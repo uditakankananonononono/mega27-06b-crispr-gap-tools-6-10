@@ -1,0 +1,41 @@
+{
+  "protocol": "train RES-only human (no nodrug rows) / test V1 mouse; mean per-gene Spearman",
+  "n_train": 3473,
+  "n_test": 2135,
+  "leader_rule_set_2_replication": {
+    "model": "GBT(lr=0.1, depth=3, 100 trees) + published feature set",
+    "per_gene": {
+      "CD13": 0.5325107074701325,
+      "CD15": 0.27355254024275083,
+      "CD28": 0.495208695092932,
+      "CD33": 0.6406654119361301,
+      "CD43": 0.6482200246790988,
+      "CD45": 0.6069616571965458,
+      "CD5": 0.609419595777823,
+      "H2-K": 0.6323777738045572,
+      "THY1": 0.6853905960755274
+    },
+    "mean_per_gene": 0.5693674446972775
+  },
+  "challenger_ours": {
+    "model": "RS2 features + GuideCNN + SequenceGCN meta-features, tuned GBT",
+    "per_gene": {
+      "CD13": 0.4199751326809059,
+      "CD15": 0.24707303676223416,
+      "CD28": 0.27503376422921094,
+      "CD33": 0.39675591443547237,
+      "CD43": 0.3983065336553963,
+      "CD45": 0.49039009847027376,
+      "CD5": 0.4393995351321524,
+      "H2-K": 0.3829714993669937,
+      "THY1": 0.277571269900037
+    },
+    "mean_per_gene": 0.36971964273696406
+  },
+  "paired_bootstrap_over_genes": {
+    "mean_diff": -0.1996478019603135,
+    "p_leader_ge_challenger": 1.0,
+    "n_boot": 10000
+  },
+  "reference_published_rs2_fc_cv": 0.52
+}
