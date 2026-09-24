@@ -39,43 +39,45 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.7}Error analysis}{7}{}\protected@file@percent }
 \citation{kosicki2018}
 \citation{wen2022}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Large-deletion risk score along the mouse Xrcc4 locus (NM\_028012.4), a locus where kilobase-scale deletions were measured experimentally \cite  {kosicki2018}.}}{8}{}\protected@file@percent }
-\newlabel{fig:xrcc4}{{3}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Tool 7 transfer matrix (Spearman vs observed, real inDelphi data): our GBT wins the in-distribution +1-insertion comparison on held-out Lib-A but loses every transfer comparison to the official Lindel model run zero-shot.}}{8}{}\protected@file@percent }
+\newlabel{fig:transfer_matrix}{{3}{8}}
 \@writefile{toc}{\contentsline {section}{\numberline {7}Tool 8: Large-deletion risk flagger}{8}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {7.1}Mechanistic model}{8}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Validation}{8}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.3}Per-locus validation results}{8}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Large-deletion risk score along the mouse Xrcc4 locus (NM\_028012.4), a locus where kilobase-scale deletions were measured experimentally \cite  {kosicki2018}.}}{9}{}\protected@file@percent }
+\newlabel{fig:xrcc4}{{4}{9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.3}Per-locus validation results}{9}{}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Large-deletion risk scan on real RefSeq loci (Kosicki 2018 genes).}}{9}{}\protected@file@percent }
 \newlabel{tab:loci}{{3}{9}}
 \@writefile{toc}{\contentsline {section}{\numberline {8}Tool 9: Biosecurity screen-and-design wrapper}{9}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {8.1}Design}{9}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.2}Deployment reality}{9}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.3}Failure modes and audit format}{9}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Human-held-out versus mouse-transfer Spearman by model class. Only the CNN leads on both axes but pays a real transfer penalty (0.665 RES held-out to 0.358 mouse V1); the simple baselines are flat.}}{10}{}\protected@file@percent }
-\newlabel{fig:transfer}{{4}{10}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.2}Deployment reality}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.3}Failure modes and audit format}{10}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {9}Tool 10: Cross-species transfer evaluator}{10}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {9.1}Problem and diagnostics}{10}{}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Human (RES only) $\to $ mouse (V1) transfer, Spearman.}}{10}{}\protected@file@percent }
 \newlabel{tab:transfer}{{4}{10}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.2}Cross-dataset head-to-head against a Rule Set 2 replication}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.2}Cross-dataset head-to-head against a Rule Set 2 replication}{10}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Human-held-out versus mouse-transfer Spearman by model class. Only the CNN leads on both axes but pays a real transfer penalty (0.665 RES held-out to 0.358 mouse V1); the simple baselines are flat.}}{11}{}\protected@file@percent }
+\newlabel{fig:transfer}{{5}{11}}
 \@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Head-to-head on the clean protocol (train RES only, test V1; mean per-gene Spearman over 9 genes).}}{11}{}\protected@file@percent }
 \newlabel{tab:azimuth}{{5}{11}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.3}Classic-scorer replications and a multi-assay negative}{11}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Per-gene Spearman on V1 under the clean Azimuth cross-dataset protocol (train RES only). All our current models sit below the same-split Rule Set 2 replication ($0.569$); the earlier contaminated run that appeared to exceed the old bar is retracted.}}{12}{}\protected@file@percent }
-\newlabel{fig:azimuth}{{5}{12}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.3}Classic-scorer replications and a multi-assay negative}{12}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {9.4}Off-target scorer replications}{12}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {10}Ethics, Dual-Use, and Governance}{12}{}\protected@file@percent }
 \citation{doench2014}
 \citation{doench2016}
 \citation{hsu2013}
 \citation{shen2018}
 \citation{chen2019}
-\@writefile{toc}{\contentsline {section}{\numberline {10}Ethics, Dual-Use, and Governance}{13}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Per-gene Spearman on V1 under the clean Azimuth cross-dataset protocol (train RES only). All our current models sit below the same-split Rule Set 2 replication ($0.569$); the earlier contaminated run that appeared to exceed the old bar is retracted.}}{13}{}\protected@file@percent }
+\newlabel{fig:azimuth}{{6}{13}}
 \@writefile{toc}{\contentsline {section}{\numberline {11}Related Work}{13}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{On-target activity.}{13}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Off-target specificity.}{13}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Repair outcome.}{13}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Multiplex design.}{13}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Biosecurity.}{13}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Repair outcome.}{14}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Multiplex design.}{14}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Biosecurity.}{14}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Cross-species transfer.}{14}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {12}Negative Results}{14}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {13}Limitations}{14}{}\protected@file@percent }
@@ -85,38 +87,37 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {A.2}Tool 7 per-target details}{15}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {A.3}Tool 10 per-model details}{15}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {A.4}Hyperparameters}{15}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Model hyperparameters.}}{15}{}\protected@file@percent }
-\newlabel{tab:hp}{{6}{15}}
 \@writefile{toc}{\contentsline {section}{\numberline {B}Dataset statistics}{15}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {C}External tools and dataset manifest}{15}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Model hyperparameters.}}{16}{}\protected@file@percent }
+\newlabel{tab:hp}{{6}{16}}
 \@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Public datasets used.}}{16}{}\protected@file@percent }
 \newlabel{tab:data}{{7}{16}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {C.1}External tools, packages, and resources (25, target 40)}{16}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {C.2}Dataset manifest (133, target 120+ reached)}{16}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {D}Benchmark protocols in full}{16}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {D.1}Tool 10 protocol A: clean Azimuth-style on-target evaluation}{16}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {D.1}Tool 10 protocol A: clean Azimuth-style on-target evaluation}{17}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {D.2}Tool 7 protocol: inDelphi repair-outcome benchmark}{17}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {D.3}Tool 6 discovery protocol: same-gene duplex enrichment}{17}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {D.3}Tool 6 discovery protocol: same-gene duplex enrichment}{18}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {D.4}Tool 8 protocol: cut-site rearrangement risk validation}{18}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {D.5}Reproducibility checklist}{18}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {E}Reproduction}{18}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {F}Model mathematics}{18}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {F.1}Convolutional guide encoder}{18}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {F}Model mathematics}{19}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {F.1}Convolutional guide encoder}{19}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {F.2}Graph propagation rule}{19}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {F.3}PAM-competition decay}{19}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {F.4}Microhomology deletion rate model}{19}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {F.5}Spearman transfer-delta significance}{19}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {F.5}Spearman transfer-delta significance}{20}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {F.6}Ridge baseline closed form}{20}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {G}Extended error analysis}{20}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {G.1}Tool 10: the CD15 outlier}{20}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {G.2}Tool 10: the cross-species transfer penalty is real}{20}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {G.3}Tool 7: microhomology-deletion share resists sequence-only models}{20}{}\protected@file@percent }
-\bibcite{lorenz2011}{Lorenz et al.(2011)}
+\@writefile{toc}{\contentsline {subsection}{\numberline {G.3}Tool 7: microhomology-deletion share resists sequence-only models}{21}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {G.4}Tool 7: why $+1$ insertion is the easiest target}{21}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {G.5}Tool 6: where the duplex model over-flags}{21}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {G.6}Tool 8: validation breadth}{21}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {G.7}Tool 9: the biosecurity wrapper's blind spot}{21}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {H}Test suite summary}{21}{}\protected@file@percent }
+\bibcite{lorenz2011}{Lorenz et al.(2011)}
 \bibcite{shen2018}{Shen et al.(2018)}
 \bibcite{doench2016}{Doench et al.(2016)}
 \bibcite{kosicki2018}{Kosicki et al.(2018)}
@@ -125,18 +126,19 @@
 \bibcite{chen2019}{Chen et al.(2019)}
 \bibcite{doench2014}{Doench et al.(2014)}
 \bibcite{bae2014}{Bae et al.(2014)}
+\@writefile{toc}{\contentsline {section}{\numberline {H}Test suite summary}{22}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {I}Software architecture}{22}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {I.1}Module map}{22}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {I.1}Module map}{23}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {I.2}Tool packages}{23}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {I.3}Command-line surface}{23}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {I.4}Design decisions and their costs}{23}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {I.5}Failure containment}{23}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {J}Algorithms}{23}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {J}Algorithms}{24}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {K}Statistical methods}{25}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {K.1}Paired bootstrap over genes}{25}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {K.2}Two-proportion $z$-test for flag-rate enrichment}{25}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {K.3}Spearman correlation and its standard error}{25}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {K.4}Multiplicity across break attempts}{25}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {K.3}Spearman correlation and its standard error}{26}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {K.4}Multiplicity across break attempts}{26}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {K.5}Contamination control as a statistical procedure}{26}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {K.6}Seeds and determinism}{26}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {L}Negative results register}{26}{}\protected@file@percent }
@@ -144,20 +146,20 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {L.2}Repair-outcome negatives (Tool 7)}{27}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {L.3}Model-class negatives}{27}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {L.4}What the negatives changed}{27}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {M}Extended validation tables}{27}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {M.1}Multiplex discovery statistics (Tool 6)}{27}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {M}Extended validation tables}{28}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {M.1}Multiplex discovery statistics (Tool 6)}{28}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {M.2}Cross-species transfer ladder (Tool 10)}{28}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {M.3}Repair-outcome transfer matrix (Tool 7)}{28}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {M.4}Off-target replication summary (crisprSQL)}{28}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {M.5}Large-deletion panel (Tool 8)}{28}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {M.5}Large-deletion panel (Tool 8)}{29}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {N}Reproducibility register}{29}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {N.1}Script-to-result map}{29}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {N.2}Determinism and contamination guards}{29}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {N.1}Script-to-result map}{30}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {N.2}Determinism and contamination guards}{30}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {N.3}Live-network steps}{30}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {O}Scoring formulas and derivations}{30}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {O.1}MIT off-target score}{30}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {O.2}Jensen-Shannon divergence of k-mer spectra}{30}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {O.3}GC-content sequestration rule}{30}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces External tools/resources in use. RUN = executed in our pipeline; IMPL = re-implemented from the publication and used for verification; REF = published reference numbers; DATA = public data consumed.}}{31}{}\protected@file@percent }
-\newlabel{tab:tools}{{8}{31}}
-\gdef \@abspage@last{31}
+\@writefile{toc}{\contentsline {section}{\numberline {O}Scoring formulas and derivations}{31}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {O.1}MIT off-target score}{31}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {O.2}Jensen-Shannon divergence of k-mer spectra}{31}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {O.3}GC-content sequestration rule}{31}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces External tools/resources in use. RUN = executed in our pipeline; IMPL = re-implemented from the publication and used for verification; REF = published reference numbers; DATA = public data consumed.}}{32}{}\protected@file@percent }
+\newlabel{tab:tools}{{8}{32}}
+\gdef \@abspage@last{32}

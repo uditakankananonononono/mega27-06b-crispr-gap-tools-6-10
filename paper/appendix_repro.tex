@@ -60,8 +60,12 @@ JSON results files, not recomputed by hand --- the extended-validation
 appendix quotes them verbatim.
 
 \subsection{Live-network steps}
-Two scripts touch the network: \texttt{riskflag\_refseq\_panel.py}
-(NCBI E-utilities; resumable, appends per-accession records) and the
-one-time dataset pulls recorded in \texttt{data/PROVENANCE.md} with exact
-URLs (figshare file IDs, GitHub raw paths). Everything else is hermetic;
-the 40-test pytest suite runs fully offline.
+Network access is confined to (a) \texttt{riskflag\_refseq\_panel.py}
+(NCBI E-utilities; resumable, appends per-accession records) and (b) the
+dataset acquisition steps recorded with exact URLs in
+\texttt{data/PROVENANCE.md} (figshare file IDs, GitHub raw/API paths,
+bioRxiv), which are run manually once and whose outputs are committed under
+\texttt{data/}. No \emph{benchmark or training} script performs network
+I/O: given the committed \texttt{data/} tree, every entry in the
+script-to-result map above reproduces offline, and the 40-test pytest
+suite runs fully offline.
