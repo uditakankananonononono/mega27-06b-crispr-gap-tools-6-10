@@ -1,0 +1,13 @@
+{
+  "n_real_guides": 4692,
+  "real_strong_self_fold_rate": 0.08951406649616368,
+  "real_mean_self_mfe": -1.8695012797273614,
+  "gc_rule_violation_rate": 0.13384484228473997,
+  "high_gc_share": 0.09036658141517477,
+  "low_gc_share": 0.043478260869565216,
+  "same_gene_pairs": 30000,
+  "same_gene_flag_rate": 0.22496666666666668,
+  "cross_gene_pairs": 30000,
+  "cross_gene_flag_rate": 0.1587,
+  "random_spacer_baseline": 0.10812324929971989
+}

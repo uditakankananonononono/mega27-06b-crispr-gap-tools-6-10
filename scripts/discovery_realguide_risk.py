@@ -17,10 +17,12 @@ def revcomp(s):
     return s.translate(str.maketrans("ACGT", "TGCA"))[::-1]
 
 def dup_mfe(a, b):
-    return RNA.duplexfold(a, revcomp(b)).energy
+    # duplexfold treats the two 5'->3' strands as antiparallel; no revcomp
+    return RNA.duplexfold(a.replace("T", "U"), b.replace("T", "U")).energy
 
 def self_mfe(a):
-    return RNA.duplexfold(a, revcomp(a)).energy
+    _, mfe = RNA.fold(a.replace("T", "U"))
+    return mfe
 
 fc = pd.read_csv("data/FC_plus_RES_withPredictions.csv", sep=None, engine="python")
 fc["spacer"] = fc["30mer"].str[4:24]
