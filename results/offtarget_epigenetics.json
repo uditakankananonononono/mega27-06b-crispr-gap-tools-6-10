@@ -1,0 +1,45 @@
+{
+  "n_pairs": 16472,
+  "studies": {
+    "Anderson": {
+      "n": 336,
+      "auc_seq_only": 0.717037037037037,
+      "auc_seq_plus_epigenetics": 0.7145370370370371
+    },
+    "Cameron": {
+      "n": 927,
+      "auc_seq_only": 0.5513306550481902,
+      "auc_seq_plus_epigenetics": 0.5532450630905901
+    },
+    "Cho": {
+      "n": 116,
+      "auc_seq_only": 0.5407407407407407,
+      "auc_seq_plus_epigenetics": 0.49135802469135803
+    },
+    "Finkelstein": {
+      "n": 6792,
+      "auc_seq_only": 0.4640927704316192,
+      "auc_seq_plus_epigenetics": 0.4631242679483183
+    },
+    "Kim": {
+      "n": 89,
+      "auc_seq_only": 0.5774011299435028,
+      "auc_seq_plus_epigenetics": 0.5813559322033898
+    },
+    "Kim16": {
+      "n": 251,
+      "auc_seq_only": 0.5127433628318584,
+      "auc_seq_plus_epigenetics": 0.5143362831858407
+    },
+    "KimChromatin": {
+      "n": 135,
+      "auc_seq_only": 0.7111255692908264,
+      "auc_seq_plus_epigenetics": 0.7153545868575146
+    }
+  },
+  "mean_auc": {
+    "seq_only": 0.5820673236176821,
+    "seq_plus_epigenetics": 0.5761873135734356,
+    "n_studies": 7
+  }
+}

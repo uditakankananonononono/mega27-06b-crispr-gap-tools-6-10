@@ -56,8 +56,8 @@ of published scorers (Rule Set 1, SSC, CRISPRscan) benchmarked in the repo.
      Finkelstein, Frock, Fu, Kim, Kim16, KimChromatin, Kleinstiver,
      Listgarten, Ran, Slaymaker, Tsai, Tsai_circle = 16 datasets
 20-130. RefSeq validation panel (results/riskflag_panel.json): 111 mRNA
-      accessions scored with Tool 8 (334 candidate cut sites; 61.1% LOW,
-      31.7% MODERATE, 7.2% HIGH), including the 3 Kosicki loci. Genes:
+      accessions scored with Tool 8 (478 candidate cut sites; 57.5% LOW,
+      34.7% MODERATE, 7.7% HIGH), including the 3 Kosicki loci. Genes:
       HBB, EMX1, VEGFA, FANCF, RUNX1, DNMT1, TET2, TP53, BRCA1, BRCA2,
       CFTR, DMD, HTT, APOE, PCSK9, CCR5, IL2RG, RAG1, ALB, G6PD, F8, F9,
       HBG1, HBG2, SERPINA1, LDLR, MSTN, TTR, SOD1, APP, MAPT, SNCA, LRRK2,

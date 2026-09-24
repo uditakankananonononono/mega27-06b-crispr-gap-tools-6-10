@@ -1,0 +1,54 @@
+\section{Extended validation tables}
+All numbers in this appendix are read directly from the committed results
+files cited in each caption; nothing is re-estimated for the manuscript.
+
+\subsection{Multiplex discovery statistics (Tool 6)}
+From \texttt{results/realguide\_risk.json}: 4{,}692 real guides from
+crisprSQL; strong self-fold rate $8.95\%$ (mean self-fold MFE $-1.87$
+kcal/mol); GC-window violation rate $13.4\%$ ($9.0\%$ high-GC, $4.3\%$
+low-GC). The named discovery --- same-gene duplex enrichment --- flags
+$22.50\%$ of 30{,}000 same-gene guide pairs vs $15.87\%$ of 30{,}000
+cross-gene pairs and $10.81\%$ of random-spacer controls (two-proportion
+$z \approx 19.9$). Same-gene pairs share exonic sequence context, which
+raises antiparallel complementarity between guides; the effect survives
+the random-spacer control, so it is not a base-composition artifact.
+
+\subsection{Cross-species transfer ladder (Tool 10)}
+From \texttt{results/beat\_azimuth\_v1.json}--\texttt{v7.json}, mean
+per-gene Spearman on V1 mouse (9 genes), train RES human:
+ridge $0.268$ (v1), GNN $0.218$ (v2), GBT $0.480$ (v3), rank-ensemble
+$0.474$ (v4), deep-stack tuned $0.370$ (v5, flawed), leak-free OOF stack
+$0.490$ (v6), multi-assay RES+V2 $0.547$ (v7). Bar: same-split Rule Set 2
+replication $0.569$. The bar stands; v6 is our best honest challenger.
+
+\subsection{Repair-outcome transfer matrix (Tool 7)}
+From \texttt{results/lindel\_headtohead.json} and
+\texttt{results/outcome\_crosscell.json} (Spearman, ours / official
+Lindel zero-shot):
+\begin{center}
+\begin{tabular}{l|cc}
+ & +1 insertion rate & frameshift frequency \\\hline
+Lib-A held-out (348 sites) & \textbf{0.614} / 0.557 & 0.304 / \textbf{0.496} \\
+U2OS Lib-B (1{,}510 sites) & 0.576 / \textbf{0.646} & 0.358 / \textbf{0.541} \\
+mESC Lib-B (1{,}953 sites) & 0.533 / \textbf{0.670} & 0.326 / \textbf{0.590} \\
+\end{tabular}
+\end{center}
+One in-distribution win (bold, top-left), five losses. The single-row
+summary in the main text hides this structure; the full matrix is the
+honest picture.
+
+\subsection{Off-target replication summary (crisprSQL)}
+From \texttt{results/offtarget\_scorers.json} and
+\texttt{results/offtarget\_epigenetics.json} (LOSO mean AUC, 7 evaluable
+studies): Hsu-style $0.556$, CFD-style $0.582$, CFD-style + epigenetic
+tracks $0.576$. Epigenetic features did not help under this protocol ---
+a small negative, preserved.
+
+\subsection{Large-deletion panel (Tool 8)}
+From \texttt{results/riskflag\_panel.json}: 111 RefSeq accessions, 478 NGG
+cut sites scored ($57.5\%$ LOW, $34.7\%$ MODERATE, $7.7\%$ HIGH), mean
+locus risk $0.221$. Highest mean-risk loci: VHL $0.655$, Pik3ca $0.633$,
+B2M $0.613$, Tet2 $0.526$, ALB $0.455$; highest single-site risk:
+Pik3ca NM\_008839 $0.780$, Tet2 NM\_001346736 $0.763$, PCSK9
+NM\_001407243 $0.715$. The score is a within-locus ranking device; no
+cross-genome calibration is claimed.
