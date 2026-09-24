@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  24 SEP 2026 20:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  24 SEP 2026 20:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -166,7 +166,7 @@ File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count276
 \l__pdf_internal_box=\box52
 )
-No file main.aux.
+(./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
@@ -183,6 +183,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -251,23 +252,27 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 14.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-
-LaTeX Warning: Citation `shen2018' on page 1 undefined on input line 39.
-
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 4
-0.
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) [1
+<figures/benchmarks.pdf, id=1, 867.24pt x 245.718pt>
+File: figures/benchmarks.pdf Graphic file (type pdf)
+<use figures/benchmarks.pdf>
+Package pdftex.def Info: figures/benchmarks.pdf  used on input line 35.
+(pdftex.def)             Requested size: 469.75502pt x 133.09816pt.
+ [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (32.15326pt too wide) in paragraph at lines 46--47
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 6
+2.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+Overfull \hbox (32.15326pt too wide) in paragraph at lines 68--69
 \OT1/ptm/m/n/12 25,632 cleav-age records (100720 dump) with epi-ge-netic co-var
 i-ates, genomes hg19/hg38/mm10/mm9/rn5. 
  []
 
 ! Undefined control sequence.
-l.52 ..., the duplex channel uses ViennaRNA \citep
+l.74 ..., the duplex channel uses ViennaRNA \citep
                                                   {lorenz2011}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -275,8 +280,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-
-Overfull \hbox (52.38058pt too wide) in paragraph at lines 60--65
+[2 <./figures/benchmarks.pdf>]
+Overfull \hbox (52.38058pt too wide) in paragraph at lines 82--87
 \OT1/ptm/b/n/12 Definition 2 \OT1/ptm/m/n/12 (In-ter-fer-ence graph)\OT1/ptm/b/
 n/12 . \OT1/ptm/m/it/12 Weighted graph on guides with edge weight $\OML/cmm/m/i
 t/12 a[] \OT1/cmr/m/n/12 = 0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 6 [](1\OML/cmm/m/
@@ -285,41 +290,31 @@ it/12 ; \OMS/cmsy/m/n/12 j\OT1/cmr/m/n/12 ^^A\OML/cmm/m/it/12 G[]\OMS/cmsy/m/n/
  []
 
 
-LaTeX Warning: Reference `tab:duplex' on page 2 undefined on input line 69.
-
-[2]
-Overfull \hbox (2.55388pt too wide) in paragraph at lines 85--87
+Overfull \hbox (2.55388pt too wide) in paragraph at lines 107--109
 \OT1/ptm/b/n/12 Proposition 1 \OT1/ptm/m/n/12 (Mi-cro-ho-mol-ogy score)\OT1/ptm
 /b/n/12 . \OT1/ptm/m/it/12 For flanks $\OML/cmm/m/it/12 L; R$ \OT1/ptm/m/it/12 
 around the cut, $\OML/cmm/m/it/12 s[] \OT1/cmr/m/n/12 = [][] \OT1/cmr/bx/n/12 1
 \OT1/cmr/m/n/12 [\OML/cmm/m/it/12 L[] \OT1/cmr/m/n/12 =
  []
 
-
-LaTeX Warning: Citation `kosicki2018' on page 3 undefined on input line 95.
-
-
-LaTeX Warning: Citation `wen2022' on page 3 undefined on input line 95.
-
-
-LaTeX Warning: Reference `tab:transfer' on page 3 undefined on input line 119.
-
-[3] [4] (./main.aux)
-
-LaTeX Warning: There were undefined references.
-
+<figures/xrcc4_risk.pdf, id=75, 505.89pt x 216.81pt>
+File: figures/xrcc4_risk.pdf Graphic file (type pdf)
+<use figures/xrcc4_risk.pdf>
+Package pdftex.def Info: figures/xrcc4_risk.pdf  used on input line 117.
+(pdftex.def)             Requested size: 375.80544pt x 161.06213pt.
+[3] [4 <./figures/xrcc4_risk.pdf>] [5] [6] (./main.aux)
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 3290 strings out of 480247
- 48557 string characters out of 5896151
- 340016 words of memory out of 5000000
- 21198 multiletter control sequences out of 15000+600000
+ 3309 strings out of 480247
+ 49012 string characters out of 5896151
+ 341179 words of memory out of 5000000
+ 21212 multiletter control sequences out of 15000+600000
  497305 words of font info for 87 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 55i,9n,62p,262b,215s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,9n,62p,346b,231s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist
@@ -332,10 +327,10 @@ sy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/font
 s/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (4 pages, 143602 bytes).
+Output written on main.pdf (6 pages, 176348 bytes).
 PDF statistics:
- 78 PDF objects out of 1000 (max. 8388607)
- 47 compressed objects within 1 object stream
+ 197 PDF objects out of 1000 (max. 8388607)
+ 61 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

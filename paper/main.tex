@@ -31,9 +31,31 @@ penalty for a CNN trained on human Doench FC+RES and tested on mouse V1
 negative and parity results are preserved.
 \end{abstract}
 
+\begin{figure}[t]\centering
+\includegraphics[width=\textwidth]{figures/benchmarks.pdf}
+\caption{Held-out benchmark summary for tools 6, 7 and 10. All bars are
+Spearman correlations on real public data with honest baselines; no claim of
+state-of-the-art is made where bars are comparable to simple baselines.}
+\label{fig:benchmarks}\end{figure}
+
 \section{Introduction}
-% TODO: expand to 2 pages - CRISPR design landscape, the 10 verified gaps (lane C),
-% why these five, related work table.
+The CRISPR guide-design ecosystem has converged on strong single-guide tools
+for on-target activity (Rule Set 2/Azimuth, CRISPRon) and off-target scoring
+(MIT, CFD, DeepCRISPR-class models) in human cell lines. Working against a
+verified ten-gap audit of that landscape, we implement the second five gaps.
+Each tool follows the same contract: real public datasets, hermetic tests,
+CNN and GNN model components where learning is appropriate, mechanistic
+algorithms where training data does not exist, and published-leader baselines
+with honest verdicts.
+
+Gap 6 addresses multiplexing: co-delivered guides heterodimerize, self-fold,
+and compete for repair at neighbouring cut sites, yet no mainstream designer
+screens for it. Gap 7 addresses the split between guide selection and outcome
+prediction: a guide picked for activity may produce predominantly in-frame
+deletions, defeating a knockout. Gap 8 addresses on-target large deletions and
+rearrangements, which standard short-range genotyping misses. Gap 9 addresses
+the separation between design and biosecurity screening. Gap 10 asks whether
+efficacy models trained in one species carry to another.
 \section{Data}
 \subsection{inDelphi U2OS LibA}
 Event-level counts from \cite{shen2018} (figshare 6837956, U2OS\_+\_LibA\_postCas9\_rep1.csv)
@@ -91,6 +113,13 @@ Held-out Spearman (349 test sites): +1-insertion 0.60 (GBT positional) / 0.50
 Published inDelphi/Lindel numbers are higher; they model full per-genotype
 distributions on mESC with richer feature sets, and we do not claim parity.
 
+\begin{figure}[t]\centering
+\includegraphics[width=0.8\textwidth]{figures/xrcc4_risk.pdf}
+\caption{Large-deletion risk score along the mouse Xrcc4 locus
+(NM\_028012.4), a locus where kilobase-scale deletions were measured
+experimentally \cite{kosicki2018}.}
+\label{fig:xrcc4}\end{figure}
+
 \section{Tool 8: Large-deletion risk flagger}
 Mechanistic, per \cite{kosicki2018} and \cite{wen2022}: direct-repeat pairs
 spanning the cut (worst-case deletion span), sequence complexity, homopolymers.
@@ -127,8 +156,19 @@ as a documented negative.
 Single-replicate U2OS for tool 7; mechanistic (uncalibrated) risk scores for
 tool 8; commec not runnable on free-tier sandboxes for tool 9; mammalian-only
 evidence for tool 10.
-\section{Conclusion}
-% TODO
+\section{Discussion and Conclusion}
+Five tools, five verified gaps, one repository. Three findings stand out.
+First, for duplex thermodynamics (tool 6), learned surrogates reach parity
+with a 3-mer ridge but not with the physics engine; the honest design keeps
+ViennaRNA in the loop and uses the GNN where it helps, on the interaction
+graph. Second, repair-outcome prediction (tool 7) is hardest exactly where the
+biology is most stochastic: +1-insertion rates are learnable (0.60 Spearman),
+frameshift fractions less so (0.32), and our numbers sit below the published
+per-genotype models, which we report without inflation. Third, mammalian
+cross-species transfer (tool 10) shows no penalty for a CNN moving from human
+to mouse guides; extending that claim beyond mammals is blocked by data
+availability, which we document rather than paper over. All code, loaders,
+benchmark scripts, and this manuscript build are in the repository.
 \begin{thebibliography}{9}
 \bibitem[Lorenz et al.(2011)]{lorenz2011} Lorenz R, et al. ViennaRNA Package 2.0. \emph{Algorithms Mol Biol} 6:26, 2011.
 \bibitem[Shen et al.(2018)]{shen2018} Shen MW, et al. Predictable and precise template-free CRISPR editing of pathogenic variants. \emph{Nature} 563:646--651, 2018.
