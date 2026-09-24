@@ -116,6 +116,15 @@ against exhaustive leave-one-out enumeration on small sets.
 CNN/GNN surrogates for single-strand fold MFE reach Spearman 0.63/0.64 against
 the ViennaRNA teacher (ridge on 3-mers 0.65): parity, not improvement;
 ViennaRNA remains the primary engine (Table~\ref{tab:duplex}).
+\subsection{Discovery: physics-derived multiplex design rules}
+Scanning 600 random spacers (7,140 pairs) against ViennaRNA ground truth
+yields two rules. (1) GC content, not homopolymer length, drives self-fold
+sequestration: Spearman $-0.645$ for GC vs $0.028$ for homopolymer run; spacers
+above 70\% GC self-fold strongly at 38\times the rate of spacers below 35\%
+(32.8\% vs 0.85\%). (2) 10.8\% of random spacer pairs form strong
+heteroduplexes ($\le -12$~kcal/mol), and pairs of similar GC flag slightly
+more often (point-biserial $-0.19$). Practical rules: keep spacer GC in
+$[0.35, 0.70]$ and mix GC levels across a multiplex set.
 \begin{table}[h]\centering
 \caption{Duplex-MFE surrogate benchmark (2,000 spacers, 400 held out).}\label{tab:duplex}
 \begin{tabular}{lcc}\hline\hline

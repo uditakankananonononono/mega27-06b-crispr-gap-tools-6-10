@@ -1,0 +1,19 @@
+{
+  "self_fold": {
+    "spearman_gc": -0.6451392090081634,
+    "spearman_homopolymer": 0.027652695617157375,
+    "mean_mfe": -1.7546666705732543,
+    "frac_strong_self_fold": 0.07333333333333333
+  },
+  "duplex": {
+    "n_pairs": 7140,
+    "frac_flagged": 0.10812324929971989,
+    "pointbiserial_gc_delta": -0.1930367105967713
+  },
+  "rules": {
+    "low_GC_self_fold_rate": 0.008547008547008548,
+    "high_GC_self_fold_rate": 0.328125,
+    "mid_GC_self_fold_rate": 0.05250596658711217,
+    "homopolymer4plus_self_fold_rate": 0.06626506024096386
+  }
+}
