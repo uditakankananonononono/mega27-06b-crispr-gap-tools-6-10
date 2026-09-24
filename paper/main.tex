@@ -160,6 +160,15 @@ experimentally \cite{kosicki2018}.}
 \label{fig:xrcc4}\end{figure}
 
 \section{Tool 8: Large-deletion risk flagger}
+\subsection{Mechanistic model}
+Let $R$ be the set of exact direct repeats of length $\ge 8$~nt in a
+$\pm 250$~bp window around the cut, and $R_s \subseteq R$ the pairs with one
+copy on each side. The worst-case deletion span is $\max_{(i,j,L)\in R_s} (j+L-i)$.
+The score is
+$S = 0.45\min(|R_s|/20,1) + 0.30\min(\text{span}/500,1) + 0.15\,c + 0.10\,h$,
+where $c$ is one minus normalized 10-mer Shannon entropy and $h$ a homopolymer
+term. Thresholds: LOW $<0.25$, MODERATE $<0.5$, HIGH $\ge 0.5$.
+\subsection{Validation}
 Mechanistic, per \cite{kosicki2018} and \cite{wen2022}: direct-repeat pairs
 spanning the cut (worst-case deletion span), sequence complexity, homopolymers.
 Across all three real Kosicki loci (Xrcc4 NM\_028012.4, Piga NM\_011081.4,
@@ -171,6 +180,15 @@ mechanistic risk - qualitative consistency, not a calibrated-rate claim. No cali
 per-sequence large-deletion training data does not exist at scale.
 
 \section{Tool 9: Biosecurity screen-and-design wrapper}
+\subsection{Design}
+The wrapper enforces a single invariant: no candidate oligo enters a design
+set unscreened. Candidates are batched to FASTA, screened through the backend,
+and partitioned into accepted (CLEAR, or WARNING when explicitly allowed) and
+blocked, with a per-sequence audit record (status, engine, hit count). The
+backend interface is small (\texttt{available}, \texttt{screen}) so the
+orchestration is testable hermetically while the production engine remains the
+real Common Mechanism.
+\subsection{Deployment reality}
 Wraps the IBBIS Common Mechanism (\texttt{commec}): every candidate oligo is
 screened before acceptance; flagged sequences are blocked with an audit log.
 When \texttt{commec} is unavailable the wrapper raises rather than silently

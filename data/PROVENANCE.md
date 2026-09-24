@@ -16,3 +16,10 @@
   contains figures only; CSHL DC1 link 404s.
 - Arabidopsis lignin-screen sgRNA set (figshare collection 4515980): supplements are PDFs
   (no machine-readable table); PDF table extraction attempted only if time permits.
+
+## crisprSQL usage note
+The non-human crisprSQL records (Anderson mm10/rn5, Ran mm9) are GUIDE-seq-class
+OFF-target measurement sets (mean cleavage 0.02-0.09), not on-target efficacy
+screens. They are therefore NOT used for the gap-10 efficacy-transfer benchmark
+(would be a label mismatch); the gap-10 result rests on the Doench human->mouse
+efficacy axis.
