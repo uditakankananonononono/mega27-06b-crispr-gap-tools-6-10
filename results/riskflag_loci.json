@@ -1,0 +1,29 @@
+{
+  "Xrcc4": {
+    "accession": "NM_028012.4",
+    "len": 1557,
+    "n_scanned": 43,
+    "n_high": 0,
+    "n_moderate": 18,
+    "max_span_overall": 500,
+    "mean_score": 0.2185
+  },
+  "Piga": {
+    "accession": "NM_011081.4",
+    "len": 3563,
+    "n_scanned": 123,
+    "n_high": 3,
+    "n_moderate": 34,
+    "max_span_overall": 489,
+    "mean_score": 0.183
+  },
+  "Cd9": {
+    "accession": "NM_007657.4",
+    "len": 1227,
+    "n_scanned": 30,
+    "n_high": 5,
+    "n_moderate": 14,
+    "max_span_overall": 404,
+    "mean_score": 0.3203
+  }
+}

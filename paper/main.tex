@@ -123,9 +123,12 @@ experimentally \cite{kosicki2018}.}
 \section{Tool 8: Large-deletion risk flagger}
 Mechanistic, per \cite{kosicki2018} and \cite{wen2022}: direct-repeat pairs
 spanning the cut (worst-case deletion span), sequence complexity, homopolymers.
-On the real Xrcc4 locus (NM\_028012.4): 18/43 scanned cut sites flagged
-MODERATE, predicted spans to 500~bp - qualitatively consistent with the
-kilobase-scale deletions measured at this locus. No calibrated-rate claim:
+Across all three real Kosicki loci (Xrcc4 NM\_028012.4, Piga NM\_011081.4,
+Cd9 NM\_007657.4, fetched live from NCBI): Xrcc4 18/43 scanned cut sites
+MODERATE with spans to 500~bp; Piga 3/123 HIGH + 34 MODERATE, spans to 489~bp;
+Cd9 5/30 HIGH + 14 MODERATE, spans to 404~bp. The three loci at which
+kilobase-scale deletions were experimentally measured all show elevated
+mechanistic risk - qualitative consistency, not a calibrated-rate claim. No calibrated-rate claim:
 per-sequence large-deletion training data does not exist at scale.
 
 \section{Tool 9: Biosecurity screen-and-design wrapper}
