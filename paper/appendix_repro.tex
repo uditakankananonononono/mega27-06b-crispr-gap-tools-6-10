@@ -1,0 +1,67 @@
+\section{Reproducibility register}
+Every quantitative claim in this manuscript maps to one script, one input
+dataset, and one committed results file. All scripts run CPU-only
+(${\leq}2$ cores, ${\leq}2$~GB RAM) and are executed with
+\texttt{PYTHONPATH=.} from the repository root. Environment: Python 3.10,
+NumPy 2.2.6, pandas 2.3.3, SciPy 1.15.3, scikit-learn 1.7.2, PyTorch
+2.14.0+cpu, ViennaRNA 2.7.2 (duplexfold/RNAfold). Deep models seed all
+samplers explicitly; scikit-learn models use \texttt{random\_state=0}.
+
+\subsection{Script-to-result map}
+\begin{center}
+\small
+\begin{tabular}{p{5.2cm}p{5.6cm}p{4.2cm}}
+script & produces & key inputs \\\hline
+\texttt{discovery\_realguide\_risk.py} & \texttt{realguide\_risk.json}
+ (discovery) & crisprSQL guides, random spacers \\
+\texttt{discovery\_multiplex\_rules.py} & \texttt{multiplex\_rules.json}
+ & synthetic + real pair sets \\
+\texttt{benchmark\_duplex\_surrogate.py} & \texttt{duplex\_surrogate.json}
+ & ViennaRNA duplexfold calls \\
+\texttt{train\_outcome\_model.py} & \texttt{outcome\_models.json} &
+ inDelphi Lib-A events + targets \\
+\texttt{lindel\_headtohead.py} & \texttt{lindel\_headtohead.json} &
+ Lib-A + official Lindel weights \\
+\texttt{transfer\_outcome\_crosscell.py} & \texttt{outcome\_crosscell.json}
+ & Lib-A train; U2OS/mESC Lib-B test \\
+\texttt{improve\_mhdel.py} & \texttt{mhdel\_improve.json} (negative) &
+ inDelphi Lib-A \\
+\texttt{beat\_azimuth\_v1.py}--\texttt{v6.py} &
+ \texttt{beat\_azimuth\_v1..6.json} & FC+RES (drug-filtered), V1 \\
+\texttt{beat\_azimuth\_v7.py} & \texttt{beat\_azimuth\_v7.json} (negative)
+ & + Doench V2 (\texttt{V2\_results.csv}) \\
+\texttt{replicate\_classic\_scorers.py} & \texttt{classic\_scorers.json} &
+ same split as v6 \\
+\texttt{offtarget\_scorers.py} & \texttt{offtarget\_scorers.json} &
+ crisprSQL pairs, LOSO \\
+\texttt{offtarget\_epigenetics.py} & \texttt{offtarget\_epigenetics.json}
+ (negative) & + 5 epigenetic tracks \\
+\texttt{crisprsql\_perstudy.py} & \texttt{crisprsql\_perstudy.json} &
+ crisprSQL 100720 \\
+\texttt{riskflag\_refseq\_panel.py} & \texttt{riskflag\_panel.json} &
+ NCBI E-utilities (live) \\
+\texttt{validate\_riskflag\_realseq.py} & \texttt{riskflag\_loci.json},
+ \texttt{riskflag\_xrcc4.json} & Kosicki loci RefSeq seqs \\
+\texttt{benchmark\_transfer.py} & \texttt{transfer.json} & FC+RES, V1 \\
+\texttt{make\_figures.py}--\texttt{make\_figures4.py} &
+ \texttt{paper/figures/*.pdf} & committed results files \\
+\end{tabular}
+\end{center}
+
+\subsection{Determinism and contamination guards}
+Three guards make the pipeline failure-visible. (1) The FC+RES loader
+enforces \texttt{drug != 'nodrug'} so FC test guides cannot leak into
+training; a hermetic test asserts the filter (added after the retraction
+documented in the negative-results register). (2) Every benchmark script
+verifies 30-mer-set disjointness between train and test before fitting;
+the V2 pull was accepted only after V2/V1 overlap was verified to be zero.
+(3) All reported numbers are read into the manuscript from the committed
+JSON results files, not recomputed by hand --- the extended-validation
+appendix quotes them verbatim.
+
+\subsection{Live-network steps}
+Two scripts touch the network: \texttt{riskflag\_refseq\_panel.py}
+(NCBI E-utilities; resumable, appends per-accession records) and the
+one-time dataset pulls recorded in \texttt{data/PROVENANCE.md} with exact
+URLs (figshare file IDs, GitHub raw paths). Everything else is hermetic;
+the 40-test pytest suite runs fully offline.
