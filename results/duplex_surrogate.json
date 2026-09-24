@@ -1,0 +1,17 @@
+{
+  "n_train": 1600,
+  "n_test": 400,
+  "teacher": "ViennaRNA 2.7.2 RNA.fold MFE (kcal/mol)",
+  "ridge_kmer": {
+    "spearman": 0.6479965812060218,
+    "pearson": 0.6529766043664653
+  },
+  "cnn": {
+    "spearman": 0.632668819740513,
+    "pearson": 0.6584678019031517
+  },
+  "gnn": {
+    "spearman": 0.6448823711764311,
+    "pearson": 0.6453062257880526
+  }
+}
