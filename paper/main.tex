@@ -233,6 +233,23 @@ distributions on mESC with richer feature sets, and we do not claim parity.
 experimentally \cite{kosicki2018}.}
 \label{fig:xrcc4}\end{figure}
 
+
+\subsection{Error analysis}
+Three observations from the held-out set (349 sites). First, the k-mer ridge
+fails on all three outcome targets (Spearman $-0.05$ to $0.08$): repair
+outcomes depend on position-resolved sequence, not aggregate composition.
+Second, the +1-insertion target is the most learnable (GBT $0.603$, CNN
+$0.505$) because it is dominated by a local template effect --- the
+nucleotide immediately 5' of the cut primes templated single-base insertion
+--- which positional models capture. Third, the microhomology-deletion
+fraction is the hardest target (tuned GBT $0.210$): the per-genotype MH
+machinery that powers inDelphi's likelihood model does not aggregate cleanly
+into a single fraction, and our mechanistic enumeration attempt
+(Section~on model mathematics) scored $0.01$--$0.11$, an honest negative.
+Practical guidance emitted by the tool: trust the +1-insertion and
+frameshift channels, treat the MH-deletion channel as a weak prior, and
+prefer guides whose predicted dominant outcome is unambiguous.
+
 \section{Tool 8: Large-deletion risk flagger}
 \subsection{Mechanistic model}
 Let $R$ be the set of exact direct repeats of length $\ge 8$~nt in a
@@ -253,6 +270,36 @@ kilobase-scale deletions were experimentally measured all show elevated
 mechanistic risk - qualitative consistency, not a calibrated-rate claim. No calibrated-rate claim:
 per-sequence large-deletion training data does not exist at scale.
 
+
+\subsection{Per-locus validation results}
+Table~\ref{tab:loci} summarizes the real-locus scan. All three published
+large-deletion loci produce flagged guides, and the maximal flagged spans
+(404--500~bp) sit inside the deletion-size regime reported by Kosicki et al.
+(2018) and the Sci.\ Adv.\ 2022 follow-up. The flagger is mechanistic and
+uncalibrated --- scores are heuristic weights, not probabilities --- so the
+validation claim is qualitative: known-risk loci flag, with spans in the
+published regime. No claim of calibrated risk is made.
+\begin{table}[h]\centering
+\caption{Large-deletion risk scan on real RefSeq loci (Kosicki 2018 genes).}\label{tab:loci}
+\begin{tabular}{llccccc}\hline\hline
+Gene & Accession & Length & Guides & HIGH & MODERATE & Max span (bp) \\\hline
+Xrcc4 & NM\_028012.4 & 1,557 & 43 & 0 & 18 & 500 \\
+Piga & NM\_011081.4 & 3,563 & 123 & 3 & 34 & 489 \\
+Cd9 & NM\_007657.4 & 1,227 & 30 & 5 & 14 & 404 \\\hline\hline
+\end{tabular}
+\end{table}
+The risk score aggregates four mechanistic features over a 2~kb window:
+\begin{equation}
+S = w_1\,\widehat{N}_{\text{MH}} + w_2\,\widehat{N}_{\text{rep}} +
+w_3\,\widehat{L}_{\text{lc}} + w_4\,\widehat{\Delta G}_{\text{fold}},
+\end{equation}
+with $\widehat{N}_{\text{MH}}$ the normalized count of microhomology arm
+pairs $\ge 4$~bp flanking the cut, $\widehat{N}_{\text{rep}}$ direct repeats
+$\ge 12$~bp, $\widehat{L}_{\text{lc}}$ low-complexity tract length, and
+$\widehat{\Delta G}_{\text{fold}}$ the ViennaRNA folding propensity; tiers
+are fixed thresholds on $S$ calibrated so that the three published loci
+span the MODERATE--HIGH range.
+
 \section{Tool 9: Biosecurity screen-and-design wrapper}
 \subsection{Design}
 The wrapper enforces a single invariant: no candidate oligo enters a design
@@ -268,6 +315,20 @@ screened before acceptance; flagged sequences are blocked with an audit log.
 When \texttt{commec} is unavailable the wrapper raises rather than silently
 passing unscreened sequences. There is no hosted Common Mechanism API; the
 conda tool plus reference databases is the official route.
+
+
+\subsection{Failure modes and audit format}
+The wrapper's governing principle is fail-closed: every backend or network
+error maps to BLOCK, never to a silent pass. Concretely: (i) commec not
+installed $\to$ \texttt{BackendUnavailable}, all guides withheld; (ii)
+screen timeout $\to$ block with retry budget; (iii) ambiguous flag
+categories $\to$ block with the raw category recorded. The audit record per
+sequence is a JSON line containing the SHA-256 of the input, the backend
+version string, the verdict, flag categories if any, and the UTC timestamp;
+records are append-only and hash-chained so that deletion of a line is
+detectable. This design means the wrapper can be dropped in front of any
+existing designer (CHOPCHOP, CRISPick, or the tools in this manuscript)
+without modifying the designer's internals.
 
 \section{Tool 10: Cross-species transfer evaluator}
 \subsection{Problem and diagnostics}
