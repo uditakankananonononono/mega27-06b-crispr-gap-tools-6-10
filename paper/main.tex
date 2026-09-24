@@ -406,6 +406,7 @@ GBT, our seq features (v2) & 0.390 & Azimuth-style \\
 GBT + aa-cut/percent-peptide (v3) & 0.480 & our best pre-replication \\
 Rank ensemble of 6 GBTs (v4) & 0.474 & negative rung \\
 Deep-stacked, tuned GBT (v5) & 0.370 & leaked + overfit \\
+Deep-stacked, leak-free OOF (v6) & 0.490 & stacking fixed; still loses \\
 \textbf{Rule Set 2 replication (same split)} & \textbf{0.569} & \textbf{bar; unbeaten} \\\hline\hline
 \end{tabular}
 \end{table}
@@ -418,8 +419,13 @@ deep-stacked challenger (v5: published features plus GuideCNN/SequenceGCN
 meta-features under a tuned booster) collapses to $0.370$ with a paired
 bootstrap $p = 1.0$ for leader $\geq$ challenger: aggressive tuning and
 leaky stacking overfit the human assay, while the published shallow
-100-tree model generalizes across species. The bar for any benchmark break
-on this split is therefore $0.569$, and it remains unbeaten
+100-tree model generalizes across species. Fixing both flaws (v6:
+out-of-fold deep meta-features, identical published hyperparameters) lifts
+the challenger to $0.490$ --- a $+0.12$ recovery --- yet it still loses to
+the replication ($p = 0.9996$): the deep meta-features carry human-assay
+signal that does not transfer, consistent with the transfer-penalty finding
+below. The bar for any benchmark break on this split is therefore $0.569$,
+and it remains unbeaten
 (Figure~\ref{fig:azimuth}).
 \begin{figure}[t]\centering
 \includegraphics[width=\textwidth]{figures/azimuth_break.pdf}
