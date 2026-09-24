@@ -1,0 +1,145 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{times}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{natbib}
+\title{Five Open-Source Tools for Under-Served Problems in CRISPR Guide Design:\\
+Multiplex Interference, Repair-Outcome Annotation, Large-Deletion Risk,\\
+Biosecurity Screening, and Cross-Species Transfer}
+\author{MEGA-PROGRAM-27, Item 6 (tools 6--10)}
+\date{\today}
+\newtheorem{proposition}{Proposition}
+\newtheorem{definition}{Definition}
+\begin{document}
+\maketitle
+\begin{abstract}
+Guide-RNA design tooling for CRISPR editing is mature for single-guide on-target
+scoring in human cell lines, but five practical problems remain under-served:
+(i) cross-guide interference in multiplex experiments, (ii) repair-outcome
+prediction decoupled from guide selection, (iii) unintended large on-target
+deletions and rearrangements, (iv) biosecurity screening disconnected from the
+design loop, and (v) untested transfer of efficacy models across species. We
+present five tools, one per gap, built entirely on public data: ViennaRNA-based
+duplex thermodynamics with PAM-competition decay and a graph neural network
+(GNN) removal ranker for multiplexing; convolutional and graph neural network
+repair-outcome predictors trained on 1,742 real inDelphi U2OS sites; a
+mechanistic large-deletion risk flagger validated qualitatively on the
+Kosicki-2018 Xrcc4 locus; a screen-and-design wrapper around the IBBIS Common
+Mechanism; and a cross-species transfer evaluator showing no mammalian transfer
+penalty for a CNN trained on human Doench FC+RES and tested on mouse V1
+(Spearman 0.78 vs 0.63). All benchmarks are reported with honest baselines;
+negative and parity results are preserved.
+\end{abstract}
+
+\section{Introduction}
+% TODO: expand to 2 pages - CRISPR design landscape, the 10 verified gaps (lane C),
+% why these five, related work table.
+\section{Data}
+\subsection{inDelphi U2OS LibA}
+Event-level counts from \citet{shen2018} (figshare 6837956, U2OS\_+\_LibA\_postCas9\_rep1.csv)
+joined to 57-nt target contexts (targets-libA.txt) via the \texttt{\_Experiment} index;
+1,742 sites after coverage filters (total $\geq 50$, edited $\geq 100$ reads).
+\subsection{Doench 2016 FC+RES and V1}
+Human FC+RES (5,310 guides, 30-mer context, drug-gene-rank activity) and mouse V1
+(2,144 guides, percent-rank activity) from the azimuth mirror.
+\subsection{crisprSQL}
+25,632 cleavage records (100720 dump) with epigenetic covariates, genomes hg19/hg38/mm10/mm9/rn5.
+\subsection{Real-locus sequence}
+Mouse Xrcc4 mRNA (NM\_028012.4) fetched live from NCBI for risk-flagger validation.
+
+\section{Tool 6: Multiplex cross-guide interference screener}
+\subsection{Model}
+For guides $g_i, g_j$, the duplex channel uses ViennaRNA \citep{lorenz2011}
+heteroduplex MFE $\Delta G_{ij}^{\text{dup}}$ (duplexfold) and the longest
+contiguous antiparallel complementarity run $c_{ij}$.
+\begin{definition}[PAM competition]
+Guides cutting at distance $d$ compete for repair machinery with weight
+$w(d) = e^{-d/\lambda}$, $\lambda = 50$~bp (repair window).
+\end{definition}
+\begin{definition}[Interference graph]
+Weighted graph on guides with edge weight
+$a_{ij} = 0.6\min(1,|\Delta G_{ij}^{\text{dup}}|/20) + 0.4\,w(d_{ij})$.
+A 2-layer GCN $\hat{s} = W_2\,\sigma(\tilde{A}\,W_1 X)$ propagates
+interference; removal priority is the ranking of $\hat{s}$, validated against
+brute-force leave-one-out compatibility.
+\end{definition}
+\subsection{Results}
+CNN/GNN surrogates for single-strand fold MFE reach Spearman 0.63/0.64 against
+the ViennaRNA teacher (ridge on 3-mers 0.65): parity, not improvement;
+ViennaRNA remains the primary engine (Table~\ref{tab:duplex}).
+\begin{table}[h]\centering
+\caption{Duplex-MFE surrogate benchmark (2,000 spacers, 400 held out).}\label{tab:duplex}
+\begin{tabular}{lcc}\toprule
+Model & Spearman & Pearson \\\midrule
+Ridge (3-mer) & 0.648 & 0.653 \\
+CNN (one-hot) & 0.633 & 0.658 \\
+GCN (3-mer graph) & 0.645 & 0.645 \\\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Tool 7: Repair-outcome annotator}
+\subsection{Model and math}
+Per-site outcome statistics from inDelphi events: frameshift fraction over
+Cas9-induced indels, +1 insertion fraction, microhomology-deletion fraction.
+\begin{proposition}[Microhomology score]
+For flanks $L, R$ around the cut, $s_{MH} = \sum_{k \ge 2} \mathbf{1}[L_{|L|-k:|L|} = R_{0:k}]/k$
+is the Bae-2014-class length-weighted microhomology score.
+\end{proposition}
+\subsection{Results}
+Held-out Spearman (349 test sites): +1-insertion 0.60 (GBT positional) / 0.50
+(CNN); frameshift 0.32 (GBT); microhomology-deletion 0.23 (GBT).
+Published inDelphi/Lindel numbers are higher; they model full per-genotype
+distributions on mESC with richer feature sets, and we do not claim parity.
+
+\section{Tool 8: Large-deletion risk flagger}
+Mechanistic, per \citet{kosicki2018} and \citet{wen2022}: direct-repeat pairs
+spanning the cut (worst-case deletion span), sequence complexity, homopolymers.
+On the real Xrcc4 locus (NM\_028012.4): 18/43 scanned cut sites flagged
+MODERATE, predicted spans to 500~bp - qualitatively consistent with the
+kilobase-scale deletions measured at this locus. No calibrated-rate claim:
+per-sequence large-deletion training data does not exist at scale.
+
+\section{Tool 9: Biosecurity screen-and-design wrapper}
+Wraps the IBBIS Common Mechanism (\texttt{commec}): every candidate oligo is
+screened before acceptance; flagged sequences are blocked with an audit log.
+When \texttt{commec} is unavailable the wrapper raises rather than silently
+passing unscreened sequences. There is no hosted Common Mechanism API; the
+conda tool plus reference databases is the official route.
+
+\section{Tool 10: Cross-species transfer evaluator}
+\begin{table}[h]\centering
+\caption{Human (FC+RES) $\to$ mouse (V1) transfer, Spearman.}\label{tab:transfer}
+\begin{tabular}{lccc}\toprule
+Model & Human held-out & Mouse transfer & Drop \\\midrule
+Ridge (3-mer) & 0.279 & 0.331 & $-0.052$ \\
+CNN (one-hot 30-mer) & 0.630 & 0.781 & $-0.151$ \\
+GCN (3-mer graph) & 0.289 & 0.281 & $+0.008$ \\\bottomrule
+\end{tabular}
+\end{table}
+The CNN transfers from human to mouse \emph{without penalty} (Table~\ref{tab:transfer});
+the apparent gain is a label-noise asymmetry between the FC+RES drug-gene-rank
+labels and V1 percent-rank labels, not improved biology. Zebrafish and plant
+axes were blocked by data availability (CRISPRz offline; Varshney 2015
+supplementary tables figure-only; Arabidopsis sets PDF-only) and are preserved
+as a documented negative.
+
+\section{Limitations}
+Single-replicate U2OS for tool 7; mechanistic (uncalibrated) risk scores for
+tool 8; commec not runnable on free-tier sandboxes for tool 9; mammalian-only
+evidence for tool 10.
+\section{Conclusion}
+% TODO
+\begin{thebibliography}{9}
+\bibitem[Lorenz et al.(2011)]{lorenz2011} Lorenz R, et al. ViennaRNA Package 2.0. \emph{Algorithms Mol Biol} 6:26, 2011.
+\bibitem[Shen et al.(2018)]{shen2018} Shen MW, et al. Predictable and precise template-free CRISPR editing of pathogenic variants. \emph{Nature} 563:646--651, 2018.
+\bibitem[Doench et al.(2016)]{doench2016} Doench JG, et al. Optimized sgRNA design to maximize activity and minimize off-target effects of CRISPR-Cas9. \emph{Nat Biotechnol} 34:184--191, 2016.
+\bibitem[Kosicki et al.(2018)]{kosicki2018} Kosicki M, Tomberg K, Bradley A. Repair of double-strand breaks induced by CRISPR-Cas9 leads to large deletions and complex rearrangements. \emph{Nat Biotechnol} 36:765--771, 2018.
+\bibitem[Wen et al.(2022)]{wen2022} Wen W, et al. Comprehensive analysis and accurate quantification of unintended large gene modifications induced by CRISPR-Cas9 gene editing. \emph{Sci Adv} 8:eabo7676, 2022.
+\bibitem[Hsu et al.(2013)]{hsu2013} Hsu PD, et al. DNA targeting specificity of RNA-guided Cas9 nucleases. \emph{Nat Biotechnol} 31:827--832, 2013.
+\bibitem[Chen et al.(2019)]{chen2019} Chen W, et al. Massively parallel profiling and predictive modeling of the outcomes of CRISPR/Cas9-mediated double-strand break repair. \emph{Nucleic Acids Res} 47:7989--8003, 2019.
+\bibitem[Bae et al.(2014)]{bae2014} Bae S, et al. Microhomology-based choice of Cas9 nuclease target sites. \emph{Nat Methods} 11:705--706, 2014.
+\end{thebibliography}
+\end{document}
