@@ -46,11 +46,19 @@ of published scorers (Rule Set 1, SSC, CRISPRscan) benchmarked in the repo.
      (results/crisprsql_perstudy.json): Anderson, Cameron, Chen17, Cho,
      Finkelstein, Frock, Fu, Kim, Kim16, KimChromatin, Kleinstiver,
      Listgarten, Ran, Slaymaker, Tsai, Tsai_circle = 16 datasets
-20. Xrcc4 NM_028012.4 (RefSeq)
-21. Piga NM_011081.4 (RefSeq)
-22. Cd9 NM_007657.4 (RefSeq)
+20-95. RefSeq validation panel (results/riskflag_panel.json): 76 mRNA
+      accessions scored with Tool 8 (334 candidate cut sites; 61.1% LOW,
+      31.7% MODERATE, 7.2% HIGH), including the 3 Kosicki loci. Genes:
+      HBB, EMX1, VEGFA, FANCF, RUNX1, DNMT1, TET2, TP53, BRCA1, BRCA2,
+      CFTR, DMD, HTT, APOE, PCSK9, CCR5, IL2RG, RAG1, ALB, G6PD, F8, F9,
+      HBG1, HBG2, SERPINA1, LDLR, MSTN, TTR, SOD1, APP, MAPT, SNCA, LRRK2,
+      GBA, NF1, RB1, PTEN, KRAS, BRAF, EGFR, MYC, CDKN2A, VHL (human);
+      Xrcc4, Piga, Cd9, Rosa26, Sox2, Oct4, Nanog, Trp53, Pten, Apc, Kras,
+      Braf, Dmd, Htt, Sod1, App, Mapt, Snca, Ldlr, Pcsk9, Ttr, Alb, F8,
+      Cftr, Apoe, Mstn, Myo7a, Pax6, Tyr, Kit, Rag1, Il2rg, Hbb, Hba,
+      Gata1, Runx1, Dnmt1, Tet2, Ezh2 (mouse).
 
-Current honest count: 22 datasets/data sources. Target: 120+.
+Current honest count: 95 datasets/data sources. Target: 120+.
 Path: Tool 8 validation panel over additional RefSeq accessions (each
 accession = one dataset, real sequence-level risk scoring), inDelphi
 additional cell lines (HEK293/HCT116/K562/mESC = +4), Lindel training set,

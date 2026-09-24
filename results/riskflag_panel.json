@@ -1,5 +1,5 @@
 {
-  "n_accessions": 3,
+  "n_accessions": 76,
   "records": [
     {
       "gene": "HBB",
@@ -48,6 +48,1184 @@
       },
       "risk_mean": 0.2424333333333333,
       "risk_max": 0.639
+    },
+    {
+      "gene": "FANCF",
+      "organism": "human",
+      "accession": "NM_022725",
+      "uid": "1732746308",
+      "seq_len": 3291,
+      "gc": 0.4369492555454269,
+      "n_cutsites_scored": 6,
+      "flag_counts": {
+        "LOW": 5,
+        "MODERATE": 1,
+        "HIGH": 0
+      },
+      "risk_mean": 0.15880000000000002,
+      "risk_max": 0.3174
+    },
+    {
+      "gene": "RUNX1",
+      "organism": "human",
+      "accession": "NM_001754",
+      "uid": "1808670925",
+      "seq_len": 5971,
+      "gc": 0.4618991793669402,
+      "n_cutsites_scored": 3,
+      "flag_counts": {
+        "LOW": 2,
+        "MODERATE": 0,
+        "HIGH": 1
+      },
+      "risk_mean": 0.2401,
+      "risk_max": 0.547
+    },
+    {
+      "gene": "DNMT1",
+      "organism": "human",
+      "accession": "NM_001379",
+      "uid": "1677703423",
+      "seq_len": 5226,
+      "gc": 0.5493685419058554,
+      "n_cutsites_scored": 5,
+      "flag_counts": {
+        "LOW": 4,
+        "MODERATE": 1,
+        "HIGH": 0
+      },
+      "risk_mean": 0.16907999999999998,
+      "risk_max": 0.2982
+    },
+    {
+      "gene": "TET2",
+      "organism": "human",
+      "accession": "NM_001127208",
+      "uid": "1835712480",
+      "seq_len": 9589,
+      "gc": 0.41151319219939514,
+      "n_cutsites_scored": 3,
+      "flag_counts": {
+        "LOW": 1,
+        "MODERATE": 2,
+        "HIGH": 0
+      },
+      "risk_mean": 0.2732,
+      "risk_max": 0.3768
+    },
+    {
+      "gene": "TP53",
+      "organism": "human",
+      "accession": "NM_001407264",
+      "uid": "2246031143",
+      "seq_len": 2522,
+      "gc": 0.527755749405234,
+      "n_cutsites_scored": 7,
+      "flag_counts": {
+        "LOW": 5,
+        "MODERATE": 2,
+        "HIGH": 0
+      },
+      "risk_mean": 0.09682857142857144,
+      "risk_max": 0.3018
+    },
+    {
+      "gene": "BRCA1",
+      "organism": "human",
+      "accession": "NM_007294",
+      "uid": "1732746264",
+      "seq_len": 7088,
+      "gc": 0.4177483069977427,
+      "n_cutsites_scored": 2,
+      "flag_counts": {
+        "LOW": 1,
+        "MODERATE": 1,
+        "HIGH": 0
+      },
+      "risk_mean": 0.15035,
+      "risk_max": 0.2907
+    },
+    {
+      "gene": "BRCA2",
+      "organism": "human",
+      "accession": "NM_001406720",
+      "uid": "2240897268",
+      "seq_len": 11903,
+      "gc": 0.36192556498361755,
+      "n_cutsites_scored": 2,
+      "flag_counts": {
+        "LOW": 1,
+        "MODERATE": 1,
+        "HIGH": 0
+      },
+      "risk_mean": 0.35305,
+      "risk_max": 0.4657
+    },
+    {
+      "gene": "CFTR",
+      "organism": "human",
+      "accession": "NM_000492",
+      "uid": "1732746288",
+      "seq_len": 6070,
+      "gc": 0.4090609555189456,
+      "n_cutsites_scored": 3,
+      "flag_counts": {
+        "LOW": 2,
+        "MODERATE": 1,
+        "HIGH": 0
+      },
+      "risk_mean": 0.17920000000000003,
+      "risk_max": 0.3879
+    },
+    {
+      "gene": "DMD",
+      "organism": "human",
+      "accession": "NM_004020",
+      "uid": "1890346317",
+      "seq_len": 7086,
+      "gc": 0.42224103866779567,
+      "n_cutsites_scored": 5,
+      "flag_counts": {
+        "LOW": 3,
+        "MODERATE": 2,
+        "HIGH": 0
+      },
+      "risk_mean": 0.1559,
+      "risk_max": 0.3138
+    },
+    {
+      "gene": "HTT",
+      "organism": "human",
+      "accession": "NM_001388492",
+      "uid": "1933851640",
+      "seq_len": 13472,
+      "gc": 0.5383758907363421,
+      "n_cutsites_scored": 4,
+      "flag_counts": {
+        "LOW": 3,
+        "MODERATE": 1,
+        "HIGH": 0
+      },
+      "risk_mean": 0.27525,
+      "risk_max": 0.4755
+    },
+    {
+      "gene": "APOE",
+      "organism": "human",
+      "accession": "NM_001302690",
+      "uid": "1889569396",
+      "seq_len": 1244,
+      "gc": 0.6736334405144695,
+      "n_cutsites_scored": 9,
+      "flag_counts": {
+        "LOW": 7,
+        "MODERATE": 1,
+        "HIGH": 1
+      },
+      "risk_mean": 0.21189999999999998,
+      "risk_max": 0.534
+    },
+    {
+      "gene": "PCSK9",
+      "organism": "human",
+      "accession": "NM_001407243",
+      "uid": "2245789912",
+      "seq_len": 3580,
+      "gc": 0.6268156424581005,
+      "n_cutsites_scored": 6,
+      "flag_counts": {
+        "LOW": 1,
+        "MODERATE": 4,
+        "HIGH": 1
+      },
+      "risk_mean": 0.3828,
+      "risk_max": 0.7152
+    },
+    {
+      "gene": "CCR5",
+      "organism": "human",
+      "accession": "NM_001394783",
+      "uid": "2032630013",
+      "seq_len": 3358,
+      "gc": 0.4499702203692674,
+      "n_cutsites_scored": 2,
+      "flag_counts": {
+        "LOW": 2,
+        "MODERATE": 0,
+        "HIGH": 0
+      },
+      "risk_mean": 0.10835,
+      "risk_max": 0.2167
+    },
+    {
+      "gene": "IL2RG",
+      "organism": "human",
+      "accession": "NM_000206",
+      "uid": "1780222514",
+      "seq_len": 1480,
+      "gc": 0.5047297297297297,
+      "n_cutsites_scored": 4,
+      "flag_counts": {
+        "LOW": 3,
+        "MODERATE": 1,
+        "HIGH": 0
+      },
+      "risk_mean": 0.17534999999999998,
+      "risk_max": 0.292
+    },
+    {
+      "gene": "RAG1",
+      "organism": "human",
+      "accession": "NM_001440489",
+      "uid": "2982651863",
+      "seq_len": 7158,
+      "gc": 0.4237217099748533,
+      "n_cutsites_scored": 4,
+      "flag_counts": {
+        "LOW": 2,
+        "MODERATE": 2,
+        "HIGH": 0
+      },
+      "risk_mean": 0.15175,
+      "risk_max": 0.3069
+    },
+    {
+      "gene": "ALB",
+      "organism": "human",
+      "accession": "NM_001319193",
+      "uid": "2028477684",
+      "seq_len": 4874,
+      "gc": 0.6138695116947066,
+      "n_cutsites_scored": 11,
+      "flag_counts": {
+        "LOW": 2,
+        "MODERATE": 3,
+        "HIGH": 6
+      },
+      "risk_mean": 0.45486363636363636,
+      "risk_max": 0.6927
+    },
+    {
+      "gene": "G6PD",
+      "organism": "human",
+      "accession": "NM_001042351",
+      "uid": "1676440137",
+      "seq_len": 2267,
+      "gc": 0.6135862373180415,
+      "n_cutsites_scored": 7,
+      "flag_counts": {
+        "LOW": 6,
+        "MODERATE": 1,
+        "HIGH": 0
+      },
+      "risk_mean": 0.09008571428571428,
+      "risk_max": 0.3999
+    },
+    {
+      "gene": "F8",
+      "organism": "human",
+      "accession": "NM_019863",
+      "uid": "1890341802",
+      "seq_len": 2616,
+      "gc": 0.4246941896024465,
+      "n_cutsites_scored": 4,
+      "flag_counts": {
+        "LOW": 3,
+        "MODERATE": 0,
+        "HIGH": 1
+      },
+      "risk_mean": 0.1336,
+      "risk_max": 0.5344
+    },
+    {
+      "gene": "F9",
+      "organism": "human",
+      "accession": "NM_001313913",
+      "uid": "1890273849",
+      "seq_len": 2686,
+      "gc": 0.39314966492926284,
+      "n_cutsites_scored": 4,
+      "flag_counts": {
+        "LOW": 3,
+        "MODERATE": 1,
+        "HIGH": 0
+      },
+      "risk_mean": 0.074775,
+      "risk_max": 0.2991
+    },
+    {
+      "gene": "HBG1",
+      "organism": "human",
+      "accession": "NM_000559",
+      "uid": "1780198658",
+      "seq_len": 587,
+      "gc": 0.5127768313458262,
+      "n_cutsites_scored": 6,
+      "flag_counts": {
+        "LOW": 3,
+        "MODERATE": 3,
+        "HIGH": 0
+      },
+      "risk_mean": 0.15535,
+      "risk_max": 0.3615
+    },
+    {
+      "gene": "HBG2",
+      "organism": "human",
+      "accession": "NM_000184",
+      "uid": "1520685244",
+      "seq_len": 586,
+      "gc": 0.5119453924914675,
+      "n_cutsites_scored": 6,
+      "flag_counts": {
+        "LOW": 3,
+        "MODERATE": 3,
+        "HIGH": 0
+      },
+      "risk_mean": 0.15535,
+      "risk_max": 0.3615
+    },
+    {
+      "gene": "SERPINA1",
+      "organism": "human",
+      "accession": "NM_001127704",
+      "uid": "1677537611",
+      "seq_len": 3435,
+      "gc": 0.5377001455604076,
+      "n_cutsites_scored": 8,
+      "flag_counts": {
+        "LOW": 5,
+        "MODERATE": 1,
+        "HIGH": 2
+      },
+      "risk_mean": 0.242475,
+      "risk_max": 0.5298
+    },
+    {
+      "gene": "LDLR",
+      "organism": "human",
+      "accession": "NM_001406861",
+      "uid": "2241236971",
+      "seq_len": 1301,
+      "gc": 0.5787855495772483,
+      "n_cutsites_scored": 6,
+      "flag_counts": {
+        "LOW": 4,
+        "MODERATE": 2,
+        "HIGH": 0
+      },
+      "risk_mean": 0.17176666666666665,
+      "risk_max": 0.2775
+    },
+    {
+      "gene": "MSTN",
+      "organism": "human",
+      "accession": "NM_005259",
+      "uid": "1653961810",
+      "seq_len": 2819,
+      "gc": 0.33806314295849593,
+      "n_cutsites_scored": 3,
+      "flag_counts": {
+        "LOW": 3,
+        "MODERATE": 0,
+        "HIGH": 0
+      },
+      "risk_mean": 0.10910000000000002,
+      "risk_max": 0.2466
+    },
+    {
+      "gene": "TTR",
+      "organism": "human",
+      "accession": "NM_000371",
+      "uid": "1780222569",
+      "seq_len": 616,
+      "gc": 0.5146103896103896,
+      "n_cutsites_scored": 5,
+      "flag_counts": {
+        "LOW": 5,
+        "MODERATE": 0,
+        "HIGH": 0
+      },
+      "risk_mean": 0.0,
+      "risk_max": 0.0
+    },
+    {
+      "gene": "SOD1",
+      "organism": "human",
+      "accession": "NM_000454",
+      "uid": "1780222508",
+      "seq_len": 895,
+      "gc": 0.4424581005586592,
+      "n_cutsites_scored": 4,
+      "flag_counts": {
+        "LOW": 4,
+        "MODERATE": 0,
+        "HIGH": 0
+      },
+      "risk_mean": 0.05565,
+      "risk_max": 0.2226
+    },
+    {
+      "gene": "APP",
+      "organism": "human",
+      "accession": "NM_001385253",
+      "uid": "1869284273",
+      "seq_len": 3415,
+      "gc": 0.4808199121522694,
+      "n_cutsites_scored": 5,
+      "flag_counts": {
+        "LOW": 3,
+        "MODERATE": 2,
+        "HIGH": 0
+      },
+      "risk_mean": 0.23548,
+      "risk_max": 0.4322
+    },
+    {
+      "gene": "MAPT",
+      "organism": "human",
+      "accession": "NM_001203252",
+      "uid": "1890327527",
+      "seq_len": 5546,
+      "gc": 0.5578795528308691,
+      "n_cutsites_scored": 3,
+      "flag_counts": {
+        "LOW": 1,
+        "MODERATE": 2,
+        "HIGH": 0
+      },
+      "risk_mean": 0.3571333333333333,
+      "risk_max": 0.4605
+    },
+    {
+      "gene": "SNCA",
+      "organism": "human",
+      "accession": "NM_007308",
+      "uid": "1890271887",
+      "seq_len": 3312,
+      "gc": 0.39009661835748793,
+      "n_cutsites_scored": 1,
+      "flag_counts": {
+        "LOW": 0,
+        "MODERATE": 1,
+        "HIGH": 0
+      },
+      "risk_mean": 0.2934,
+      "risk_max": 0.2934
+    },
+    {
+      "gene": "LRRK2",
+      "organism": "human",
+      "accession": "NM_198578",
+      "uid": "1519473489",
+      "seq_len": 9239,
+      "gc": 0.388786665223509,
+      "n_cutsites_scored": 3,
+      "flag_counts": {
+        "LOW": 1,
+        "MODERATE": 1,
+        "HIGH": 1
+      },
+      "risk_mean": 0.26406666666666667,
+      "risk_max": 0.519
+    },
+    {
+      "gene": "GBA",
+      "organism": "human",
+      "accession": "NM_001005742",
+      "uid": "1653961860",
+      "seq_len": 2325,
+      "gc": 0.5578494623655914,
+      "n_cutsites_scored": 5,
+      "flag_counts": {
+        "LOW": 3,
+        "MODERATE": 2,
+        "HIGH": 0
+      },
+      "risk_mean": 0.14352,
+      "risk_max": 0.3456
+    },
+    {
+      "gene": "NF1",
+      "organism": "human",
+      "accession": "NM_001042492",
+      "uid": "1732746177",
+      "seq_len": 12373,
+      "gc": 0.415501495191142,
+      "n_cutsites_scored": 3,
+      "flag_counts": {
+        "LOW": 2,
+        "MODERATE": 1,
+        "HIGH": 0
+      },
+      "risk_mean": 0.13896666666666666,
+      "risk_max": 0.2568
+    },
+    {
+      "gene": "RB1",
+      "organism": "human",
+      "accession": "NM_001407168",
+      "uid": "2245367911",
+      "seq_len": 2159,
+      "gc": 0.32839277443260767,
+      "n_cutsites_scored": 4,
+      "flag_counts": {
+        "LOW": 2,
+        "MODERATE": 2,
+        "HIGH": 0
+      },
+      "risk_mean": 0.206625,
+      "risk_max": 0.3714
+    },
+    {
+      "gene": "PTEN",
+      "organism": "human",
+      "accession": "NM_000314",
+      "uid": "1732746392",
+      "seq_len": 8515,
+      "gc": 0.3672342924251321,
+      "n_cutsites_scored": 5,
+      "flag_counts": {
+        "LOW": 2,
+        "MODERATE": 2,
+        "HIGH": 1
+      },
+      "risk_mean": 0.34008,
+      "risk_max": 0.6748
+    },
+    {
+      "gene": "KRAS",
+      "organism": "human",
+      "accession": "NM_001369786",
+      "uid": "1621312268",
+      "seq_len": 5417,
+      "gc": 0.3614546797120177,
+      "n_cutsites_scored": 0,
+      "flag_counts": {
+        "LOW": 0,
+        "MODERATE": 0,
+        "HIGH": 0
+      },
+      "risk_mean": null,
+      "risk_max": null
+    },
+    {
+      "gene": "BRAF",
+      "organism": "human",
+      "accession": "NM_001378474",
+      "uid": "1810812888",
+      "seq_len": 5062,
+      "gc": 0.4749111023310944,
+      "n_cutsites_scored": 2,
+      "flag_counts": {
+        "LOW": 0,
+        "MODERATE": 2,
+        "HIGH": 0
+      },
+      "risk_mean": 0.39705,
+      "risk_max": 0.4632
+    },
+    {
+      "gene": "EGFR",
+      "organism": "human",
+      "accession": "NM_201283",
+      "uid": "1890270827",
+      "seq_len": 1575,
+      "gc": 0.5580952380952381,
+      "n_cutsites_scored": 6,
+      "flag_counts": {
+        "LOW": 5,
+        "MODERATE": 1,
+        "HIGH": 0
+      },
+      "risk_mean": 0.12739999999999999,
+      "risk_max": 0.2961
+    },
+    {
+      "gene": "MYC",
+      "organism": "human",
+      "accession": "NM_002467",
+      "uid": "1552482295",
+      "seq_len": 3721,
+      "gc": 0.4877721042730449,
+      "n_cutsites_scored": 3,
+      "flag_counts": {
+        "LOW": 2,
+        "MODERATE": 0,
+        "HIGH": 1
+      },
+      "risk_mean": 0.318,
+      "risk_max": 0.5283
+    },
+    {
+      "gene": "CDKN2A",
+      "organism": "human",
+      "accession": "NM_000077",
+      "uid": "3395125075",
+      "seq_len": 1191,
+      "gc": 0.5952980688497062,
+      "n_cutsites_scored": 10,
+      "flag_counts": {
+        "LOW": 3,
+        "MODERATE": 7,
+        "HIGH": 0
+      },
+      "risk_mean": 0.24143999999999996,
+      "risk_max": 0.4764
+    },
+    {
+      "gene": "VHL",
+      "organism": "human",
+      "accession": "NM_000551",
+      "uid": "1779521775",
+      "seq_len": 4414,
+      "gc": 0.46307204349796105,
+      "n_cutsites_scored": 1,
+      "flag_counts": {
+        "LOW": 0,
+        "MODERATE": 0,
+        "HIGH": 1
+      },
+      "risk_mean": 0.6548,
+      "risk_max": 0.6548
+    },
+    {
+      "gene": "Xrcc4",
+      "organism": "mouse",
+      "accession": "NM_028012",
+      "uid": "225007583",
+      "seq_len": 1557,
+      "gc": 0.4091201027617213,
+      "n_cutsites_scored": 3,
+      "flag_counts": {
+        "LOW": 1,
+        "MODERATE": 2,
+        "HIGH": 0
+      },
+      "risk_mean": 0.2797,
+      "risk_max": 0.3789
+    },
+    {
+      "gene": "Piga",
+      "organism": "mouse",
+      "accession": "NM_011081",
+      "uid": "2186591298",
+      "seq_len": 3563,
+      "gc": 0.4266067920291889,
+      "n_cutsites_scored": 3,
+      "flag_counts": {
+        "LOW": 2,
+        "MODERATE": 1,
+        "HIGH": 0
+      },
+      "risk_mean": 0.24556666666666668,
+      "risk_max": 0.3425
+    },
+    {
+      "gene": "Cd9",
+      "organism": "mouse",
+      "accession": "NM_007657",
+      "uid": "1344169069",
+      "seq_len": 1227,
+      "gc": 0.44335778321108393,
+      "n_cutsites_scored": 4,
+      "flag_counts": {
+        "LOW": 3,
+        "MODERATE": 0,
+        "HIGH": 1
+      },
+      "risk_mean": 0.30605000000000004,
+      "risk_max": 0.6095
+    },
+    {
+      "gene": "Rosa26",
+      "organism": "mouse",
+      "error": "no_refseq"
+    },
+    {
+      "gene": "Sox2",
+      "organism": "mouse",
+      "accession": "NM_011443",
+      "uid": "927928777",
+      "seq_len": 2480,
+      "gc": 0.5177419354838709,
+      "n_cutsites_scored": 7,
+      "flag_counts": {
+        "LOW": 4,
+        "MODERATE": 2,
+        "HIGH": 1
+      },
+      "risk_mean": 0.2325857142857143,
+      "risk_max": 0.6614
+    },
+    {
+      "gene": "Oct4",
+      "organism": "mouse",
+      "accession": "NM_001252452",
+      "uid": "356995853",
+      "seq_len": 991,
+      "gc": 0.5368314833501514,
+      "n_cutsites_scored": 6,
+      "flag_counts": {
+        "LOW": 5,
+        "MODERATE": 1,
+        "HIGH": 0
+      },
+      "risk_mean": 0.12899999999999998,
+      "risk_max": 0.3601
+    },
+    {
+      "gene": "Nanog",
+      "organism": "mouse",
+      "accession": "NM_028016",
+      "uid": "577861022",
+      "seq_len": 2223,
+      "gc": 0.4552406657669816,
+      "n_cutsites_scored": 3,
+      "flag_counts": {
+        "LOW": 1,
+        "MODERATE": 1,
+        "HIGH": 1
+      },
+      "risk_mean": 0.2652,
+      "risk_max": 0.5014
+    },
+    {
+      "gene": "Trp53",
+      "organism": "mouse",
+      "accession": "NM_001127233",
+      "uid": "2725764736",
+      "seq_len": 1824,
+      "gc": 0.5394736842105263,
+      "n_cutsites_scored": 7,
+      "flag_counts": {
+        "LOW": 5,
+        "MODERATE": 2,
+        "HIGH": 0
+      },
+      "risk_mean": 0.14981428571428573,
+      "risk_max": 0.3204
+    },
+    {
+      "gene": "Pten",
+      "organism": "mouse",
+      "accession": "NM_008960",
+      "uid": "86355519",
+      "seq_len": 8229,
+      "gc": 0.4043018592781626,
+      "n_cutsites_scored": 3,
+      "flag_counts": {
+        "LOW": 1,
+        "MODERATE": 2,
+        "HIGH": 0
+      },
+      "risk_mean": 0.3048,
+      "risk_max": 0.4131
+    },
+    {
+      "gene": "Apc",
+      "organism": "mouse",
+      "accession": "NM_001402732",
+      "uid": "2210364609",
+      "seq_len": 12482,
+      "gc": 0.44383912834481654,
+      "n_cutsites_scored": 3,
+      "flag_counts": {
+        "LOW": 2,
+        "MODERATE": 1,
+        "HIGH": 0
+      },
+      "risk_mean": 0.2009,
+      "risk_max": 0.3258
+    },
+    {
+      "gene": "Kras",
+      "organism": "mouse",
+      "accession": "NM_001403243",
+      "uid": "2213906097",
+      "seq_len": 4798,
+      "gc": 0.3834931221342226,
+      "n_cutsites_scored": 4,
+      "flag_counts": {
+        "LOW": 4,
+        "MODERATE": 0,
+        "HIGH": 0
+      },
+      "risk_mean": 0.07225,
+      "risk_max": 0.249
+    },
+    {
+      "gene": "Braf",
+      "organism": "mouse",
+      "accession": "NM_139294",
+      "uid": "153791903",
+      "seq_len": 9728,
+      "gc": 0.4263980263157895,
+      "n_cutsites_scored": 2,
+      "flag_counts": {
+        "LOW": 1,
+        "MODERATE": 1,
+        "HIGH": 0
+      },
+      "risk_mean": 0.19185000000000002,
+      "risk_max": 0.2837
+    },
+    {
+      "gene": "Dmd",
+      "organism": "mouse",
+      "accession": "NM_001314038",
+      "uid": "930588908",
+      "seq_len": 1410,
+      "gc": 0.4794326241134752,
+      "n_cutsites_scored": 1,
+      "flag_counts": {
+        "LOW": 1,
+        "MODERATE": 0,
+        "HIGH": 0
+      },
+      "risk_mean": 0.01,
+      "risk_max": 0.01
+    },
+    {
+      "gene": "Htt",
+      "organism": "mouse",
+      "accession": "NM_010484",
+      "uid": "195972806",
+      "seq_len": 2747,
+      "gc": 0.5205678922460867,
+      "n_cutsites_scored": 3,
+      "flag_counts": {
+        "LOW": 1,
+        "MODERATE": 2,
+        "HIGH": 0
+      },
+      "risk_mean": 0.2164,
+      "risk_max": 0.3648
+    },
+    {
+      "gene": "Sod1",
+      "organism": "mouse",
+      "accession": "NM_011434",
+      "uid": "1378577766",
+      "seq_len": 652,
+      "gc": 0.5230061349693251,
+      "n_cutsites_scored": 3,
+      "flag_counts": {
+        "LOW": 3,
+        "MODERATE": 0,
+        "HIGH": 0
+      },
+      "risk_mean": 0.0642,
+      "risk_max": 0.0963
+    },
+    {
+      "gene": "App",
+      "organism": "mouse",
+      "accession": "NM_001198826",
+      "uid": "311893407",
+      "seq_len": 3323,
+      "gc": 0.5058681913933193,
+      "n_cutsites_scored": 2,
+      "flag_counts": {
+        "LOW": 2,
+        "MODERATE": 0,
+        "HIGH": 0
+      },
+      "risk_mean": 0.09765,
+      "risk_max": 0.1953
+    },
+    {
+      "gene": "Mapt",
+      "organism": "mouse",
+      "accession": "NM_001404015",
+      "uid": "2219518278",
+      "seq_len": 5237,
+      "gc": 0.5201451212526256,
+      "n_cutsites_scored": 6,
+      "flag_counts": {
+        "LOW": 3,
+        "MODERATE": 3,
+        "HIGH": 0
+      },
+      "risk_mean": 0.23645000000000002,
+      "risk_max": 0.3723
+    },
+    {
+      "gene": "Snca",
+      "organism": "mouse",
+      "accession": "NM_001042451",
+      "uid": "553727222",
+      "seq_len": 1304,
+      "gc": 0.47162576687116564,
+      "n_cutsites_scored": 6,
+      "flag_counts": {
+        "LOW": 4,
+        "MODERATE": 2,
+        "HIGH": 0
+      },
+      "risk_mean": 0.20204999999999998,
+      "risk_max": 0.3684
+    },
+    {
+      "gene": "Ldlr",
+      "organism": "mouse",
+      "accession": "NM_001252659",
+      "uid": "358030303",
+      "seq_len": 4546,
+      "gc": 0.5472943246810382,
+      "n_cutsites_scored": 3,
+      "flag_counts": {
+        "LOW": 2,
+        "MODERATE": 1,
+        "HIGH": 0
+      },
+      "risk_mean": 0.1449,
+      "risk_max": 0.3174
+    },
+    {
+      "gene": "Pcsk9",
+      "organism": "mouse",
+      "accession": "NM_153565",
+      "uid": "163644257",
+      "seq_len": 3512,
+      "gc": 0.585990888382688,
+      "n_cutsites_scored": 5,
+      "flag_counts": {
+        "LOW": 3,
+        "MODERATE": 2,
+        "HIGH": 0
+      },
+      "risk_mean": 0.2535,
+      "risk_max": 0.4233
+    },
+    {
+      "gene": "Ttr",
+      "organism": "mouse",
+      "accession": "NM_013697",
+      "uid": "291463252",
+      "seq_len": 1237,
+      "gc": 0.4559417946645109,
+      "n_cutsites_scored": 4,
+      "flag_counts": {
+        "LOW": 3,
+        "MODERATE": 1,
+        "HIGH": 0
+      },
+      "risk_mean": 0.23184999999999997,
+      "risk_max": 0.3858
+    },
+    {
+      "gene": "Alb",
+      "organism": "mouse",
+      "accession": "NM_009654",
+      "uid": "937576194",
+      "seq_len": 2076,
+      "gc": 0.470616570327553,
+      "n_cutsites_scored": 0,
+      "flag_counts": {
+        "LOW": 0,
+        "MODERATE": 0,
+        "HIGH": 0
+      },
+      "risk_mean": null,
+      "risk_max": null
+    },
+    {
+      "gene": "F8",
+      "organism": "mouse",
+      "accession": "NM_001161374",
+      "uid": "238624183",
+      "seq_len": 7306,
+      "gc": 0.3905009581166165,
+      "n_cutsites_scored": 3,
+      "flag_counts": {
+        "LOW": 2,
+        "MODERATE": 1,
+        "HIGH": 0
+      },
+      "risk_mean": 0.2056,
+      "risk_max": 0.2526
+    },
+    {
+      "gene": "Cftr",
+      "organism": "mouse",
+      "accession": "NM_021050",
+      "uid": "116008179",
+      "seq_len": 6305,
+      "gc": 0.41237113402061853,
+      "n_cutsites_scored": 3,
+      "flag_counts": {
+        "LOW": 2,
+        "MODERATE": 1,
+        "HIGH": 0
+      },
+      "risk_mean": 0.2409,
+      "risk_max": 0.2892
+    },
+    {
+      "gene": "Apoe",
+      "organism": "mouse",
+      "accession": "NM_001305844",
+      "uid": "803378412",
+      "seq_len": 1208,
+      "gc": 0.5877483443708609,
+      "n_cutsites_scored": 6,
+      "flag_counts": {
+        "LOW": 3,
+        "MODERATE": 1,
+        "HIGH": 2
+      },
+      "risk_mean": 0.31536666666666663,
+      "risk_max": 0.6165
+    },
+    {
+      "gene": "Mstn",
+      "organism": "mouse",
+      "accession": "NM_010834",
+      "uid": "922959927",
+      "seq_len": 2705,
+      "gc": 0.3807763401109057,
+      "n_cutsites_scored": 2,
+      "flag_counts": {
+        "LOW": 2,
+        "MODERATE": 0,
+        "HIGH": 0
+      },
+      "risk_mean": 0.06615,
+      "risk_max": 0.1023
+    },
+    {
+      "gene": "Myo7a",
+      "organism": "mouse",
+      "accession": "NM_001256083",
+      "uid": "367460067",
+      "seq_len": 7196,
+      "gc": 0.561284046692607,
+      "n_cutsites_scored": 9,
+      "flag_counts": {
+        "LOW": 5,
+        "MODERATE": 4,
+        "HIGH": 0
+      },
+      "risk_mean": 0.2050777777777778,
+      "risk_max": 0.4359
+    },
+    {
+      "gene": "Pax6",
+      "organism": "mouse",
+      "accession": "NM_001310146",
+      "uid": "860610461",
+      "seq_len": 3485,
+      "gc": 0.43845050215208037,
+      "n_cutsites_scored": 4,
+      "flag_counts": {
+        "LOW": 3,
+        "MODERATE": 1,
+        "HIGH": 0
+      },
+      "risk_mean": 0.211,
+      "risk_max": 0.3861
+    },
+    {
+      "gene": "Tyr",
+      "organism": "mouse",
+      "accession": "NM_001417448",
+      "uid": "2451183900",
+      "seq_len": 2329,
+      "gc": 0.40317732932589095,
+      "n_cutsites_scored": 3,
+      "flag_counts": {
+        "LOW": 2,
+        "MODERATE": 1,
+        "HIGH": 0
+      },
+      "risk_mean": 0.18323333333333333,
+      "risk_max": 0.3423
+    },
+    {
+      "gene": "Kit",
+      "organism": "mouse",
+      "accession": "NM_001122733",
+      "uid": "170650720",
+      "seq_len": 5205,
+      "gc": 0.4785782901056676,
+      "n_cutsites_scored": 3,
+      "flag_counts": {
+        "LOW": 1,
+        "MODERATE": 2,
+        "HIGH": 0
+      },
+      "risk_mean": 0.2126,
+      "risk_max": 0.3261
+    },
+    {
+      "gene": "Rag1",
+      "organism": "mouse",
+      "accession": "NM_009019",
+      "uid": "133778932",
+      "seq_len": 6669,
+      "gc": 0.44024591393012447,
+      "n_cutsites_scored": 8,
+      "flag_counts": {
+        "LOW": 6,
+        "MODERATE": 2,
+        "HIGH": 0
+      },
+      "risk_mean": 0.1653375,
+      "risk_max": 0.2901
+    },
+    {
+      "gene": "Il2rg",
+      "organism": "mouse",
+      "accession": "NM_001308535",
+      "uid": "820375847",
+      "seq_len": 1559,
+      "gc": 0.48877485567671586,
+      "n_cutsites_scored": 3,
+      "flag_counts": {
+        "LOW": 3,
+        "MODERATE": 0,
+        "HIGH": 0
+      },
+      "risk_mean": 0.0463,
+      "risk_max": 0.1389
+    },
+    {
+      "gene": "Hbb",
+      "organism": "mouse",
+      "error": "no_refseq"
+    },
+    {
+      "gene": "Hba",
+      "organism": "mouse",
+      "accession": "NM_008218",
+      "uid": "145301577",
+      "seq_len": 569,
+      "gc": 0.5571177504393673,
+      "n_cutsites_scored": 6,
+      "flag_counts": {
+        "LOW": 1,
+        "MODERATE": 5,
+        "HIGH": 0
+      },
+      "risk_mean": 0.24029999999999999,
+      "risk_max": 0.3336
+    },
+    {
+      "gene": "Gata1",
+      "organism": "mouse",
+      "accession": "NM_001410603",
+      "uid": "2284976147",
+      "seq_len": 1979,
+      "gc": 0.5406771096513391,
+      "n_cutsites_scored": 9,
+      "flag_counts": {
+        "LOW": 8,
+        "MODERATE": 1,
+        "HIGH": 0
+      },
+      "risk_mean": 0.1363,
+      "risk_max": 0.3963
     }
   ]
 }
