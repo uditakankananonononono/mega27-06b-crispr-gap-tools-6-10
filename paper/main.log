@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  24 SEP 2026 22:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  24 SEP 2026 22:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -296,176 +296,185 @@ File: figures/realguide_risk.pdf Graphic file (type pdf)
 <use figures/realguide_risk.pdf>
 Package pdftex.def Info: figures/realguide_risk.pdf  used on input line 219.
 (pdftex.def)             Requested size: 375.80544pt x 219.70108pt.
- [5] [6 <./figures/realguide_risk.pdf>]
-Overfull \hbox (2.55388pt too wide) in paragraph at lines 256--258
+ [5]
+Underfull \hbox (badness 3407) in paragraph at lines 242--242
+[]\OT1/ptm/m/n/12 Table 3: Tool 6 en-gine cross-check and CHOP-CHOP rule au-dit
+, all num-bers from
+ []
+
+[6 <./figures/realguide_risk.pdf>]
+Overfull \hbox (2.55388pt too wide) in paragraph at lines 278--280
 \OT1/ptm/b/n/12 Proposition 1 \OT1/ptm/m/n/12 (Mi-cro-ho-mol-ogy score)\OT1/ptm
 /b/n/12 . \OT1/ptm/m/it/12 For flanks $\OML/cmm/m/it/12 L; R$ \OT1/ptm/m/it/12 
 around the cut, $\OML/cmm/m/it/12 s[] \OT1/cmr/m/n/12 = [][] \OT1/cmr/bx/n/12 1
 \OT1/cmr/m/n/12 [\OML/cmm/m/it/12 L[] \OT1/cmr/m/n/12 =
  []
 
-<figures/lindel_head2head.pdf, id=147, 650.43pt x 260.17201pt>
+[7]
+<figures/lindel_head2head.pdf, id=154, 650.43pt x 260.17201pt>
 File: figures/lindel_head2head.pdf Graphic file (type pdf)
 <use figures/lindel_head2head.pdf>
-Package pdftex.def Info: figures/lindel_head2head.pdf  used on input line 285.
+Package pdftex.def Info: figures/lindel_head2head.pdf  used on input line 307.
 (pdftex.def)             Requested size: 469.75502pt x 187.90726pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 293--293
+Underfull \hbox (badness 10000) in paragraph at lines 315--315
 []\OT1/ptm/m/n/12 Figure 3: Head-to-head against the of-fi-cial Lin-del model, 
 all num-bers from
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 293--293
+Underfull \hbox (badness 10000) in paragraph at lines 315--315
 \OT1/pcr/m/n/12 results/lindel[]headtohead.json \OT1/ptm/m/n/12 and \OT1/pcr/m/
 n/12 results/outcome[]crosscell.json\OT1/ptm/m/n/12 .
  []
 
-<figures/outcome_transfer_matrix.pdf, id=148, 650.43pt x 260.17201pt>
+<figures/outcome_transfer_matrix.pdf, id=155, 650.43pt x 260.17201pt>
 File: figures/outcome_transfer_matrix.pdf Graphic file (type pdf)
 <use figures/outcome_transfer_matrix.pdf>
 Package pdftex.def Info: figures/outcome_transfer_matrix.pdf  used on input lin
-e 315.
+e 337.
 (pdftex.def)             Requested size: 469.75502pt x 187.90726pt.
-<figures/xrcc4_risk.pdf, id=149, 505.89pt x 216.81pt>
+<figures/xrcc4_risk.pdf, id=156, 505.89pt x 216.81pt>
 File: figures/xrcc4_risk.pdf Graphic file (type pdf)
 <use figures/xrcc4_risk.pdf>
-Package pdftex.def Info: figures/xrcc4_risk.pdf  used on input line 323.
+Package pdftex.def Info: figures/xrcc4_risk.pdf  used on input line 345.
 (pdftex.def)             Requested size: 375.80544pt x 161.06213pt.
-[7] [8 <./figures/lindel_head2head.pdf>] [9 <./figures/outcome_transfer_matrix.
-pdf>]
-<figures/panel_risk.pdf, id=272, 686.565pt x 274.626pt>
+[8 <./figures/lindel_head2head.pdf>] [9 <./figures/outcome_transfer_matrix.pdf>
+]
+<figures/panel_risk.pdf, id=274, 686.565pt x 274.626pt>
 File: figures/panel_risk.pdf Graphic file (type pdf)
 <use figures/panel_risk.pdf>
-Package pdftex.def Info: figures/panel_risk.pdf  used on input line 414.
+Package pdftex.def Info: figures/panel_risk.pdf  used on input line 436.
 (pdftex.def)             Requested size: 469.75502pt x 187.89977pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 417--417
+Underfull \hbox (badness 10000) in paragraph at lines 439--439
 []\OT1/ptm/m/n/12 Figure 6: Tool 8 panel screen over 109 scored Ref-Seq loci
  []
 
 
-Underfull \hbox (badness 1888) in paragraph at lines 417--417
+Underfull \hbox (badness 1888) in paragraph at lines 439--439
 \OT1/ptm/m/n/12 (\OT1/pcr/m/n/12 results/riskflag[]panel.json\OT1/ptm/m/n/12 ).
  Left: dis-tri-bu-tion of mean and max per-locus
  []
 
 [10 <./figures/xrcc4_risk.pdf>] [11 <./figures/panel_risk.pdf>]
-Overfull \hbox (30.58246pt too wide) in paragraph at lines 468--474
+Overfull \hbox (30.58246pt too wide) in paragraph at lines 490--496
 \OT1/ptm/m/n/12 oli-gos: two guide spac-ers (EMX1 \OT1/pcr/m/n/12 GAGTCCGAGCAGA
 AGAAGAA\OT1/ptm/m/n/12 , VEGFA \OT1/pcr/m/n/12 GGGTGGGGGGAGTTTGCTCC\OT1/ptm/m/n
 /12 )
  []
 
 
-Overfull \hbox (11.61073pt too wide) in paragraph at lines 468--474
+Overfull \hbox (11.61073pt too wide) in paragraph at lines 490--496
 \OT1/ptm/m/n/12 and a primer pair. All ar-ti-facts be-low are pro-duced by \OT1
 /pcr/m/n/12 scripts/bioscreen[]walkthrough.py
  []
 
 
-Overfull \hbox (0.76164pt too wide) in paragraph at lines 476--482
+Overfull \hbox (0.76164pt too wide) in paragraph at lines 498--504
  \OT1/ptm/b/n/12 Step 1: fail-closed on an un-pro-vi-sioned host (real run).[] 
 \OT1/ptm/m/n/12 In-vok-ing the pro-duc-tion path, \OT1/pcr/m/n/12 python
  []
 
 
-Overfull \hbox (43.97539pt too wide) in paragraph at lines 476--482
+Overfull \hbox (43.97539pt too wide) in paragraph at lines 498--504
 \OT1/ptm/m/n/12 in-stall ex-its non-zero with \OT1/pcr/m/n/12 BackendUnavailabl
 e: commec CLI or reference databases
  []
 
-
-Overfull \hbox (34.24498pt too wide) in paragraph at lines 502--502
+[12]
+Overfull \hbox (34.24498pt too wide) in paragraph at lines 524--524
 []  \OT1/pcr/m/n/10 "seq\_sha256": "b429a35688390cff1d842ddbc155728d4eef954f26c
 e633a54e2cd38b9e92d6b",[] 
  []
 
 
-Overfull \hbox (34.24498pt too wide) in paragraph at lines 502--502
+Overfull \hbox (34.24498pt too wide) in paragraph at lines 524--524
 []  \OT1/pcr/m/n/10 "prev\_chain": "0000000000000000000000000000000000000000000
 000000000000000000000",[] 
  []
 
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 522--522
-[]\OT1/ptm/m/n/12 Table 4: Tamper-evidence checks on the com-mit-ted au-dit cha
+
+Underfull \hbox (badness 10000) in paragraph at lines 544--544
+[]\OT1/ptm/m/n/12 Table 5: Tamper-evidence checks on the com-mit-ted au-dit cha
 in
  []
 
 
-Underfull \hbox (badness 2717) in paragraph at lines 522--522
+Underfull \hbox (badness 2717) in paragraph at lines 544--544
 \OT1/ptm/m/n/12 (\OT1/pcr/m/n/12 results/bioscreen[]audit[]demo.json\OT1/ptm/m/
 n/12 , part 3). Each at-tack is a real call to
  []
 
-<figures/transfer.pdf, id=392, 433.62pt x 260.17201pt>
+[13]
+<figures/transfer.pdf, id=398, 433.62pt x 260.17201pt>
 File: figures/transfer.pdf Graphic file (type pdf)
 <use figures/transfer.pdf>
-Package pdftex.def Info: figures/transfer.pdf  used on input line 566.
+Package pdftex.def Info: figures/transfer.pdf  used on input line 588.
 (pdftex.def)             Requested size: 352.31625pt x 211.40112pt.
-[13] [14 <./figures/transfer.pdf>]
-<figures/transfer_ladder.pdf, id=449, 708.24597pt x 289.08pt>
+ [14 <./figures/transfer.pdf>]
+<figures/transfer_ladder.pdf, id=451, 708.24597pt x 289.08pt>
 File: figures/transfer_ladder.pdf Graphic file (type pdf)
 <use figures/transfer_ladder.pdf>
-Package pdftex.def Info: figures/transfer_ladder.pdf  used on input line 625.
+Package pdftex.def Info: figures/transfer_ladder.pdf  used on input line 647.
 (pdftex.def)             Requested size: 469.75502pt x 191.74174pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 637--637
+Underfull \hbox (badness 10000) in paragraph at lines 659--659
 []\OT1/ptm/m/n/12 Figure 8: The Tool 10 bench-mark lad-der on the clean RES-hum
 an $\OMS/cmsy/m/n/12 !$ \OT1/ptm/m/n/12 V1-
  []
 
 
-Underfull \hbox (badness 5771) in paragraph at lines 637--637
+Underfull \hbox (badness 5771) in paragraph at lines 659--659
 \OT1/ptm/m/n/12 mouse split (mean per-gene Spear-man), built at com-pile time f
 rom the com-mit-ted
  []
 
 
-Underfull \hbox (badness 4217) in paragraph at lines 637--637
+Underfull \hbox (badness 4217) in paragraph at lines 659--659
 \OT1/pcr/m/n/12 results/beat[]azimuth[]v*.json \OT1/ptm/m/n/12 files by \OT1/pc
 r/m/n/12 scripts/make[]figures7.py\OT1/ptm/m/n/12 . The
  []
 
 
-Overfull \hbox (24.89755pt too wide) in paragraph at lines 642--662
+Overfull \hbox (24.89755pt too wide) in paragraph at lines 664--684
 \OT1/ptm/m/n/12 naRNA self-fold en-ergy, GC, din-u-cleotide spec-trum) $\OT1/cm
 r/m/n/12 0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 318$ \OT1/ptm/m/n/12 (\OT1/pcr/m/n/
 12 results/classic[]scorers2.json\OT1/ptm/m/n/12 ;
  []
 
-[15 <./figures/transfer_ladder.pdf>]
-<figures/classic_scorers.pdf, id=513, 650.43pt x 260.17201pt>
+[15]
+<figures/classic_scorers.pdf, id=455, 650.43pt x 260.17201pt>
 File: figures/classic_scorers.pdf Graphic file (type pdf)
 <use figures/classic_scorers.pdf>
-Package pdftex.def Info: figures/classic_scorers.pdf  used on input line 664.
+Package pdftex.def Info: figures/classic_scorers.pdf  used on input line 686.
 (pdftex.def)             Requested size: 422.77664pt x 169.11375pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 669--669
+Underfull \hbox (badness 10000) in paragraph at lines 691--691
 []\OT1/ptm/m/n/12 Figure 9: Clas-sic ef-fi-cacy scor-ers repli-cated on the cle
 an RES$\OMS/cmsy/m/n/12 !$\OT1/ptm/m/n/12 V1 split
  []
 
 
-Underfull \hbox (badness 1783) in paragraph at lines 669--669
+Underfull \hbox (badness 1783) in paragraph at lines 691--691
 \OT1/ptm/m/n/12 (\OT1/pcr/m/n/12 results/classic[]scorers.json\OT1/ptm/m/n/12 )
  against our chal-lengers (v6, v7) and the same-
  []
 
-<figures/offtarget_perstudy.pdf, id=514, 578.16pt x 260.17201pt>
+<figures/offtarget_perstudy.pdf, id=456, 578.16pt x 260.17201pt>
 File: figures/offtarget_perstudy.pdf Graphic file (type pdf)
 <use figures/offtarget_perstudy.pdf>
-Package pdftex.def Info: figures/offtarget_perstudy.pdf  used on input line 693
+Package pdftex.def Info: figures/offtarget_perstudy.pdf  used on input line 715
 .
 (pdftex.def)             Requested size: 399.29463pt x 179.68163pt.
-<figures/azimuth_break.pdf, id=515, 686.565pt x 289.08pt>
+<figures/azimuth_break.pdf, id=457, 686.565pt x 289.08pt>
 File: figures/azimuth_break.pdf Graphic file (type pdf)
 <use figures/azimuth_break.pdf>
-Package pdftex.def Info: figures/azimuth_break.pdf  used on input line 701.
+Package pdftex.def Info: figures/azimuth_break.pdf  used on input line 723.
 (pdftex.def)             Requested size: 469.75502pt x 197.78923pt.
-[16 <./figures/classic_scorers.pdf>] [17 <./figures/offtarget_perstudy.pdf>]
-Overfull \hbox (89.81107pt too wide) in paragraph at lines 773--789
+[16 <./figures/transfer_ladder.pdf>] [17 <./figures/classic_scorers.pdf>]
+[18 <./figures/offtarget_perstudy.pdf>]
+Overfull \hbox (89.81107pt too wide) in paragraph at lines 795--811
 \OT1/ptm/m/n/12 deletion frac-tion (Spear-man $\OT1/cmr/m/n/12 0\OML/cmm/m/it/1
 2 :\OT1/cmr/m/n/12 01$\OT1/ptm/m/n/12 --$\OT1/cmr/m/n/12 0\OML/cmm/m/it/12 :\OT
 1/cmr/m/n/12 11$ \OT1/ptm/m/n/12 vs $\OT1/cmr/m/n/12 0\OML/cmm/m/it/12 :\OT1/cm
@@ -473,20 +482,43 @@ r/m/n/12 210$ \OT1/ptm/m/n/12 for the tuned po-si-tional GBT); \OT1/pcr/m/n/12
 results/mhdel[]improve.json\OT1/ptm/m/n/12 .
  []
 
-[18 <./figures/azimuth_break.pdf>] [19]
-Underfull \hbox (badness 10000) in paragraph at lines 832--832
-[]\OT1/ptm/m/n/12 Table 7: Tool 7 full model $\OMS/cmsy/m/n/12 ^^B$ \OT1/ptm/m/
+[19 <./figures/azimuth_break.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 842--842
+[]\OT1/ptm/m/n/12 Table 8: Tool 6 duplex-MFE sur-ro-gate: all num-bers from
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 842--842
+\OT1/pcr/m/n/12 results/duplex[]surrogate.json \OT1/ptm/m/n/12 (teacher: Vi-en-
+naRNA 2.7.2 RNA.fold MFE
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 869--869
+[]\OT1/ptm/m/n/12 Table 9: Tool 7 full model $\OMS/cmsy/m/n/12 ^^B$ \OT1/ptm/m/
 n/12 tar-get ma-trix, machine-extracted from
  []
 
 
-Underfull \hbox (badness 1005) in paragraph at lines 832--832
+Underfull \hbox (badness 1005) in paragraph at lines 869--869
 \OT1/pcr/m/n/12 results/outcome[]models.json \OT1/ptm/m/n/12 (train 1,393 / tes
 t 349 Lib-A sites; Spear-man with
  []
 
 
-Overfull \hbox (20.62175pt too wide) in paragraph at lines 867--875
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 884--884
+[]\OT1/ptm/m/n/12 Table 10: MH-deletion-fraction im-prove-ment at-tempts, all n
+um-bers from
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[20]
+Overfull \hbox (20.62175pt too wide) in paragraph at lines 921--929
  [][] 
  []
 
@@ -499,7 +531,7 @@ Overfull \hbox (109.20479pt too wide) in paragraph at lines 2--7
 the machine-readable source is \OT1/pcr/m/n/12 docs/EXTERNAL[]TOOLS.md
  []
 
-[20]
+[21]
 Underfull \hbox (badness 1675) in paragraph at lines 39--39
 []\OT1/ptm/m/n/10.95 replication bench-marked on RES$\OMS/cmsy/m/n/10.95 !$\OT1
 /ptm/m/n/10.95 V1:
@@ -520,20 +552,20 @@ Underfull \hbox (badness 1675) in paragraph at lines 41--41
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) (./appendix_protocols.tex [21]
+) (./appendix_protocols.tex [22]
 Overfull \hbox (38.17764pt too wide) in paragraph at lines 68--76
 \OT1/ptm/m/n/12 of ran-dom 20-nt spac-ers matched in length. \OT1/ptm/b/n/12 Sc
 or-ing. \OT1/ptm/m/n/12 Each pair is scored with \OT1/pcr/m/n/12 RNAduplex\OT1/
 ptm/m/n/12 /\OT1/pcr/m/n/12 duplexfold
  []
 
-[22]) (./appendix_derivations.tex [23]
+[23]) (./appendix_derivations.tex [24]
 Overfull \hbox (7.4422pt too wide) in paragraph at lines 71--71
 []\OT1/ptm/b/n/14.4 D3. Spear-man cor-re-la-tion and the gene-clustered paired 
 boot-strap (Tools
  []
 
-[24]
+[25]
 Overfull \hbox (44.54343pt too wide) in paragraph at lines 91--97
 \OT1/ptm/m/n/12 and $\OML/cmm/m/it/12 p \OT1/cmr/m/n/12 = 0\OML/cmm/m/it/12 :\O
 T1/cmr/m/n/12 9996$ \OT1/ptm/m/n/12 (v6) as \OT1/ptm/m/it/12 fail-ures to beat 
@@ -547,7 +579,7 @@ Overfull \hbox (101.238pt too wide) in paragraph at lines 115--121
 head-to-head (\OT1/pcr/m/n/12 results/lindel[]headtohead.json\OT1/ptm/m/n/12 )
  []
 
-[25]
+[26]
 Overfull \hbox (53.31433pt too wide) in paragraph at lines 130--139
 \OT1/ptm/m/n/12 note the pre-dic-tion for $\OML/cmm/m/it/12 x[]$ \OT1/ptm/m/n/1
 2 from the fold \OT1/ptm/m/it/12 not \OT1/ptm/m/n/12 con-tain-ing $\OML/cmm/m/i
@@ -564,7 +596,7 @@ Overfull \hbox (46.77153pt too wide) in paragraph at lines 139--145
 tm/m/n/12 ). 
  []
 
-[26]
+[27]
 Overfull \hbox (34.47354pt too wide) in paragraph at lines 189--195
  \OT1/ptm/b/n/12 What $\OML/cmm/m/it/12 S$ \OT1/ptm/b/n/12 is not.[] \OT1/ptm/m
 /n/12 The weights are hand-set from the qual-i-ta-tive weight of ev-i-dence in 
@@ -579,24 +611,24 @@ flag rate $\OT1/cmr/m/n/12 0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 10812$ \OT1/ptm/m
  []
 
 )
-Overfull \hbox (5.64679pt too wide) in paragraph at lines 881--887
+Overfull \hbox (5.64679pt too wide) in paragraph at lines 935--941
 \OT1/ptm/m/n/12 Every re-ported num-ber re-gen-er-ates from the repos-i-tory: \
 OT1/pcr/m/n/12 pip install torch --index-url
  []
 
 
-Overfull \hbox (39.6688pt too wide) in paragraph at lines 881--887
+Overfull \hbox (39.6688pt too wide) in paragraph at lines 935--941
 \OT1/pcr/m/n/12 https://download.pytorch.org/whl/cpu\OT1/ptm/m/n/12 , \OT1/pcr/
 m/n/12 pip install scikit-learn biopython
  []
 
 
-Overfull \hbox (4.02785pt too wide) in paragraph at lines 881--887
+Overfull \hbox (4.02785pt too wide) in paragraph at lines 935--941
 \OT1/pcr/m/n/12 pytest pandas scipy matplotlib ViennaRNA\OT1/ptm/m/n/12 , then 
 the five scripts un-der \OT1/pcr/m/n/12 scripts/
  []
 
-[27] [28] (./appendix_erroranalysis.tex [29] [30]) [31]
+[28] [29] (./appendix_erroranalysis.tex [30] [31]) [32]
 (./appendix_architecture.tex
 Overfull \hbox (48.41362pt too wide) in paragraph at lines 18--29
 \OT1/pcr/m/n/12 tools[]multiplex \OT1/ptm/m/n/12 (du-plex screen-ing, shared-PA
@@ -622,34 +654,35 @@ m/m/n/12 , \OT1/pcr/m/n/12 riskflag score\OT1/ptm/m/n/12 , \OT1/pcr/m/n/12 bios
 ecurity prescreen\OT1/ptm/m/n/12 , \OT1/pcr/m/n/12 transfer
  []
 
-[32])
-LaTeX Font Info:    Trying to load font information for OMS+pcr on input line 9
-85.
+[33])
+LaTeX Font Info:    Trying to load font information for OMS+pcr on input line 1
+039.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omspcr.fd
 File: omspcr.fd 
 )
 LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 985.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1039.
 
-Overfull \hbox (9.47386pt too wide) in paragraph at lines 985--998
+
+Overfull \hbox (9.47386pt too wide) in paragraph at lines 1039--1052
 \OT1/pcr/m/n/10.95 Output: per-guide penalties, set compatibility, removal rank
 ing 
  []
 
 
-Overfull \hbox (22.61385pt too wide) in paragraph at lines 1001--1008
+Overfull \hbox (22.61385pt too wide) in paragraph at lines 1055--1062
 \OT1/pcr/m/n/10.95 Output: P(frameshift), P(+1 insertion), P(MH deletion), prec
 ision 
  []
 
-[33] (./appendix_stats.tex [34]) (./appendix_negatives.tex
+[34] (./appendix_stats.tex [35]) (./appendix_negatives.tex
 Overfull \hbox (20.9491pt too wide) in paragraph at lines 7--10
 \OT1/ptm/m/n/12 stated; the bar is the same-split Rule Set 2 repli-ca-tion, $\O
 T1/cmr/m/n/12 0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 569$ \OT1/ptm/m/n/12 (\OT1/pcr
 /m/n/12 results/beat[]azimuth[]v*.json\OT1/ptm/m/n/12 ). 
  []
 
-[35]
+[36]
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 1
 1.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
@@ -666,7 +699,7 @@ Overfull \hbox (23.50049pt too wide) in paragraph at lines 45--51
 m/n/12 results/outcome[]crosscell.json\OT1/ptm/m/n/12 ): our +1-insertion-
  []
 
-[36]) (./appendix_validation.tex
+[37]) (./appendix_validation.tex
 Overfull \hbox (1.3035pt too wide) in paragraph at lines 17--23
 \OT1/ptm/m/n/12 From \OT1/pcr/m/n/12 results/beat[]azimuth[]v1.json\OT1/ptm/m/n
 /12 --\OT1/pcr/m/n/12 v7.json\OT1/ptm/m/n/12 , mean per-gene Spear-man on V1 mo
@@ -679,7 +712,7 @@ Overfull \hbox (6.65659pt too wide) in paragraph at lines 25--28
 /n/12 and \OT1/pcr/m/n/12 results/outcome[]crosscell.json
  []
 
-[37]
+[38]
 Overfull \hbox (35.45657pt too wide) in paragraph at lines 41--46
 \OT1/ptm/m/n/12 From \OT1/pcr/m/n/12 results/offtarget[]scorers.json \OT1/ptm/m
 /n/12 and \OT1/pcr/m/n/12 results/offtarget[]epigenetics.json
@@ -727,7 +760,7 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-) (./appendix_crisprsql.tex [38]
+) (./appendix_crisprsql.tex [39]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -887,19 +920,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 46--46
 []\OT1/pcr/m/n/10.95 make[]figures.py\OT1/ptm/m/n/10.95 --
  []
 
-[39]) [40] [41] [42] [43] [44] [45] [46] [47] (./main.aux)
+[40]) [41] [42] [43] [44] [45] [46] [47] [48] (./main.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3547 strings out of 480247
- 54328 string characters out of 5896151
- 418489 words of memory out of 5000000
- 21388 multiletter control sequences out of 15000+600000
+ 3550 strings out of 480247
+ 54370 string characters out of 5896151
+ 418519 words of memory out of 5000000
+ 21391 multiletter control sequences out of 15000+600000
  508063 words of font info for 113 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 55i,11n,62p,935b,266s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,11n,62p,935b,316s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist
@@ -908,19 +941,20 @@ f-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist
 /public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utm
-r8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (47 pages, 524390 bytes).
+mr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/font
+s/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/t
+imes/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (48 pages, 535035 bytes).
 PDF statistics:
- 866 PDF objects out of 1000 (max. 8388607)
- 216 compressed objects within 3 object streams
+ 874 PDF objects out of 1000 (max. 8388607)
+ 221 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  56 words of extra memory for PDF output out of 10000 (max. 10000000)
 

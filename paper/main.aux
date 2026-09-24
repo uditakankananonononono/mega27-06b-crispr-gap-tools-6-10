@@ -31,153 +31,159 @@
 \@writefile{toc}{\contentsline {section}{\numberline {6}Tool 7: Repair-outcome annotator}{6}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Problem}{6}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Features and models}{6}{}\protected@file@percent }
-\citation{kosicki2018}
-\citation{kosicki2018}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Tool 6 engine cross-check and CHOPCHOP rule audit, all numbers from \texttt  {results/duplex\_crosscheck.json}. Part A: ViennaRNA duplexfold vs primer3-py calc\_heterodimer on 2{,}000 real-guide pairs. Part B: CHOPCHOP v3 default design rules audited over 4{,}692 crisprSQL guides.}}{7}{}\protected@file@percent }
+\newlabel{tab:crosscheck}{{3}{7}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Model and math}{7}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.4}Results}{7}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.5}Head-to-head against the official Lindel model}{7}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.6}Cross-cell-line and cross-species transfer}{7}{}\protected@file@percent }
 \citation{kosicki2018}
-\citation{wen2022}
+\citation{kosicki2018}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Head-to-head against the official Lindel model, all numbers from \texttt  {results/lindel\_headtohead.json} and \texttt  {results/outcome\_crosscell.json}. Left: in-distribution, 348 held-out Lib-A sites - our GBT wins the +1-insertion rate ($0.614$ vs $0.557$) and loses frameshift frequency ($0.304$ vs $0.496$). Right: the same comparison transferred to Lib-B loci in U2OS and in mESC - Lindel wins all four transfer evaluations, so the in-distribution win does not generalize across loci, cell line, or species.}}{8}{}\protected@file@percent }
 \newlabel{fig:lindel-h2h}{{3}{8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.6}Cross-cell-line and cross-species transfer}{8}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.7}Error analysis}{8}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {7}Tool 8: Large-deletion risk flagger}{8}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}Mechanistic model}{8}{}\protected@file@percent }
+\citation{kosicki2018}
+\citation{wen2022}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Tool 7 transfer matrix (Spearman vs observed, real inDelphi data): our GBT wins the in-distribution +1-insertion comparison on held-out Lib-A but loses every transfer comparison to the official Lindel model run zero-shot.}}{9}{}\protected@file@percent }
 \newlabel{fig:transfer_matrix}{{4}{9}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Tool 8: Large-deletion risk flagger}{9}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}Mechanistic model}{9}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Validation}{9}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.3}Per-locus validation results}{9}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Large-deletion risk scan on real RefSeq loci (Kosicki 2018 genes).}}{9}{}\protected@file@percent }
-\newlabel{tab:loci}{{3}{9}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Large-deletion risk score along the mouse Xrcc4 locus (NM\_028012.4), a locus where kilobase-scale deletions were measured experimentally \cite  {kosicki2018}.}}{10}{}\protected@file@percent }
 \newlabel{fig:xrcc4}{{5}{10}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.3}Per-locus validation results}{10}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Large-deletion risk scan on real RefSeq loci (Kosicki 2018 genes).}}{10}{}\protected@file@percent }
+\newlabel{tab:loci}{{4}{10}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {7.4}Panel screen: 109 loci, 478 cut sites}{10}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {8}Tool 9: Biosecurity screen-and-design wrapper}{10}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.1}Design}{10}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Tool 8 panel screen over 109 scored RefSeq loci (\texttt  {results/riskflag\_panel.json}). Left: distribution of mean and max per-locus risk scores. Right: top 15 loci by mean risk.}}{11}{}\protected@file@percent }
 \newlabel{fig:panelrisk}{{6}{11}}
+\@writefile{toc}{\contentsline {section}{\numberline {8}Tool 9: Biosecurity screen-and-design wrapper}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1}Design}{11}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {8.2}Deployment reality}{11}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.3}Formal screening rule}{11}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.4}Failure modes and audit format}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.3}Formal screening rule}{12}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.4}Failure modes and audit format}{12}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {8.5}Deployment walkthrough and tamper-evident audit log}{12}{}\protected@file@percent }
 \newlabel{sec:tool9-walkthrough}{{8.5}{12}}
 \@writefile{toc}{\contentsline {paragraph}{Step 1: fail-closed on an unprovisioned host (real run).}{12}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Step 2: orchestration and the audit record.}{12}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Step 3: chain verification.}{12}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Tamper-evidence checks on the committed audit chain (\texttt  {results/bioscreen\_audit\_demo.json}, part 3). Each attack is a real call to \texttt  {verify\_chain} on the mutated log.}}{13}{}\protected@file@percent }
-\newlabel{tab:tamper}{{4}{13}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Tamper-evidence checks on the committed audit chain (\texttt  {results/bioscreen\_audit\_demo.json}, part 3). Each attack is a real call to \texttt  {verify\_chain} on the mutated log.}}{13}{}\protected@file@percent }
+\newlabel{tab:tamper}{{5}{13}}
+\@writefile{toc}{\contentsline {paragraph}{Step 3: chain verification.}{13}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{What this does and does not claim.}{13}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {9}Tool 10: Cross-species transfer evaluator}{13}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.1}Problem and diagnostics}{13}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Human (RES only) $\to $ mouse (V1) transfer, Spearman.}}{13}{}\protected@file@percent }
-\newlabel{tab:transfer}{{5}{13}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.2}Cross-dataset head-to-head against a Rule Set 2 replication}{13}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Human-held-out versus mouse-transfer Spearman by model class. Only the CNN leads on both axes but pays a real transfer penalty (0.665 RES held-out to 0.358 mouse V1); the simple baselines are flat.}}{14}{}\protected@file@percent }
 \newlabel{fig:transfer}{{7}{14}}
-\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Head-to-head on the clean protocol (train RES only, test V1; mean per-gene Spearman over 9 genes).}}{14}{}\protected@file@percent }
-\newlabel{tab:azimuth}{{6}{14}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces The Tool 10 benchmark ladder on the clean RES-human $\to $ V1-mouse split (mean per-gene Spearman), built at compile time from the committed \texttt  {results/beat\_azimuth\_v*.json} files by \texttt  {scripts/make\_figures7.py}. The orange dashed line is the same-split Rule Set 2 replication ($0.569$), the honest bar. Seven challenger variants - ridge/CNN/GNN featurizations (v1, best of the three shown), GBT on Azimuth features (v2, v3), a GBT rank ensemble (v4), a deep stack with a leaked normalization (v5, flawed and retracted), a leak-free out-of-fold deep stack (v6), and multi-assay RES+V2 training (v7) - all lose; paired bootstrap $p$-values over genes are printed inside the bars where computed. The ladder is the honest record of a benchmark we tried seven ways to break and did not.}}{15}{}\protected@file@percent }
-\newlabel{fig:transfer-ladder}{{8}{15}}
+\@writefile{toc}{\contentsline {section}{\numberline {9}Tool 10: Cross-species transfer evaluator}{14}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.1}Problem and diagnostics}{14}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Human (RES only) $\to $ mouse (V1) transfer, Spearman.}}{14}{}\protected@file@percent }
+\newlabel{tab:transfer}{{6}{14}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.2}Cross-dataset head-to-head against a Rule Set 2 replication}{14}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Head-to-head on the clean protocol (train RES only, test V1; mean per-gene Spearman over 9 genes).}}{15}{}\protected@file@percent }
+\newlabel{tab:azimuth}{{7}{15}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {9.3}Classic-scorer replications and a multi-assay negative}{15}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Classic efficacy scorers replicated on the clean RES$\to $V1 split (\texttt  {results/classic\_scorers.json}) against our challengers (v6, v7) and the same-split Rule Set 2 replication bar. The published ordering (CRISPRscan $<$ Rule Set 1 $<$ SSC $<$ Rule Set 2) reproduces, and no challenger reaches the bar.}}{16}{}\protected@file@percent }
-\newlabel{fig:classic}{{9}{16}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces The Tool 10 benchmark ladder on the clean RES-human $\to $ V1-mouse split (mean per-gene Spearman), built at compile time from the committed \texttt  {results/beat\_azimuth\_v*.json} files by \texttt  {scripts/make\_figures7.py}. The orange dashed line is the same-split Rule Set 2 replication ($0.569$), the honest bar. Seven challenger variants - ridge/CNN/GNN featurizations (v1, best of the three shown), GBT on Azimuth features (v2, v3), a GBT rank ensemble (v4), a deep stack with a leaked normalization (v5, flawed and retracted), a leak-free out-of-fold deep stack (v6), and multi-assay RES+V2 training (v7) - all lose; paired bootstrap $p$-values over genes are printed inside the bars where computed. The ladder is the honest record of a benchmark we tried seven ways to break and did not.}}{16}{}\protected@file@percent }
+\newlabel{fig:transfer-ladder}{{8}{16}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {9.4}Off-target scorer replications}{16}{}\protected@file@percent }
 \citation{doench2014}
 \citation{doench2016}
-\citation{hsu2013}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Per-study LOSO AUC for the Hsu-style and CFD-style replications on crisprSQL (\texttt  {results/offtarget\_scorers.json}). CFD-style wins 5 of 7 studies, matching the published ordering - the harness reproduces known reference behavior before we trust it with new claims.}}{17}{}\protected@file@percent }
-\newlabel{fig:offtarget}{{10}{17}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Classic efficacy scorers replicated on the clean RES$\to $V1 split (\texttt  {results/classic\_scorers.json}) against our challengers (v6, v7) and the same-split Rule Set 2 replication bar. The published ordering (CRISPRscan $<$ Rule Set 1 $<$ SSC $<$ Rule Set 2) reproduces, and no challenger reaches the bar.}}{17}{}\protected@file@percent }
+\newlabel{fig:classic}{{9}{17}}
 \@writefile{toc}{\contentsline {section}{\numberline {10}Ethics, Dual-Use, and Governance}{17}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {11}Related Work}{17}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{On-target activity.}{17}{}\protected@file@percent }
+\citation{hsu2013}
 \citation{shen2018}
 \citation{chen2019}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Per-gene Spearman on V1 under the clean Azimuth cross-dataset protocol (train RES only). All our current models sit below the same-split Rule Set 2 replication ($0.569$); the earlier contaminated run that appeared to exceed the old bar is retracted.}}{18}{}\protected@file@percent }
-\newlabel{fig:azimuth}{{11}{18}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Per-study LOSO AUC for the Hsu-style and CFD-style replications on crisprSQL (\texttt  {results/offtarget\_scorers.json}). CFD-style wins 5 of 7 studies, matching the published ordering - the harness reproduces known reference behavior before we trust it with new claims.}}{18}{}\protected@file@percent }
+\newlabel{fig:offtarget}{{10}{18}}
 \@writefile{toc}{\contentsline {paragraph}{Off-target specificity.}{18}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Repair outcome.}{18}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Multiplex design.}{18}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Biosecurity.}{18}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Cross-species transfer.}{18}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Per-gene Spearman on V1 under the clean Azimuth cross-dataset protocol (train RES only). All our current models sit below the same-split Rule Set 2 replication ($0.569$); the earlier contaminated run that appeared to exceed the old bar is retracted.}}{19}{}\protected@file@percent }
+\newlabel{fig:azimuth}{{11}{19}}
 \@writefile{toc}{\contentsline {section}{\numberline {12}Negative Results}{19}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {13}Limitations}{19}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {14}Discussion and Conclusion}{19}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {A}Extended results}{19}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.1}Tool 6 surrogate details}{19}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {14}Discussion and Conclusion}{20}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {A}Extended results}{20}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.1}Tool 6 surrogate details}{20}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Tool 6 duplex-MFE surrogate: all numbers from \texttt  {results/duplex\_surrogate.json} (teacher: ViennaRNA 2.7.2 RNA.fold MFE (kcal/mol); train 1{,}600 / test 400 random 20-nt spacers, Spearman with Pearson in parentheses).}}{20}{}\protected@file@percent }
+\newlabel{tab:surrogate}{{8}{20}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {A.2}Tool 7 per-target details}{20}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Tool 7 full model $\times $ target matrix, machine-extracted from \texttt  {results/outcome\_models.json} (train 1{,}393 / test 349 Lib-A sites; Spearman with Pearson in parentheses). Bold marks the best model per target column.}}{20}{}\protected@file@percent }
-\newlabel{tab:outcome-matrix}{{7}{20}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.3}Tool 10 per-model details}{20}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.4}Hyperparameters}{20}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Model hyperparameters.}}{20}{}\protected@file@percent }
-\newlabel{tab:hp}{{8}{20}}
-\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Public datasets used.}}{21}{}\protected@file@percent }
-\newlabel{tab:data}{{9}{21}}
-\@writefile{toc}{\contentsline {section}{\numberline {B}Dataset statistics}{21}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {C}External tools and dataset manifest}{21}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {C.1}External tools, packages, and resources (25, target 40)}{21}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {C.2}Dataset manifest (133, target 120+ reached)}{21}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {D}Benchmark protocols in full}{21}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {D.1}Tool 10 protocol A: clean Azimuth-style on-target evaluation}{22}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {D.2}Tool 7 protocol: inDelphi repair-outcome benchmark}{22}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {D.3}Tool 6 discovery protocol: same-gene duplex enrichment}{23}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {D.4}Tool 8 protocol: cut-site rearrangement risk validation}{23}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {D.5}Reproducibility checklist}{23}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {E}Derivations and proofs}{23}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {E.1}D1. Nearest-neighbor duplex free energy (Tool 6)}{23}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Model.}{23}{}\protected@file@percent }
-\newlabel{eq:nn}{{6}{23}}
-\@writefile{toc}{\contentsline {paragraph}{Additivity.}{24}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Screening statistic.}{24}{}\protected@file@percent }
-\newlabel{eq:flag}{{7}{24}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {E.2}D2. Two-proportion $z$-test for the same-gene enrichment (Tool 6 discovery)}{24}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Setup.}{24}{}\protected@file@percent }
-\newlabel{eq:ztest}{{8}{24}}
-\@writefile{toc}{\contentsline {paragraph}{Computation.}{24}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Validity conditions.}{24}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {E.3}D3. Spearman correlation and the gene-clustered paired bootstrap (Tools 7, 10)}{25}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Statistic.}{25}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Why a clustered bootstrap.}{25}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {E.4}D4. Microhomology deletion model and frameshift accounting (Tool 7)}{25}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Lindel-style rate model.}{25}{}\protected@file@percent }
-\newlabel{eq:lindel}{{12}{25}}
-\@writefile{toc}{\contentsline {paragraph}{Frameshift.}{25}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Expected deletion length.}{26}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {E.5}D5. Out-of-fold stacking: what it estimates and why in-fold stacking leaks (Tool 10, v5 vs v6)}{26}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Claim.}{26}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Quantification on our split.}{26}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Caveat.}{26}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {E.6}D6. CFD as a product of per-mismatch penalties (Tool 10 off-target replication)}{26}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Derivation.}{26}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Tool 7 full model $\times $ target matrix, machine-extracted from \texttt  {results/outcome\_models.json} (train 1{,}393 / test 349 Lib-A sites; Spearman with Pearson in parentheses). Bold marks the best model per target column.}}{21}{}\protected@file@percent }
+\newlabel{tab:outcome-matrix}{{9}{21}}
+\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces MH-deletion-fraction improvement attempts, all numbers from \texttt  {results/mhdel\_improve.json} (same Lib-A split; Spearman with Pearson in parentheses). Attempt 1 adds microhomology features; attempt 2 tunes the positional GBT. The tuned positional model is the only improvement, and it is the model quoted in the error-analysis section; microhomology features alone carry almost no signal ($0.010$) and hurt when added to the full feature set.}}{21}{}\protected@file@percent }
+\newlabel{tab:mhdel}{{10}{21}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.3}Tool 10 per-model details}{21}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.4}Hyperparameters}{21}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces Model hyperparameters.}}{21}{}\protected@file@percent }
+\newlabel{tab:hp}{{11}{21}}
+\@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces Public datasets used.}}{22}{}\protected@file@percent }
+\newlabel{tab:data}{{12}{22}}
+\@writefile{toc}{\contentsline {section}{\numberline {B}Dataset statistics}{22}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {C}External tools and dataset manifest}{22}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {C.1}External tools, packages, and resources (25, target 40)}{22}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {C.2}Dataset manifest (133, target 120+ reached)}{22}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {D}Benchmark protocols in full}{22}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {D.1}Tool 10 protocol A: clean Azimuth-style on-target evaluation}{23}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {D.2}Tool 7 protocol: inDelphi repair-outcome benchmark}{23}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {D.3}Tool 6 discovery protocol: same-gene duplex enrichment}{24}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {D.4}Tool 8 protocol: cut-site rearrangement risk validation}{24}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {D.5}Reproducibility checklist}{24}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {E}Derivations and proofs}{24}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {E.1}D1. Nearest-neighbor duplex free energy (Tool 6)}{24}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Model.}{24}{}\protected@file@percent }
+\newlabel{eq:nn}{{6}{24}}
+\@writefile{toc}{\contentsline {paragraph}{Additivity.}{25}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Screening statistic.}{25}{}\protected@file@percent }
+\newlabel{eq:flag}{{7}{25}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {E.2}D2. Two-proportion $z$-test for the same-gene enrichment (Tool 6 discovery)}{25}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Setup.}{25}{}\protected@file@percent }
+\newlabel{eq:ztest}{{8}{25}}
+\@writefile{toc}{\contentsline {paragraph}{Computation.}{25}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Validity conditions.}{25}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {E.3}D3. Spearman correlation and the gene-clustered paired bootstrap (Tools 7, 10)}{26}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Statistic.}{26}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Why a clustered bootstrap.}{26}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {E.4}D4. Microhomology deletion model and frameshift accounting (Tool 7)}{26}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Lindel-style rate model.}{26}{}\protected@file@percent }
+\newlabel{eq:lindel}{{12}{26}}
+\@writefile{toc}{\contentsline {paragraph}{Frameshift.}{26}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Expected deletion length.}{27}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {E.5}D5. Out-of-fold stacking: what it estimates and why in-fold stacking leaks (Tool 10, v5 vs v6)}{27}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Claim.}{27}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Quantification on our split.}{27}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Caveat.}{27}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {E.6}D6. CFD as a product of per-mismatch penalties (Tool 10 off-target replication)}{27}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Derivation.}{27}{}\protected@file@percent }
 \citation{kosicki2018}
 \citation{wen2022}
-\@writefile{toc}{\contentsline {subsection}{\numberline {E.7}D7. Tool 8 risk score: composition and invariance (Tool 8)}{27}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Definition.}{27}{}\protected@file@percent }
-\newlabel{eq:tool8}{{17}{27}}
-\@writefile{toc}{\contentsline {paragraph}{Properties.}{27}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{What $S$ is not.}{27}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {E.8}D8. Cost-asymmetric screening threshold (Tool 9)}{27}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Decision rule.}{27}{}\protected@file@percent }
-\newlabel{eq:bayes}{{18}{27}}
-\@writefile{toc}{\contentsline {paragraph}{Fail-closed as a limit.}{27}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {E.9}D9. Duplex-enrichment baseline under random spacers (Tool 6)}{27}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Baseline construction.}{27}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {F}Reproduction}{28}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {G}Model mathematics}{28}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {G.1}Convolutional guide encoder}{28}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {G.2}Graph propagation rule}{28}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {G.3}PAM-competition decay}{28}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {G.4}Microhomology deletion rate model}{29}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {G.5}Spearman transfer-delta significance}{29}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {G.6}Ridge baseline closed form}{29}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {H}Extended error analysis}{29}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {H.1}Tool 10: the CD15 outlier}{29}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {H.2}Tool 10: the cross-species transfer penalty is real}{30}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {H.3}Tool 7: microhomology-deletion share resists sequence-only models}{30}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {H.4}Tool 7: why $+1$ insertion is the easiest target}{30}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {H.5}Tool 6: where the duplex model over-flags}{30}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {H.6}Tool 8: validation breadth}{30}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {E.7}D7. Tool 8 risk score: composition and invariance (Tool 8)}{28}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Definition.}{28}{}\protected@file@percent }
+\newlabel{eq:tool8}{{17}{28}}
+\@writefile{toc}{\contentsline {paragraph}{Properties.}{28}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{What $S$ is not.}{28}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {E.8}D8. Cost-asymmetric screening threshold (Tool 9)}{28}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Decision rule.}{28}{}\protected@file@percent }
+\newlabel{eq:bayes}{{18}{28}}
+\@writefile{toc}{\contentsline {paragraph}{Fail-closed as a limit.}{28}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {E.9}D9. Duplex-enrichment baseline under random spacers (Tool 6)}{28}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Baseline construction.}{28}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {F}Reproduction}{29}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {G}Model mathematics}{29}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {G.1}Convolutional guide encoder}{29}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {G.2}Graph propagation rule}{29}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {G.3}PAM-competition decay}{29}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {G.4}Microhomology deletion rate model}{30}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {G.5}Spearman transfer-delta significance}{30}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {G.6}Ridge baseline closed form}{30}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {H}Extended error analysis}{30}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {H.1}Tool 10: the CD15 outlier}{30}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {H.2}Tool 10: the cross-species transfer penalty is real}{31}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {H.3}Tool 7: microhomology-deletion share resists sequence-only models}{31}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {H.4}Tool 7: why $+1$ insertion is the easiest target}{31}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {H.5}Tool 6: where the duplex model over-flags}{31}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {H.6}Tool 8: validation breadth}{31}{}\protected@file@percent }
 \bibcite{lorenz2011}{Lorenz et al.(2011)}
 \bibcite{shen2018}{Shen et al.(2018)}
 \bibcite{doench2016}{Doench et al.(2016)}
@@ -187,59 +193,59 @@
 \bibcite{chen2019}{Chen et al.(2019)}
 \bibcite{doench2014}{Doench et al.(2014)}
 \bibcite{bae2014}{Bae et al.(2014)}
-\@writefile{toc}{\contentsline {subsection}{\numberline {H.7}Tool 9: the biosecurity wrapper's blind spot}{31}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {I}Test suite summary}{31}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {J}Software architecture}{32}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {J.1}Module map}{32}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {J.2}Tool packages}{32}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {J.3}Command-line surface}{32}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {J.4}Design decisions and their costs}{32}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {J.5}Failure containment}{33}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {K}Algorithms}{33}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {L}Statistical methods}{34}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {L.1}Paired bootstrap over genes}{34}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {L.2}Two-proportion $z$-test for flag-rate enrichment}{35}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {L.3}Spearman correlation and its standard error}{35}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {L.4}Multiplicity across break attempts}{35}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {L.5}Contamination control as a statistical procedure}{35}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {L.6}Seeds and determinism}{35}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {M}Negative results register}{35}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {M.1}Benchmark-ladder negatives (Azimuth RES$\to $V1 clean split)}{36}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {M.2}Repair-outcome negatives (Tool 7)}{36}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {M.3}Model-class negatives}{37}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {M.4}What the negatives changed}{37}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {N}Extended validation tables}{37}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {N.1}Multiplex discovery statistics (Tool 6)}{37}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {N.2}Cross-species transfer ladder (Tool 10)}{37}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {N.3}Repair-outcome transfer matrix (Tool 7)}{37}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {N.4}Off-target replication summary (crisprSQL)}{38}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {N.5}Large-deletion panel (Tool 8)}{38}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {N.6}Off-target scorer replications: full per-study matrix}{38}{}\protected@file@percent }
-\newlabel{app:offtarget-matrix}{{N.6}{38}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {N.7}crisprSQL per-study summary}{38}{}\protected@file@percent }
-\newlabel{app:crisprsql-perstudy}{{N.7}{38}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {N.8}crisprSQL per-study summary}{39}{}\protected@file@percent }
-\newlabel{app:crisprsql-perstudy}{{N.8}{39}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {N.9}Tool 8 panel: full per-locus table}{39}{}\protected@file@percent }
-\newlabel{app:panel-table}{{N.9}{39}}
-\@writefile{toc}{\contentsline {section}{\numberline {O}Reproducibility register}{39}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {O.1}Script-to-result map}{40}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {O.2}Determinism and contamination guards}{40}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {O.3}Live-network steps}{40}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {P}Scoring formulas and derivations}{41}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {P.1}MIT off-target score}{41}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {P.2}Jensen-Shannon divergence of k-mer spectra}{41}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {P.3}GC-content sequestration rule}{41}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces External tools/resources in use. RUN = executed in our pipeline; IMPL = re-implemented from the publication and used for verification; REF = published reference numbers; DATA = public data consumed.}}{42}{}\protected@file@percent }
-\newlabel{tab:tools}{{10}{42}}
-\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces Per-study LOSO AUC for the five replicated off-target scorers. $n$ = pairs; $n_+$ = validated-positive pairs.}}{43}{}\protected@file@percent }
-\newlabel{tab:offtarget-matrix}{{11}{43}}
-\@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces crisprSQL constituent studies (16), ranked by target count.}}{43}{}\protected@file@percent }
-\newlabel{tab:crisprsql-perstudy}{{12}{43}}
-\@writefile{lot}{\contentsline {table}{\numberline {13}{\ignorespaces crisprSQL constituent studies (16), ranked by target count.}}{44}{}\protected@file@percent }
-\newlabel{tab:crisprsql-perstudy}{{13}{44}}
-\@writefile{lot}{\contentsline {table}{\numberline {14}{\ignorespaces Tool 8 panel, loci 1--36 of 109 by mean risk.}}{45}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {15}{\ignorespaces Tool 8 panel, loci 37--72 of 109 by mean risk (continued).}}{46}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {16}{\ignorespaces Tool 8 panel, loci 73--108 of 109 by mean risk (continued).}}{47}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {17}{\ignorespaces Tool 8 panel, loci 109--109 of 109 by mean risk (continued).}}{47}{}\protected@file@percent }
-\gdef \@abspage@last{47}
+\@writefile{toc}{\contentsline {subsection}{\numberline {H.7}Tool 9: the biosecurity wrapper's blind spot}{32}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {I}Test suite summary}{32}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {J}Software architecture}{33}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {J.1}Module map}{33}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {J.2}Tool packages}{33}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {J.3}Command-line surface}{33}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {J.4}Design decisions and their costs}{33}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {J.5}Failure containment}{34}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {K}Algorithms}{34}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {L}Statistical methods}{35}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {L.1}Paired bootstrap over genes}{35}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {L.2}Two-proportion $z$-test for flag-rate enrichment}{36}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {L.3}Spearman correlation and its standard error}{36}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {L.4}Multiplicity across break attempts}{36}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {L.5}Contamination control as a statistical procedure}{36}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {L.6}Seeds and determinism}{36}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {M}Negative results register}{36}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {M.1}Benchmark-ladder negatives (Azimuth RES$\to $V1 clean split)}{37}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {M.2}Repair-outcome negatives (Tool 7)}{37}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {M.3}Model-class negatives}{38}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {M.4}What the negatives changed}{38}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {N}Extended validation tables}{38}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {N.1}Multiplex discovery statistics (Tool 6)}{38}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {N.2}Cross-species transfer ladder (Tool 10)}{38}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {N.3}Repair-outcome transfer matrix (Tool 7)}{38}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {N.4}Off-target replication summary (crisprSQL)}{39}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {N.5}Large-deletion panel (Tool 8)}{39}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {N.6}Off-target scorer replications: full per-study matrix}{39}{}\protected@file@percent }
+\newlabel{app:offtarget-matrix}{{N.6}{39}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {N.7}crisprSQL per-study summary}{39}{}\protected@file@percent }
+\newlabel{app:crisprsql-perstudy}{{N.7}{39}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {N.8}crisprSQL per-study summary}{40}{}\protected@file@percent }
+\newlabel{app:crisprsql-perstudy}{{N.8}{40}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {N.9}Tool 8 panel: full per-locus table}{40}{}\protected@file@percent }
+\newlabel{app:panel-table}{{N.9}{40}}
+\@writefile{toc}{\contentsline {section}{\numberline {O}Reproducibility register}{40}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {O.1}Script-to-result map}{41}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {O.2}Determinism and contamination guards}{41}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {O.3}Live-network steps}{41}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {P}Scoring formulas and derivations}{42}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {P.1}MIT off-target score}{42}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {P.2}Jensen-Shannon divergence of k-mer spectra}{42}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {P.3}GC-content sequestration rule}{42}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {13}{\ignorespaces External tools/resources in use. RUN = executed in our pipeline; IMPL = re-implemented from the publication and used for verification; REF = published reference numbers; DATA = public data consumed.}}{43}{}\protected@file@percent }
+\newlabel{tab:tools}{{13}{43}}
+\@writefile{lot}{\contentsline {table}{\numberline {14}{\ignorespaces Per-study LOSO AUC for the five replicated off-target scorers. $n$ = pairs; $n_+$ = validated-positive pairs.}}{44}{}\protected@file@percent }
+\newlabel{tab:offtarget-matrix}{{14}{44}}
+\@writefile{lot}{\contentsline {table}{\numberline {15}{\ignorespaces crisprSQL constituent studies (16), ranked by target count.}}{44}{}\protected@file@percent }
+\newlabel{tab:crisprsql-perstudy}{{15}{44}}
+\@writefile{lot}{\contentsline {table}{\numberline {16}{\ignorespaces crisprSQL constituent studies (16), ranked by target count.}}{45}{}\protected@file@percent }
+\newlabel{tab:crisprsql-perstudy}{{16}{45}}
+\@writefile{lot}{\contentsline {table}{\numberline {17}{\ignorespaces Tool 8 panel, loci 1--36 of 109 by mean risk.}}{46}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {18}{\ignorespaces Tool 8 panel, loci 37--72 of 109 by mean risk (continued).}}{47}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {19}{\ignorespaces Tool 8 panel, loci 73--108 of 109 by mean risk (continued).}}{48}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {20}{\ignorespaces Tool 8 panel, loci 109--109 of 109 by mean risk (continued).}}{48}{}\protected@file@percent }
+\gdef \@abspage@last{48}

@@ -236,6 +236,28 @@ screener exposes both. A CHOPCHOP-rule audit of the same 4{,}692 real
 guides finds $13.4\%$ GC-window violations and zero poly-T stretches -
 published guide sets are filtered for synthesis but not for GC.
 
+
+\begin{table}[t]
+\centering\small
+\caption{Tool 6 engine cross-check and CHOPCHOP rule audit, all numbers from \texttt{results/duplex\_crosscheck.json}. Part A: ViennaRNA duplexfold vs primer3-py calc\_heterodimer on 2{,}000 real-guide pairs. Part B: CHOPCHOP v3 default design rules audited over 4{,}692 crisprSQL guides.}
+\label{tab:crosscheck}
+\begin{tabular}{ll}
+\hline
+quantity & value \\
+\hline
+pairs checked & 2{,}000 \\
+energy-scale Spearman (ViennaRNA vs primer3) & 0.712 \\
+flag agreement at matched flag rate & 85.9\% \\
+Cohen's $\kappa$ (flag decisions) & 0.475 \\
+ViennaRNA MFE mean (kcal/mol) & -8.22 \\
+primer3 $\Delta G$ mean (kcal/mol) & -3.95 \\
+\hline
+guides audited & 4{,}692 \\
+GC-window violations (0.35--0.70) & 13.4\% \\
+poly-T (TTTT) share & 0.0\% \\
+\hline
+\end{tabular}
+\end{table}
 \section{Tool 7: Repair-outcome annotator}
 \subsection{Problem}
 Guide designers optimize cutting activity, but the repair outcome decides the
@@ -811,9 +833,24 @@ benchmark scripts, and this manuscript build are in the repository.
 \subsection{Tool 6 surrogate details}
 The surrogate task predicts single-strand ViennaRNA fold MFE for 2,000 random
 20-nt spacers (GC uniform in $[0.3,0.7]$), 1,600/400 split. All three learners
-cluster at Spearman 0.63--0.65; the 3-mer ridge is indistinguishable from the
-deep models. Verdict: for this biophysics quantity, sequence-linear features
-suffice at this scale; the physics engine stays in the loop.
+cluster at Spearman 0.63--0.65 (Table~\ref{tab:surrogate}); the 3-mer ridge
+is indistinguishable from the deep models. Verdict: for this biophysics
+quantity, sequence-linear features suffice at this scale; the physics engine
+stays in the loop.
+\begin{table}[h]
+\centering\small
+\caption{Tool 6 duplex-MFE surrogate: all numbers from \texttt{results/duplex\_surrogate.json} (teacher: ViennaRNA 2.7.2 RNA.fold MFE (kcal/mol); train 1{,}600 / test 400 random 20-nt spacers, Spearman with Pearson in parentheses).}
+\label{tab:surrogate}
+\begin{tabular}{lcc}
+\hline
+model & Spearman & Pearson \\
+\hline
+ridge 3-mer & 0.648 & 0.653 \\
+CNN & 0.633 & 0.658 \\
+GNN & 0.645 & 0.645 \\
+\hline
+\end{tabular}
+\end{table}
 \subsection{Tool 7 per-target details}
 The +1-insertion rate is the most learnable outcome (GBT $0.610$, CNN $0.505$
 Spearman), consistent with its strong sequence determinism (templated
@@ -839,6 +876,23 @@ ridge 3-mer & 0.076 (0.074) & -0.051 (-0.049) & -0.002 (0.011) \\
 GBT positional & \textbf{0.610 (0.447)} & \textbf{0.320 (0.285)} & \textbf{0.178 (0.146)} \\
 CNN & 0.505 (0.314) & 0.244 (0.227) & 0.154 (0.138) \\
 GNN & 0.047 (0.050) & 0.053 (0.102) & 0.037 (0.039) \\
+\hline
+\end{tabular}
+\end{table}
+\begin{table}[h]
+\centering\small
+\caption{MH-deletion-fraction improvement attempts, all numbers from \texttt{results/mhdel\_improve.json} (same Lib-A split; Spearman with Pearson in parentheses). Attempt 1 adds microhomology features; attempt 2 tunes the positional GBT. The tuned positional model is the only improvement, and it is the model quoted in the error-analysis section; microhomology features alone carry almost no signal ($0.010$) and hurt when added to the full feature set.}
+\label{tab:mhdel}
+\begin{tabular}{lcc}
+\hline
+model & Spearman & Pearson \\
+\hline
+ridge 3-mer & -0.002 & 0.011 \\
+GBT, MH features only & 0.010 & 0.044 \\
+GBT, full + MH & 0.110 & 0.085 \\
+reference GBT positional & 0.173 & --- \\
+\textbf{GBT tuned positional} & \textbf{0.210} & \textbf{0.178} \\
+GBT tuned positional + MH & 0.114 & 0.107 \\
 \hline
 \end{tabular}
 \end{table}
