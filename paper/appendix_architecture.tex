@@ -1,0 +1,54 @@
+\section{Software architecture}
+The five tools share one library (\texttt{crisprlib}) and one command-line
+front end (\texttt{cli.py}); each tool package owns only its domain logic.
+
+\subsection{Module map}
+\texttt{crisprlib.featurize} holds every sequence encoding (one-hot,
+dinucleotide one-hot, $k$-mer counts, GC content, SantaLucia nearest-neighbour
+$\Delta G$, microhomology scoring, guide:target alignment encodings).
+\texttt{crisprlib.models} holds GuideCNN, PairCNN, and SequenceGCN with their
+graph construction. \texttt{crisprlib.train} holds the deterministic CPU
+training loop (Adam, MSE, early stopping, fixed seeds) shared by every model
+in the paper, so all training behaviour described in Methods exists exactly
+once in the codebase. \texttt{crisprlib.benchmark} holds the evaluation
+metrics (per-gene Spearman, regression metrics) used by every benchmark
+script, preventing metric drift between tools.
+
+\subsection{Tool packages}
+\texttt{tools\_multiplex} (duplex screening, shared-PAM competition scoring,
+pair ranking), \texttt{tools\_outcome} (inDelphi loading, event aggregation,
+frameshift/insertion/deletion targets), \texttt{tools\_riskflag}
+(microhomology density, secondary-structure and exon-boundary terms, locus
+loader), \texttt{tools\_biosecurity} (homology pre-filter, audit-record
+writer, Common Mechanism handoff), and \texttt{tools\_transfer} (FC+RES/V1
+loaders with the contamination guard, divergence statistics, transfer
+evaluator). The loaders are the single place where the
+\texttt{drug} $\neq$ \texttt{nodrug} filter is enforced; benchmark scripts
+cannot bypass it without editing library code, which is how the contamination
+class from Section on negative results is now structurally prevented.
+
+\subsection{Command-line surface}
+\texttt{python cli.py <tool> <subcommand>} exposes every user-facing
+function: \texttt{multiplex screen}, \texttt{outcome annotate},
+\texttt{riskflag score}, \texttt{biosecurity prescreen}, \texttt{transfer
+evaluate}. All emit JSON to stdout and write audit records where relevant;
+there are no interactive prompts, so every tool composes in shell pipelines.
+
+\subsection{Design decisions and their costs}
+Three decisions were made for auditability over raw performance. (1) Pure
+NumPy/PyTorch implementations with no CUDA paths: every number reproduces on
+free-tier CPUs in minutes, at the cost of excluding very large screens.
+(2) JSON-over-files artifacts: every result the paper cites is a committed
+file, at the cost of a larger repository. (3) A single shared training loop:
+cross-tool comparability, at the cost of forgoing per-model exotic
+optimizers. We judge these costs acceptable for a benchmark-and-discovery
+deliverable whose value depends on third parties being able to re-run it.
+
+\subsection{Failure containment}
+Each script validates its inputs against \texttt{data/PROVENANCE.md} hashes
+where network data is involved, refuses to overwrite existing result files
+unless told to, and exits non-zero on any NaN in model outputs. The 40-test
+hermetic suite covers featurization invariants (one-hot row sums, graph
+symmetry), loader guards (no \texttt{nodrug} rows in training frames),
+metric identities, and end-to-end smoke runs of each tool on synthetic
+fixtures; it needs no network and finishes in under a minute.
