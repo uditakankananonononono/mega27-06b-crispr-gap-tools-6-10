@@ -84,6 +84,28 @@ rest of the manuscript describes data (Section~2), shared model components
 (Section~3), and then one section per tool with its methods, results, and
 honest verdict.
 
+
+\section{Notation and problem formulation}
+Throughout, a \emph{guide} is a 20-nt spacer $g \in \{A,C,G,T\}^{20}$ and a
+\emph{context} is the 30-mer $c = (c_1,\dots,c_{30})$ in which positions
+$5$--$24$ hold the spacer, positions $25$--$27$ hold the PAM (NGG for
+SpCas9), and position $28$ the variable PAM-distal base. Guide $i$ carries an
+activity $y_i \in [0,1]$ (percent-rank of measured knockout) and a gene label
+$\gamma(i)$. Tools predict either activities $\hat y_i$ (Tools 7, 10), binary
+or ranked risks (Tools 6, 8), or screening verdicts (Tool 9). The duplex free
+energy of strands $s,t$ is $\Delta G(s,t)$ from ViennaRNA; the folding energy
+of a single strand is $\Delta G_{\mathrm{fold}}(s)$. All correlations are
+Spearman rank correlations; $\bar\rho$ always means the mean over genes of
+the per-gene correlation, matching the Azimuth evaluation protocol. For an
+event class $e$ at target site $j$, $f_e(j) \in [0,1]$ denotes its frequency
+among edited reads at that site; Tool 7 predicts $f_e$ from the 60-nt target
+context. A multiplex design is a set $\{g_1,\dots,g_k\}$ whose interference
+score is a function of pairwise $\Delta G(g_i,g_j)$ and shared-PAM
+competition terms (Tool 6). A cut site $q$ in locus sequence $L$ carries a
+rearrangement-risk score $R(q \mid L) \in [0,1]$ (Tool 8). Tool 9 maps a
+candidate design to a verdict in
+$\{\textsc{pass},\textsc{review},\textsc{block}\}$ with an audit record.
+
 \section{Data}
 \subsection{inDelphi U2OS LibA}
 Event-level counts from \cite{shen2018} (figshare 6837956, U2OS\_+\_LibA\_postCas9\_rep1.csv)

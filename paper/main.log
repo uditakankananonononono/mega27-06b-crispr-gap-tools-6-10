@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  24 SEP 2026 21:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  24 SEP 2026 21:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -269,13 +269,13 @@ LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 8
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 ) [2 <./figures/benchmarks.pdf>]
-Overfull \hbox (32.15326pt too wide) in paragraph at lines 96--97
+Overfull \hbox (32.15326pt too wide) in paragraph at lines 118--119
 \OT1/ptm/m/n/12 25,632 cleav-age records (100720 dump) with epi-ge-netic co-var
 i-ates, genomes hg19/hg38/mm10/mm9/rn5. 
  []
 
 [3]
-Overfull \hbox (52.38058pt too wide) in paragraph at lines 130--135
+Overfull \hbox (52.38058pt too wide) in paragraph at lines 152--157
 \OT1/ptm/b/n/12 Definition 2 \OT1/ptm/m/n/12 (In-ter-fer-ence graph)\OT1/ptm/b/
 n/12 . \OT1/ptm/m/it/12 Weighted graph on guides with edge weight $\OML/cmm/m/i
 t/12 a[] \OT1/cmr/m/n/12 = 0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 6 [](1\OML/cmm/m/
@@ -283,44 +283,40 @@ it/12 ; \OMS/cmsy/m/n/12 j\OT1/cmr/m/n/12 ^^A\OML/cmm/m/it/12 G[]\OMS/cmsy/m/n/
 12 j\OML/cmm/m/it/12 =\OT1/cmr/m/n/12 20) +
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<figures/realguide_risk.pdf, id=85, 469.755pt x 274.626pt>
+[4]
+<figures/realguide_risk.pdf, id=89, 469.755pt x 274.626pt>
 File: figures/realguide_risk.pdf Graphic file (type pdf)
 <use figures/realguide_risk.pdf>
-Package pdftex.def Info: figures/realguide_risk.pdf  used on input line 197.
+Package pdftex.def Info: figures/realguide_risk.pdf  used on input line 219.
 (pdftex.def)             Requested size: 375.80544pt x 219.70108pt.
-[4] [5 <./figures/realguide_risk.pdf>]
-Overfull \hbox (2.55388pt too wide) in paragraph at lines 220--222
+ [5]
+Overfull \hbox (2.55388pt too wide) in paragraph at lines 242--244
 \OT1/ptm/b/n/12 Proposition 1 \OT1/ptm/m/n/12 (Mi-cro-ho-mol-ogy score)\OT1/ptm
 /b/n/12 . \OT1/ptm/m/it/12 For flanks $\OML/cmm/m/it/12 L; R$ \OT1/ptm/m/it/12 
 around the cut, $\OML/cmm/m/it/12 s[] \OT1/cmr/m/n/12 = [][] \OT1/cmr/bx/n/12 1
 \OT1/cmr/m/n/12 [\OML/cmm/m/it/12 L[] \OT1/cmr/m/n/12 =
  []
 
-<figures/xrcc4_risk.pdf, id=144, 505.89pt x 216.81pt>
+[6 <./figures/realguide_risk.pdf>]
+<figures/xrcc4_risk.pdf, id=148, 505.89pt x 216.81pt>
 File: figures/xrcc4_risk.pdf Graphic file (type pdf)
 <use figures/xrcc4_risk.pdf>
-Package pdftex.def Info: figures/xrcc4_risk.pdf  used on input line 230.
+Package pdftex.def Info: figures/xrcc4_risk.pdf  used on input line 252.
 (pdftex.def)             Requested size: 375.80544pt x 161.06213pt.
-[6 <./figures/xrcc4_risk.pdf>]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[7] [8]
+ [7 <./figures/xrcc4_risk.pdf>] [8]
 <figures/transfer.pdf, id=207, 433.62pt x 260.17201pt>
 File: figures/transfer.pdf Graphic file (type pdf)
 <use figures/transfer.pdf>
-Package pdftex.def Info: figures/transfer.pdf  used on input line 353.
+Package pdftex.def Info: figures/transfer.pdf  used on input line 375.
 (pdftex.def)             Requested size: 352.31625pt x 211.40112pt.
 <figures/azimuth_break.pdf, id=208, 650.43pt x 289.08pt>
 File: figures/azimuth_break.pdf Graphic file (type pdf)
 <use figures/azimuth_break.pdf>
-Package pdftex.def Info: figures/azimuth_break.pdf  used on input line 374.
+Package pdftex.def Info: figures/azimuth_break.pdf  used on input line 396.
 (pdftex.def)             Requested size: 469.75502pt x 208.78584pt.
- [9 <./figures/transfer.pdf>] [10 <./figures/azimuth_break.pdf>]
-Overfull \hbox (89.81107pt too wide) in paragraph at lines 456--472
+ [9]
+[10 <./figures/transfer.pdf>] [11 <./figures/azimuth_break.pdf>]
+Overfull \hbox (89.81107pt too wide) in paragraph at lines 478--494
 \OT1/ptm/m/n/12 deletion frac-tion (Spear-man $\OT1/cmr/m/n/12 0\OML/cmm/m/it/1
 2 :\OT1/cmr/m/n/12 01$\OT1/ptm/m/n/12 --$\OT1/cmr/m/n/12 0\OML/cmm/m/it/12 :\OT
 1/cmr/m/n/12 11$ \OT1/ptm/m/n/12 vs $\OT1/cmr/m/n/12 0\OML/cmm/m/it/12 :\OT1/cm
@@ -328,38 +324,45 @@ r/m/n/12 210$ \OT1/ptm/m/n/12 for the tuned po-si-tional GBT); \OT1/pcr/m/n/12
 results/mhdel[]improve.json\OT1/ptm/m/n/12 .
  []
 
-[11] [12]
-Overfull \hbox (20.62175pt too wide) in paragraph at lines 530--538
+[12]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (20.62175pt too wide) in paragraph at lines 552--560
  [][] 
  []
 
-(./appendix_protocols.tex [13]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+(./appendix_protocols.tex [13] [14]
 Overfull \hbox (38.17764pt too wide) in paragraph at lines 68--76
 \OT1/ptm/m/n/12 of ran-dom 20-nt spac-ers matched in length. \OT1/ptm/b/n/12 Sc
 or-ing. \OT1/ptm/m/n/12 Each pair is scored with \OT1/pcr/m/n/12 RNAduplex\OT1/
 ptm/m/n/12 /\OT1/pcr/m/n/12 duplexfold
  []
 
-[14])
-Overfull \hbox (5.64679pt too wide) in paragraph at lines 542--548
+[15])
+Overfull \hbox (5.64679pt too wide) in paragraph at lines 564--570
 \OT1/ptm/m/n/12 Every re-ported num-ber re-gen-er-ates from the repos-i-tory: \
 OT1/pcr/m/n/12 pip install torch --index-url
  []
 
 
-Overfull \hbox (39.6688pt too wide) in paragraph at lines 542--548
+Overfull \hbox (39.6688pt too wide) in paragraph at lines 564--570
 \OT1/pcr/m/n/12 https://download.pytorch.org/whl/cpu\OT1/ptm/m/n/12 , \OT1/pcr/
 m/n/12 pip install scikit-learn biopython
  []
 
 
-Overfull \hbox (4.02785pt too wide) in paragraph at lines 542--548
+Overfull \hbox (4.02785pt too wide) in paragraph at lines 564--570
 \OT1/pcr/m/n/12 pytest pandas scipy matplotlib ViennaRNA\OT1/ptm/m/n/12 , then 
 the five scripts un-der \OT1/pcr/m/n/12 scripts/
  []
 
-[15] [16] (./appendix_erroranalysis.tex [17]) [18] (./appendix_architecture.tex
-[19]
+[16] (./appendix_erroranalysis.tex [17] [18]) [19] (./appendix_architecture.tex
+
 Overfull \hbox (48.41362pt too wide) in paragraph at lines 18--29
 \OT1/pcr/m/n/12 tools[]multiplex \OT1/ptm/m/n/12 (du-plex screen-ing, shared-PA
 M com-pe-ti-tion scor-ing, pair rank-ing), \OT1/pcr/m/n/12 tools[]outcome
@@ -384,33 +387,33 @@ m/m/n/12 , \OT1/pcr/m/n/12 riskflag score\OT1/ptm/m/n/12 , \OT1/pcr/m/n/12 bios
 ecurity prescreen\OT1/ptm/m/n/12 , \OT1/pcr/m/n/12 transfer
  []
 
-) [20]
+[20])
 LaTeX Font Info:    Trying to load font information for OMS+pcr on input line 6
-46.
+68.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omspcr.fd
 File: omspcr.fd 
 )
 LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 646.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 668.
 
-Overfull \hbox (9.47386pt too wide) in paragraph at lines 646--659
+Overfull \hbox (9.47386pt too wide) in paragraph at lines 668--681
 \OT1/pcr/m/n/10.95 Output: per-guide penalties, set compatibility, removal rank
 ing 
  []
 
 
-Overfull \hbox (22.61385pt too wide) in paragraph at lines 662--669
+Overfull \hbox (22.61385pt too wide) in paragraph at lines 684--691
 \OT1/pcr/m/n/10.95 Output: P(frameshift), P(+1 insertion), P(MH deletion), prec
 ision 
  []
 
 [21] [22] [23] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 3390 strings out of 480247
- 50736 string characters out of 5896151
- 344286 words of memory out of 5000000
- 21272 multiletter control sequences out of 15000+600000
- 501804 words of font info for 96 fonts, out of 8000000 for 9000
+ 3392 strings out of 480247
+ 50764 string characters out of 5896151
+ 344287 words of memory out of 5000000
+ 21274 multiletter control sequences out of 15000+600000
+ 503096 words of font info for 98 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  55i,10n,62p,384b,243s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/bas
@@ -429,7 +432,7 @@ cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols
 /usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (23 pages, 330548 bytes).
+Output written on main.pdf (23 pages, 334149 bytes).
 PDF statistics:
  429 PDF objects out of 1000 (max. 8388607)
  126 compressed objects within 2 object streams
