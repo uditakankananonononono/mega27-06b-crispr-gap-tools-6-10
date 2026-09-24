@@ -815,13 +815,33 @@ cluster at Spearman 0.63--0.65; the 3-mer ridge is indistinguishable from the
 deep models. Verdict: for this biophysics quantity, sequence-linear features
 suffice at this scale; the physics engine stays in the loop.
 \subsection{Tool 7 per-target details}
-The +1-insertion rate is the most learnable outcome (GBT 0.603, CNN 0.505
+The +1-insertion rate is the most learnable outcome (GBT $0.610$, CNN $0.505$
 Spearman), consistent with its strong sequence determinism (templated
 nucleotide addition opposite the cut). Frameshift fraction is intermediate
-(0.31), and microhomology-deletion fraction is hardest (0.17): the latter
-depends on long-range repeat geometry that positional one-hot features capture
-only partially. Ridge on 3-mers fails on all three ($<$0.08), confirming that
-position-resolved features carry the signal.
+(GBT $0.320$), and microhomology-deletion fraction is hardest (GBT $0.178$):
+the latter depends on long-range repeat geometry that positional one-hot
+features capture only partially. Ridge on 3-mers fails on all three
+($\leq 0.076$), and the GNN fails on all three as well ($\leq 0.053$),
+confirming that position-resolved tabular features, not graph propagation,
+carry the signal at this data scale (Table~\ref{tab:outcome-matrix}).
+The GNN row is a negative for our own architecture, preserved as such:
+on 1{,}393 training sites the GNN does not beat a linear model.
+
+\begin{table}[h]
+\centering\small
+\caption{Tool 7 full model $\times$ target matrix, machine-extracted from \texttt{results/outcome\_models.json} (train 1{,}393 / test 349 Lib-A sites; Spearman with Pearson in parentheses). Bold marks the best model per target column.}
+\label{tab:outcome-matrix}
+\begin{tabular}{lccc}
+\hline
+model & +1 insertion & frameshift & MH-deletion \\
+\hline
+ridge 3-mer & 0.076 (0.074) & -0.051 (-0.049) & -0.002 (0.011) \\
+GBT positional & \textbf{0.610 (0.447)} & \textbf{0.320 (0.285)} & \textbf{0.178 (0.146)} \\
+CNN & 0.505 (0.314) & 0.244 (0.227) & 0.154 (0.138) \\
+GNN & 0.047 (0.050) & 0.053 (0.102) & 0.037 (0.039) \\
+\hline
+\end{tabular}
+\end{table}
 \subsection{Tool 10 per-model details}
 The CNN leads on human held-out (0.665) and retains the lead on mouse
 transfer (0.358) despite a real penalty; ridge and the GCN sit near
@@ -1018,6 +1038,8 @@ Output: transfer delta + shift diagnostics\\
 \input{appendix_stats}
 \input{appendix_negatives}
 \input{appendix_validation}
+\input{appendix_crisprsql}
+\input{appendix_crisprsql}
 \input{appendix_panel}
 \input{appendix_repro}
 \section{Scoring formulas and derivations}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  24 SEP 2026 22:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  24 SEP 2026 22:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -166,7 +166,14 @@ File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count276
 \l__pdf_internal_box=\box52
 )
-(./main.aux)
+(./main.aux
+
+LaTeX Warning: Label `app:crisprsql-perstudy' multiply defined.
+
+
+LaTeX Warning: Label `tab:crisprsql-perstudy' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
@@ -467,9 +474,24 @@ results/mhdel[]improve.json\OT1/ptm/m/n/12 .
  []
 
 [18 <./figures/azimuth_break.pdf>] [19]
-Overfull \hbox (20.62175pt too wide) in paragraph at lines 847--855
+Underfull \hbox (badness 10000) in paragraph at lines 832--832
+[]\OT1/ptm/m/n/12 Table 7: Tool 7 full model $\OMS/cmsy/m/n/12 ^^B$ \OT1/ptm/m/
+n/12 tar-get ma-trix, machine-extracted from
+ []
+
+
+Underfull \hbox (badness 1005) in paragraph at lines 832--832
+\OT1/pcr/m/n/12 results/outcome[]models.json \OT1/ptm/m/n/12 (train 1,393 / tes
+t 349 Lib-A sites; Spear-man with
+ []
+
+
+Overfull \hbox (20.62175pt too wide) in paragraph at lines 867--875
  [][] 
  []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 (./appendix_toolsdata.tex
 Overfull \hbox (109.20479pt too wide) in paragraph at lines 2--7
@@ -495,20 +517,23 @@ Underfull \hbox (badness 1675) in paragraph at lines 41--41
 /ptm/m/n/10.95 V1:
  []
 
-) (./appendix_protocols.tex [21] [22]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (./appendix_protocols.tex [21]
 Overfull \hbox (38.17764pt too wide) in paragraph at lines 68--76
 \OT1/ptm/m/n/12 of ran-dom 20-nt spac-ers matched in length. \OT1/ptm/b/n/12 Sc
 or-ing. \OT1/ptm/m/n/12 Each pair is scored with \OT1/pcr/m/n/12 RNAduplex\OT1/
 ptm/m/n/12 /\OT1/pcr/m/n/12 duplexfold
  []
 
-[23]) (./appendix_derivations.tex [24]
+[22]) (./appendix_derivations.tex [23]
 Overfull \hbox (7.4422pt too wide) in paragraph at lines 71--71
 []\OT1/ptm/b/n/14.4 D3. Spear-man cor-re-la-tion and the gene-clustered paired 
 boot-strap (Tools
  []
 
-
+[24]
 Overfull \hbox (44.54343pt too wide) in paragraph at lines 91--97
 \OT1/ptm/m/n/12 and $\OML/cmm/m/it/12 p \OT1/cmr/m/n/12 = 0\OML/cmm/m/it/12 :\O
 T1/cmr/m/n/12 9996$ \OT1/ptm/m/n/12 (v6) as \OT1/ptm/m/it/12 fail-ures to beat 
@@ -516,13 +541,13 @@ the bar\OT1/ptm/m/n/12 , not as near-misses (\OT1/pcr/m/n/12 results/beat[]azim
 uth[]v6.json\OT1/ptm/m/n/12 ,
  []
 
-[25]
+
 Overfull \hbox (101.238pt too wide) in paragraph at lines 115--121
 \OT1/ptm/m/n/12 the frameshift rate are strongly cou-pled --- which is why our 
 head-to-head (\OT1/pcr/m/n/12 results/lindel[]headtohead.json\OT1/ptm/m/n/12 )
  []
 
-
+[25]
 Overfull \hbox (53.31433pt too wide) in paragraph at lines 130--139
 \OT1/ptm/m/n/12 note the pre-dic-tion for $\OML/cmm/m/it/12 x[]$ \OT1/ptm/m/n/1
 2 from the fold \OT1/ptm/m/it/12 not \OT1/ptm/m/n/12 con-tain-ing $\OML/cmm/m/i
@@ -546,7 +571,7 @@ Overfull \hbox (34.47354pt too wide) in paragraph at lines 189--195
 [[],
  []
 
-[27]
+
 Overfull \hbox (33.19177pt too wide) in paragraph at lines 217--222
  \OT1/ptm/b/n/12 Base-line con-struc-tion.[] \OT1/ptm/m/n/12 The random-spacer 
 flag rate $\OT1/cmr/m/n/12 0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 10812$ \OT1/ptm/m
@@ -554,25 +579,25 @@ flag rate $\OT1/cmr/m/n/12 0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 10812$ \OT1/ptm/m
  []
 
 )
-Overfull \hbox (5.64679pt too wide) in paragraph at lines 861--867
+Overfull \hbox (5.64679pt too wide) in paragraph at lines 881--887
 \OT1/ptm/m/n/12 Every re-ported num-ber re-gen-er-ates from the repos-i-tory: \
 OT1/pcr/m/n/12 pip install torch --index-url
  []
 
 
-Overfull \hbox (39.6688pt too wide) in paragraph at lines 861--867
+Overfull \hbox (39.6688pt too wide) in paragraph at lines 881--887
 \OT1/pcr/m/n/12 https://download.pytorch.org/whl/cpu\OT1/ptm/m/n/12 , \OT1/pcr/
 m/n/12 pip install scikit-learn biopython
  []
 
 
-Overfull \hbox (4.02785pt too wide) in paragraph at lines 861--867
+Overfull \hbox (4.02785pt too wide) in paragraph at lines 881--887
 \OT1/pcr/m/n/12 pytest pandas scipy matplotlib ViennaRNA\OT1/ptm/m/n/12 , then 
 the five scripts un-der \OT1/pcr/m/n/12 scripts/
  []
 
-[28] [29] (./appendix_erroranalysis.tex [30]) [31] (./appendix_architecture.tex
-[32]
+[27] [28] (./appendix_erroranalysis.tex [29] [30]) [31]
+(./appendix_architecture.tex
 Overfull \hbox (48.41362pt too wide) in paragraph at lines 18--29
 \OT1/pcr/m/n/12 tools[]multiplex \OT1/ptm/m/n/12 (du-plex screen-ing, shared-PA
 M com-pe-ti-tion scor-ing, pair rank-ing), \OT1/pcr/m/n/12 tools[]outcome
@@ -597,38 +622,39 @@ m/m/n/12 , \OT1/pcr/m/n/12 riskflag score\OT1/ptm/m/n/12 , \OT1/pcr/m/n/12 bios
 ecurity prescreen\OT1/ptm/m/n/12 , \OT1/pcr/m/n/12 transfer
  []
 
-) [33]
+[32])
 LaTeX Font Info:    Trying to load font information for OMS+pcr on input line 9
-65.
+85.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omspcr.fd
 File: omspcr.fd 
 )
 LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 965.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 985.
 
-Overfull \hbox (9.47386pt too wide) in paragraph at lines 965--978
+Overfull \hbox (9.47386pt too wide) in paragraph at lines 985--998
 \OT1/pcr/m/n/10.95 Output: per-guide penalties, set compatibility, removal rank
 ing 
  []
 
 
-Overfull \hbox (22.61385pt too wide) in paragraph at lines 981--988
+Overfull \hbox (22.61385pt too wide) in paragraph at lines 1001--1008
 \OT1/pcr/m/n/10.95 Output: P(frameshift), P(+1 insertion), P(MH deletion), prec
 ision 
  []
 
-[34] (./appendix_stats.tex [35]) (./appendix_negatives.tex
+[33] (./appendix_stats.tex [34]) (./appendix_negatives.tex
 Overfull \hbox (20.9491pt too wide) in paragraph at lines 7--10
 \OT1/ptm/m/n/12 stated; the bar is the same-split Rule Set 2 repli-ca-tion, $\O
 T1/cmr/m/n/12 0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 569$ \OT1/ptm/m/n/12 (\OT1/pcr
 /m/n/12 results/beat[]azimuth[]v*.json\OT1/ptm/m/n/12 ). 
  []
 
+[35]
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 1
 1.
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [36]
+)
 Overfull \hbox (2.18752pt too wide) in paragraph at lines 32--36
 \OT1/ptm/m/n/12 into RES train-ing data (1,836 over-lap-ping 30-mers with V1). 
 Re-tracted in com-mit \OT1/pcr/m/n/12 a22ba74\OT1/ptm/m/n/12 ;
@@ -640,7 +666,7 @@ Overfull \hbox (23.50049pt too wide) in paragraph at lines 45--51
 m/n/12 results/outcome[]crosscell.json\OT1/ptm/m/n/12 ): our +1-insertion-
  []
 
-) (./appendix_validation.tex [37]
+[36]) (./appendix_validation.tex
 Overfull \hbox (1.3035pt too wide) in paragraph at lines 17--23
 \OT1/ptm/m/n/12 From \OT1/pcr/m/n/12 results/beat[]azimuth[]v1.json\OT1/ptm/m/n
 /12 --\OT1/pcr/m/n/12 v7.json\OT1/ptm/m/n/12 , mean per-gene Spear-man on V1 mo
@@ -653,13 +679,104 @@ Overfull \hbox (6.65659pt too wide) in paragraph at lines 25--28
 /n/12 and \OT1/pcr/m/n/12 results/outcome[]crosscell.json
  []
 
-
+[37]
 Overfull \hbox (35.45657pt too wide) in paragraph at lines 41--46
 \OT1/ptm/m/n/12 From \OT1/pcr/m/n/12 results/offtarget[]scorers.json \OT1/ptm/m
 /n/12 and \OT1/pcr/m/n/12 results/offtarget[]epigenetics.json
  []
 
-[38]) (./appendix_panel.tex) (./appendix_repro.tex [39]
+) (./appendix_crisprsql.tex
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.20 Tsai_
+          circle & 7{,}374 & 3034 & hg19 & 0.003 & -0.623 & +0.517 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<template> \unskip \hfil }
+                          \hskip \tabcolsep \endtemplate 
+l.20 Tsai_circle &
+                   7{,}374 & 3034 & hg19 & 0.003 & -0.623 & +0.517 \\
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.20 Tsai_circle &
+                   7{,}374 & 3034 & hg19 & 0.003 & -0.623 & +0.517 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.20 Tsai_circle &
+                   7{,}374 & 3034 & hg19 & 0.003 & -0.623 & +0.517 \\
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+) (./appendix_crisprsql.tex [38]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.20 Tsai_
+          circle & 7{,}374 & 3034 & hg19 & 0.003 & -0.623 & +0.517 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<template> \unskip \hfil }
+                          \hskip \tabcolsep \endtemplate 
+l.20 Tsai_circle &
+                   7{,}374 & 3034 & hg19 & 0.003 & -0.623 & +0.517 \\
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.20 Tsai_circle &
+                   7{,}374 & 3034 & hg19 & 0.003 & -0.623 & +0.517 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.20 Tsai_circle &
+                   7{,}374 & 3034 & hg19 & 0.003 & -0.623 & +0.517 \\
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+) (./appendix_panel.tex
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (./appendix_repro.tex
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -770,36 +887,40 @@ Underfull \hbox (badness 10000) in paragraph at lines 46--46
 []\OT1/pcr/m/n/10.95 make[]figures.py\OT1/ptm/m/n/10.95 --
  []
 
-[40]) [41] [42] [43] [44] (./main.aux) ) 
+[39]) [40] [41] [42] [43] [44] [45] [46] [47] (./main.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 3536 strings out of 480247
- 54064 string characters out of 5896151
- 398461 words of memory out of 5000000
- 21382 multiletter control sequences out of 15000+600000
+ 3547 strings out of 480247
+ 54328 string characters out of 5896151
+ 418489 words of memory out of 5000000
+ 21388 multiletter control sequences out of 15000+600000
  508063 words of font info for 113 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  55i,11n,62p,935b,266s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/en
-c/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cme
-x10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/sy
-mbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (44 pages, 511356 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utm
+r8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (47 pages, 524390 bytes).
 PDF statistics:
- 852 PDF objects out of 1000 (max. 8388607)
- 207 compressed objects within 3 object streams
+ 866 PDF objects out of 1000 (max. 8388607)
+ 216 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  56 words of extra memory for PDF output out of 10000 (max. 10000000)
 

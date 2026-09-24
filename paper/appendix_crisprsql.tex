@@ -1,0 +1,39 @@
+\subsection{crisprSQL per-study summary}
+\label{app:crisprsql-perstudy}
+All 16 constituent studies of the crisprSQL off-target corpus used in the
+Tool 10 replications, machine-extracted from
+\texttt{results/crisprsql\_perstudy.json}. Cleavage is the study's own
+validated off-target readout; the two right-hand columns are Spearman
+correlations of guide GC content and guide--target duplex thermodynamic
+stability against that readout within each study - both near zero in
+almost every study, which is why the sequence-mismatch scorers (not
+composition priors) carry the replicated signal.
+\begin{table}[h]
+\centering\footnotesize
+\caption{crisprSQL constituent studies (16), ranked by target count.}
+\label{tab:crisprsql-perstudy}
+\begin{tabular}{lrrlrrr}
+\hline
+study & targets & genes & genomes & cleav. mean & GC $\rho$ & thermo $\rho$ \\
+\hline
+Finkelstein & 14{,}108 & 0 &  & 0.057 & +0.317 & -0.317 \\
+Tsai_circle & 7{,}374 & 3034 & hg19 & 0.003 & -0.623 & +0.517 \\
+Cameron & 1{,}630 & 903 & hg38 & 0.005 & +0.057 & -0.060 \\
+Tsai & 575 & 286 & hg19 & 0.035 & -0.176 & +0.217 \\
+Anderson & 367 & 194 & mm10{,}rn5 & 0.036 & -0.021 & +0.095 \\
+Listgarten & 272 & 179 & hg19 & 0.037 & -0.245 & +0.246 \\
+Kim16 & 258 & 156 & hg19 & 0.065 & +0.215 & -0.204 \\
+Chen17 & 203 & 146 & hg19 & 0.025 & -0.440 & +0.449 \\
+Kim & 162 & 100 & hg19 & 0.023 & +0.073 & -0.073 \\
+KimChromatin & 141 & 87 & hg19 & 0.057 & +0.067 & -0.054 \\
+Cho & 116 & 71 & hg19 & 0.045 & -0.159 & +0.149 \\
+Ran & 87 & 51 & hg19{,}mm9 & 0.021 & +0.049 & +0.111 \\
+Frock & 86 & 53 & hg19 & 0.003 & +0.095 & -0.095 \\
+Fu & 72 & 0 &  & 0.166 & +0.065 & -0.054 \\
+Kleinstiver & 61 & 39 & hg19 & 0.115 & +0.165 & -0.155 \\
+Slaymaker & 31 & 12 & hg19 & 0.097 & -0.316 & +0.316 \\
+\hline
+total & 25{,}543 & 5{,}311 &  &  &  &  \\
+\hline
+\end{tabular}
+\end{table}
