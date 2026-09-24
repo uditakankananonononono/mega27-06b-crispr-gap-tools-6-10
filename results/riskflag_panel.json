@@ -1,0 +1,53 @@
+{
+  "n_accessions": 3,
+  "records": [
+    {
+      "gene": "HBB",
+      "organism": "human",
+      "accession": "NM_000518",
+      "uid": "1401724401",
+      "seq_len": 628,
+      "gc": 0.5127388535031847,
+      "n_cutsites_scored": 6,
+      "flag_counts": {
+        "LOW": 2,
+        "MODERATE": 4,
+        "HIGH": 0
+      },
+      "risk_mean": 0.22380000000000003,
+      "risk_max": 0.3171
+    },
+    {
+      "gene": "EMX1",
+      "organism": "human",
+      "accession": "XM_054341014",
+      "uid": "2462571100",
+      "seq_len": 7198,
+      "gc": 0.5220894692970269,
+      "n_cutsites_scored": 5,
+      "flag_counts": {
+        "LOW": 2,
+        "MODERATE": 2,
+        "HIGH": 1
+      },
+      "risk_mean": 0.33508000000000004,
+      "risk_max": 0.5205
+    },
+    {
+      "gene": "VEGFA",
+      "organism": "human",
+      "accession": "NM_001317010",
+      "uid": "2432005450",
+      "seq_len": 3537,
+      "gc": 0.5134294599943455,
+      "n_cutsites_scored": 6,
+      "flag_counts": {
+        "LOW": 4,
+        "MODERATE": 0,
+        "HIGH": 2
+      },
+      "risk_mean": 0.2424333333333333,
+      "risk_max": 0.639
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+\section{External tools and dataset manifest}
+Program requirement: 40 external tools and 120+ accession-level datasets per
+project, honestly counted. This manifest is regenerated as the counts move;
+the machine-readable source is \texttt{docs/EXTERNAL\_TOOLS.md} and
+\texttt{results/}. Counting rule: datasets are accession-level and actually
+used; one study's condition matrix is one dataset; no padding.
+
+\subsection{External tools, packages, and resources (25, target 40)}
+\begin{table}[h]\centering\small
+\caption{External tools/resources in use. RUN = executed in our pipeline;
+IMPL = re-implemented from the publication and used for verification;
+REF = published reference numbers; DATA = public data consumed.}\label{tab:tools}
+\begin{tabular}{llp{6.5cm}l}\hline\hline
+\# & Tool/resource & Used for & How \\\hline
+1 & ViennaRNA 2.7.2 & Tool 6 duplex + self-fold scoring & RUN \\
+2 & PyTorch 2.14 & GuideCNN, PairCNN, SequenceGCN & RUN \\
+3 & scikit-learn & GBT/ridge models, metrics & RUN \\
+4 & Biopython & RefSeq fetch, sequence utilities & RUN \\
+5 & NumPy & numerics & RUN \\
+6 & pandas & data handling & RUN \\
+7 & SciPy & Spearman, statistical tests & RUN \\
+8 & matplotlib & figures & RUN \\
+9 & pytest & hermetic test suite & RUN \\
+10 & NCBI E-utilities & accession resolution + sequence & RUN \\
+11 & inDelphi Lib-A (figshare) & Tool 7 training/eval & DATA+RUN \\
+12 & inDelphi targets-libA & Tool 7 target contexts & DATA+RUN \\
+13 & Doench FC+RES & Tool 10 training & DATA+RUN \\
+14 & Doench V1 mouse & Tool 10 evaluation & DATA+RUN \\
+15 & crisprSQL & off-target studies (16 used per-study) & DATA+RUN \\
+16 & Kosicki 2018 loci & Tool 8 validation & REF+DATA \\
+17 & Azimuth/Rule Set 2 & benchmark leader, replicated & IMPL+REF \\
+18 & Common Mechanism & Tool 9 wrap target & REF \\
+19 & SantaLucia 1998 NN model & thermodynamic features & IMPL \\
+20 & GitHub & repository surface & RUN \\
+21 & pdfLaTeX/TeX Live & paper build & RUN \\
+22 & Hsu 2013 MIT score & off-target baseline reference & REF \\
+23 & Doench 2016 CFD score & off-target baseline reference & REF \\
+24 & Lindel (Chen 2019) & Tool 7 reference numbers & REF \\
+25 & inDelphi model (Shen 2018) & Tool 7 reference numbers & REF \\\hline\hline
+\end{tabular}
+\end{table}
+
+\subsection{Dataset manifest (22, target 120+)}
+Accession-level datasets actually used: inDelphi U2OS Lib-A (1); Doench
+FC+RES (1); Doench V1 mouse (1); crisprSQL constituent studies analyzed
+per-study --- Anderson, Cameron, Chen17, Cho, Finkelstein, Frock, Fu, Kim,
+Kim16, KimChromatin, Kleinstiver, Listgarten, Ran, Slaymaker, Tsai,
+Tsai\_circle (16); RefSeq accessions NM\_028012.4 (Xrcc4), NM\_011081.4
+(Piga), NM\_007657.4 (Cd9) (3). The RefSeq validation panel
+(\texttt{results/riskflag\_panel.json}) extends the RefSeq count and is
+reported with the Tool 8 results; inDelphi's four additional cell lines, the
+Lindel training set, Wang ribosomal/non-ribosomal, Koike-Yusa, Chari 2015,
+and CRISPRscan zebrafish are queued pulls with fixed URLs recorded in
+\texttt{data/PROVENANCE.md} as they land.
