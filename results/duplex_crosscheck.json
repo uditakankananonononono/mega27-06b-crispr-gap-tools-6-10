@@ -1,0 +1,23 @@
+{
+ "partA_engine_crosscheck": {
+  "n_pairs": 2000,
+  "engine_ours": "ViennaRNA 2.7.2 duplexfold",
+  "engine_check": "primer3-py 2.3.1 calc_heterodimer (kcal/mol)",
+  "spearman_energy_scales": 0.7115,
+  "vrna_flag_rate_at_-12": 0.16,
+  "flag_agreement_matched_rate": 0.859,
+  "cohens_kappa": 0.4754,
+  "vrna_mfe_mean": -8.221,
+  "primer3_dg_mean": -3.95
+ },
+ "partB_chopchop_rule_audit": {
+  "n_guides": 4692,
+  "gc_window": [
+   0.35,
+   0.7
+  ],
+  "gc_violation_rate": 0.1338,
+  "polyT_TTTT_share": 0.0,
+  "ref": "CHOPCHOP v3 default rules, Labun 2019 NAR 47:W171"
+ }
+}

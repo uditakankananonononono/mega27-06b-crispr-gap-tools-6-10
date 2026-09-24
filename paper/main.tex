@@ -222,6 +222,20 @@ published guide pairs. Same-gene sets --- the realistic multiplex case ---
 carry the highest risk.}
 \label{fig:realguide}\end{figure}
 
+\subsection{Independent thermodynamic cross-check}
+Duplex flags depend on the energy engine, so we re-scored 2{,}000 seeded
+real-guide pairs with primer3-py (an independent nearest-neighbor
+thermodynamics implementation) alongside ViennaRNA
+(\texttt{results/duplex\_crosscheck.json}). The two engines' energy
+scales correlate at Spearman $0.711$, and flag agreement at matched flag
+rates is $85.9\%$ (Cohen's $\kappa = 0.475$): the engines agree on the
+rank ordering of pairs but disagree on calibration (mean $-8.2$ vs
+$-4.0$~kcal/mol). Consequence for users: treat borderline flags as
+engine-sensitive and re-check critical pairs under a second engine; the
+screener exposes both. A CHOPCHOP-rule audit of the same 4{,}692 real
+guides finds $13.4\%$ GC-window violations and zero poly-T stretches -
+published guide sets are filtered for synthesis but not for GC.
+
 \section{Tool 7: Repair-outcome annotator}
 \subsection{Problem}
 Guide designers optimize cutting activity, but the repair outcome decides the

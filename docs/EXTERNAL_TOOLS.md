@@ -46,13 +46,14 @@ numbers/verification source; DATA = public dataset/data source consumed.
 | 37 | Chari 2015 (sgRNA Designer 1.0) | published tool | 20-mer motif-classifier replication on RES->V1 split: 0.340 (results/classic_scorers2.json) | IMPL |
 | 38 | WU-CRISPR (Wong 2015) | published tool | structural/composition (ViennaRNA self-fold) replication on RES->V1: 0.318 (same file) | IMPL |
 
-Current honest count: 38 external tools/resources (14 RUN, 5 DATA+RUN,
-14 IMPL/IMPL+REF, 3 REF, 2 DATA). All five wave-2 additions are real
-replications benchmarked in-repo on the same harnesses as the originals
-(off-target: crisprSQL LOSO logistic; efficacy: RES->V1 clean split).
-Target: 40. Remaining gap plan (honest candidates): FOREcasT (Allen 2019)
-official weights head-to-head like Lindel; CHOPCHOP v3 design rules
-(Labun 2019) verification of our GC/clamp rules.
+| 39 | primer3-py 2.3.1 (UNAFold-derived NN thermodynamics) | package | independent duplex-engine cross-check of Tool 6 flags: Spearman 0.711 vs ViennaRNA on 2,000 real-guide pairs, kappa 0.475 at matched flag rate (results/duplex_crosscheck.json) | RUN |
+| 40 | CHOPCHOP v3 design rules (Labun 2019) | published tool | design-rule audit of 4,692 real published guides: GC-window [0.35,0.70] violation 0.134, poly-T 0.0 (same file) | REF |
+
+Current honest count: 40 external tools/resources (15 RUN, 5 DATA+RUN,
+14 IMPL/IMPL+REF, 4 REF, 2 DATA). TARGET REACHED. FOREcasT (Allen 2019)
+was attempted as a further addition: the official shendurelab/FOREcasT
+repo is not on GitHub anymore (404, org search negative, 2026-09-24) -
+recorded as a dead end, not counted.
 
 ## Datasets consumed (honest count, accession-level per program rule)
 1. inDelphi U2OS Lib-A (events + targets; one study dataset)
