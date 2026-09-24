@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  24 SEP 2026 20:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  24 SEP 2026 20:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -358,55 +358,56 @@ Overfull \hbox (4.02785pt too wide) in paragraph at lines 542--548
 the five scripts un-der \OT1/pcr/m/n/12 scripts/
  []
 
-[15] [16] [17]
+[15] [16] (./appendix_erroranalysis.tex [17]) [18]
 LaTeX Font Info:    Trying to load font information for OMS+pcr on input line 6
-44.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omspcr.fd
+45.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omspcr.fd
 File: omspcr.fd 
 )
 LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 644.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 645.
 
-Overfull \hbox (9.47386pt too wide) in paragraph at lines 644--657
+Overfull \hbox (9.47386pt too wide) in paragraph at lines 645--658
 \OT1/pcr/m/n/10.95 Output: per-guide penalties, set compatibility, removal rank
 ing 
  []
 
-
-Overfull \hbox (22.61385pt too wide) in paragraph at lines 660--667
+[19]
+Overfull \hbox (22.61385pt too wide) in paragraph at lines 661--668
 \OT1/pcr/m/n/10.95 Output: P(frameshift), P(+1 insertion), P(MH deletion), prec
 ision 
  []
 
-[18] [19] [20] (./main.aux) ) 
+[20] [21] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 3373 strings out of 480247
- 50337 string characters out of 5896151
+ 3384 strings out of 480247
+ 50568 string characters out of 5896151
  344286 words of memory out of 5000000
- 21263 multiletter control sequences out of 15000+600000
- 500879 words of font info for 93 fonts, out of 8000000 for 9000
+ 21269 multiletter control sequences out of 15000+600000
+ 501804 words of font info for 96 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 55i,10n,62p,384b,243s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/bas
-e/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols
-/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (20 pages, 322594 bytes).
+ 55i,10n,62p,384b,244s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.
+enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+sy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm
+10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (21 pages, 326785 bytes).
 PDF statistics:
- 420 PDF objects out of 1000 (max. 8388607)
- 120 compressed objects within 2 object streams
+ 423 PDF objects out of 1000 (max. 8388607)
+ 122 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

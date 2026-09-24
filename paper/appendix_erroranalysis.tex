@@ -1,0 +1,71 @@
+\section{Extended error analysis}
+This appendix dissects the largest residual errors of each tool and identifies
+their causes; every claim traces to a committed artifact in \texttt{results/}.
+
+\subsection{Tool 10: the CD15 outlier}
+Across every model in the break-attempt ladder, CD15 is the worst-predicted
+V1 gene (v3: $\rho = 0.155$ against a cross-gene mean near $0.51$; v4:
+$0.278$). Three candidate explanations, in decreasing order of support:
+(i) \emph{assay-window mismatch} --- CD15 guide activities in V1 are
+compressed toward the middle of the percent-rank scale, so the rank
+information available to any regressor is intrinsically weaker;
+(ii) \emph{sequence-context shift} --- the CD15 target contexts have GC
+content skewed relative to the RES training pool, placing much of the CD15
+test mass outside the feature region where the training fit is tight;
+(iii) \emph{gene-specific biology} --- chromatin accessibility at the CD15
+locus in the mouse line used for V1 is not represented in the human RES
+selections. Explanations (i) and (ii) are checkable from the data we ship;
+(iii) is a hypothesis. We do not exclude CD15 from headline numbers.
+
+\subsection{Tool 10: the cross-species transfer penalty is real}
+Before the contamination fix, our CNN appeared to transfer from human RES to
+mouse V1 with no penalty ($0.665 \to 0.781$); after removing the 1{,}836
+overlapping guides the same model drops to $0.358$ on mouse --- a $46\%$
+relative penalty. The ridge and GNN baselines are flat at $\approx 0.25$ on
+both sides, meaning they learn less human signal to lose. The clean ordering
+(deep model learns more human-specific signal and loses more of it in
+transfer) is itself a finding about what these models capture: a large share
+of learnable on-target signal is species- or assay-specific, not universal
+sequence determinism.
+
+\subsection{Tool 7: microhomology-deletion share resists sequence-only models}
+Our tuned GBT reaches Spearman $0.210$ on MH-deletion share; enumerating
+microhomology pairs directly and scoring them by length and GC gives
+$0.01$--$0.11$. The gap between the learned model and the mechanistic
+enumerator suggests the enumerator's assumption (deletion probability
+factorizes over MH length/composition) is wrong in the inDelphi data, where
+deletion spectra show strong position-dependent context effects that a
+pairwise enumerator cannot express. The negative result is preserved in
+\texttt{results/mhdel\_improve.json} with both variants.
+
+\subsection{Tool 7: why $+1$ insertion is the easiest target}
+The $+1$-insertion frequency achieves $\rho = 0.60$ because it is dominated
+by a single mechanistic variable --- the identity of the nucleotides flanking
+the cut site, which template the single-base insertion. Position-specific
+one-hots capture it directly; frameshift and MH-deletion outcomes depend on
+longer-range context that our feature families only partially express.
+
+\subsection{Tool 6: where the duplex model over-flags}
+RNA-duplex scoring treats guide:guide pairing as concentration-independent.
+In real multiplexed transfections, guides are expressed from separate
+transcripts at unequal levels; a thermodynamically plausible duplex between a
+highly expressed and a weakly expressed guide may never form at an effective
+rate. Our screener therefore over-flags relative to any kinetic ground truth.
+We mitigate by reporting both an energy-ranked list and the calibrated binary
+flag, and by quantifying the flag-rate enrichment against cross-gene and
+random-spacer controls rather than claiming absolute interference rates.
+
+\subsection{Tool 8: validation is locus-limited}
+The rearrangement-risk flagger is validated on the three Kosicki~2018 loci
+only. Large-deletion propensity is known to be locus-dependent (chromatin,
+replication timing); we therefore present the risk score as a ranking device
+within a locus, not a calibrated probability across the genome, until broader
+validation data (e.g.\ long-read repair outcome sets) are integrated.
+
+\subsection{Tool 9: the biosecurity wrapper's blind spot}
+Because the Common Mechanism's multi-GB databases cannot run on free-tier
+hardware, Tool 9's local pre-screen is a homology-and-motif fast filter whose
+output is advisory; the authoritative decision is delegated to a full Common
+Mechanism run at deployment. The wrapper's value is pipeline ergonomics
+(one command, one audit record), not a new screening capability --- stated
+plainly to avoid overclaiming.
