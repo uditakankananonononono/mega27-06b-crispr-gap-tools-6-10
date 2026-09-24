@@ -1,0 +1,26 @@
+{
+  "locus": "NM_028012.4",
+  "n_cuts_scanned": 43,
+  "n_high": 0,
+  "n_moderate": 18,
+  "top3": [
+    {
+      "cut": 925,
+      "score": 0.48,
+      "flag": "MODERATE",
+      "max_span": 500
+    },
+    {
+      "cut": 800,
+      "score": 0.3729,
+      "flag": "MODERATE",
+      "max_span": 434
+    },
+    {
+      "cut": 750,
+      "score": 0.3504,
+      "flag": "MODERATE",
+      "max_span": 434
+    }
+  ]
+}
