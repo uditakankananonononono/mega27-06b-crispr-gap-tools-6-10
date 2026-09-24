@@ -69,6 +69,26 @@ Human FC+RES (5,310 guides, 30-mer context, drug-gene-rank activity) and mouse V
 \subsection{Real-locus sequence}
 Mouse Xrcc4 mRNA (NM\_028012.4) fetched live from NCBI for risk-flagger validation.
 
+\section{Methods shared across tools}
+\subsection{Sequence featurization}
+DNA sequences are encoded as (i) per-position one-hot matrices with alphabet
+order A,C,G,T and zero rows for ambiguous bases, (ii) dinucleotide one-hots,
+(iii) $4^k$ $k$-mer count vectors, and (iv) thermodynamic features from the
+SantaLucia-1998 unified nearest-neighbour set, $\Delta G(s) = \sum_i \Delta G_{s_i s_{i+1}}$.
+\subsection{Model architectures}
+\textbf{GuideCNN}: parallel 1-D convolutions (kernel widths 3,5,7; 24--40
+filters), batch normalization and ReLU, concatenated and passed through a
+two-layer MLP head with dropout. \textbf{PairCNN}: same family over the
+9-channel guide:target alignment encoding. \textbf{SequenceGCN}: a pure-PyTorch
+GCN over the $k$-mer transition graph of a sequence (nodes $=$ distinct
+3-mers, edges $=$ observed transitions, symmetrized with self-loops and
+degree-normalized), two graph convolutions, global mean pooling, linear head.
+\subsection{Training protocol}
+All models train with Adam (lr $2\times10^{-3}$--$5\times10^{-3}$,
+weight decay $10^{-4}$), MSE loss, batch 64, early stopping (patience 8) on a
+held-out validation split, fixed seeds. Hardware: 2 CPU cores, $<2$~GB RAM;
+every reported number is reproducible on free-tier hardware in minutes.
+
 \section{Tool 6: Multiplex cross-guide interference screener}
 \subsection{Model}
 For guides $g_i, g_j$, the duplex channel uses ViennaRNA \citep{lorenz2011}
@@ -85,6 +105,13 @@ A 2-layer GCN $\hat{s} = W_2\,\sigma(\tilde{A}\,W_1 X)$ propagates
 interference; removal priority is the ranking of $\hat{s}$, validated against
 brute-force leave-one-out compatibility.
 \end{definition}
+\subsection{Implementation}
+The screener enumerates all guide pairs, computes ViennaRNA duplexfold and
+cofold MFEs, contiguous complementarity, cut-distance competition, and
+single-guide self-fold MFE; per-guide penalties aggregate flagged pairs and
+self-fold flags; set-level compatibility is the fraction of unflagged pairs.
+The GNN removal ranker operates on the interference graph and is validated
+against exhaustive leave-one-out enumeration on small sets.
 \subsection{Results}
 CNN/GNN surrogates for single-strand fold MFE reach Spearman 0.63/0.64 against
 the ViennaRNA teacher (ridge on 3-mers 0.65): parity, not improvement;
@@ -154,6 +181,19 @@ labels and V1 percent-rank labels, not improved biology. Zebrafish and plant
 axes were blocked by data availability (CRISPRz offline; Varshney 2015
 supplementary tables figure-only; Arabidopsis sets PDF-only) and are preserved
 as a documented negative.
+
+\section{Related Work}
+On-target activity: Rule Set 2/Azimuth \cite{doench2016}, CRISPRon, DeepCRISPR.
+Off-target: the MIT score \cite{hsu2013}, CFD, and deep models.
+Repair outcome: inDelphi \cite{shen2018}, Lindel \cite{chen2019}, FORECasT.
+Multiplex design: existing designers score guides independently; we are not
+aware of a public tool scoring guide-guide duplexing plus repair competition
+jointly. Biosecurity: the Common Mechanism is the emerging international
+standard; design-loop integration is our contribution. Cross-species transfer:
+per-species tools exist (e.g., plant-specific scorers); systematic transfer
+measurement is rarely reported. Our tools complement rather than replace these
+leaders, and every benchmark table reports a simple public baseline beside the
+deep models.
 
 \section{Limitations}
 Single-replicate U2OS for tool 7; mechanistic (uncalibrated) risk scores for
