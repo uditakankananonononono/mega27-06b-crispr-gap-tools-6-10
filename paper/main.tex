@@ -127,6 +127,18 @@ GCN (3-mer graph) & 0.645 & 0.645 \\\hline\hline
 \end{table}
 
 \section{Tool 7: Repair-outcome annotator}
+\subsection{Problem}
+Guide designers optimize cutting activity, but the repair outcome decides the
+experiment: a knockout needs frameshifts, a precise edit needs a specific
+allele, and an in-frame deletion can silently preserve function. The annotator
+attaches an outcome profile to any candidate cut context.
+\subsection{Features and models}
+Per-position one-hot over the 55-nt context, plus engineered repair features:
+cut-spanning microhomology, offset microhomology at deletion-relevant
+distances $d \in \{2,3,4,5,7,10,15\}$, local and global GC, and
+nearest-neighbour duplex stability of the two flanks. Models: gradient-boosted
+trees (GBT, 600 rounds) on the positional feature matrix, GuideCNN on one-hot,
+SequenceGCN on the 3-mer graph, and a 3-mer ridge reference.
 \subsection{Model and math}
 Per-site outcome statistics from inDelphi events: frameshift fraction over
 Cas9-induced indels, +1 insertion fraction, microhomology-deletion fraction.
@@ -166,6 +178,14 @@ passing unscreened sequences. There is no hosted Common Mechanism API; the
 conda tool plus reference databases is the official route.
 
 \section{Tool 10: Cross-species transfer evaluator}
+\subsection{Problem and diagnostics}
+Efficacy models are trained almost entirely on human cell-line screens and
+applied elsewhere without checking. The evaluator trains on species A, tests
+on species B, and reports the transfer delta next to distribution-shift
+diagnostics: GC-content delta and the Jensen-Shannon divergence
+$D_{JS}(P\|Q) = \tfrac12 D_{KL}(P\|M) + \tfrac12 D_{KL}(Q\|M)$,
+$M = \tfrac12(P+Q)$, between 3-mer distributions of the two guide sets.
+For human$\to$mouse the shift is small (GC delta 0.041, $D_{JS}=0.0040$ nats).
 \begin{table}[h]\centering
 \caption{Human (FC+RES) $\to$ mouse (V1) transfer, Spearman.}\label{tab:transfer}
 \begin{tabular}{lccc}\hline\hline
