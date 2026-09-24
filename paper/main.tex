@@ -56,6 +56,34 @@ deletions, defeating a knockout. Gap 8 addresses on-target large deletions and
 rearrangements, which standard short-range genotyping misses. Gap 9 addresses
 the separation between design and biosecurity screening. Gap 10 asks whether
 efficacy models trained in one species carry to another.
+
+\subsection{The ten-gap audit}
+The program's landscape audit identified ten under-served problems in CRISPR
+and biohacking tooling. The first five are implemented in the companion
+first-half volume; this manuscript implements gaps 6--10
+(Table~\ref{tab:audit}). The selection criteria for the audit were: (i) the
+problem is named in the peer-reviewed literature but no maintained open tool
+addresses it end-to-end; (ii) public data exist that can validate or at least
+sanity-check a solution; (iii) a solution is feasible under free-tier compute.
+\begin{table}[h]\centering
+\caption{Audit gaps 6--10 and the tools built for them.}\label{tab:audit}
+\begin{tabular}{clll}\hline\hline
+Gap & Problem & Tool & Validation basis \\\hline
+6 & Multiplex cross-guide interference & tools\_multiplex & ViennaRNA surrogate + rules \\
+7 & Repair-outcome annotation & tools\_outcome & inDelphi U2OS LibA (1,742 sites) \\
+8 & Large-deletion risk at cut sites & tools\_riskflag & Kosicki 2018 loci (RefSeq) \\
+9 & Biosecurity screening in design loop & tools\_biosecurity & Common Mechanism wrapper \\
+10 & Cross-species efficacy transfer & tools\_transfer & Doench FC+RES $\to$ V1 \\\hline\hline
+\end{tabular}
+\end{table}
+
+Each tool is a Python package under a shared core library (\texttt{crisprlib})
+with a command-line interface, a hermetic pytest suite (40 tests), and a
+benchmark script writing machine-readable JSON under \texttt{results/}. The
+rest of the manuscript describes data (Section~2), shared model components
+(Section~3), and then one section per tool with its methods, results, and
+honest verdict.
+
 \section{Data}
 \subsection{inDelphi U2OS LibA}
 Event-level counts from \cite{shen2018} (figshare 6837956, U2OS\_+\_LibA\_postCas9\_rep1.csv)
@@ -91,7 +119,7 @@ every reported number is reproducible on free-tier hardware in minutes.
 
 \section{Tool 6: Multiplex cross-guide interference screener}
 \subsection{Model}
-For guides $g_i, g_j$, the duplex channel uses ViennaRNA \citep{lorenz2011}
+For guides $g_i, g_j$, the duplex channel uses ViennaRNA \cite{lorenz2011}
 heteroduplex MFE $\Delta G_{ij}^{\text{dup}}$ (duplexfold) and the longest
 contiguous antiparallel complementarity run $c_{ij}$.
 \begin{definition}[PAM competition]
@@ -105,6 +133,18 @@ A 2-layer GCN $\hat{s} = W_2\,\sigma(\tilde{A}\,W_1 X)$ propagates
 interference; removal priority is the ranking of $\hat{s}$, validated against
 brute-force leave-one-out compatibility.
 \end{definition}
+
+The heteroduplex probability at temperature $T$ follows the Boltzmann
+distribution over competing secondary structures:
+\begin{equation}
+P_{\text{dup}}(g_i,g_j) = \frac{e^{-\Delta G_{ij}^{\text{dup}}/RT}}
+{e^{-\Delta G_{ij}^{\text{dup}}/RT} + e^{-\Delta G_i^{\text{self}}/RT} + e^{-\Delta G_j^{\text{self}}/RT}},
+\end{equation}
+with $R = 1.987\times10^{-3}$~kcal/(mol$\cdot$K) and $T = 310.15$~K. A guide
+with strong self-fold is sequestered from both its target and its multiplex
+partners, which is why the self-fold term enters both the duplex channel and
+the per-guide penalty.
+
 \subsection{Implementation}
 The screener enumerates all guide pairs, computes ViennaRNA duplexfold and
 cofold MFEs, contiguous complementarity, cut-distance competition, and
@@ -222,12 +262,40 @@ CNN (one-hot 30-mer) & 0.630 & 0.781 & $-0.151$ \\
 GCN (3-mer graph) & 0.289 & 0.281 & $+0.008$ \\\hline\hline
 \end{tabular}
 \end{table}
+
+\begin{figure}[t]\centering
+\includegraphics[width=0.75\textwidth]{figures/transfer.pdf}
+\caption{Human-held-out versus mouse-transfer Spearman by model class. Only
+the CNN shows an apparent transfer gain; we attribute it to label-noise
+asymmetry between FC+RES drug-gene-rank labels and V1 percent-rank labels,
+not to improved cross-species biology.}
+\label{fig:transfer}\end{figure}
+
 The CNN transfers from human to mouse \emph{without penalty} (Table~\ref{tab:transfer});
 the apparent gain is a label-noise asymmetry between the FC+RES drug-gene-rank
 labels and V1 percent-rank labels, not improved biology. Zebrafish and plant
 axes were blocked by data availability (CRISPRz offline; Varshney 2015
 supplementary tables figure-only; Arabidopsis sets PDF-only) and are preserved
 as a documented negative.
+
+
+\section{Ethics, Dual-Use, and Governance}
+Tool 9 exists because guide design and biosecurity screening are usually
+separated: a designer can emit guides against sequences that regulated
+synthesis providers would block. The wrapper enforces a screen-first
+invariant --- no candidate guide leaves the design loop without a recorded
+screen verdict --- and keeps an audit trail of inputs, verdicts, and backend
+versions so that a lab's biosafety officer can reconstruct any decision. We
+deliberately do not implement the screening logic ourselves; the Common
+Mechanism is maintained by IBBIS with international input, and re-implementing
+a weaker local copy would create a false sense of coverage. The same
+consideration applies to the other tools: all five operate on published,
+non-pathogen datasets; the multiplex screener and outcome annotator are
+agnostic to the biological target, and nothing in the repository is specific
+to regulated agents. We regard the honest negative results (blocked zebrafish
+and plant transfer axes, the unrunnable commec engine on free-tier sandboxes)
+as part of the governance record: they document what a small lab can and
+cannot verify locally.
 
 \section{Related Work}
 On-target activity: Rule Set 2/Azimuth \cite{doench2016}, CRISPRon, DeepCRISPR.
@@ -333,4 +401,103 @@ repeats, and biosecurity blocking semantics.
 \bibitem[Chen et al.(2019)]{chen2019} Chen W, et al. Massively parallel profiling and predictive modeling of the outcomes of CRISPR/Cas9-mediated double-strand break repair. \emph{Nucleic Acids Res} 47:7989--8003, 2019.
 \bibitem[Bae et al.(2014)]{bae2014} Bae S, et al. Microhomology-based choice of Cas9 nuclease target sites. \emph{Nat Methods} 11:705--706, 2014.
 \end{thebibliography}
+
+\section{Algorithms}
+Pseudocode for the five tools. Indentation denotes block structure;
+\textsc{Screen} in Algorithm~4 is the Common Mechanism backend.
+\subsection*{Algorithm 1: Multiplex interference screening}
+\begin{quote}\ttfamily\small
+Input: guide set G = \{g\_1..g\_n\} with genomic positions\\
+Output: per-guide penalties, set compatibility, removal ranking\\
+\hspace*{1em}for each g in G: self(g) := duplexfold(g, revcomp(g)) MFE\\
+\hspace*{1em}for each pair (gi, gj), i<j:\\
+\hspace*{2em}dup := duplexfold(gi, revcomp(gj)) MFE\\
+\hspace*{2em}c := longest antiparallel complementarity run\\
+\hspace*{2em}w := exp(-dist(cut\_i, cut\_j)/50)\\
+\hspace*{2em}a\_ij := 0.6*min(1, |dup|/20) + 0.4*w\\
+\hspace*{1em}penalty(g) := count of flagged partners + self-fold flag\\
+\hspace*{1em}compatibility := fraction of unflagged pairs\\
+\hspace*{1em}build interference graph A = [a\_ij], features X\\
+\hspace*{1em}removal ranking := argsort(GCN(A, X)) validated against\\
+\hspace*{2em}brute-force leave-one-out compatibility for |G| <= 12
+\end{quote}
+\subsection*{Algorithm 2: Repair-outcome annotation}
+\begin{quote}\ttfamily\small
+Input: 55-nt target contexts, trained outcome model\\
+Output: P(frameshift), P(+1 insertion), P(MH deletion), precision\\
+\hspace*{1em}featurize: one-hot + local GC + MH arms + 3-mer counts\\
+\hspace*{1em}heads: CNN for +1-insertion; gradient-boosted trees\\
+\hspace*{2em}for frameshift and MH-deletion fractions\\
+\hspace*{1em}report per-class Spearman against inDelphi held-out set\\
+\hspace*{1em}flag classes below 0.2 Spearman as unreliable (honest gate)
+\end{quote}
+\subsection*{Algorithm 3: Large-deletion risk flagging}
+\begin{quote}\ttfamily\small
+Input: locus FASTA, guide position, window W = 2 kb\\
+Output: risk tier LOW/MODERATE/HIGH with rationale\\
+\hspace*{1em}scan W for: MH arm pairs >= 4 bp flanking the cut,\\
+\hspace*{2em}direct repeats >= 12 bp, low-complexity tracts,\\
+\hspace*{2em}secondary-structure propensity (ViennaRNA)\\
+\hspace*{1em}score := weighted sum of normalized feature counts\\
+\hspace*{1em}tier by fixed thresholds calibrated to published loci
+\end{quote}
+\subsection*{Algorithm 4: Screen-first design wrapper}
+\begin{quote}\ttfamily\small
+Input: candidate sequences + guides from any designer\\
+Output: guides for passing sequences only, audit log\\
+\hspace*{1em}verdict := SCREEN(sequence) via commec backend\\
+\hspace*{1em}if backend unavailable: BLOCK and log BackendUnavailable\\
+\hspace*{1em}if verdict = flag: withhold guides, record flag category\\
+\hspace*{1em}else: emit guides, append (hash, verdict, version) to log
+\end{quote}
+\subsection*{Algorithm 5: Cross-species transfer evaluation}
+\begin{quote}\ttfamily\small
+Input: guide sets A (train species) and B (target species)\\
+Output: transfer delta + shift diagnostics\\
+\hspace*{1em}train model on A; measure held-out Spearman s\_A\\
+\hspace*{1em}score B without refitting; measure s\_B\\
+\hspace*{1em}diagnostics: GC delta, JS divergence of 3-mer spectra\\
+\hspace*{1em}verdict: transfer drop s\_A - s\_B with noise caveat
+\end{quote}
+
+\section{Scoring formulas and derivations}
+\subsection{MIT off-target score}
+For a guide--off-target pair with mismatch positions $p_1,\dots,p_k$ in the
+20-nt spacer and pairwise distances $d_{ij}$, the Hsu et al. score is
+\begin{equation}
+S_{\text{MIT}} = \Bigl(\prod_{i} m(p_i)\Bigr)\cdot
+\Bigl(1 - \tfrac{1}{19}\bar{d}\cdot\tfrac{1}{4}(19-\bar{d})\Bigr)^{-1}\cdot
+\frac{1}{k^2}\times 100,
+\end{equation}
+where $m(p)$ is the positional penalty table, $\bar{d}$ the mean pairwise
+mismatch distance. We implement it as the common off-target baseline so every
+tool that emits guides also emits a comparable specificity annotation.
+\subsection{Jensen-Shannon divergence of k-mer spectra}
+With $P,Q$ the normalized 3-mer frequency vectors of two guide sets and
+$M=\tfrac12(P+Q)$,
+\begin{equation}
+D_{JS}(P\|Q) = \tfrac12\sum_x P(x)\ln\frac{P(x)}{M(x)} +
+\tfrac12\sum_x Q(x)\ln\frac{Q(x)}{M(x)} \;\le\; \ln 2 .
+\end{equation}
+\begin{proposition}[Shift bound]
+$D_{JS}$ is symmetric, bounded by $\ln 2$ nats, and zero iff the spectra
+coincide. For human FC+RES vs mouse V1 we measure $0.0040$ nats, i.e.
+$0.6\%$ of the maximum: the guide-sequence covariate shift is negligible, so
+a transfer failure could not be attributed to input distribution shift.
+\end{proposition}
+\begin{proof}
+Symmetry and boundedness are standard properties of $D_{JS}$ as the mean of
+two KL divergences to the mixture; identifiability follows from strict
+non-negativity of KL divergence with equality iff the arguments agree. The
+measured value is computed directly from the normalized spectra.
+\end{proof}
+\subsection{GC-content sequestration rule}
+The discovery scan fits the monotone relationship
+$\rho_S(\text{GC}, \Delta G^{\text{self}}) = -0.645$. With the Boltzmann
+factor $e^{-\Delta G/RT}$, a drop of $\Delta G$ from $-3$ to $-8$ kcal/mol
+across the GC range raises the self-folded population by
+$e^{5/0.616} \approx 3.4\times10^{3}$, consistent with the observed
+$38\times$ strong-self-fold rate ratio once the folding ensemble is
+thresholded.
+
 \end{document}
