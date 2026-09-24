@@ -38,9 +38,10 @@ numbers/verification source; DATA = public dataset/data source consumed.
 | 30 | openpyxl | package | V2_data.xlsx parsing (Doench 2016 V2) | RUN |
 | 31 | bioRxiv | preprint server | Azimuth 021568 full text for exact protocol verification (within-FC vs same-split numbers) | DATA |
 | 32 | NCBI RefSeq | database | 111 mRNA records consumed by Tool 8 panel | DATA |
+| 33 | Bae 2014 microhomology score | published model | length-weighted MH score implemented (crisprlib.featurize.microhomology_score), used in Tool 7 features and Tool 8 flagger | IMPL |
 
-Current honest count: 32 external tools/resources (14 RUN, 5 DATA+RUN,
-8 IMPL/IMPL+REF, 3 REF, 2 DATA). Lindel was upgraded from REF to RUN: its official
+Current honest count: 33 external tools/resources (14 RUN, 5 DATA+RUN,
+9 IMPL/IMPL+REF, 3 REF, 2 DATA). Lindel was upgraded from REF to RUN: its official
 published weights now execute in-repo for a real head-to-head. Target: 40. Gap plan: additional public datasets
 (Lindel training set, Wang/Koike-Yusa viability, Chari 2015, CRISPRscan
 zebrafish, inDelphi additional cell lines) and verification implementations

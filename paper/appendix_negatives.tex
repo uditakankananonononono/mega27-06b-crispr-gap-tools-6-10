@@ -1,0 +1,70 @@
+\section{Negative results register}
+Every failed or retracted result in this project is preserved here with its
+evidence file. We consider this register a deliverable: the negatives are
+what make the surviving claims trustworthy.
+
+\subsection{Benchmark-ladder negatives (Azimuth RES$\to$V1 clean split)}
+All numbers are mean per-gene Spearman on V1 mouse (9 genes), train RES
+human only unless stated; the bar is the same-split Rule Set 2 replication,
+$0.569$ (\texttt{results/beat\_azimuth\_v*.json}).
+\begin{itemize}
+\item \textbf{v1 ridge 0.268, v2 GNN 0.218}: linear and graph baselines far
+below the bar; established that the transfer gap is not a model-capacity
+issue at the shallow end.
+\item \textbf{v3 GBT 0.480, v4 rank-ensemble 0.474}: published-style
+gradient boosting on our feature set closes most of the gap but not all;
+ensembling ranks did not help.
+\item \textbf{v5 deep-stack, tuned, 0.370}: our strongest-looking
+architecture collapsed under a paired bootstrap ($p = 1.0$ for leader
+$\geq$ challenger). Two flaws were found: leaky stacking (test-fold deep
+features in training) and aggressive hyperparameter tuning on the human
+assay. Both were corrected in v6.
+\item \textbf{v6 leak-free OOF stack 0.490, $p = 0.9996$}: with
+out-of-fold deep meta-features and the leader's exact conservative
+hyperparameters, the challenger recovered $+0.12$ over v5 yet still loses.
+Conclusion: deep meta-features carry human-assay signal that does not
+transfer to mouse.
+\item \textbf{v7 multi-assay RES+V2 0.547, $p = 0.146$}: adding the Doench
+2016 V2 A375 dataset (4{,}194 guides) to the leader's exact features and
+hyperparameters made transfer \emph{worse}, not better. Same-species assay
+data does not fix cross-species transfer; assay context dominates data
+volume.
+\item \textbf{Retracted ``break'' 0.792}: an early run appeared to beat the
+bar but mixed FC test guides into RES training data (1{,}836 overlapping
+30-mers with V1). Retracted in commit \texttt{a22ba74}; the loader now
+enforces \texttt{drug != 'nodrug'} and a hermetic test guards the filter.
+\end{itemize}
+
+\subsection{Repair-outcome negatives (Tool 7)}
+\begin{itemize}
+\item \textbf{Microhomology-enumeration model 0.01--0.11}
+(\texttt{results/mhdel\_improve.json}): an explicit MH-deletion enumerator
+scored near zero against observed MH-deletion rates; sequence-local MH
+features alone do not determine deletion usage. Preserved and replaced by
+the GBT marginal model.
+\item \textbf{Cross-cell-line transfer failure}
+(\texttt{results/outcome\_crosscell.json}): our +1-insertion-rate win over
+the official Lindel model on held-out Lib-A (0.614 vs 0.557) does not
+transfer to Lib-B in the same cell line (0.576 vs 0.646) or across species
+(0.533 vs 0.670). The enumerated per-genotype distribution architecture is
+the better inductive bias.
+\item \textbf{Frameshift gap} (\texttt{results/lindel\_headtohead.json}):
+Lindel leads 0.496 to 0.304 on frameshift frequency; our marginal models
+miss the deletion-length structure that drives frameshift.
+\end{itemize}
+
+\subsection{Model-class negatives}
+The GNN (SequenceGCN) underperforms on every supervised task in this
+project: 0.218 on transfer (v2), 0.047--0.053 on repair outcomes
+(\texttt{results/outcome\_models.json}), 0.154 on microhomology rate. We
+keep it in the toolkit because it wins on the multiplex screening task
+(pairwise graph structure is its natural input), and we report its
+supervised failures rather than silently dropping it.
+
+\subsection{What the negatives changed}
+Each negative altered the project: v5's collapse produced the leak-free
+stacking protocol; v7 killed the ``more human data'' hypothesis and ended
+benchmark-chasing on this split in favor of the paper; the Tool 7 transfer
+failure re-scoped the tool's claims from ``competitive with Lindel'' to
+``competitive in-distribution only''; the retraction produced the
+contamination guard that every later result inherits.
