@@ -32,7 +32,7 @@ X_oh = np.stack([one_hot(s.context, 55) for s in sites]).transpose(0, 2, 1)
 # engineered features (microhomology across the cut, local GC, duplex dG)
 def positional_features(ctx: str) -> np.ndarray:
     oh = one_hot(ctx, 55).reshape(-1)
-    left, right = ctx[:28], ctx[28:]
+    left, right = ctx[:27], ctx[27:]  # empirical cut (grna-libA alignment)
     feats = [microhomology_score(left, right), gc_content(ctx),
              gc_content(left[-10:]), thermo_dg(left[-15:]),
              thermo_dg(right[:15])]

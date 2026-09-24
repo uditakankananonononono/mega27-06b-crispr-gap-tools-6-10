@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  24 SEP 2026 21:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  24 SEP 2026 21:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -301,23 +301,23 @@ around the cut, $\OML/cmm/m/it/12 s[] \OT1/cmr/m/n/12 = [][] \OT1/cmr/bx/n/12 1
 <figures/xrcc4_risk.pdf, id=148, 505.89pt x 216.81pt>
 File: figures/xrcc4_risk.pdf Graphic file (type pdf)
 <use figures/xrcc4_risk.pdf>
-Package pdftex.def Info: figures/xrcc4_risk.pdf  used on input line 252.
+Package pdftex.def Info: figures/xrcc4_risk.pdf  used on input line 286.
 (pdftex.def)             Requested size: 375.80544pt x 161.06213pt.
- [7 <./figures/xrcc4_risk.pdf>] [8]
-<figures/transfer.pdf, id=207, 433.62pt x 260.17201pt>
+ [7] [8 <./figures/xrcc4_risk.pdf>] [9]
+<figures/transfer.pdf, id=210, 433.62pt x 260.17201pt>
 File: figures/transfer.pdf Graphic file (type pdf)
 <use figures/transfer.pdf>
-Package pdftex.def Info: figures/transfer.pdf  used on input line 375.
+Package pdftex.def Info: figures/transfer.pdf  used on input line 409.
 (pdftex.def)             Requested size: 352.31625pt x 211.40112pt.
- [9]
-<figures/azimuth_break.pdf, id=211, 686.565pt x 289.08pt>
+
+[10 <./figures/transfer.pdf>]
+<figures/azimuth_break.pdf, id=263, 686.565pt x 289.08pt>
 File: figures/azimuth_break.pdf Graphic file (type pdf)
 <use figures/azimuth_break.pdf>
-Package pdftex.def Info: figures/azimuth_break.pdf  used on input line 431.
+Package pdftex.def Info: figures/azimuth_break.pdf  used on input line 465.
 (pdftex.def)             Requested size: 469.75502pt x 197.78923pt.
-
-[10 <./figures/transfer.pdf>] [11 <./figures/azimuth_break.pdf>]
-Overfull \hbox (89.81107pt too wide) in paragraph at lines 503--519
+ [11] [12 <./figures/azimuth_break.pdf>]
+Overfull \hbox (89.81107pt too wide) in paragraph at lines 537--553
 \OT1/ptm/m/n/12 deletion frac-tion (Spear-man $\OT1/cmr/m/n/12 0\OML/cmm/m/it/1
 2 :\OT1/cmr/m/n/12 01$\OT1/ptm/m/n/12 --$\OT1/cmr/m/n/12 0\OML/cmm/m/it/12 :\OT
 1/cmr/m/n/12 11$ \OT1/ptm/m/n/12 vs $\OT1/cmr/m/n/12 0\OML/cmm/m/it/12 :\OT1/cm
@@ -325,10 +325,17 @@ r/m/n/12 210$ \OT1/ptm/m/n/12 for the tuned po-si-tional GBT); \OT1/pcr/m/n/12
 results/mhdel[]improve.json\OT1/ptm/m/n/12 .
  []
 
-[12] [13]
-Overfull \hbox (20.62175pt too wide) in paragraph at lines 577--585
+[13]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (20.62175pt too wide) in paragraph at lines 611--619
  [][] 
  []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 (./appendix_toolsdata.tex
 Overfull \hbox (109.20479pt too wide) in paragraph at lines 2--7
@@ -336,33 +343,37 @@ Overfull \hbox (109.20479pt too wide) in paragraph at lines 2--7
 the machine-readable source is \OT1/pcr/m/n/12 docs/EXTERNAL[]TOOLS.md
  []
 
-[14]) (./appendix_protocols.tex [15] [16]
+[14]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (./appendix_protocols.tex [15] [16]
 Overfull \hbox (38.17764pt too wide) in paragraph at lines 68--76
 \OT1/ptm/m/n/12 of ran-dom 20-nt spac-ers matched in length. \OT1/ptm/b/n/12 Sc
 or-ing. \OT1/ptm/m/n/12 Each pair is scored with \OT1/pcr/m/n/12 RNAduplex\OT1/
 ptm/m/n/12 /\OT1/pcr/m/n/12 duplexfold
  []
 
-)
-Overfull \hbox (5.64679pt too wide) in paragraph at lines 590--596
+[17])
+Overfull \hbox (5.64679pt too wide) in paragraph at lines 624--630
 \OT1/ptm/m/n/12 Every re-ported num-ber re-gen-er-ates from the repos-i-tory: \
 OT1/pcr/m/n/12 pip install torch --index-url
  []
 
 
-Overfull \hbox (39.6688pt too wide) in paragraph at lines 590--596
+Overfull \hbox (39.6688pt too wide) in paragraph at lines 624--630
 \OT1/pcr/m/n/12 https://download.pytorch.org/whl/cpu\OT1/ptm/m/n/12 , \OT1/pcr/
 m/n/12 pip install scikit-learn biopython
  []
 
 
-Overfull \hbox (4.02785pt too wide) in paragraph at lines 590--596
+Overfull \hbox (4.02785pt too wide) in paragraph at lines 624--630
 \OT1/pcr/m/n/12 pytest pandas scipy matplotlib ViennaRNA\OT1/ptm/m/n/12 , then 
 the five scripts un-der \OT1/pcr/m/n/12 scripts/
  []
 
-[17] [18] (./appendix_erroranalysis.tex [19]) [20] (./appendix_architecture.tex
-[21]
+[18] [19] (./appendix_erroranalysis.tex [20]) [21] (./appendix_architecture.tex
+
 Overfull \hbox (48.41362pt too wide) in paragraph at lines 18--29
 \OT1/pcr/m/n/12 tools[]multiplex \OT1/ptm/m/n/12 (du-plex screen-ing, shared-PA
 M com-pe-ti-tion scor-ing, pair rank-ing), \OT1/pcr/m/n/12 tools[]outcome
@@ -374,7 +385,7 @@ Overfull \hbox (62.39378pt too wide) in paragraph at lines 18--29
 ary terms, lo-cus loader), \OT1/pcr/m/n/12 tools[]biosecurity
  []
 
-
+[22]
 Overfull \hbox (6.05559pt too wide) in paragraph at lines 31--36
 \OT1/pcr/m/n/12 python cli.py <tool> <subcommand> \OT1/ptm/m/n/12 ex-poses ev-e
 ry user-facing func-tion: \OT1/pcr/m/n/12 multiplex
@@ -387,35 +398,35 @@ m/m/n/12 , \OT1/pcr/m/n/12 riskflag score\OT1/ptm/m/n/12 , \OT1/pcr/m/n/12 bios
 ecurity prescreen\OT1/ptm/m/n/12 , \OT1/pcr/m/n/12 transfer
  []
 
-) [22]
-LaTeX Font Info:    Trying to load font information for OMS+pcr on input line 6
-94.
+)
+LaTeX Font Info:    Trying to load font information for OMS+pcr on input line 7
+28.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omspcr.fd
 File: omspcr.fd 
 )
 LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 694.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 728.
 
-Overfull \hbox (9.47386pt too wide) in paragraph at lines 694--707
+Overfull \hbox (9.47386pt too wide) in paragraph at lines 728--741
 \OT1/pcr/m/n/10.95 Output: per-guide penalties, set compatibility, removal rank
 ing 
  []
 
-
-Overfull \hbox (22.61385pt too wide) in paragraph at lines 710--717
+[23]
+Overfull \hbox (22.61385pt too wide) in paragraph at lines 744--751
 \OT1/pcr/m/n/10.95 Output: P(frameshift), P(+1 insertion), P(MH deletion), prec
 ision 
  []
 
-[23] (./appendix_stats.tex [24]) [25] [26] (./main.aux) ) 
+[24] (./appendix_stats.tex [25]) [26] [27] (./main.aux) ) 
 Here is how much of TeX's memory you used:
  3411 strings out of 480247
  51152 string characters out of 5896151
- 349296 words of memory out of 5000000
+ 349297 words of memory out of 5000000
  21287 multiletter control sequences out of 15000+600000
  504695 words of font info for 104 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 55i,10n,62p,385b,243s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,10n,62p,385b,244s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/te
 xmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
@@ -432,10 +443,10 @@ ype1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times
 /utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (26 pages, 347746 bytes).
+Output written on main.pdf (27 pages, 349869 bytes).
 PDF statistics:
- 442 PDF objects out of 1000 (max. 8388607)
- 133 compressed objects within 2 object streams
+ 445 PDF objects out of 1000 (max. 8388607)
+ 135 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

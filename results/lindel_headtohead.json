@@ -1,0 +1,27 @@
+{
+  "n_sites": 1742,
+  "n_test": 349,
+  "targets": {
+    "ins1_frac": {
+      "n_compared": 348,
+      "lindel_zeroshot_spearman": 0.5572124230710701,
+      "ours_gbt_spearman": 0.6143268957535052,
+      "mean_masked_mass_lindel": 5.4387570109734615e-05
+    },
+    "frameshift_frac": {
+      "n_compared": 348,
+      "lindel_zeroshot_spearman": 0.49591468955309115,
+      "ours_gbt_spearman": 0.3037455014627037,
+      "mean_masked_mass_lindel": 5.4387570109734615e-05
+    }
+  },
+  "geometry": {
+    "guide_alignment": "ctx[10:30] via grna-libA.txt exact match (1996/2000)",
+    "cut": "between ctx indices 26/27 (canonical, 3 nt 5' of ctx[30:33] PAM)",
+    "lindel_input": "3 nt left pad + right pad to 65-mer; pad-touching deletion classes masked and renormalized"
+  },
+  "provenance": {
+    "lindel_weights": "github.com/shendurelab/Lindel Model_weights.pkl + model_prereq.pkl (Chen 2019 NAR 47:7989)",
+    "observed": "figshare 6837956 U2OS_+_LibA_postCas9_rep1.csv (Shen 2018)"
+  }
+}

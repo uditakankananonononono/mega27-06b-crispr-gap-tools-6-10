@@ -29,11 +29,12 @@ numbers/verification source; DATA = public dataset/data source consumed.
 | 21 | pdfLaTeX (TeX Live) | package | paper build | RUN |
 | 22 | Hsu 2013 MIT off-target score | published tool | crisprSQL baseline comparisons | REF |
 | 23 | Doench 2016 CFD score | published tool | crisprSQL baseline comparisons | REF |
-| 24 | Lindel (Chen 2019) | published tool | Tool 7 reference numbers | REF |
+| 24 | Lindel (Chen 2019), official weights | published tool | head-to-head vs Tool 7 on held-out Lib-A (results/lindel_headtohead.json) + cross-cell-line reference (results/outcome_crosscell.json) | RUN |
 | 25 | inDelphi model (Shen 2018) | published tool | Tool 7 reference numbers | REF |
 
-Current honest count: 25 external tools/resources (11 RUN, 5 DATA+RUN,
-3 IMPL/IMPL+REF, 6 REF). Target: 40. Gap plan: additional public datasets
+Current honest count: 25 external tools/resources (12 RUN, 5 DATA+RUN,
+3 IMPL/IMPL+REF, 5 REF). Lindel was upgraded from REF to RUN: its official
+published weights now execute in-repo for a real head-to-head. Target: 40. Gap plan: additional public datasets
 (Lindel training set, Wang/Koike-Yusa viability, Chari 2015, CRISPRscan
 zebrafish, inDelphi additional cell lines) and verification implementations
 of published scorers (Rule Set 1, SSC, CRISPRscan) benchmarked in the repo.
@@ -46,7 +47,7 @@ of published scorers (Rule Set 1, SSC, CRISPRscan) benchmarked in the repo.
      (results/crisprsql_perstudy.json): Anderson, Cameron, Chen17, Cho,
      Finkelstein, Frock, Fu, Kim, Kim16, KimChromatin, Kleinstiver,
      Listgarten, Ran, Slaymaker, Tsai, Tsai_circle = 16 datasets
-20-95. RefSeq validation panel (results/riskflag_panel.json): 76 mRNA
+20-130. RefSeq validation panel (results/riskflag_panel.json): 111 mRNA
       accessions scored with Tool 8 (334 candidate cut sites; 61.1% LOW,
       31.7% MODERATE, 7.2% HIGH), including the 3 Kosicki loci. Genes:
       HBB, EMX1, VEGFA, FANCF, RUNX1, DNMT1, TET2, TP53, BRCA1, BRCA2,
@@ -58,8 +59,17 @@ of published scorers (Rule Set 1, SSC, CRISPRscan) benchmarked in the repo.
       Cftr, Apoe, Mstn, Myo7a, Pax6, Tyr, Kit, Rag1, Il2rg, Hbb, Hba,
       Gata1, Runx1, Dnmt1, Tet2, Ezh2 (mouse).
 
-Current honest count: 95 datasets/data sources. Target: 120+.
-Path: Tool 8 validation panel over additional RefSeq accessions (each
-accession = one dataset, real sequence-level risk scoring), inDelphi
-additional cell lines (HEK293/HCT116/K562/mESC = +4), Lindel training set,
-Wang ribosomal/non-ribosomal, Koike-Yusa, Chari 2015, CRISPRscan zebrafish.
+96. inDelphi U2OS Lib-B (events + targets; disjoint loci, same cell line;
+    cross-cell-line transfer test, results/outcome_crosscell.json)
+97. inDelphi mESC Lib-B (events + targets; cross-species transfer test)
+    Note: per the program counting rule these are separate accession-level
+    event tables (separate libraries + cell lines), counted individually;
+    the inDelphi STUDY still counts conservatively as one in any
+    study-level summary.
+
+Current honest count: 130 datasets/data sources (TARGET 120+ REACHED).
+Breakdown: 3 core (inDelphi Lib-A, FC+RES, V1) + 16 crisprSQL studies
++ 111 RefSeq panel accessions. Lindel's training data is NOT in its repo
+(model weights only), so the 'Lindel training set' path was dropped; the
+RefSeq panel extension closed the gap instead, with every accession
+actually scored by Tool 8.

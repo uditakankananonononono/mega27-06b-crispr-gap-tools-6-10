@@ -13,7 +13,9 @@ from dataclasses import dataclass
 
 import pandas as pd
 
-CUT_POS = 28  # inDelphi LibA/B design: Cas9 cut between index 28 and 29
+CUT_POS = 27  # empirical: Lib-A/B guides align at ctx[10:30] (grna-lib*.txt
+# exact match in 1996/2000 Lib-A targets), PAM ctx[30:33], so the
+# canonical Cas9 cut is between indices 26/27
 
 
 @dataclass

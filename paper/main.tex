@@ -243,10 +243,44 @@ For flanks $L, R$ around the cut, $s_{MH} = \sum_{k \ge 2} \mathbf{1}[L_{|L|-k:|
 is the Bae-2014-class length-weighted microhomology score.
 \end{proposition}
 \subsection{Results}
-Held-out Spearman (349 test sites): +1-insertion 0.60 (GBT positional) / 0.50
-(CNN); frameshift 0.31 (GBT); microhomology-deletion 0.17 (GBT).
+Held-out Spearman (349 test sites): +1-insertion 0.61 (GBT positional) /
+0.50 (CNN); frameshift 0.32 (GBT) / 0.24 (CNN); microhomology-deletion
+0.18 (GBT). Features use the empirically calibrated cut position (between
+context indices 26/27, from exact guide alignment), which improved the CNN
+frameshift Spearman from 0.18 to 0.24 over the initially assumed offset.
 Published inDelphi/Lindel numbers are higher; they model full per-genotype
 distributions on mESC with richer feature sets, and we do not claim parity.
+
+\subsection{Head-to-head against the official Lindel model}
+We downloaded the published Lindel weights (Chen et al.\ 2019) and executed
+the official model zero-shot on our 348 held-out Lib-A test sites, aligned
+by exact guide matching (guides sit at positions 10--30 in 1996/2000 Lib-A
+contexts, fixing the Cas9 cut between context indices 26/27; predicted
+deletion classes extending past the real 56-nt context were masked and the
+distribution renormalized, masked mass $5\times10^{-5}$). On the +1
+insertion rate, \emph{our GBT beats the official Lindel model}:
+Spearman $0.614$ vs $0.557$. On frameshift frequency Lindel leads
+$0.496$ vs our $0.304$ --- its microhomology-aware deletion enumeration
+carries frameshift signal that our marginal model does not capture. The
+verdict is split and reported as such: one published-leader metric beaten
+on identical held-out real data, one lost
+(\texttt{results/lindel\_headtohead.json}, \texttt{scripts/lindel\_headtohead.py}).
+
+\subsection{Cross-cell-line and cross-species transfer}
+Training on all 1{,}742 U2OS Lib-A sites and testing on disjoint libraries,
+the in-distribution +1-insertion win does not transfer: on U2OS Lib-B
+(1{,}510 sites, same cell line, new loci) Lindel leads $0.646$ to $0.576$,
+and on mESC Lib-B (1{,}953 sites, different cell line and species) Lindel
+leads $0.670$ to $0.533$. Frameshift transfer shows the same ordering
+($0.541$/$0.358$ U2OS-B, $0.590$/$0.326$ mESC-B). Lindel's advantage is
+structural: it predicts the full per-genotype outcome distribution from an
+enumerated indel space, and per-genotype structure transfers across cellular
+contexts better than our marginal-rate regressors. Honest conclusion: our
+Tool 7 model is competitive in-distribution on +1-insertion rate but is not
+the better model overall; the enumerated-distribution architecture is the
+right inductive bias for repair-outcome prediction, which motivates the
+per-genotype extension in the future-work section
+(\texttt{results/outcome\_crosscell.json}).
 
 \begin{figure}[t]\centering
 \includegraphics[width=0.8\textwidth]{figures/xrcc4_risk.pdf}

@@ -1,0 +1,34 @@
+{
+  "train": {
+    "set": "U2OS Lib-A rep1",
+    "n": 1742
+  },
+  "test": {
+    "U2OS_Lib-B": {
+      "n_sites": 1523,
+      "ins1_frac": {
+        "n_compared": 1510,
+        "ours_gbt_spearman": 0.5760769075731386,
+        "lindel_zeroshot_spearman": 0.645989873025821
+      },
+      "frameshift_frac": {
+        "n_compared": 1510,
+        "ours_gbt_spearman": 0.3578360704976622,
+        "lindel_zeroshot_spearman": 0.5407662458546799
+      }
+    },
+    "mESC_Lib-B": {
+      "n_sites": 1985,
+      "ins1_frac": {
+        "n_compared": 1953,
+        "ours_gbt_spearman": 0.532972308105317,
+        "lindel_zeroshot_spearman": 0.6697476510655339
+      },
+      "frameshift_frac": {
+        "n_compared": 1953,
+        "ours_gbt_spearman": 0.32585248525462285,
+        "lindel_zeroshot_spearman": 0.5900525047951121
+      }
+    }
+  }
+}

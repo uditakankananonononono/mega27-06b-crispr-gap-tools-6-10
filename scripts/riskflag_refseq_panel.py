@@ -47,6 +47,17 @@ PANEL = [
     ("Rag1", "mouse"), ("Il2rg", "mouse"), ("Hbb", "mouse"),
     ("Hba", "mouse"), ("Gata1", "mouse"), ("Runx1", "mouse"),
     ("Dnmt1", "mouse"), ("Tet2", "mouse"), ("Ezh2", "mouse"),
+    ("BCL11A", "human"), ("CXCR4", "human"), ("PDCD1", "human"),
+    ("CTLA4", "human"), ("TRAC", "human"), ("TRBC1", "human"),
+    ("B2M", "human"), ("HPRT1", "human"), ("FUT8", "human"),
+    ("CIITA", "human"), ("IL7R", "human"), ("JAK3", "human"),
+    ("ADA", "human"), ("RAG2", "human"), ("DCLRE1C", "human"),
+    ("Prkdc", "mouse"), ("Foxp3", "mouse"), ("Ifng", "mouse"),
+    ("Tnf", "mouse"), ("Il6", "mouse"), ("Vegfa", "mouse"),
+    ("Emx1", "mouse"), ("Notch1", "mouse"), ("Smad4", "mouse"),
+    ("Ctnnb1", "mouse"), ("Pik3ca", "mouse"), ("Egfr", "mouse"),
+    ("Nras", "mouse"), ("Jak2", "mouse"), ("Met", "mouse"),
+    ("Alk", "mouse"), ("Trac", "mouse"), ("B2m", "mouse"),
 ]
 PANEL = [(g, o) for g, o in PANEL if o]
 
