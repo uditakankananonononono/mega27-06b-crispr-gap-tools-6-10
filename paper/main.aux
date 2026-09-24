@@ -40,43 +40,56 @@
 \@writefile{toc}{\contentsline {section}{\numberline {7}Tool 9: Biosecurity screen-and-design wrapper}{6}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {7.1}Design}{6}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Deployment reality}{6}{}\protected@file@percent }
+\citation{doench2016}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Human-held-out versus mouse-transfer Spearman by model class. Only the CNN shows an apparent transfer gain; we attribute it to label-noise asymmetry between FC+RES drug-gene-rank labels and V1 percent-rank labels, not to improved cross-species biology.}}{7}{}\protected@file@percent }
 \newlabel{fig:transfer}{{3}{7}}
 \@writefile{toc}{\contentsline {section}{\numberline {8}Tool 10: Cross-species transfer evaluator}{7}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {8.1}Problem and diagnostics}{7}{}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Human (FC+RES) $\to $ mouse (V1) transfer, Spearman.}}{7}{}\protected@file@percent }
 \newlabel{tab:transfer}{{3}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.2}Benchmark break: Rule Set 2 cross-dataset protocol}{7}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Per-gene Spearman on the V1/FC dataset under the Azimuth cross-dataset protocol (train RES only). GuideCNN exceeds the published Rule Set 2 performance (dashed line, $0.52$) on all nine genes.}}{8}{}\protected@file@percent }
+\newlabel{fig:azimuth}{{4}{8}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Azimuth-protocol results (train RES, test V1/FC, 2,144 guides).}}{8}{}\protected@file@percent }
+\newlabel{tab:azimuth}{{4}{8}}
 \citation{doench2016}
 \citation{hsu2013}
 \citation{shen2018}
 \citation{chen2019}
-\@writefile{toc}{\contentsline {section}{\numberline {9}Ethics, Dual-Use, and Governance}{8}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {10}Related Work}{8}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {11}Limitations}{8}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {12}Discussion and Conclusion}{8}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {A}Extended results}{9}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.1}Tool 6 surrogate details}{9}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.2}Tool 7 per-target details}{9}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.3}Tool 10 per-model details}{9}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.4}Hyperparameters}{9}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Model hyperparameters.}}{9}{}\protected@file@percent }
-\newlabel{tab:hp}{{4}{9}}
+\@writefile{toc}{\contentsline {section}{\numberline {9}Ethics, Dual-Use, and Governance}{9}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {10}Related Work}{9}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {11}Limitations}{9}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {12}Discussion and Conclusion}{9}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {A}Extended results}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.1}Tool 6 surrogate details}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.2}Tool 7 per-target details}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.3}Tool 10 per-model details}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.4}Hyperparameters}{10}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Model hyperparameters.}}{10}{}\protected@file@percent }
+\newlabel{tab:hp}{{5}{10}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Public datasets used.}}{11}{}\protected@file@percent }
+\newlabel{tab:data}{{6}{11}}
+\@writefile{toc}{\contentsline {section}{\numberline {B}Dataset statistics}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {C}Reproduction}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {D}Model mathematics}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {D.1}Convolutional guide encoder}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {D.2}Graph propagation rule}{11}{}\protected@file@percent }
 \bibcite{lorenz2011}{Lorenz et al.(2011)}
+\@writefile{toc}{\contentsline {subsection}{\numberline {D.3}PAM-competition decay}{12}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {D.4}Microhomology deletion rate model}{12}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {D.5}Spearman transfer-delta significance}{12}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {D.6}Ridge baseline closed form}{12}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {E}Test suite summary}{12}{}\protected@file@percent }
 \bibcite{shen2018}{Shen et al.(2018)}
 \bibcite{doench2016}{Doench et al.(2016)}
 \bibcite{kosicki2018}{Kosicki et al.(2018)}
 \bibcite{wen2022}{Wen et al.(2022)}
 \bibcite{hsu2013}{Hsu et al.(2013)}
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Public datasets used.}}{10}{}\protected@file@percent }
-\newlabel{tab:data}{{5}{10}}
-\@writefile{toc}{\contentsline {section}{\numberline {B}Dataset statistics}{10}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {C}Reproduction}{10}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {D}Test suite summary}{10}{}\protected@file@percent }
 \bibcite{chen2019}{Chen et al.(2019)}
 \bibcite{bae2014}{Bae et al.(2014)}
-\@writefile{toc}{\contentsline {section}{\numberline {E}Algorithms}{11}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {F}Scoring formulas and derivations}{12}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {F.1}MIT off-target score}{12}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {F.2}Jensen-Shannon divergence of k-mer spectra}{12}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {F.3}GC-content sequestration rule}{13}{}\protected@file@percent }
-\gdef \@abspage@last{13}
+\@writefile{toc}{\contentsline {section}{\numberline {F}Algorithms}{13}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {G}Scoring formulas and derivations}{14}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {G.1}MIT off-target score}{14}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {G.2}Jensen-Shannon divergence of k-mer spectra}{15}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {G.3}GC-content sequestration rule}{15}{}\protected@file@percent }
+\gdef \@abspage@last{15}

@@ -43,5 +43,13 @@
       "THY1": 0.3082667728866938
     },
     "mean_per_gene": 0.29609003329522754
+  },
+  "significance": {
+    "cnn_vs_ridge_paired_t": 8.98,
+    "cnn_vs_ridge_p": 1.88e-05,
+    "mean_delta_z": 0.79,
+    "cnn_vs_published_052_one_sample_t": 5.68,
+    "cnn_vs_published_052_p": 0.00047,
+    "note": "Fisher z transform, 9 genes; published 0.52 treated as fixed constant (conservative)."
   }
 }

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  24 SEP 2026 20:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  24 SEP 2026 20:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -305,8 +305,13 @@ File: figures/transfer.pdf Graphic file (type pdf)
 <use figures/transfer.pdf>
 Package pdftex.def Info: figures/transfer.pdf  used on input line 267.
 (pdftex.def)             Requested size: 352.31625pt x 211.40112pt.
- [7 <./figures/transfer.pdf>] [8]
-Overfull \hbox (20.62175pt too wide) in paragraph at lines 367--375
+<figures/azimuth_break.pdf, id=149, 650.43pt x 289.08pt>
+File: figures/azimuth_break.pdf Graphic file (type pdf)
+<use figures/azimuth_break.pdf>
+Package pdftex.def Info: figures/azimuth_break.pdf  used on input line 292.
+(pdftex.def)             Requested size: 469.75502pt x 208.78584pt.
+ [7 <./figures/transfer.pdf>] [8 <./figures/azimuth_break.pdf>] [9]
+Overfull \hbox (20.62175pt too wide) in paragraph at lines 401--409
  [][] 
  []
 
@@ -314,49 +319,49 @@ Overfull \hbox (20.62175pt too wide) in paragraph at lines 367--375
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (5.64679pt too wide) in paragraph at lines 378--384
+Overfull \hbox (5.64679pt too wide) in paragraph at lines 412--418
 \OT1/ptm/m/n/12 Every re-ported num-ber re-gen-er-ates from the repos-i-tory: \
 OT1/pcr/m/n/12 pip install torch --index-url
  []
 
 
-Overfull \hbox (39.6688pt too wide) in paragraph at lines 378--384
+Overfull \hbox (39.6688pt too wide) in paragraph at lines 412--418
 \OT1/pcr/m/n/12 https://download.pytorch.org/whl/cpu\OT1/ptm/m/n/12 , \OT1/pcr/
 m/n/12 pip install scikit-learn biopython
  []
 
 
-Overfull \hbox (4.02785pt too wide) in paragraph at lines 378--384
+Overfull \hbox (4.02785pt too wide) in paragraph at lines 412--418
 \OT1/pcr/m/n/12 pytest pandas scipy matplotlib ViennaRNA\OT1/ptm/m/n/12 , then 
 the five scripts un-der \OT1/pcr/m/n/12 scripts/
  []
 
-[9] [10]
-LaTeX Font Info:    Trying to load font information for OMS+pcr on input line 4
-10.
+[10] [11] [12]
+LaTeX Font Info:    Trying to load font information for OMS+pcr on input line 5
+13.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omspcr.fd
 File: omspcr.fd 
 )
 LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 410.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 513.
 
-Overfull \hbox (9.47386pt too wide) in paragraph at lines 410--423
+Overfull \hbox (9.47386pt too wide) in paragraph at lines 513--526
 \OT1/pcr/m/n/10.95 Output: per-guide penalties, set compatibility, removal rank
 ing 
  []
 
 
-Overfull \hbox (22.61385pt too wide) in paragraph at lines 426--433
+Overfull \hbox (22.61385pt too wide) in paragraph at lines 529--536
 \OT1/pcr/m/n/10.95 Output: P(frameshift), P(+1 insertion), P(MH deletion), prec
 ision 
  []
 
-[11] [12] [13] (./main.aux) ) 
+[13] [14] [15] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 3348 strings out of 480247
- 49673 string characters out of 5896151
- 343230 words of memory out of 5000000
- 21243 multiletter control sequences out of 15000+600000
+ 3357 strings out of 480247
+ 49921 string characters out of 5896151
+ 343247 words of memory out of 5000000
+ 21251 multiletter control sequences out of 15000+600000
  500879 words of font info for 93 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  55i,10n,62p,387b,243s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -370,14 +375,16 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr
-8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (13 pages, 250224 bytes).
+sfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols
+/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (15 pages, 290477 bytes).
 PDF statistics:
- 283 PDF objects out of 1000 (max. 8388607)
- 89 compressed objects within 1 object stream
+ 355 PDF objects out of 1000 (max. 8388607)
+ 104 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
