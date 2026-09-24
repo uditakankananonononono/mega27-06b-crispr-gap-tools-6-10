@@ -1,0 +1,45 @@
+{
+  "n_human_train": 4248,
+  "n_human_test": 1062,
+  "n_mouse": 2144,
+  "ridge_kmer": {
+    "human_heldout": {
+      "spearman": 0.2794052335179743,
+      "pearson": 0.29075292939265285
+    },
+    "mouse_transfer": {
+      "spearman": 0.331240726686578,
+      "pearson": 0.3299105774878527
+    },
+    "transfer_drop": -0.0518
+  },
+  "cnn": {
+    "human_heldout": {
+      "spearman": 0.6300311415532173,
+      "pearson": 0.6457501882235765
+    },
+    "mouse_transfer": {
+      "spearman": 0.7810401966765738,
+      "pearson": 0.7848477493461797
+    },
+    "transfer_drop": -0.151
+  },
+  "gnn": {
+    "human_heldout": {
+      "spearman": 0.2890297505151434,
+      "pearson": 0.30155351816753095
+    },
+    "mouse_transfer": {
+      "spearman": 0.28137800641066724,
+      "pearson": 0.2908370656646324
+    },
+    "transfer_drop": 0.0077
+  },
+  "species_shift": {
+    "gc_mean_a": 0.5660012554927808,
+    "gc_mean_b": 0.6074937810945273,
+    "gc_delta": 0.041492525601746544,
+    "kmer_js_divergence": 0.003958650398999453,
+    "k": 3
+  }
+}
