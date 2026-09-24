@@ -33,9 +33,16 @@ X_oh = np.stack([one_hot(s.context, 55) for s in sites]).transpose(0, 2, 1)
 def positional_features(ctx: str) -> np.ndarray:
     oh = one_hot(ctx, 55).reshape(-1)
     left, right = ctx[:28], ctx[28:]
-    eng = np.array([microhomology_score(left, right), gc_content(ctx),
-                    gc_content(left[-10:]), thermo_dg(left[-15:]),
-                    thermo_dg(right[:15])], dtype=np.float32)
+    feats = [microhomology_score(left, right), gc_content(ctx),
+             gc_content(left[-10:]), thermo_dg(left[-15:]),
+             thermo_dg(right[:15])]
+    # MH scores at increasing offsets (deletions of length d use MH d apart)
+    for d in (2, 3, 4, 5, 7, 10, 15):
+        if len(left) > d and len(right) > d:
+            feats.append(microhomology_score(left[:-d], right[d:]))
+        else:
+            feats.append(0.0)
+    eng = np.array(feats, dtype=np.float32)
     return np.concatenate([oh, eng])
 X_pos = np.stack([positional_features(s.context) for s in sites])
 X_km = np.stack([kmer_counts(s.context, 3) for s in sites])
@@ -49,7 +56,7 @@ for tname in TARGETS:
     out = {}
     ridge = Ridge(alpha=1.0).fit(X_km[tr], y[tr])
     out["ridge_kmer"] = regression_metrics(y[te], ridge.predict(X_km[te]))
-    gbt = HistGradientBoostingRegressor(max_iter=300, learning_rate=0.06,
+    gbt = HistGradientBoostingRegressor(max_iter=600, learning_rate=0.05,
                                         random_state=0).fit(X_pos[tr], y[tr])
     out["gbt_positional"] = regression_metrics(y[te], gbt.predict(X_pos[te]))
     cnn = GuideCNN(seq_len=55, filters=24, kernel_widths=(3, 5, 7))
