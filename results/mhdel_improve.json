@@ -1,0 +1,25 @@
+{
+  "ridge_kmer": {
+    "spearman": -0.002003054195390171,
+    "pearson": 0.010813070670737366
+  },
+  "gbt_mh_only": {
+    "spearman": 0.010063826444727208,
+    "pearson": 0.04445468291402938
+  },
+  "gbt_full_with_mh": {
+    "spearman": 0.10964953820825435,
+    "pearson": 0.08505902645245864
+  },
+  "reference_existing_gbt_spearman": 0.173,
+  "attempt2_tuned": {
+    "gbt_tuned_pos": {
+      "spearman": 0.20996993372113007,
+      "pearson": 0.17793663666916476
+    },
+    "gbt_tuned_pos_mh": {
+      "spearman": 0.11428602078243348,
+      "pearson": 0.1066240261984418
+    }
+  }
+}
