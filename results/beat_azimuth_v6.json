@@ -1,0 +1,36 @@
+{
+  "protocol": "train RES-only human / test V1 mouse; mean per-gene Spearman; leak-free 3-fold OOF deep meta-features; identical published GBT hyperparameters for leader and challenger",
+  "leader_rule_set_2_replication": {
+    "per_gene": {
+      "CD13": 0.5330069073055393,
+      "CD15": 0.2766921147145918,
+      "CD28": 0.495208695092932,
+      "CD33": 0.64017161475725,
+      "CD43": 0.6471696372542766,
+      "CD45": 0.6083181147070905,
+      "CD5": 0.6082425800132182,
+      "H2-K": 0.6317547005907456,
+      "THY1": 0.6846205109218807
+    },
+    "mean_per_gene": 0.5694649861508361
+  },
+  "challenger_rs2_plus_deep_oof": {
+    "per_gene": {
+      "CD13": 0.4815406017585475,
+      "CD15": 0.31966945344085756,
+      "CD28": 0.3574184835037624,
+      "CD33": 0.5447230485904518,
+      "CD43": 0.5677465467243079,
+      "CD45": 0.5877752063157637,
+      "CD5": 0.5671584577490375,
+      "H2-K": 0.5177359144818469,
+      "THY1": 0.4636653091447611
+    },
+    "mean_per_gene": 0.4897147801899262
+  },
+  "paired_bootstrap_over_genes": {
+    "mean_diff": -0.07975020596090981,
+    "p_leader_ge_challenger": 0.9996,
+    "n_boot": 10000
+  }
+}

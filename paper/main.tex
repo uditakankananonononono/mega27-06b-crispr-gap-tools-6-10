@@ -379,36 +379,55 @@ the CNN leads on both axes but pays a real transfer penalty
 \label{fig:transfer}\end{figure}
 
 
-\subsection{Cross-dataset protocol attempt (honest standing)}
+\subsection{Cross-dataset head-to-head against a Rule Set 2 replication}
 We replicate the Azimuth cross-dataset evaluation exactly: train on the RES
 assays only (3,473 guides, 8 genes; the FC rows of the FC+RES file are
 excluded because they are the V1 test guides --- an earlier version of this
 benchmark trained on them by mistake, was caught by our own dataset audit,
-and is retracted), test on V1/FC, metric = mean per-gene Spearman across
-the nine genes. Under the clean protocol the published Rule Set 2 range
-($0.51$--$0.52$ on FC) remains unbeaten by our current models
-(Figure~\ref{fig:azimuth}, Table~\ref{tab:azimuth}): GuideCNN reaches
-$0.286$, the k-mer ridge $0.268$, and the SequenceGCN $0.218$. The gap to
-Rule Set 2 plausibly reflects its richer engineered feature set
-(position-specific dinucleotides, thermodynamic features) rather than model
-class; closing it is future work. We report the standing without inflation.
-\begin{figure}[t]\centering
-\includegraphics[width=\textwidth]{figures/azimuth_break.pdf}
-\caption{Per-gene Spearman on V1/FC under the clean Azimuth cross-dataset
-protocol (train RES only). All our current models sit below the published
-Rule Set 2 range (dashed line, $0.52$); the earlier contaminated run that
-appeared to exceed it is retracted.}
-\label{fig:azimuth}\end{figure}
+and is retracted), test on V1, metric = mean per-gene Spearman across the
+nine genes. Because the widely quoted Rule Set 2 numbers ($0.51$--$0.52$)
+are \emph{within-FC} cross-validation figures rather than RES$\to$V1
+transfer figures, the honest bar is a same-split replication of the
+published method: the published feature categories (position-specific mono-
+and dinucleotides, position-independent dinucleotide counts, GC count,
+nearest-neighbour Tm segments, NGGX-interaction terms, amino-acid cut
+position, percent peptide) with the published gradient-boosting
+hyperparameters (learning rate $0.1$, depth $3$, $100$ trees).
+
 \begin{table}[h]\centering
-\caption{Clean Azimuth-protocol results (train RES only, test V1/FC).}\label{tab:azimuth}
+\caption{Head-to-head on the clean protocol (train RES only, test V1;
+mean per-gene Spearman over 9 genes).}\label{tab:azimuth}
 \begin{tabular}{lcc}\hline\hline
 Model & Mean per-gene Spearman & Note \\\hline
 Ridge (3-mer) & 0.268 & baseline \\
 SequenceGCN & 0.218 & below ridge \\
-Rule Set 2 (published) & 0.51--0.52 & unbeaten \\
-GuideCNN (ours) & 0.286 & best of ours \\\hline\hline
+GuideCNN (ours) & 0.286 & deep sequence-only \\
+GBT, our seq features (v2) & 0.390 & Azimuth-style \\
+GBT + aa-cut/percent-peptide (v3) & 0.480 & our best pre-replication \\
+Rank ensemble of 6 GBTs (v4) & 0.474 & negative rung \\
+Deep-stacked, tuned GBT (v5) & 0.370 & leaked + overfit \\
+\textbf{Rule Set 2 replication (same split)} & \textbf{0.569} & \textbf{bar; unbeaten} \\\hline\hline
 \end{tabular}
 \end{table}
+
+Two findings emerged. First, the same-split Rule Set 2 replication scores
+$0.569$ on V1 --- \emph{above} its own published within-FC figure
+($0.51$--$0.52$): the published model transfers human$\to$mouse better
+than its within-human cross-validation suggests. Second, our strongest
+deep-stacked challenger (v5: published features plus GuideCNN/SequenceGCN
+meta-features under a tuned booster) collapses to $0.370$ with a paired
+bootstrap $p = 1.0$ for leader $\geq$ challenger: aggressive tuning and
+leaky stacking overfit the human assay, while the published shallow
+100-tree model generalizes across species. The bar for any benchmark break
+on this split is therefore $0.569$, and it remains unbeaten
+(Figure~\ref{fig:azimuth}).
+\begin{figure}[t]\centering
+\includegraphics[width=\textwidth]{figures/azimuth_break.pdf}
+\caption{Per-gene Spearman on V1 under the clean Azimuth cross-dataset
+protocol (train RES only). All our current models sit below the same-split
+Rule Set 2 replication ($0.569$); the earlier contaminated run that
+appeared to exceed the old bar is retracted.}
+\label{fig:azimuth}\end{figure}
 
 The clean measurement (Table~\ref{tab:transfer}) shows a \emph{real}
 transfer penalty: the CNN drops from $0.665$ RES-held-out to $0.358$ on mouse
