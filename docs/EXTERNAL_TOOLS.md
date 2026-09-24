@@ -31,9 +31,12 @@ numbers/verification source; DATA = public dataset/data source consumed.
 | 23 | Doench 2016 CFD score | published tool | crisprSQL baseline comparisons | REF |
 | 24 | Lindel (Chen 2019), official weights | published tool | head-to-head vs Tool 7 on held-out Lib-A (results/lindel_headtohead.json) + cross-cell-line reference (results/outcome_crosscell.json) | RUN |
 | 25 | inDelphi model (Shen 2018) | published tool | Tool 7 reference numbers | REF |
+| 26 | Rule Set 1 (Doench 2014) | published tool | replication (logistic, binarized activity) benchmarked on the RES->V1 clean split: 0.352 vs our v6 0.490 (results/classic_scorers.json) | IMPL |
+| 27 | SSC (Xu 2015) | published tool | replication (positional mononucleotide linear) benchmarked: 0.389 vs v6 0.490 (results/classic_scorers.json) | IMPL |
+| 28 | CRISPRscan (Moreno-Mateos 2015) | published tool | replication (positional 6-mer sparse linear) benchmarked: 0.149 vs v6 0.490 (results/classic_scorers.json) | IMPL |
 
-Current honest count: 25 external tools/resources (12 RUN, 5 DATA+RUN,
-3 IMPL/IMPL+REF, 5 REF). Lindel was upgraded from REF to RUN: its official
+Current honest count: 28 external tools/resources (12 RUN, 5 DATA+RUN,
+6 IMPL/IMPL+REF, 5 REF). Lindel was upgraded from REF to RUN: its official
 published weights now execute in-repo for a real head-to-head. Target: 40. Gap plan: additional public datasets
 (Lindel training set, Wang/Koike-Yusa viability, Chari 2015, CRISPRscan
 zebrafish, inDelphi additional cell lines) and verification implementations
@@ -59,9 +62,13 @@ of published scorers (Rule Set 1, SSC, CRISPRscan) benchmarked in the repo.
       Cftr, Apoe, Mstn, Myo7a, Pax6, Tyr, Kit, Rag1, Il2rg, Hbb, Hba,
       Gata1, Runx1, Dnmt1, Tet2, Ezh2 (mouse).
 
-96. inDelphi U2OS Lib-B (events + targets; disjoint loci, same cell line;
+131. inDelphi U2OS Lib-B (events + targets; disjoint loci, same cell line;
     cross-cell-line transfer test, results/outcome_crosscell.json)
-97. inDelphi mESC Lib-B (events + targets; cross-species transfer test)
+132. inDelphi mESC Lib-B (events + targets; cross-species transfer test)
+133. Doench 2016 V2 A375 (Azimuth repo V2_data.xlsx ResultsFiltered, parsed
+    to data/V2_results.csv: 4,195 guides, 15 genes; multi-assay training
+    for Tool 10, scripts/beat_azimuth_v7.py; V2/V1 30-mer overlap = 0,
+    verified no contamination)
     Note: per the program counting rule these are separate accession-level
     event tables (separate libraries + cell lines), counted individually;
     the inDelphi STUDY still counts conservatively as one in any

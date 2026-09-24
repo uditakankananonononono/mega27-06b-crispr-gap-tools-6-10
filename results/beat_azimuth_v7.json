@@ -1,0 +1,15 @@
+{
+  "leader_res_only": [
+    0.5694649861508361,
+    9
+  ],
+  "challenger_res_plus_v2": [
+    0.5471380768459784,
+    9
+  ],
+  "paired_bootstrap": {
+    "mean_diff": -0.022326909304857676,
+    "p_leader_ge_challenger": 0.1461,
+    "n_genes": 9
+  }
+}

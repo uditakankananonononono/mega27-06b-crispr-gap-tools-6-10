@@ -1,0 +1,19 @@
+{
+  "rs1_style_logistic": [
+    0.35219167497973713,
+    9
+  ],
+  "ssc_style_linear": [
+    0.38944792958715474,
+    9
+  ],
+  "crisprscan_style_6mer": [
+    0.14855646900495373,
+    9
+  ],
+  "_protocol": "train RES human (drug!=nodrug), test V1 mouse, mean per-gene Spearman, identical split as beat_azimuth_v6",
+  "_reference_points": {
+    "rs2_replication": 0.569,
+    "our_v6_stack": 0.49
+  }
+}

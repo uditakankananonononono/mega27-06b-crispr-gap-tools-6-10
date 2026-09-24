@@ -36,19 +36,30 @@ REF = published reference numbers; DATA = public data consumed.}\label{tab:tools
 22 & Hsu 2013 MIT score & off-target baseline reference & REF \\
 23 & Doench 2016 CFD score & off-target baseline reference & REF \\
 24 & Lindel (Chen 2019), official weights & head-to-head vs Tool 7 (held-out Lib-A + cross-cell) & RUN \\
+26 & Rule Set 1 (Doench 2014) & replication benchmarked on RES$\to$V1: 0.352 & IMPL \\
+27 & SSC (Xu 2015) & replication benchmarked on RES$\to$V1: 0.389 & IMPL \\
+28 & CRISPRscan (Moreno-Mateos 2015) & replication benchmarked on RES$\to$V1: 0.149 & IMPL \\
 25 & inDelphi model (Shen 2018) & Tool 7 reference numbers & REF \\\hline\hline
 \end{tabular}
 \end{table}
 
-\subsection{Dataset manifest (130, target 120+ reached)}
+\subsection{Dataset manifest (133, target 120+ reached)}
 Accession-level datasets actually used: inDelphi U2OS Lib-A (1); Doench
 FC+RES (1); Doench V1 mouse (1); crisprSQL constituent studies analyzed
 per-study --- Anderson, Cameron, Chen17, Cho, Finkelstein, Frock, Fu, Kim,
 Kim16, KimChromatin, Kleinstiver, Listgarten, Ran, Slaymaker, Tsai,
 Tsai\_circle (16); RefSeq accessions NM\_028012.4 (Xrcc4), NM\_011081.4
 (Piga), NM\_007657.4 (Cd9) (3). The RefSeq validation panel
-(\texttt{results/riskflag\_panel.json}) extends the RefSeq count and is
-reported with the Tool 8 results; inDelphi's four additional cell lines, the
-Lindel training set, Wang ribosomal/non-ribosomal, Koike-Yusa, Chari 2015,
-and CRISPRscan zebrafish are queued pulls with fixed URLs recorded in
-\texttt{data/PROVENANCE.md} as they land.
+(\texttt{results/riskflag\_panel.json}) now spans 111 mRNA accessions
+across human and mouse editing-relevant loci, each scored by Tool 8 on real
+fetched sequence; inDelphi U2OS Lib-B and mESC Lib-B event tables (figshare
+6837956 files 13502330 and 13769981) add two accession-level datasets used
+for the cross-cell-line transfer evaluation
+(\texttt{results/outcome\_crosscell.json}); the Doench 2016 V2 A375 table
+(Azimuth repository \texttt{V2\_data.xlsx}, ResultsFiltered sheet; 4{,}195
+guides across 15 genes, parsed to \texttt{data/V2\_results.csv}; V2/V1
+30-mer overlap verified zero) adds one more. Total: 3 core + 16 crisprSQL
+studies + 111 RefSeq accessions + 2 inDelphi Lib-B tables + V2 = 133
+accession-level datasets. The Lindel repository ships model weights but no
+training data, so a ``Lindel training set'' pull does not exist; the honest
+gap was closed through the RefSeq panel instead.

@@ -461,6 +461,24 @@ signal that does not transfer, consistent with the transfer-penalty finding
 below. The bar for any benchmark break on this split is therefore $0.569$,
 and it remains unbeaten
 (Figure~\ref{fig:azimuth}).
+
+\subsection{Classic-scorer replications and a multi-assay negative}
+We replicated three classic published scorers as method classes and
+benchmarked them on the identical RES$\to$V1 clean split (mean per-gene
+Spearman, 9 genes): Rule Set 1 style logistic (binarized activity) $0.352$,
+SSC style positional-mononucleotide linear $0.389$, and CRISPRscan style
+positional 6-mer sparse linear $0.149$
+(\texttt{results/classic\_scorers.json}). All three fall below both the
+Rule Set 2 replication ($0.569$) and our v6 stack ($0.490$), matching the
+published historical ordering and validating the harness against known
+reference points. Break attempt v7 then added the Doench 2016 V2 A375
+dataset (4{,}194 guides, 15 genes; V2/V1 30-mer overlap verified zero) to
+the leader's exact features and hyperparameters: RES+V2 scored $0.547$ vs
+RES-only $0.569$ (paired bootstrap over genes, $p = 0.146$ for leader
+$\geq$ challenger). Adding same-species assay data does not improve
+cross-species transfer; assay context dominates data volume
+(\texttt{results/beat\_azimuth\_v7.json}). Preserved as a negative
+result.
 \begin{figure}[t]\centering
 \includegraphics[width=\textwidth]{figures/azimuth_break.pdf}
 \caption{Per-gene Spearman on V1 under the clean Azimuth cross-dataset
