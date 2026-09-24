@@ -418,17 +418,56 @@ as part of the governance record: they document what a small lab can and
 cannot verify locally.
 
 \section{Related Work}
-On-target activity: Rule Set 2/Azimuth \cite{doench2016}, CRISPRon, DeepCRISPR.
-Off-target: the MIT score \cite{hsu2013}, CFD, and deep models.
-Repair outcome: inDelphi \cite{shen2018}, Lindel \cite{chen2019}, FORECasT.
-Multiplex design: existing designers score guides independently; we are not
-aware of a public tool scoring guide-guide duplexing plus repair competition
-jointly. Biosecurity: the Common Mechanism is the emerging international
-standard; design-loop integration is our contribution. Cross-species transfer:
-per-species tools exist (e.g., plant-specific scorers); systematic transfer
-measurement is rarely reported. Our tools complement rather than replace these
-leaders, and every benchmark table reports a simple public baseline beside the
-deep models.
+\paragraph{On-target activity.} Rule Set 1 \cite{doench2014} introduced
+per-gene cross-validation on the flow-cytometry (FC/V1) dataset; Rule Set
+2/Azimuth \cite{doench2016} added gradient-boosted trees over position-specific
+and thermodynamic features on the FC+RES union, and remains the reference
+point for cross-dataset generalization. CRISPRon and DeepCRISPR-class models
+use convolutional encoders on larger cell-line screens. Our tool-10 result
+shows a small CNN trained only on RES exceeds Rule Set 2's published FC
+performance by $+0.27$ mean per-gene Spearman under the Azimuth protocol
+itself.
+\paragraph{Off-target specificity.} The MIT score \cite{hsu2013}, CFD, and
+deep models (DeepCRISPR, CRISPRoff) score guide--off-target pairs. We reuse
+the MIT score as the common specificity annotation across tools rather than
+competing in this mature area.
+\paragraph{Repair outcome.} inDelphi \cite{shen2018} models per-genotype
+deletion/insertion rates with a microhomology-aware likelihood; Lindel
+\cite{chen2019} and FORECasT target the same distribution with logistic and
+k-mer models. Our annotator decouples outcome prediction from guide selection
+and reports honest per-target numbers below these per-genotype leaders.
+\paragraph{Multiplex design.} Mainstream designers (CHOPCHOP, CRISPick,
+GuideScan) score guides independently; interaction-aware multiplex design
+appears only in method papers on combinatorial screens without a reusable
+public tool. Our screener fills that gap with ViennaRNA duplex thermodynamics,
+a PAM-competition decay, and a GNN removal ranker.
+\paragraph{Biosecurity.} The IBBIS Common Mechanism is the emerging
+international standard for synthesis screening; commercial providers screen
+internally. Design-loop integration with a fail-closed audit trail is our
+contribution.
+\paragraph{Cross-species transfer.} Per-species scorers exist (plant- and
+insect-specific models), but systematic transfer measurement with
+distribution-shift diagnostics is rarely reported; our evaluator makes the
+measurement a first-class artifact.
+
+
+\section{Negative Results}
+Preserved, not buried. (1) The mechanistic microhomology-enumeration feature
+family --- the closest public analogue of inDelphi's per-genotype model ---
+does not predict the aggregate MH-deletion fraction (Spearman
+$0.01$--$0.11$ vs $0.210$ for the tuned positional GBT);
+\texttt{results/mhdel\_improve.json}. (2) The SequenceGCN underperforms a
+k-mer ridge on the transfer benchmark ($0.296$ vs $0.331$ per-gene mean):
+graph smoothing over 3-mer transition graphs discards the positional signal
+that drives guide efficacy. (3) CNN and GNN surrogates for ViennaRNA
+duplexfold reach parity with a 3-mer ridge but not with the physics engine
+(Table~\ref{tab:duplex}); we keep ViennaRNA in the loop. (4) Zebrafish and
+plant transfer axes are blocked by data availability: CRISPRz offline,
+Varshney 2015 supplementary tables figure-only, Arabidopsis sets PDF-only;
+documented in \texttt{data/PROVENANCE.md}. (5) The commec engine is not
+runnable on free-tier sandboxes (conda CLI plus multi-GB databases), so
+tool 9 is validated on its fail-closed invariant rather than on live
+screens.
 
 \section{Limitations}
 Single-replicate U2OS for tool 7; mechanistic (uncalibrated) risk scores for
@@ -588,6 +627,7 @@ repeats, and biosecurity blocking semantics.
 \bibitem[Wen et al.(2022)]{wen2022} Wen W, et al. Comprehensive analysis and accurate quantification of unintended large gene modifications induced by CRISPR-Cas9 gene editing. \emph{Sci Adv} 8:eabo7676, 2022.
 \bibitem[Hsu et al.(2013)]{hsu2013} Hsu PD, et al. DNA targeting specificity of RNA-guided Cas9 nucleases. \emph{Nat Biotechnol} 31:827--832, 2013.
 \bibitem[Chen et al.(2019)]{chen2019} Chen W, et al. Massively parallel profiling and predictive modeling of the outcomes of CRISPR/Cas9-mediated double-strand break repair. \emph{Nucleic Acids Res} 47:7989--8003, 2019.
+\bibitem[Doench et al.(2014)]{doench2014} Doench JG, et al. Rational design of highly active sgRNAs for CRISPR-Cas9-mediated gene inactivation. \emph{Nat Biotechnol} 32:1262--1267, 2014.
 \bibitem[Bae et al.(2014)]{bae2014} Bae S, et al. Microhomology-based choice of Cas9 nuclease target sites. \emph{Nat Methods} 11:705--706, 2014.
 \end{thebibliography}
 
