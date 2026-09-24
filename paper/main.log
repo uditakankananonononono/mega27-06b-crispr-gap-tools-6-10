@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  24 SEP 2026 20:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  24 SEP 2026 20:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -333,50 +333,57 @@ Overfull \hbox (20.62175pt too wide) in paragraph at lines 530--538
  [][] 
  []
 
+(./appendix_protocols.tex [13]
+Overfull \hbox (38.17764pt too wide) in paragraph at lines 68--76
+\OT1/ptm/m/n/12 of ran-dom 20-nt spac-ers matched in length. \OT1/ptm/b/n/12 Sc
+or-ing. \OT1/ptm/m/n/12 Each pair is scored with \OT1/pcr/m/n/12 RNAduplex\OT1/
+ptm/m/n/12 /\OT1/pcr/m/n/12 duplexfold
+ []
 
-Overfull \hbox (5.64679pt too wide) in paragraph at lines 541--547
+[14])
+Overfull \hbox (5.64679pt too wide) in paragraph at lines 542--548
 \OT1/ptm/m/n/12 Every re-ported num-ber re-gen-er-ates from the repos-i-tory: \
 OT1/pcr/m/n/12 pip install torch --index-url
  []
 
 
-Overfull \hbox (39.6688pt too wide) in paragraph at lines 541--547
+Overfull \hbox (39.6688pt too wide) in paragraph at lines 542--548
 \OT1/pcr/m/n/12 https://download.pytorch.org/whl/cpu\OT1/ptm/m/n/12 , \OT1/pcr/
 m/n/12 pip install scikit-learn biopython
  []
 
 
-Overfull \hbox (4.02785pt too wide) in paragraph at lines 541--547
+Overfull \hbox (4.02785pt too wide) in paragraph at lines 542--548
 \OT1/pcr/m/n/12 pytest pandas scipy matplotlib ViennaRNA\OT1/ptm/m/n/12 , then 
 the five scripts un-der \OT1/pcr/m/n/12 scripts/
  []
 
-[13] [14] [15]
+[15] [16] [17]
 LaTeX Font Info:    Trying to load font information for OMS+pcr on input line 6
-43.
+44.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omspcr.fd
 File: omspcr.fd 
 )
 LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 643.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 644.
 
-Overfull \hbox (9.47386pt too wide) in paragraph at lines 643--656
+Overfull \hbox (9.47386pt too wide) in paragraph at lines 644--657
 \OT1/pcr/m/n/10.95 Output: per-guide penalties, set compatibility, removal rank
 ing 
  []
 
 
-Overfull \hbox (22.61385pt too wide) in paragraph at lines 659--666
+Overfull \hbox (22.61385pt too wide) in paragraph at lines 660--667
 \OT1/pcr/m/n/10.95 Output: P(frameshift), P(+1 insertion), P(MH deletion), prec
 ision 
  []
 
-[16] [17] [18] (./main.aux) ) 
+[18] [19] [20] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 3367 strings out of 480247
- 50187 string characters out of 5896151
+ 3373 strings out of 480247
+ 50337 string characters out of 5896151
  344286 words of memory out of 5000000
- 21260 multiletter control sequences out of 15000+600000
+ 21263 multiletter control sequences out of 15000+600000
  500879 words of font info for 93 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  55i,10n,62p,384b,243s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -396,10 +403,10 @@ cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols
 /usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (18 pages, 312371 bytes).
+Output written on main.pdf (20 pages, 322594 bytes).
 PDF statistics:
- 413 PDF objects out of 1000 (max. 8388607)
- 115 compressed objects within 2 object streams
+ 420 PDF objects out of 1000 (max. 8388607)
+ 120 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

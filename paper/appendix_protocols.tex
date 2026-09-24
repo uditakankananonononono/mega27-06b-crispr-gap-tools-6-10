@@ -1,0 +1,103 @@
+\section{Benchmark protocols in full}
+This appendix records each benchmark protocol exactly as implemented, so that
+every number in the main text regenerates end to end.
+
+\subsection{Tool 10 protocol A: clean Azimuth-style on-target evaluation}
+\textbf{Data construction.} The Doench FC+RES file contains 5{,}310 human
+30-mer rows over 17 genes. Rows carry a drug-treatment label; the 1{,}837
+rows labelled \texttt{nodrug} are the FC (flow-cytometry) guides that
+constitute the Rule Set 2 test set, and the remaining 3{,}473 rows (PLX,
+AZD, 6TG selections) are the RES training guides. Any evaluation that trains
+on the full file and tests on V1 leaks: 1{,}836 of the 2{,}144 V1 mouse
+30-mers appear verbatim among the \texttt{nodrug} rows. Our clean protocol
+therefore trains only on rows with drug $\neq$ \texttt{nodrug}
+(3{,}473 guides) and evaluates on the V1 file (2{,}144 mouse guides,
+9 genes), with the published Rule Set 2 number (Spearman $0.51$--$0.52$ on
+FC, from the Azimuth paper) as the reference bar.
+
+\textbf{Evaluation statistic.} Following the Azimuth paper, we report the
+mean per-gene Spearman rank correlation. For gene $g$ with guide activities
+$y_i$ and predictions $\hat y_i$,
+\begin{equation}
+\rho_g = 1 - \frac{6 \sum_{i=1}^{n_g} d_i^2}{n_g (n_g^2 - 1)},
+\qquad
+\bar\rho = \frac{1}{G}\sum_{g=1}^{G} \rho_g,
+\end{equation}
+where $d_i$ is the difference of the within-gene ranks of $y_i$ and
+$\hat y_i$ and $n_g$ is the number of guides on gene $g$. Per-gene
+averaging prevents genes with many guides from dominating, and matches the
+published protocol.
+
+\textbf{Model ladder.} v1: GuideCNN (sequence one-hots only). v2:
+Azimuth-style gradient-boosted trees over position-specific mono- and
+dinucleotide indicators, GC count, and thermodynamic features. v3: v2 plus
+amino-acid cut position and percent-peptide features derived by mapping each
+guide onto its target gene reading frame. Reported clean numbers:
+$\bar\rho = 0.286$ (v1), $0.390$ (v2), $0.480$ (v3). v4: a rank-average
+ensemble of six gradient-boosting variants,
+\begin{equation}
+\hat y_i^{(\mathrm{ens})} = \frac{1}{M}\sum_{m=1}^{M}
+\Phi\!\left(\frac{r_i^{(m)} - \mu_m}{\sigma_m}\right),
+\end{equation}
+where $r_i^{(m)}$ is the rank of model $m$'s prediction for guide $i$ within
+its training fold and $\Phi$ the standard normal CDF; averaging in rank space
+removes per-model scale drift before combination.
+
+\textbf{Per-gene analysis.} The v3 model is uniform across genes except
+CD15, whose per-gene $\rho = 0.155$ drags the mean; excluding CD15 the v3
+mean rises above $0.52$. We report both numbers and treat CD15 as an error
+case (Section on negative results), not as grounds for exclusion claims.
+
+\subsection{Tool 7 protocol: inDelphi repair-outcome benchmark}
+\textbf{Event aggregation.} The inDelphi Lib-A event table (117{,}438 rows)
+records per-observation repair events for 2{,}000 target sites; each row
+carries an \texttt{\_Experiment} field equal to the 0-based row index of the
+site in \texttt{targets-libA.txt}. Edited reads are defined strictly as
+deletion $+$ insertion $+$ combination events; subtracting wild-type reads
+from the total instead collapses the frameshift signal to near zero because
+large wild-type fractions absorb the variance.
+
+\textbf{Targets.} Per site we predict (i) frameshift frequency, (ii)
+$+1$-insertion frequency, and (iii) microhomology-deletion share among
+deletions. Evaluation is Spearman correlation over held-out sites.
+Honest standing after tuning: $+1$-insertion $0.60$, frameshift $0.31$,
+MH-deletion $0.21$ (tuned GBT, $+21\%$ over our initial $0.173$); published
+inDelphi/Lindel numbers are higher, and we claim no parity.
+
+\subsection{Tool 6 discovery protocol: same-gene duplex enrichment}
+\textbf{Sampling.} From the 4{,}692 real published guides in the FC+RES/V1
+files we draw (a) 30{,}000 same-gene guide pairs uniformly without
+replacement, (b) 30{,}000 cross-gene pairs, and (c) 30{,}000 pairs of random
+20-nt spacers matched in length. \textbf{Scoring.} Each pair is scored with
+\texttt{RNAduplex}/\texttt{duplexfold} (ViennaRNA 2.7.2) on the two
+$5'\to3'$ strands directly; the antiparallel geometry is internal to the
+tool. A pair \emph{flags} when the duplex free energy falls below the
+calibrated interference threshold.
+
+\textbf{Statistic.} Enrichment uses the two-proportion $z$-test:
+\begin{equation}
+z = \frac{p_1 - p_2}{\sqrt{p(1-p)\left(\frac{1}{n_1}+\frac{1}{n_2}\right)}},
+\qquad
+p = \frac{x_1 + x_2}{n_1 + n_2},
+\end{equation}
+with $p_1$ the same-gene flag rate ($0.225$), $p_2$ the cross-gene rate
+($0.159$), $n_1=n_2=30{,}000$; $z \approx 19.9$, $p < 10^{-80}$. The
+random-spacer control flags at $0.108$, so the same-gene excess over the
+sequence-composition null is $+11.7$ percentage points.
+
+\textbf{Artifact control.} An early version scored duplexfold$(g,
+\mathrm{revcomp}(g))$, which is a perfect duplex by construction and flags
+$100\%$ of pairs; this artifact was caught by the control arm and removed.
+
+\subsection{Tool 8 protocol: cut-site rearrangement risk validation}
+Risk scores combine a microhomology-density term, a local secondary-structure
+term, and an exon-boundary proximity term (main text, Tool 8 section).
+Validation uses live RefSeq sequence for the three Kosicki~2018 loci
+(Xrcc4 NM\_028012.4, Piga NM\_011081.4, Cd9 NM\_007657.4) resolved by
+NCBI esearch; accession guesses are never used after a mislabeling incident
+caught during audit.
+
+\subsection{Reproducibility checklist}
+Every figure and table regenerates from \texttt{scripts/} with fixed seeds;
+the hermetic test suite (40 tests) requires no network; all dataset hashes
+and URLs are in \texttt{data/PROVENANCE.md}.
