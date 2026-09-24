@@ -251,6 +251,39 @@ to mouse guides; extending that claim beyond mammals is blocked by data
 availability, which we document rather than paper over. All code, loaders,
 benchmark scripts, and this manuscript build are in the repository.
 \appendix
+\section{Extended results}
+\subsection{Tool 6 surrogate details}
+The surrogate task predicts single-strand ViennaRNA fold MFE for 2,000 random
+20-nt spacers (GC uniform in $[0.3,0.7]$), 1,600/400 split. All three learners
+cluster at Spearman 0.63--0.65; the 3-mer ridge is indistinguishable from the
+deep models. Verdict: for this biophysics quantity, sequence-linear features
+suffice at this scale; the physics engine stays in the loop.
+\subsection{Tool 7 per-target details}
+The +1-insertion rate is the most learnable outcome (GBT 0.603, CNN 0.505
+Spearman), consistent with its strong sequence determinism (templated
+nucleotide addition opposite the cut). Frameshift fraction is intermediate
+(0.31), and microhomology-deletion fraction is hardest (0.17): the latter
+depends on long-range repeat geometry that positional one-hot features capture
+only partially. Ridge on 3-mers fails on all three ($<$0.08), confirming that
+position-resolved features carry the signal.
+\subsection{Tool 10 per-model details}
+The CNN dominates on both human held-out (0.630) and mouse transfer (0.781);
+ridge and the GCN sit near 0.28--0.33 on both. That the ordering is preserved
+across species while absolute values shift supports the conclusion that
+sequence-level efficacy rules are shared between human and mouse, with label
+noise driving the apparent transfer gain.
+\subsection{Hyperparameters}
+\begin{table}[h]\centering
+\caption{Model hyperparameters.}\label{tab:hp}
+\begin{tabular}{lll}\hline\hline
+Model & Key settings & Optimizer \\\hline
+GuideCNN & widths 3/5/7, 24--40 filt., drop 0.2--0.3 & Adam $2\times10^{-3}$ \\
+SequenceGCN & 2 layers, hidden 48, drop 0.2 & Adam $2\times10^{-3}$ \\
+GBT & 600 rounds, lr 0.05 & histogram boosting \\
+Ridge & $\alpha=1.0$, 3-mer counts & closed form \\\hline\hline
+\end{tabular}
+\end{table}
+
 \section{Dataset statistics}
 \begin{table}[h]\centering
 \caption{Public datasets used.}\label{tab:data}
