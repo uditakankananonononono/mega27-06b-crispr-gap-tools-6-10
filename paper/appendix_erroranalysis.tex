@@ -55,12 +55,18 @@ We mitigate by reporting both an energy-ranked list and the calibrated binary
 flag, and by quantifying the flag-rate enrichment against cross-gene and
 random-spacer controls rather than claiming absolute interference rates.
 
-\subsection{Tool 8: validation is locus-limited}
-The rearrangement-risk flagger is validated on the three Kosicki~2018 loci
-only. Large-deletion propensity is known to be locus-dependent (chromatin,
-replication timing); we therefore present the risk score as a ranking device
-within a locus, not a calibrated probability across the genome, until broader
-validation data (e.g.\ long-read repair outcome sets) are integrated.
+\subsection{Tool 8: validation breadth}
+The rearrangement-risk flagger was initially validated on the three
+Kosicki~2018 loci only. The RefSeq panel
+(\texttt{results/riskflag\_panel.json}) broadens this to 76 mRNA
+accessions (43 human, 33 mouse) with 334 candidate NGG cut sites scored:
+$61.1\%$ flag LOW, $31.7\%$ MODERATE, $7.2\%$ HIGH. The highest
+mean-risk loci (VHL $0.655$, ALB $0.455$, BRAF $0.397$, PCSK9 $0.383$,
+MAPT $0.357$) are repeat-rich or low-complexity genes, consistent with the
+mechanistic terms. Large-deletion propensity is known to be
+locus-dependent (chromatin, replication timing), so the score remains a
+within-locus ranking device, not a calibrated cross-genome probability,
+until long-read repair-outcome sets are integrated.
 
 \subsection{Tool 9: the biosecurity wrapper's blind spot}
 Because the Common Mechanism's multi-GB databases cannot run on free-tier
