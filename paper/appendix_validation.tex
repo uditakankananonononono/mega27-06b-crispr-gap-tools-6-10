@@ -52,3 +52,49 @@ B2M $0.613$, Tet2 $0.526$, ALB $0.455$; highest single-site risk:
 Pik3ca NM\_008839 $0.780$, Tet2 NM\_001346736 $0.763$, PCSK9
 NM\_001407243 $0.715$. The score is a within-locus ranking device; no
 cross-genome calibration is claimed.
+
+\subsection{Off-target scorer replications: full per-study matrix}
+\label{app:offtarget-matrix}
+Table~\ref{tab:offtarget-matrix} gives the complete leave-one-study-out
+per-study AUC matrix behind the off-target replication subsections of the
+main text - the wave-1 (Hsu-style, CFD-style) and wave-2 (CCTop-style,
+CROP-IT-style, CRISPRoff-style) replications, 16{,}472 guide--off-target
+pairs across seven studies, all numbers machine-extracted from
+\texttt{results/}\allowbreak\texttt{offtarget\_scorers.json}
+and \texttt{results/}\allowbreak\texttt{offtarget\_scorers2.json}.
+On mean AUC the published
+ordering holds exactly: Hsu-style $0.556$ $<$ CCTop-style $0.565$ $<$
+CRISPRoff-style $0.567$ $<$ CROP-IT-style $0.573$ $<$ CFD-style $0.582$,
+and CFD-style beats Hsu-style in 5 of 7 studies, matching the primary
+published comparison. The per-study matrix adds structure the means hide.
+Per-study winners split across scorers: CRISPRoff-style takes Anderson
+($0.784$), Cameron ($0.574$) and Kim16 ($0.715$); CFD-style takes Kim and
+KimChromatin, the two chromatin-context studies; CROP-IT-style takes Cho;
+and Hsu-style - the simplest scorer - takes Finkelstein, a near-saturated
+positive set (6{,}743/6{,}792 positive) where every scorer sits at or
+below $0.48$ and CRISPRoff-style collapses to $0.331$. No scorer wins a
+majority of studies; the honest summary is that the published mean
+ordering is real but the per-study best scorer is study-dependent, with
+CFD-style never worse than second on the two chromatin studies.
+\begin{table}[h]
+\centering
+\caption{Per-study LOSO AUC for the five replicated off-target scorers.
+$n$ = pairs; $n_+$ = validated-positive pairs.}
+\label{tab:offtarget-matrix}
+\small
+\begin{tabular}{lrr|rr|rrr}
+\hline
+study & $n$ & $n_+$ & Hsu-st. & CFD-st. & CCTop-st. & CROP-IT-st. & CRISPRoff-st. \\
+\hline
+Finkelstein & 6{,}792 & 6{,}743 & 0.481 & 0.464 & 0.474 & 0.459 & 0.331 \\
+Cameron & 927 & 516 & 0.514 & 0.551 & 0.539 & 0.528 & 0.574 \\
+Anderson & 336 & 36 & 0.619 & 0.717 & 0.706 & 0.730 & 0.784 \\
+Kim16 & 251 & 226 & 0.572 & 0.513 & 0.558 & 0.584 & 0.715 \\
+KimChromatin & 135 & 106 & 0.661 & 0.711 & 0.617 & 0.601 & 0.584 \\
+Cho & 116 & 81 & 0.503 & 0.541 & 0.539 & 0.568 & 0.423 \\
+Kim & 89 & 59 & 0.541 & 0.577 & 0.518 & 0.543 & 0.558 \\
+\hline
+mean & 16{,}472 & --- & 0.556 & 0.582 & 0.565 & 0.573 & 0.567 \\
+\hline
+\end{tabular}
+\end{table}

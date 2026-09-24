@@ -447,6 +447,87 @@ detectable. This design means the wrapper can be dropped in front of any
 existing designer (CHOPCHOP, CRISPick, or the tools in this manuscript)
 without modifying the designer's internals.
 
+
+\subsection{Deployment walkthrough and tamper-evident audit log}
+\label{sec:tool9-walkthrough}
+We walk through the wrapper as a synthesis provider would run it, on a
+realistic order batch of four oligos: two guide spacers (EMX1
+\texttt{GAGTCCGAGCAGAAGAAGAA}, VEGFA \texttt{GGGTGGGGGGAGTTTGCTCC}) and a
+primer pair. All artifacts below are produced by
+\texttt{scripts/bioscreen\_walkthrough.py} and committed as
+\texttt{results/bioscreen\_audit\_demo.json}.
+
+\paragraph{Step 1: fail-closed on an unprovisioned host (real run).}
+Invoking the production path, \texttt{python cli.py bioscreen
+g1=<EMX1 spacer>}, on a machine without a Common Mechanism install exits
+non-zero with \texttt{BackendUnavailable: commec CLI or reference databases
+not found}; no oligo is accepted. This is the required behavior: a screen
+that cannot run must block the order, and the recorded run shows the wrapper
+does exactly that rather than degrading to a pass.
+
+\paragraph{Step 2: orchestration and the audit record.}
+With a backend present, \texttt{screen\_and\_design} batches the candidates,
+screens each before acceptance, and partitions them: in the committed
+demonstration (deterministic fixture backend from the test suite, standing
+in for the database-backed commec engine, which exceeds this workspace's
+footprint; the orchestration and audit code are production code), three
+oligos are accepted and the VEGFA spacer is blocked on a planted
+regulated-motif hit. Each oligo yields one append-only record:
+{\footnotesize\begin{verbatim}}
+{
+  "seq\_sha256": "b429a35688390cff1d842ddbc155728d4eef954f26ce633a54e2cd38b9e92d6b",
+  "engine": "fixture",
+  "verdict": "CLEAR",
+  "flags": [],
+  "n\_hits": 0,
+  "ts\_utc": "2026-09-24T16:28:18+00:00",
+  "prev\_chain": "0000000000000000000000000000000000000000000000000000000000000000",
+  "chain": "9b8f09a8b4230049a51680e3371e143698c348e5cb77b6e078d11bb8ce034ffb"
+}
+\end{verbatim}}
+The sequence itself never appears in the log - only its SHA-256 - so the
+audit can leave a secure enclave without disclosing customer sequence, while
+remaining bindable to the order by anyone who holds the oligo.
+
+\paragraph{Step 3: chain verification.}
+Records are chained $c_i = \mathrm{SHA256}(c_{i-1} \,\|\, r_i)$ over the
+canonical JSON serialization of record $r_i$, with genesis $c_0 = 0^{64}$.
+Verification is $O(n)$: recompute each link and compare the head. The
+committed demonstration records the outcome of four real verification calls
+on the emitted chain: the intact chain verifies; flipping one verdict from
+CLEAR to FLAG, deleting one line, and reversing the order each fail
+verification (Table~\ref{tab:tamper}). Because link $i$ commits to every
+record before it, tampering with any prefix invalidates the head, and the
+detector needs no trusted copy of the log - the head alone suffices.
+
+\begin{table}[t]
+\centering
+\caption{Tamper-evidence checks on the committed audit chain
+(\texttt{results/bioscreen\_audit\_demo.json}, part 3). Each attack is a
+real call to \texttt{verify\_chain} on the mutated log.}
+\label{tab:tamper}
+\begin{tabular}{lc}
+\hline
+log state & \texttt{verify\_chain} \\
+\hline
+intact & \textbf{true} \\
+single verdict edited (CLEAR $\to$ FLAG) & false \\
+one line deleted & false \\
+lines reordered & false \\
+\hline
+\end{tabular}
+\end{table}
+
+\paragraph{What this does and does not claim.}
+The walkthrough demonstrates the wrapper's guarantees - fail-closed
+screening, per-oligo verdicts, tamper-evident logging - with the screening
+engine abstracted. The regulated-content detection itself is the Common
+Mechanism's; we neither reimplement nor benchmark it here, and the fixture
+backend's planted motif is labeled as such in the artifact. The unit tests
+(\texttt{tests/test\_biosecurity.py}, 6 tests) pin the fail-closed raise,
+the accept/block partition, chain integrity, tamper detection, and the
+no-plaintext-sequence property.
+
 \section{Tool 10: Cross-species transfer evaluator}
 \subsection{Problem and diagnostics}
 Efficacy models are trained almost entirely on human cell-line screens and

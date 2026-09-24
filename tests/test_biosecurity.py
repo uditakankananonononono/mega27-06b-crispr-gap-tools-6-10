@@ -39,3 +39,33 @@ def test_all_clear():
     res = screen_and_design(cands, FixtureBackend(motif="ZZZZZ"))
     assert res["accepted"] == ["g1", "g2"]
     assert res["blocked"] == []
+
+
+def test_audit_chain_intact_verifies():
+    from tools_biosecurity.audit import GENESIS, verify_chain
+    cands = {"g1": "ACGTACGTACGTACGTACGT", "g2": "TTAAAACCCCGGGGTTTTGG",
+             "g3": "GGGGCCCCACACGTGTACAC"}
+    res = screen_and_design(cands, FixtureBackend())
+    assert len(res["chain"]) == 3
+    assert res["chain"][0]["prev_chain"] == GENESIS
+    assert res["chain"][-1]["chain"] == res["chain_head"]
+    assert verify_chain(res["chain"])
+
+
+def test_audit_chain_tamper_evidence():
+    from tools_biosecurity.audit import verify_chain
+    cands = {"g1": "ACGTACGTACGTACGTACGT", "g2": "TTAAAACCCCGGGGTTTTGG"}
+    res = screen_and_design(cands, FixtureBackend())
+    edited = [dict(r) for r in res["chain"]]
+    edited[0]["verdict"] = "FLAG"          # edit a verdict
+    assert not verify_chain(edited)
+    assert not verify_chain(res["chain"][1:])   # delete a line
+    assert not verify_chain(res["chain"][::-1])  # reorder
+
+
+def test_audit_chain_hides_sequence():
+    cands = {"g1": "ACGTACGTACGTACGTACGT"}
+    res = screen_and_design(cands, FixtureBackend())
+    blob = str(res["chain"])
+    assert "ACGTACGTACGTACGTACGT" not in blob  # only SHA-256 is recorded
+    assert len(res["chain"][0]["seq_sha256"]) == 64

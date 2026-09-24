@@ -24,6 +24,8 @@ import tempfile
 from dataclasses import dataclass, field
 from pathlib import Path
 
+from .audit import GENESIS, build_chain
+
 
 class BackendUnavailable(RuntimeError):
     pass
@@ -88,5 +90,10 @@ def screen_and_design(candidates: dict[str, str], backend,
         (accepted if ok else blocked).append(oc.sequence_id)
         audit.append({"id": oc.sequence_id, "status": oc.status,
                       "engine": oc.engine, "n_hits": len(oc.hits)})
+    chain = build_chain([
+        {"sequence": candidates[oc.sequence_id], "verdict": oc.status,
+         "engine": oc.engine, "flags": list(oc.hits), "n_hits": len(oc.hits)}
+        for oc in outcomes])
     return {"accepted": accepted, "blocked": blocked, "audit": audit,
+            "chain": chain, "chain_head": chain[-1]["chain"] if chain else GENESIS,
             "engine": getattr(backend, "commec_bin", "unknown")}

@@ -1,0 +1,73 @@
+{
+  "part1_fail_closed_real_run": {
+    "command": "python cli.py bioscreen g1=<EMX1 spacer>",
+    "returncode": 1,
+    "stderr_tail": "tools_biosecurity.screener.BackendUnavailable: commec CLI or reference databases not found; install per github.com/ibbis-bio/common-mechanism (conda + commec setup)",
+    "behavior": "fail-closed: BackendUnavailable raised, no oligo accepted"
+  },
+  "part2_audit_format_demo": {
+    "purpose": "audit-record format demonstration; production engine is IBBIS commec (multi-GB databases, environment-provided)",
+    "engine": "fixture-no-commec-db",
+    "accepted": [
+      "order1_guideEMX1",
+      "order1_fwdPrimer",
+      "order1_revPrimer"
+    ],
+    "blocked": [
+      "order1_guideVEGFA"
+    ],
+    "chain_head": "cdd9f5c613557fcfdf108fb9c011e91679d6db21fd003512836002f301ebd63a",
+    "chain": [
+      {
+        "seq_sha256": "b429a35688390cff1d842ddbc155728d4eef954f26ce633a54e2cd38b9e92d6b",
+        "engine": "fixture",
+        "verdict": "CLEAR",
+        "flags": [],
+        "n_hits": 0,
+        "ts_utc": "2026-09-24T16:28:18+00:00",
+        "prev_chain": "0000000000000000000000000000000000000000000000000000000000000000",
+        "chain": "9b8f09a8b4230049a51680e3371e143698c348e5cb77b6e078d11bb8ce034ffb"
+      },
+      {
+        "seq_sha256": "0f8f5faf8dc88303218b4680d81d7422966c5c4febc9a965da9a9391d83e02c3",
+        "engine": "fixture",
+        "verdict": "FLAG",
+        "flags": [
+          {
+            "motif": "GGGGGG"
+          }
+        ],
+        "n_hits": 1,
+        "ts_utc": "2026-09-24T16:28:18+00:00",
+        "prev_chain": "9b8f09a8b4230049a51680e3371e143698c348e5cb77b6e078d11bb8ce034ffb",
+        "chain": "59e6be58713372fc8b563a3cce928f91221ec3a44edf97e3abf91c8005dd22de"
+      },
+      {
+        "seq_sha256": "de5e86953600e964ebb518e4f2912ac631aaa973740a76d1702cda273a01781c",
+        "engine": "fixture",
+        "verdict": "CLEAR",
+        "flags": [],
+        "n_hits": 0,
+        "ts_utc": "2026-09-24T16:28:18+00:00",
+        "prev_chain": "59e6be58713372fc8b563a3cce928f91221ec3a44edf97e3abf91c8005dd22de",
+        "chain": "da5cf58a39c8c52610358324c83ee72d4018e5af0207df7d8fc28b5d317be52a"
+      },
+      {
+        "seq_sha256": "3937af87eb593c96e249852e4fb348e6f4dd9b25d1887086633641f8e83a6ecf",
+        "engine": "fixture",
+        "verdict": "CLEAR",
+        "flags": [],
+        "n_hits": 0,
+        "ts_utc": "2026-09-24T16:28:18+00:00",
+        "prev_chain": "da5cf58a39c8c52610358324c83ee72d4018e5af0207df7d8fc28b5d317be52a",
+        "chain": "cdd9f5c613557fcfdf108fb9c011e91679d6db21fd003512836002f301ebd63a"
+      }
+    ]
+  },
+  "part3_tamper_evidence_real": {
+    "verify_intact": true,
+    "verify_after_verdict_edit": false,
+    "verify_after_line_deletion": false,
+    "verify_after_reorder": false
+  }
+}

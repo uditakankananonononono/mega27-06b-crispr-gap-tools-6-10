@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  24 SEP 2026 21:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  24 SEP 2026 22:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -326,56 +326,99 @@ Underfull \hbox (badness 1888) in paragraph at lines 402--402
  []
 
 [10 <./figures/panel_risk.pdf>]
+Overfull \hbox (30.58246pt too wide) in paragraph at lines 453--459
+\OT1/ptm/m/n/12 oli-gos: two guide spac-ers (EMX1 \OT1/pcr/m/n/12 GAGTCCGAGCAGA
+AGAAGAA\OT1/ptm/m/n/12 , VEGFA \OT1/pcr/m/n/12 GGGTGGGGGGAGTTTGCTCC\OT1/ptm/m/n
+/12 )
+ []
 
-LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/transfer.pdf, id=330, 433.62pt x 260.17201pt>
+Overfull \hbox (11.61073pt too wide) in paragraph at lines 453--459
+\OT1/ptm/m/n/12 and a primer pair. All ar-ti-facts be-low are pro-duced by \OT1
+/pcr/m/n/12 scripts/bioscreen[]walkthrough.py
+ []
+
+
+Overfull \hbox (0.76164pt too wide) in paragraph at lines 461--467
+ \OT1/ptm/b/n/12 Step 1: fail-closed on an un-pro-vi-sioned host (real run).[] 
+\OT1/ptm/m/n/12 In-vok-ing the pro-duc-tion path, \OT1/pcr/m/n/12 python
+ []
+
+
+Overfull \hbox (43.97539pt too wide) in paragraph at lines 461--467
+\OT1/ptm/m/n/12 in-stall ex-its non-zero with \OT1/pcr/m/n/12 BackendUnavailabl
+e: commec CLI or reference databases
+ []
+
+[11]
+Overfull \hbox (34.24498pt too wide) in paragraph at lines 487--487
+[]  \OT1/pcr/m/n/10 "seq\_sha256": "b429a35688390cff1d842ddbc155728d4eef954f26c
+e633a54e2cd38b9e92d6b",[] 
+ []
+
+
+Overfull \hbox (34.24498pt too wide) in paragraph at lines 487--487
+[]  \OT1/pcr/m/n/10 "prev\_chain": "0000000000000000000000000000000000000000000
+000000000000000000000",[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 507--507
+[]\OT1/ptm/m/n/12 Table 4: Tamper-evidence checks on the com-mit-ted au-dit cha
+in
+ []
+
+
+Underfull \hbox (badness 2717) in paragraph at lines 507--507
+\OT1/ptm/m/n/12 (\OT1/pcr/m/n/12 results/bioscreen[]audit[]demo.json\OT1/ptm/m/
+n/12 , part 3). Each at-tack is a real call to
+ []
+
+[12]
+<figures/transfer.pdf, id=336, 433.62pt x 260.17201pt>
 File: figures/transfer.pdf Graphic file (type pdf)
 <use figures/transfer.pdf>
-Package pdftex.def Info: figures/transfer.pdf  used on input line 470.
+Package pdftex.def Info: figures/transfer.pdf  used on input line 551.
 (pdftex.def)             Requested size: 352.31625pt x 211.40112pt.
-[11]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[12 <./figures/transfer.pdf>]
-Overfull \hbox (24.89755pt too wide) in paragraph at lines 527--547
+ [13 <./figures/transfer.pdf>]
+Overfull \hbox (24.89755pt too wide) in paragraph at lines 608--628
 \OT1/ptm/m/n/12 naRNA self-fold en-ergy, GC, din-u-cleotide spec-trum) $\OT1/cm
 r/m/n/12 0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 318$ \OT1/ptm/m/n/12 (\OT1/pcr/m/n/
 12 results/classic[]scorers2.json\OT1/ptm/m/n/12 ;
  []
 
-<figures/classic_scorers.pdf, id=386, 650.43pt x 260.17201pt>
+[14]
+<figures/classic_scorers.pdf, id=393, 650.43pt x 260.17201pt>
 File: figures/classic_scorers.pdf Graphic file (type pdf)
 <use figures/classic_scorers.pdf>
-Package pdftex.def Info: figures/classic_scorers.pdf  used on input line 549.
+Package pdftex.def Info: figures/classic_scorers.pdf  used on input line 630.
 (pdftex.def)             Requested size: 422.77664pt x 169.11375pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 554--554
+Underfull \hbox (badness 10000) in paragraph at lines 635--635
 []\OT1/ptm/m/n/12 Figure 7: Clas-sic ef-fi-cacy scor-ers repli-cated on the cle
 an RES$\OMS/cmsy/m/n/12 !$\OT1/ptm/m/n/12 V1 split
  []
 
 
-Underfull \hbox (badness 1783) in paragraph at lines 554--554
+Underfull \hbox (badness 1783) in paragraph at lines 635--635
 \OT1/ptm/m/n/12 (\OT1/pcr/m/n/12 results/classic[]scorers.json\OT1/ptm/m/n/12 )
  against our chal-lengers (v6, v7) and the same-
  []
 
-[13]
-<figures/offtarget_perstudy.pdf, id=391, 578.16pt x 260.17201pt>
+<figures/offtarget_perstudy.pdf, id=394, 578.16pt x 260.17201pt>
 File: figures/offtarget_perstudy.pdf Graphic file (type pdf)
 <use figures/offtarget_perstudy.pdf>
-Package pdftex.def Info: figures/offtarget_perstudy.pdf  used on input line 578
+Package pdftex.def Info: figures/offtarget_perstudy.pdf  used on input line 659
 .
 (pdftex.def)             Requested size: 399.29463pt x 179.68163pt.
-<figures/azimuth_break.pdf, id=392, 686.565pt x 289.08pt>
+<figures/azimuth_break.pdf, id=395, 686.565pt x 289.08pt>
 File: figures/azimuth_break.pdf Graphic file (type pdf)
 <use figures/azimuth_break.pdf>
-Package pdftex.def Info: figures/azimuth_break.pdf  used on input line 586.
+Package pdftex.def Info: figures/azimuth_break.pdf  used on input line 667.
 (pdftex.def)             Requested size: 469.75502pt x 197.78923pt.
- [14 <./figures/classic_scorers.pdf>] [15 <./figures/offtarget_perstudy.pdf>]
-Overfull \hbox (89.81107pt too wide) in paragraph at lines 658--674
+[15 <./figures/classic_scorers.pdf>] [16 <./figures/offtarget_perstudy.pdf>]
+[17 <./figures/azimuth_break.pdf>]
+Overfull \hbox (89.81107pt too wide) in paragraph at lines 739--755
 \OT1/ptm/m/n/12 deletion frac-tion (Spear-man $\OT1/cmr/m/n/12 0\OML/cmm/m/it/1
 2 :\OT1/cmr/m/n/12 01$\OT1/ptm/m/n/12 --$\OT1/cmr/m/n/12 0\OML/cmm/m/it/12 :\OT
 1/cmr/m/n/12 11$ \OT1/ptm/m/n/12 vs $\OT1/cmr/m/n/12 0\OML/cmm/m/it/12 :\OT1/cm
@@ -383,8 +426,8 @@ r/m/n/12 210$ \OT1/ptm/m/n/12 for the tuned po-si-tional GBT); \OT1/pcr/m/n/12
 results/mhdel[]improve.json\OT1/ptm/m/n/12 .
  []
 
-[16 <./figures/azimuth_break.pdf>] [17]
-Overfull \hbox (20.62175pt too wide) in paragraph at lines 732--740
+[18]
+Overfull \hbox (20.62175pt too wide) in paragraph at lines 813--821
  [][] 
  []
 
@@ -394,7 +437,7 @@ Overfull \hbox (109.20479pt too wide) in paragraph at lines 2--7
 the machine-readable source is \OT1/pcr/m/n/12 docs/EXTERNAL[]TOOLS.md
  []
 
-
+[19]
 Underfull \hbox (badness 1675) in paragraph at lines 39--39
 []\OT1/ptm/m/n/10.95 replication bench-marked on RES$\OMS/cmsy/m/n/10.95 !$\OT1
 /ptm/m/n/10.95 V1:
@@ -412,17 +455,14 @@ Underfull \hbox (badness 1675) in paragraph at lines 41--41
 /ptm/m/n/10.95 V1:
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-) (./appendix_protocols.tex [18] [19]
+) (./appendix_protocols.tex [20] [21]
 Overfull \hbox (38.17764pt too wide) in paragraph at lines 68--76
 \OT1/ptm/m/n/12 of ran-dom 20-nt spac-ers matched in length. \OT1/ptm/b/n/12 Sc
 or-ing. \OT1/ptm/m/n/12 Each pair is scored with \OT1/pcr/m/n/12 RNAduplex\OT1/
 ptm/m/n/12 /\OT1/pcr/m/n/12 duplexfold
  []
 
-) (./appendix_derivations.tex [20] [21]
+[22]) (./appendix_derivations.tex [23]
 Overfull \hbox (7.4422pt too wide) in paragraph at lines 71--71
 []\OT1/ptm/b/n/14.4 D3. Spear-man cor-re-la-tion and the gene-clustered paired 
 boot-strap (Tools
@@ -436,7 +476,7 @@ the bar\OT1/ptm/m/n/12 , not as near-misses (\OT1/pcr/m/n/12 results/beat[]azim
 uth[]v6.json\OT1/ptm/m/n/12 ,
  []
 
-[22]
+[24]
 Overfull \hbox (101.238pt too wide) in paragraph at lines 115--121
 \OT1/ptm/m/n/12 the frameshift rate are strongly cou-pled --- which is why our 
 head-to-head (\OT1/pcr/m/n/12 results/lindel[]headtohead.json\OT1/ptm/m/n/12 )
@@ -459,40 +499,40 @@ Overfull \hbox (46.77153pt too wide) in paragraph at lines 139--145
 tm/m/n/12 ). 
  []
 
-[23]
+[25]
 Overfull \hbox (34.47354pt too wide) in paragraph at lines 189--195
  \OT1/ptm/b/n/12 What $\OML/cmm/m/it/12 S$ \OT1/ptm/b/n/12 is not.[] \OT1/ptm/m
 /n/12 The weights are hand-set from the qual-i-ta-tive weight of ev-i-dence in 
 [[],
  []
 
-
+[26]
 Overfull \hbox (33.19177pt too wide) in paragraph at lines 217--222
  \OT1/ptm/b/n/12 Base-line con-struc-tion.[] \OT1/ptm/m/n/12 The random-spacer 
 flag rate $\OT1/cmr/m/n/12 0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 10812$ \OT1/ptm/m
 /n/12 in \OT1/pcr/m/n/12 results/realguide[]risk.json
  []
 
-[24])
-Overfull \hbox (5.64679pt too wide) in paragraph at lines 746--752
+)
+Overfull \hbox (5.64679pt too wide) in paragraph at lines 827--833
 \OT1/ptm/m/n/12 Every re-ported num-ber re-gen-er-ates from the repos-i-tory: \
 OT1/pcr/m/n/12 pip install torch --index-url
  []
 
 
-Overfull \hbox (39.6688pt too wide) in paragraph at lines 746--752
+Overfull \hbox (39.6688pt too wide) in paragraph at lines 827--833
 \OT1/pcr/m/n/12 https://download.pytorch.org/whl/cpu\OT1/ptm/m/n/12 , \OT1/pcr/
 m/n/12 pip install scikit-learn biopython
  []
 
 
-Overfull \hbox (4.02785pt too wide) in paragraph at lines 746--752
+Overfull \hbox (4.02785pt too wide) in paragraph at lines 827--833
 \OT1/pcr/m/n/12 pytest pandas scipy matplotlib ViennaRNA\OT1/ptm/m/n/12 , then 
 the five scripts un-der \OT1/pcr/m/n/12 scripts/
  []
 
-[25] (./appendix_erroranalysis.tex [26] [27]) [28] (./appendix_architecture.tex
-
+[27] [28] (./appendix_erroranalysis.tex [29]) [30] (./appendix_architecture.tex
+[31]
 Overfull \hbox (48.41362pt too wide) in paragraph at lines 18--29
 \OT1/pcr/m/n/12 tools[]multiplex \OT1/ptm/m/n/12 (du-plex screen-ing, shared-PA
 M com-pe-ti-tion scor-ing, pair rank-ing), \OT1/pcr/m/n/12 tools[]outcome
@@ -504,7 +544,7 @@ Overfull \hbox (62.39378pt too wide) in paragraph at lines 18--29
 ary terms, lo-cus loader), \OT1/pcr/m/n/12 tools[]biosecurity
  []
 
-[29]
+
 Overfull \hbox (6.05559pt too wide) in paragraph at lines 31--36
 \OT1/pcr/m/n/12 python cli.py <tool> <subcommand> \OT1/ptm/m/n/12 ex-poses ev-e
 ry user-facing func-tion: \OT1/pcr/m/n/12 multiplex
@@ -517,27 +557,27 @@ m/m/n/12 , \OT1/pcr/m/n/12 riskflag score\OT1/ptm/m/n/12 , \OT1/pcr/m/n/12 bios
 ecurity prescreen\OT1/ptm/m/n/12 , \OT1/pcr/m/n/12 transfer
  []
 
-)
-LaTeX Font Info:    Trying to load font information for OMS+pcr on input line 8
-50.
+) [32]
+LaTeX Font Info:    Trying to load font information for OMS+pcr on input line 9
+31.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omspcr.fd
 File: omspcr.fd 
 )
 LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 850.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 931.
 
-Overfull \hbox (9.47386pt too wide) in paragraph at lines 850--863
+Overfull \hbox (9.47386pt too wide) in paragraph at lines 931--944
 \OT1/pcr/m/n/10.95 Output: per-guide penalties, set compatibility, removal rank
 ing 
  []
 
-[30]
-Overfull \hbox (22.61385pt too wide) in paragraph at lines 866--873
+
+Overfull \hbox (22.61385pt too wide) in paragraph at lines 947--954
 \OT1/pcr/m/n/10.95 Output: P(frameshift), P(+1 insertion), P(MH deletion), prec
 ision 
  []
 
-(./appendix_stats.tex [31] [32]) (./appendix_negatives.tex
+[33] (./appendix_stats.tex [34]) (./appendix_negatives.tex
 Overfull \hbox (20.9491pt too wide) in paragraph at lines 7--10
 \OT1/ptm/m/n/12 stated; the bar is the same-split Rule Set 2 repli-ca-tion, $\O
 T1/cmr/m/n/12 0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 569$ \OT1/ptm/m/n/12 (\OT1/pcr
@@ -548,19 +588,19 @@ LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 1
 1.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-)
+) [35]
 Overfull \hbox (2.18752pt too wide) in paragraph at lines 32--36
 \OT1/ptm/m/n/12 into RES train-ing data (1,836 over-lap-ping 30-mers with V1). 
 Re-tracted in com-mit \OT1/pcr/m/n/12 a22ba74\OT1/ptm/m/n/12 ;
  []
 
-[33]
+
 Overfull \hbox (23.50049pt too wide) in paragraph at lines 45--51
 []\OT1/ptm/b/n/12 Cross-cell-line trans-fer fail-ure \OT1/ptm/m/n/12 (\OT1/pcr/
 m/n/12 results/outcome[]crosscell.json\OT1/ptm/m/n/12 ): our +1-insertion-
  []
 
-) (./appendix_validation.tex [34]
+) (./appendix_validation.tex [36]
 Overfull \hbox (1.3035pt too wide) in paragraph at lines 17--23
 \OT1/ptm/m/n/12 From \OT1/pcr/m/n/12 results/beat[]azimuth[]v1.json\OT1/ptm/m/n
 /12 --\OT1/pcr/m/n/12 v7.json\OT1/ptm/m/n/12 , mean per-gene Spear-man on V1 mo
@@ -579,13 +619,13 @@ Overfull \hbox (35.45657pt too wide) in paragraph at lines 41--46
 /n/12 and \OT1/pcr/m/n/12 results/offtarget[]epigenetics.json
  []
 
-) (./appendix_repro.tex
+[37]) (./appendix_repro.tex
 Overfull \hbox (11.03363pt too wide) in paragraph at lines 2--9
 \OT1/ptm/m/n/12 2.3.3, SciPy 1.15.3, scikit-learn 1.7.2, Py-Torch 2.14.0+cpu, V
 i-en-naRNA 2.7.2 (du-plex-fold/RNAfold).
  []
 
-[35]
+[38]
 Overfull \hbox (24.17953pt too wide) in paragraph at lines 15--15
 []\OT1/pcr/m/n/10.95 discovery[]realguide[]risk.py| 
  []
@@ -680,35 +720,36 @@ Underfull \hbox (badness 10000) in paragraph at lines 46--46
 []\OT1/pcr/m/n/10.95 make[]figures.py\OT1/ptm/m/n/10.95 --
  []
 
-[36]) [37] [38] [39] (./main.aux) ) 
+) [39] [40] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 3498 strings out of 480247
- 53221 string characters out of 5896151
- 357389 words of memory out of 5000000
- 21354 multiletter control sequences out of 15000+600000
- 505009 words of font info for 105 fonts, out of 8000000 for 9000
+ 3505 strings out of 480247
+ 53334 string characters out of 5896151
+ 351430 words of memory out of 5000000
+ 21360 multiletter control sequences out of 15000+600000
+ 506031 words of font info for 108 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  55i,11n,62p,446b,266s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvi
-ps/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-bx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/s
-ymbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf
--dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (39 pages, 456230 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8
+r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/urw/times/utmri8a.pfb>
+Output written on main.pdf (40 pages, 471245 bytes).
 PDF statistics:
- 713 PDF objects out of 1000 (max. 8388607)
- 183 compressed objects within 2 object streams
+ 721 PDF objects out of 1000 (max. 8388607)
+ 188 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
