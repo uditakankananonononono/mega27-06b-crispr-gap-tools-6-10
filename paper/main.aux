@@ -48,17 +48,16 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {7.1}Design}{8}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Deployment reality}{8}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {7.3}Failure modes and audit format}{8}{}\protected@file@percent }
-\citation{doench2016}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Human-held-out versus mouse-transfer Spearman by model class. Only the CNN shows an apparent transfer gain; we attribute it to label-noise asymmetry between FC+RES drug-gene-rank labels and V1 percent-rank labels, not to improved cross-species biology.}}{9}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Human-held-out versus mouse-transfer Spearman by model class. Only the CNN leads on both axes but pays a real transfer penalty (0.665 RES held-out to 0.358 mouse V1); the simple baselines are flat.}}{9}{}\protected@file@percent }
 \newlabel{fig:transfer}{{4}{9}}
 \@writefile{toc}{\contentsline {section}{\numberline {8}Tool 10: Cross-species transfer evaluator}{9}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {8.1}Problem and diagnostics}{9}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Human (FC+RES) $\to $ mouse (V1) transfer, Spearman.}}{9}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Human (RES only) $\to $ mouse (V1) transfer, Spearman.}}{9}{}\protected@file@percent }
 \newlabel{tab:transfer}{{4}{9}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.2}Benchmark break: Rule Set 2 cross-dataset protocol}{9}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Per-gene Spearman on the V1/FC dataset under the Azimuth cross-dataset protocol (train RES only). GuideCNN exceeds the published Rule Set 2 performance (dashed line, $0.52$) on all nine genes.}}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.2}Cross-dataset protocol attempt (honest standing)}{9}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Per-gene Spearman on V1/FC under the clean Azimuth cross-dataset protocol (train RES only). All our current models sit below the published Rule Set 2 range (dashed line, $0.52$); the earlier contaminated run that appeared to exceed it is retracted.}}{10}{}\protected@file@percent }
 \newlabel{fig:azimuth}{{5}{10}}
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Azimuth-protocol results (train RES, test V1/FC, 2,144 guides).}}{10}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Clean Azimuth-protocol results (train RES only, test V1/FC).}}{10}{}\protected@file@percent }
 \newlabel{tab:azimuth}{{5}{10}}
 \@writefile{toc}{\contentsline {section}{\numberline {9}Ethics, Dual-Use, and Governance}{10}{}\protected@file@percent }
 \citation{doench2014}

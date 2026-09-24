@@ -5,8 +5,15 @@ import pandas as pd
 
 
 def load_human(path: str = "data/FC_plus_RES_withPredictions.csv") -> pd.DataFrame:
-    """FC+RES: 5,310 human guides; target = score_drug_gene_rank (0..1)."""
+    """RES-only training set: the 3,473 drug-resistance-screen guides.
+
+    The FC+RES file mixes the FC (flow-cytometry, drug == 'nodrug') guides
+    with the RES drug-screen guides. FC rows ARE the V1 test guides, so
+    training on them contaminates any V1 evaluation (caught 2026-09-24:
+    1,836 train/test overlapping 30-mers). We keep only drug != 'nodrug'
+    rows; target = score_drug_gene_rank (0..1)."""
     df = pd.read_csv(path, index_col=0)
+    df = df[df["drug"] != "nodrug"]
     df = df.rename(columns={"30mer": "context", "score_drug_gene_rank": "activity"})
     df = df.dropna(subset=["context", "activity"])
     df["context"] = df["context"].str.upper()

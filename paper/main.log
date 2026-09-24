@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  24 SEP 2026 20:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  24 SEP 2026 20:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -317,10 +317,10 @@ Package pdftex.def Info: figures/transfer.pdf  used on input line 353.
 <figures/azimuth_break.pdf, id=208, 650.43pt x 289.08pt>
 File: figures/azimuth_break.pdf Graphic file (type pdf)
 <use figures/azimuth_break.pdf>
-Package pdftex.def Info: figures/azimuth_break.pdf  used on input line 378.
+Package pdftex.def Info: figures/azimuth_break.pdf  used on input line 374.
 (pdftex.def)             Requested size: 469.75502pt x 208.78584pt.
  [9 <./figures/transfer.pdf>] [10 <./figures/azimuth_break.pdf>]
-Overfull \hbox (89.81107pt too wide) in paragraph at lines 455--471
+Overfull \hbox (89.81107pt too wide) in paragraph at lines 456--472
 \OT1/ptm/m/n/12 deletion frac-tion (Spear-man $\OT1/cmr/m/n/12 0\OML/cmm/m/it/1
 2 :\OT1/cmr/m/n/12 01$\OT1/ptm/m/n/12 --$\OT1/cmr/m/n/12 0\OML/cmm/m/it/12 :\OT
 1/cmr/m/n/12 11$ \OT1/ptm/m/n/12 vs $\OT1/cmr/m/n/12 0\OML/cmm/m/it/12 :\OT1/cm
@@ -329,44 +329,44 @@ results/mhdel[]improve.json\OT1/ptm/m/n/12 .
  []
 
 [11] [12]
-Overfull \hbox (20.62175pt too wide) in paragraph at lines 526--534
+Overfull \hbox (20.62175pt too wide) in paragraph at lines 530--538
  [][] 
  []
 
 
-Overfull \hbox (5.64679pt too wide) in paragraph at lines 537--543
+Overfull \hbox (5.64679pt too wide) in paragraph at lines 541--547
 \OT1/ptm/m/n/12 Every re-ported num-ber re-gen-er-ates from the repos-i-tory: \
 OT1/pcr/m/n/12 pip install torch --index-url
  []
 
 
-Overfull \hbox (39.6688pt too wide) in paragraph at lines 537--543
+Overfull \hbox (39.6688pt too wide) in paragraph at lines 541--547
 \OT1/pcr/m/n/12 https://download.pytorch.org/whl/cpu\OT1/ptm/m/n/12 , \OT1/pcr/
 m/n/12 pip install scikit-learn biopython
  []
 
 
-Overfull \hbox (4.02785pt too wide) in paragraph at lines 537--543
+Overfull \hbox (4.02785pt too wide) in paragraph at lines 541--547
 \OT1/pcr/m/n/12 pytest pandas scipy matplotlib ViennaRNA\OT1/ptm/m/n/12 , then 
 the five scripts un-der \OT1/pcr/m/n/12 scripts/
  []
 
 [13] [14] [15]
 LaTeX Font Info:    Trying to load font information for OMS+pcr on input line 6
-39.
+43.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omspcr.fd
 File: omspcr.fd 
 )
 LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 639.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 643.
 
-Overfull \hbox (9.47386pt too wide) in paragraph at lines 639--652
+Overfull \hbox (9.47386pt too wide) in paragraph at lines 643--656
 \OT1/pcr/m/n/10.95 Output: per-guide penalties, set compatibility, removal rank
 ing 
  []
 
 
-Overfull \hbox (22.61385pt too wide) in paragraph at lines 655--662
+Overfull \hbox (22.61385pt too wide) in paragraph at lines 659--666
 \OT1/pcr/m/n/10.95 Output: P(frameshift), P(+1 insertion), P(MH deletion), prec
 ision 
  []
@@ -379,7 +379,7 @@ Here is how much of TeX's memory you used:
  21260 multiletter control sequences out of 15000+600000
  500879 words of font info for 93 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 55i,10n,62p,387b,245s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,10n,62p,384b,243s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/bas
 e/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></u
@@ -396,9 +396,9 @@ cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols
 /usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (18 pages, 312554 bytes).
+Output written on main.pdf (18 pages, 312371 bytes).
 PDF statistics:
- 416 PDF objects out of 1000 (max. 8388607)
+ 413 PDF objects out of 1000 (max. 8388607)
  115 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)

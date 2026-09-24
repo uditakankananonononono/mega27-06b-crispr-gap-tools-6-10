@@ -25,10 +25,10 @@ duplex thermodynamics with PAM-competition decay and a graph neural network
 repair-outcome predictors trained on 1,742 real inDelphi U2OS sites; a
 mechanistic large-deletion risk flagger validated qualitatively on the
 Kosicki-2018 Xrcc4 locus; a screen-and-design wrapper around the IBBIS Common
-Mechanism; and a cross-species transfer evaluator showing no mammalian transfer
-penalty for a CNN trained on human Doench FC+RES and tested on mouse V1
-(Spearman 0.78 vs 0.63). All benchmarks are reported with honest baselines;
-negative and parity results are preserved.
+Mechanism; and a cross-species transfer evaluator quantifying the real mammalian
+transfer penalty for a CNN trained on human RES and tested on mouse V1
+(held-out 0.67 vs transfer 0.36 Spearman). All benchmarks are reported with
+honest baselines; negative, retracted, and parity results are preserved.
 \end{abstract}
 
 \begin{figure}[t]\centering
@@ -338,62 +338,63 @@ on species B, and reports the transfer delta next to distribution-shift
 diagnostics: GC-content delta and the Jensen-Shannon divergence
 $D_{JS}(P\|Q) = \tfrac12 D_{KL}(P\|M) + \tfrac12 D_{KL}(Q\|M)$,
 $M = \tfrac12(P+Q)$, between 3-mer distributions of the two guide sets.
-For human$\to$mouse the shift is small (GC delta 0.041, $D_{JS}=0.0040$ nats).
+For human RES$\to$mouse V1 the shift is small (GC delta 0.061, $D_{JS}=0.0087$ nats).
 \begin{table}[h]\centering
-\caption{Human (FC+RES) $\to$ mouse (V1) transfer, Spearman.}\label{tab:transfer}
+\caption{Human (RES only) $\to$ mouse (V1) transfer, Spearman.}\label{tab:transfer}
 \begin{tabular}{lccc}\hline\hline
 Model & Human held-out & Mouse transfer & Drop \\\hline
-Ridge (3-mer) & 0.279 & 0.331 & $-0.052$ \\
-CNN (one-hot 30-mer) & 0.630 & 0.781 & $-0.151$ \\
-GCN (3-mer graph) & 0.289 & 0.281 & $+0.008$ \\\hline\hline
+Ridge (3-mer) & 0.248 & 0.254 & $-0.006$ \\
+CNN (one-hot 30-mer) & 0.665 & 0.358 & $+0.307$ \\
+GCN (3-mer graph) & 0.218 & 0.229 & $-0.011$ \\\hline\hline
 \end{tabular}
 \end{table}
 
 \begin{figure}[t]\centering
 \includegraphics[width=0.75\textwidth]{figures/transfer.pdf}
 \caption{Human-held-out versus mouse-transfer Spearman by model class. Only
-the CNN shows an apparent transfer gain; we attribute it to label-noise
-asymmetry between FC+RES drug-gene-rank labels and V1 percent-rank labels,
-not to improved cross-species biology.}
+the CNN leads on both axes but pays a real transfer penalty
+(0.665 RES held-out to 0.358 mouse V1); the simple baselines are flat.}
 \label{fig:transfer}\end{figure}
 
 
-\subsection{Benchmark break: Rule Set 2 cross-dataset protocol}
+\subsection{Cross-dataset protocol attempt (honest standing)}
 We replicate the Azimuth cross-dataset evaluation exactly: train on the RES
-assays, test on the V1/FC dataset, metric = mean per-gene Spearman across the
-nine genes. The published Rule Set 2 model (gradient-boosted regression
-trees) reports $0.51$--$0.52$ mean per-gene Spearman on the FC data
-\cite{doench2016}. GuideCNN scores $0.792$ on the identical protocol,
-an absolute gain of $+0.27$ ($\approx 52\%$ relative), beating the published
-leader on every one of the nine genes
-(Figure~\ref{fig:azimuth}, Table~\ref{tab:azimuth}). The k-mer ridge
-($0.331$) and SequenceGCN ($0.296$) baselines are reported without omission.
-Two caveats accompany the claim. First, the published $0.51$--$0.52$ figure
-is quoted from the Azimuth feature-importance analysis; the figure-bar
-values of its Figure~3 could not be machine-extracted, so we cite the
-text-reported range. Second, the RES (drug-gene-rank) and V1 (percent-rank)
-label types differ; the protocol inherits this asymmetry from the original
-publication, and it applies equally to every model evaluated under it.
+assays only (3,473 guides, 8 genes; the FC rows of the FC+RES file are
+excluded because they are the V1 test guides --- an earlier version of this
+benchmark trained on them by mistake, was caught by our own dataset audit,
+and is retracted), test on V1/FC, metric = mean per-gene Spearman across
+the nine genes. Under the clean protocol the published Rule Set 2 range
+($0.51$--$0.52$ on FC) remains unbeaten by our current models
+(Figure~\ref{fig:azimuth}, Table~\ref{tab:azimuth}): GuideCNN reaches
+$0.286$, the k-mer ridge $0.268$, and the SequenceGCN $0.218$. The gap to
+Rule Set 2 plausibly reflects its richer engineered feature set
+(position-specific dinucleotides, thermodynamic features) rather than model
+class; closing it is future work. We report the standing without inflation.
 \begin{figure}[t]\centering
 \includegraphics[width=\textwidth]{figures/azimuth_break.pdf}
-\caption{Per-gene Spearman on the V1/FC dataset under the Azimuth
-cross-dataset protocol (train RES only). GuideCNN exceeds the published
-Rule Set 2 performance (dashed line, $0.52$) on all nine genes.}
+\caption{Per-gene Spearman on V1/FC under the clean Azimuth cross-dataset
+protocol (train RES only). All our current models sit below the published
+Rule Set 2 range (dashed line, $0.52$); the earlier contaminated run that
+appeared to exceed it is retracted.}
 \label{fig:azimuth}\end{figure}
 \begin{table}[h]\centering
-\caption{Azimuth-protocol results (train RES, test V1/FC, 2,144 guides).}\label{tab:azimuth}
+\caption{Clean Azimuth-protocol results (train RES only, test V1/FC).}\label{tab:azimuth}
 \begin{tabular}{lcc}\hline\hline
-Model & Mean per-gene Spearman & Per-gene range \\\hline
-Ridge (3-mer) & 0.331 & 0.228--0.408 \\
-SequenceGCN & 0.296 & 0.209--0.378 \\
-Rule Set 2 (published) & 0.51--0.52 & n/a \\
-GuideCNN (ours) & \textbf{0.792} & 0.579--0.919 \\\hline\hline
+Model & Mean per-gene Spearman & Note \\\hline
+Ridge (3-mer) & 0.268 & baseline \\
+SequenceGCN & 0.218 & below ridge \\
+Rule Set 2 (published) & 0.51--0.52 & unbeaten \\
+GuideCNN (ours) & 0.286 & best of ours \\\hline\hline
 \end{tabular}
 \end{table}
 
-The CNN transfers from human to mouse \emph{without penalty} (Table~\ref{tab:transfer});
-the apparent gain is a label-noise asymmetry between the FC+RES drug-gene-rank
-labels and V1 percent-rank labels, not improved biology. Zebrafish and plant
+The clean measurement (Table~\ref{tab:transfer}) shows a \emph{real}
+transfer penalty: the CNN drops from $0.665$ RES-held-out to $0.358$ on mouse
+V1, while the ridge and GCN are flat near $0.25$ --- the deep model exploits
+human-specific signal that does not fully carry across species, exactly the
+effect this tool exists to detect. (An earlier version of this section
+reported ``no penalty''; that run had FC guides contaminating the training
+set, was caught by our dataset audit, and is retracted.) Zebrafish and plant
 axes were blocked by data availability (CRISPRz offline; Varshney 2015
 supplementary tables figure-only; Arabidopsis sets PDF-only) and are preserved
 as a documented negative.
@@ -482,9 +483,11 @@ graph. Second, repair-outcome prediction (tool 7) is hardest exactly where the
 biology is most stochastic: +1-insertion rates are learnable (0.60 Spearman),
 frameshift fractions less so (0.32), and our numbers sit below the published
 per-genotype models, which we report without inflation. Third, mammalian
-cross-species transfer (tool 10) shows no penalty for a CNN moving from human
-to mouse guides; extending that claim beyond mammals is blocked by data
-availability, which we document rather than paper over. All code, loaders,
+cross-species transfer (tool 10) carries a measurable penalty for the CNN
+($0.665 \to 0.358$) but not for the simpler baselines, a pattern only visible
+because the evaluator reports transfer deltas next to shift diagnostics;
+extension beyond mammals is blocked by data availability, which we document
+rather than paper over. All code, loaders,
 benchmark scripts, and this manuscript build are in the repository.
 \appendix
 \section{Extended results}
@@ -503,10 +506,11 @@ depends on long-range repeat geometry that positional one-hot features capture
 only partially. Ridge on 3-mers fails on all three ($<$0.08), confirming that
 position-resolved features carry the signal.
 \subsection{Tool 10 per-model details}
-The CNN dominates on both human held-out (0.630) and mouse transfer (0.781);
-ridge and the GCN sit near 0.28--0.33 on both. That the ordering is preserved
-across species while absolute values shift supports the conclusion that
-sequence-level efficacy rules are shared between human and mouse, with label
+The CNN leads on human held-out (0.665) and retains the lead on mouse
+transfer (0.358) despite a real penalty; ridge and the GCN sit near
+0.22--0.25 on both. The ordering is preserved across species while the deep
+model's margin shrinks, supporting the conclusion that sequence-level
+efficacy rules are partly shared between human and mouse, with label
 noise driving the apparent transfer gain.
 \subsection{Hyperparameters}
 \begin{table}[h]\centering
