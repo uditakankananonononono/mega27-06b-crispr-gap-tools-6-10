@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  24 SEP 2026 20:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  24 SEP 2026 20:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -286,105 +286,122 @@ it/12 ; \OMS/cmsy/m/n/12 j\OT1/cmr/m/n/12 ^^A\OML/cmm/m/it/12 G[]\OMS/cmsy/m/n/
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[4]
-Overfull \hbox (2.55388pt too wide) in paragraph at lines 195--197
+
+LaTeX Warning: Reference `fig:realguide' on page 4 undefined on input line 182.
+
+
+<figures/realguide_risk.pdf, id=85, 469.755pt x 274.626pt>
+File: figures/realguide_risk.pdf Graphic file (type pdf)
+<use figures/realguide_risk.pdf>
+Package pdftex.def Info: figures/realguide_risk.pdf  used on input line 197.
+(pdftex.def)             Requested size: 375.80544pt x 219.70108pt.
+[4] [5 <./figures/realguide_risk.pdf>]
+Overfull \hbox (2.55388pt too wide) in paragraph at lines 220--222
 \OT1/ptm/b/n/12 Proposition 1 \OT1/ptm/m/n/12 (Mi-cro-ho-mol-ogy score)\OT1/ptm
 /b/n/12 . \OT1/ptm/m/it/12 For flanks $\OML/cmm/m/it/12 L; R$ \OT1/ptm/m/it/12 
 around the cut, $\OML/cmm/m/it/12 s[] \OT1/cmr/m/n/12 = [][] \OT1/cmr/bx/n/12 1
 \OT1/cmr/m/n/12 [\OML/cmm/m/it/12 L[] \OT1/cmr/m/n/12 =
  []
 
-<figures/xrcc4_risk.pdf, id=89, 505.89pt x 216.81pt>
+<figures/xrcc4_risk.pdf, id=144, 505.89pt x 216.81pt>
 File: figures/xrcc4_risk.pdf Graphic file (type pdf)
 <use figures/xrcc4_risk.pdf>
-Package pdftex.def Info: figures/xrcc4_risk.pdf  used on input line 205.
+Package pdftex.def Info: figures/xrcc4_risk.pdf  used on input line 230.
 (pdftex.def)             Requested size: 375.80544pt x 161.06213pt.
-[5] [6 <./figures/xrcc4_risk.pdf>]
-<figures/transfer.pdf, id=148, 433.62pt x 260.17201pt>
+[6 <./figures/xrcc4_risk.pdf>] [7]
+<figures/transfer.pdf, id=204, 433.62pt x 260.17201pt>
 File: figures/transfer.pdf Graphic file (type pdf)
 <use figures/transfer.pdf>
-Package pdftex.def Info: figures/transfer.pdf  used on input line 267.
+Package pdftex.def Info: figures/transfer.pdf  used on input line 292.
 (pdftex.def)             Requested size: 352.31625pt x 211.40112pt.
-<figures/azimuth_break.pdf, id=149, 650.43pt x 289.08pt>
+<figures/azimuth_break.pdf, id=205, 650.43pt x 289.08pt>
 File: figures/azimuth_break.pdf Graphic file (type pdf)
 <use figures/azimuth_break.pdf>
-Package pdftex.def Info: figures/azimuth_break.pdf  used on input line 292.
+Package pdftex.def Info: figures/azimuth_break.pdf  used on input line 317.
 (pdftex.def)             Requested size: 469.75502pt x 208.78584pt.
- [7 <./figures/transfer.pdf>] [8 <./figures/azimuth_break.pdf>] [9]
-Overfull \hbox (20.62175pt too wide) in paragraph at lines 401--409
- [][] 
- []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+[8 <./figures/transfer.pdf>] [9 <./figures/azimuth_break.pdf>] [10]
+Overfull \hbox (20.62175pt too wide) in paragraph at lines 426--434
+ [][] 
+ []
 
-Overfull \hbox (5.64679pt too wide) in paragraph at lines 412--418
+
+Overfull \hbox (5.64679pt too wide) in paragraph at lines 437--443
 \OT1/ptm/m/n/12 Every re-ported num-ber re-gen-er-ates from the repos-i-tory: \
 OT1/pcr/m/n/12 pip install torch --index-url
  []
 
 
-Overfull \hbox (39.6688pt too wide) in paragraph at lines 412--418
+Overfull \hbox (39.6688pt too wide) in paragraph at lines 437--443
 \OT1/pcr/m/n/12 https://download.pytorch.org/whl/cpu\OT1/ptm/m/n/12 , \OT1/pcr/
 m/n/12 pip install scikit-learn biopython
  []
 
 
-Overfull \hbox (4.02785pt too wide) in paragraph at lines 412--418
+Overfull \hbox (4.02785pt too wide) in paragraph at lines 437--443
 \OT1/pcr/m/n/12 pytest pandas scipy matplotlib ViennaRNA\OT1/ptm/m/n/12 , then 
 the five scripts un-der \OT1/pcr/m/n/12 scripts/
  []
 
-[10] [11] [12]
+[11] [12] [13]
 LaTeX Font Info:    Trying to load font information for OMS+pcr on input line 5
-13.
+38.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omspcr.fd
 File: omspcr.fd 
 )
 LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 513.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 538.
 
-Overfull \hbox (9.47386pt too wide) in paragraph at lines 513--526
+Overfull \hbox (9.47386pt too wide) in paragraph at lines 538--551
 \OT1/pcr/m/n/10.95 Output: per-guide penalties, set compatibility, removal rank
 ing 
  []
 
 
-Overfull \hbox (22.61385pt too wide) in paragraph at lines 529--536
+Overfull \hbox (22.61385pt too wide) in paragraph at lines 554--561
 \OT1/pcr/m/n/10.95 Output: P(frameshift), P(+1 insertion), P(MH deletion), prec
 ision 
  []
 
-[13] [14] [15] (./main.aux) ) 
+[14] [15] [16] (./main.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 3357 strings out of 480247
- 49921 string characters out of 5896151
- 343247 words of memory out of 5000000
- 21251 multiletter control sequences out of 15000+600000
+ 3365 strings out of 480247
+ 50165 string characters out of 5896151
+ 344247 words of memory out of 5000000
+ 21258 multiletter control sequences out of 15000+600000
  500879 words of font info for 93 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  55i,10n,62p,387b,243s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/bas
-e/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols
-/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (15 pages, 290477 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri
+8a.pfb>
+Output written on main.pdf (16 pages, 306460 bytes).
 PDF statistics:
- 355 PDF objects out of 1000 (max. 8388607)
- 104 compressed objects within 2 object streams
+ 410 PDF objects out of 1000 (max. 8388607)
+ 111 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

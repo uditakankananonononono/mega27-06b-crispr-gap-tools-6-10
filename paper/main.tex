@@ -175,6 +175,31 @@ GCN (3-mer graph) & 0.645 & 0.645 \\\hline\hline
 \end{tabular}
 \end{table}
 
+
+\subsection{Discovery: same-gene duplex enrichment in published guide sets}
+We audited 4,692 unique real published guides (Doench FC+RES human, V1
+mouse) with the validated ViennaRNA pipeline. The headline finding
+(Figure~\ref{fig:realguide}): pairs of guides targeting the \emph{same gene}
+--- precisely the sets co-delivered in multiplex knockout experiments ---
+flag for strong heteroduplexes at $22.5\%$ (30,000 pairs), versus $15.9\%$
+for cross-gene published pairs (30,000) and $10.8\%$ for random spacers
+(7,140). Same-gene multiplex sets therefore carry roughly $2.1\times$ the
+random-baseline duplex risk and $1.4\times$ the risk of arbitrary published
+guides. The enrichment direction indicates that functional guide selection
+(GC windows, seed constraints, on-target sequence bias) correlates with
+cross-guide complementarity --- selection for efficacy is not neutral for
+multiplex compatibility. The claim is falsifiable: all sequences are public
+and the computation is a single open-source script
+(\texttt{scripts/discovery\_realguide\_risk.py}). Secondary audit findings:
+$13.4\%$ of real published guides violate the GC window $[0.35, 0.70]$ from
+our physics-derived rule, and $9.0\%$ carry strong self-fold.
+\begin{figure}[t]\centering
+\includegraphics[width=0.8\textwidth]{figures/realguide_risk.pdf}
+\caption{Heteroduplex flag rates: random spacers vs cross-gene vs same-gene
+published guide pairs. Same-gene sets --- the realistic multiplex case ---
+carry the highest risk.}
+\label{fig:realguide}\end{figure}
+
 \section{Tool 7: Repair-outcome annotator}
 \subsection{Problem}
 Guide designers optimize cutting activity, but the repair outcome decides the
