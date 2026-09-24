@@ -1,0 +1,66 @@
+{
+ "n_pairs": 16472,
+ "studies": {
+  "Anderson": {
+   "n": 336,
+   "n_pos": 36,
+   "auc_cctop_style": 0.7055,
+   "auc_cropit_style": 0.7301,
+   "auc_crisproff_style": 0.784
+  },
+  "Cameron": {
+   "n": 927,
+   "n_pos": 516,
+   "auc_cctop_style": 0.5394,
+   "auc_cropit_style": 0.5279,
+   "auc_crisproff_style": 0.5741
+  },
+  "Cho": {
+   "n": 116,
+   "n_pos": 81,
+   "auc_cctop_style": 0.5395,
+   "auc_cropit_style": 0.5679,
+   "auc_crisproff_style": 0.4233
+  },
+  "Finkelstein": {
+   "n": 6792,
+   "n_pos": 6743,
+   "auc_cctop_style": 0.4745,
+   "auc_cropit_style": 0.4589,
+   "auc_crisproff_style": 0.3309
+  },
+  "Kim": {
+   "n": 89,
+   "n_pos": 59,
+   "auc_cctop_style": 0.5181,
+   "auc_cropit_style": 0.5427,
+   "auc_crisproff_style": 0.5585
+  },
+  "Kim16": {
+   "n": 251,
+   "n_pos": 226,
+   "auc_cctop_style": 0.5584,
+   "auc_cropit_style": 0.5835,
+   "auc_crisproff_style": 0.7146
+  },
+  "KimChromatin": {
+   "n": 135,
+   "n_pos": 106,
+   "auc_cctop_style": 0.6165,
+   "auc_cropit_style": 0.6013,
+   "auc_crisproff_style": 0.5836
+  }
+ },
+ "mean_auc": {
+  "cctop_style": 0.5645,
+  "cropit_style": 0.5732,
+  "crisproff_style": 0.567
+ },
+ "_harness": "LOSO logistic, binary label cleavage_freq>0, same as offtarget_scorers.py",
+ "_sources": {
+  "cctop": "Stemmer 2015 PLoS ONE 10:e0144633",
+  "cropit": "Singh 2015 Genome Res 25:114",
+  "crisproff": "Alkan 2018 Nat Commun 9:4438"
+ },
+ "n_studies": 7
+}

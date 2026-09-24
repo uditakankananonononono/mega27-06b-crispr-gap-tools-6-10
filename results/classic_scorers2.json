@@ -1,0 +1,15 @@
+{
+ "chari_style_logistic": [
+  0.3397,
+  9
+ ],
+ "wu_crispr_style": [
+  0.3175,
+  9
+ ],
+ "_protocol": "identical to scripts/replicate_classic_scorers.py: train RES human (drug != nodrug), test V1 mouse, mean per-gene Spearman; IMPL method-class replications, not official weights",
+ "_sources": {
+  "chari": "Chari 2015 Nat Methods 12:823",
+  "wu_crispr": "Wong 2015 Genome Biol 16:218"
+ }
+}

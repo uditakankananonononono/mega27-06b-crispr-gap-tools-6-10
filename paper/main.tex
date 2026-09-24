@@ -364,6 +364,30 @@ $\widehat{\Delta G}_{\text{fold}}$ the ViennaRNA folding propensity; tiers
 are fixed thresholds on $S$ calibrated so that the three published loci
 span the MODERATE--HIGH range.
 
+\subsection{Panel screen: 109 loci, 478 cut sites}
+We ran the flagger over a 111-accession RefSeq panel (43 human and 68 mouse
+disease/model genes; requests for 115 gene--organism pairs, of which 109
+resolved and scored - the six failures, including KRAS and TRAC requests
+whose esearch resolution returned no NM\_ record on the pull date, are
+recorded verbatim in \texttt{results/riskflag\_panel.json}). The panel
+scored 478 candidate cut sites: $57.5\%$ LOW, $34.7\%$ MODERATE, $7.7\%$
+HIGH, with mean locus risk $0.221$. Highest mean-risk loci: VHL $0.655$,
+Pik3ca $0.633$, B2M $0.613$, Tet2 $0.526$, ALB $0.455$
+(Figure~\ref{fig:panelrisk}). Two observations matter for users. First,
+risk is locus-shaped, not uniform: the top-risk loci carry long
+repeat-rich windows on both sides of many candidate cuts, so guide choice
+within a locus can move a project from HIGH to LOW without changing the
+target gene. Second, the three published large-deletion loci sit in the
+upper half of the panel distribution but not at its top - consistent with
+kilobase-scale deletions being common wherever spanning repeats exist, not
+a peculiarity of three famous loci.
+\begin{figure}[t]\centering
+\includegraphics[width=\textwidth]{figures/panel_risk.pdf}
+\caption{Tool 8 panel screen over 109 scored RefSeq loci
+(\texttt{results/riskflag\_panel.json}). Left: distribution of mean and
+max per-locus risk scores. Right: top 15 loci by mean risk.}
+\label{fig:panelrisk}\end{figure}
+
 \section{Tool 9: Biosecurity screen-and-design wrapper}
 \subsection{Design}
 The wrapper enforces a single invariant: no candidate oligo enters a design
@@ -380,6 +404,21 @@ When \texttt{commec} is unavailable the wrapper raises rather than silently
 passing unscreened sequences. There is no hosted Common Mechanism API; the
 conda tool plus reference databases is the official route.
 
+
+\subsection{Formal screening rule}
+Let $h(x) = \Pr(\text{hazardous} \mid x)$ be the backend's assessment for
+candidate oligo $x$. With false-accept cost $C_{FN}$ and false-block cost
+$C_{FA}$, expected-cost minimization gives the accept rule
+$h(x) < \tau^{\star} = C_{FA}/(C_{FA} + C_{FN})$ (derivation D8). For
+synthesis screening $C_{FN} \gg C_{FA}$, so $\tau^{\star} \to 0$: accept
+only on positive evidence of safety. The wrapper implements this limit
+directly - a backend error is $h(x) = 1$, never $0$ - and never averages
+verdicts across backends, because the objective is not linear in $h$ and
+averaging shifts the boundary in the unsafe direction. Per-oligo the audit
+record is $(\text{SHA256}(x), v_{\text{backend}}, \text{verdict},
+\text{flags}, t_{\text{UTC}})$, hash-chained as
+$c_i = \text{SHA256}(c_{i-1} \| r_i)$ so that deletion or reordering of
+any record is detectable from the chain head.
 
 \subsection{Failure modes and audit format}
 The wrapper's governing principle is fail-closed: every backend or network
@@ -471,12 +510,16 @@ and it remains unbeaten
 (Figure~\ref{fig:azimuth}).
 
 \subsection{Classic-scorer replications and a multi-assay negative}
-We replicated three classic published scorers as method classes and
+We replicated five classic published scorers as method classes and
 benchmarked them on the identical RES$\to$V1 clean split (mean per-gene
 Spearman, 9 genes): Rule Set 1 style logistic (binarized activity) $0.352$,
-SSC style positional-mononucleotide linear $0.389$, and CRISPRscan style
+SSC style positional-mononucleotide linear $0.389$, CRISPRscan style
 positional 6-mer sparse linear $0.149$
-(\texttt{results/classic\_scorers.json}). All three fall below both the
+(\texttt{results/classic\_scorers.json}), Chari 2015 style motif
+classifier over the 20-mer only $0.340$, and WU-CRISPR style
+structural/composition features (ViennaRNA self-fold energy, GC,
+dinucleotide spectrum) $0.318$ (\texttt{results/classic\_scorers2.json};
+Figure~\ref{fig:classic}). All three fall below both the
 Rule Set 2 replication ($0.569$) and our v6 stack ($0.490$), matching the
 published historical ordering and validating the harness against known
 reference points. Break attempt v7 then added the Doench 2016 V2 A375
@@ -488,6 +531,15 @@ cross-species transfer; assay context dominates data volume
 (\texttt{results/beat\_azimuth\_v7.json}). Preserved as a negative
 result.
 
+\begin{figure}[t]\centering
+\includegraphics[width=0.9\textwidth]{figures/classic_scorers.pdf}
+\caption{Classic efficacy scorers replicated on the clean RES$\to$V1
+split (\texttt{results/classic\_scorers.json}) against our challengers
+(v6, v7) and the same-split Rule Set 2 replication bar. The published
+ordering (CRISPRscan $<$ Rule Set 1 $<$ SSC $<$ Rule Set 2) reproduces,
+and no challenger reaches the bar.}
+\label{fig:classic}\end{figure}
+
 \subsection{Off-target scorer replications}
 As a harness check on crisprSQL's 16{,}472 usable guide/off-target pairs
 (binary label: cleavage\_freq $>0$, leave-one-study-out logistic models),
@@ -498,6 +550,24 @@ reaches $0.582$, beating Hsu-style in 5 of 7 studies
 et al.\ reported when introducing CFD, again validating that our
 evaluation pipelines reproduce known reference behavior before we trust
 them with new claims.
+A second wave of replications on the identical harness
+(\texttt{results/offtarget\_scorers2.json}) adds CCTop style
+(PAM-distance mismatch weighting) mean AUC $0.564$, CROP-IT style
+(exponentially decaying position weights, $\tau = 5$) $0.573$, and
+CRISPRoff style (guide:off-target hybrid free energy from ViennaRNA
+duplexfold plus mismatch count) $0.567$. All three land between the
+Hsu-style and CFD-style scores, and none beats CFD style - again
+consistent with the published picture that position$\times$base-identity
+tables are the strongest lightweight off-target features.
+
+\begin{figure}[t]\centering
+\includegraphics[width=0.85\textwidth]{figures/offtarget_perstudy.pdf}
+\caption{Per-study LOSO AUC for the Hsu-style and CFD-style replications
+on crisprSQL (\texttt{results/offtarget\_scorers.json}). CFD-style wins 5
+of 7 studies, matching the published ordering - the harness reproduces
+known reference behavior before we trust it with new claims.}
+\label{fig:offtarget}\end{figure}
+
 \begin{figure}[t]\centering
 \includegraphics[width=\textwidth]{figures/azimuth_break.pdf}
 \caption{Per-gene Spearman on V1 under the clean Azimuth cross-dataset
@@ -657,6 +727,7 @@ Xrcc4/Piga/Cd9 RefSeq & NCBI live & 3 loci & Tool 8 validation \\\hline\hline
 
 \input{appendix_toolsdata}
 \input{appendix_protocols}
+\input{appendix_derivations}
 \section{Reproduction}
 Every reported number regenerates from the repository: \texttt{pip install
 torch --index-url https://download.pytorch.org/whl/cpu}, \texttt{pip install

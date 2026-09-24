@@ -40,12 +40,19 @@ numbers/verification source; DATA = public dataset/data source consumed.
 | 32 | NCBI RefSeq | database | 111 mRNA records consumed by Tool 8 panel | DATA |
 | 33 | Bae 2014 microhomology score | published model | length-weighted MH score implemented (crisprlib.featurize.microhomology_score), used in Tool 7 features and Tool 8 flagger | IMPL |
 
-Current honest count: 33 external tools/resources (14 RUN, 5 DATA+RUN,
-9 IMPL/IMPL+REF, 3 REF, 2 DATA). Lindel was upgraded from REF to RUN: its official
-published weights now execute in-repo for a real head-to-head. Target: 40. Gap plan: additional public datasets
-(Lindel training set, Wang/Koike-Yusa viability, Chari 2015, CRISPRscan
-zebrafish, inDelphi additional cell lines) and verification implementations
-of published scorers (Rule Set 1, SSC, CRISPRscan) benchmarked in the repo.
+| 34 | CCTop (Stemmer 2015) | published tool | PAM-distance mismatch-weighted off-target replication, crisprSQL LOSO: mean AUC 0.5645 (results/offtarget_scorers2.json) | IMPL |
+| 35 | CROP-IT (Singh 2015) | published tool | exp-decay position-weighted off-target replication, LOSO: 0.5732 (same file) | IMPL |
+| 36 | CRISPRoff (Alkan 2018) | published tool | guide:off-target hybrid dG (ViennaRNA duplexfold) off-target replication, LOSO: 0.5670 (same file) | IMPL |
+| 37 | Chari 2015 (sgRNA Designer 1.0) | published tool | 20-mer motif-classifier replication on RES->V1 split: 0.340 (results/classic_scorers2.json) | IMPL |
+| 38 | WU-CRISPR (Wong 2015) | published tool | structural/composition (ViennaRNA self-fold) replication on RES->V1: 0.318 (same file) | IMPL |
+
+Current honest count: 38 external tools/resources (14 RUN, 5 DATA+RUN,
+14 IMPL/IMPL+REF, 3 REF, 2 DATA). All five wave-2 additions are real
+replications benchmarked in-repo on the same harnesses as the originals
+(off-target: crisprSQL LOSO logistic; efficacy: RES->V1 clean split).
+Target: 40. Remaining gap plan (honest candidates): FOREcasT (Allen 2019)
+official weights head-to-head like Lindel; CHOPCHOP v3 design rules
+(Labun 2019) verification of our GC/clamp rules.
 
 ## Datasets consumed (honest count, accession-level per program rule)
 1. inDelphi U2OS Lib-A (events + targets; one study dataset)

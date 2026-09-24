@@ -1,0 +1,234 @@
+\section{Derivations and proofs}
+This appendix collects the mathematical backbone of the five tools in one
+place. Each derivation is stated with its assumptions; where a step is an
+approximation rather than a theorem, we say so.
+
+\subsection{D1. Nearest-neighbor duplex free energy (Tool 6)}
+\paragraph{Model.} For two RNA strands annealed in a given alignment, the
+SantaLucia nearest-neighbor model assigns the standard free energy at
+$37^{\circ}$C as
+\begin{equation}
+\Delta G^{\circ}_{37} \;=\; \Delta G^{\circ}_{\text{init}}
++ \sum_{k=1}^{m-1} \Delta G^{\circ}_{37}\!\left(\text{stack}_k\right)
++ \Delta G^{\circ}_{\text{term}},
+\label{eq:nn}
+\end{equation}
+where $\text{stack}_k$ is the $k$-th adjacent base-pair doublet and the
+per-doublet parameters are the experimentally fitted SantaLucia values.
+\paragraph{Additivity.} Equation~\eqref{eq:nn} is an assumption, not a
+theorem: it posits that the energy of a helix decomposes into
+position-local contributions depending only on adjacent pairs. Its
+empirical justification is the fit quality on optical-melting data; its
+practical consequence is that duplex energy is computable in $O(m)$ per
+alignment, so our screener can evaluate all $O(L^2)$ ungapped alignments
+of two 20-nt spacers exactly, and delegate gapped/bulge structures to
+ViennaRNA's \texttt{RNAcofold}, which minimizes the same objective over a
+larger structure ensemble.
+\paragraph{Screening statistic.} For guides $g_i, g_j$ we use
+\begin{equation}
+E_{ij} \;=\; \min_{a \in \mathcal{A}(g_i, g_j)} \Delta G^{\circ}_{37}(a),
+\qquad
+\text{flag}(i,j) = \mathbf{1}\!\left[E_{ij} \le \theta\right]
+\;\vee\; \mathbf{1}\!\left[\text{shared PAM-proximal seed}\right],
+\label{eq:flag}
+\end{equation}
+with $\theta = -8$~kcal/mol chosen so that the flag rate on random
+spacers is near $10\%$ (measured $10.8\%$;
+\texttt{results/realguide\_risk.json}). The min over alignments makes the
+statistic conservative: any single strong annealing suffices to flag,
+which is the correct bias for a screening (not a scoring) tool.
+
+\subsection{D2. Two-proportion $z$-test for the same-gene enrichment (Tool 6 discovery)}
+\paragraph{Setup.} Let $X_1 \sim \text{Binomial}(n_1, p_1)$ count flagged
+same-gene pairs and $X_2 \sim \text{Binomial}(n_2, p_2)$ flagged
+cross-gene pairs, $n_1 = n_2 = 30{,}000$. Under $H_0: p_1 = p_2$ the
+pooled estimator is $\hat{p} = (X_1 + X_2)/(n_1 + n_2)$ and
+\begin{equation}
+Z \;=\; \frac{\hat{p}_1 - \hat{p}_2}
+{\sqrt{\hat{p}(1-\hat{p})\left(\tfrac{1}{n_1} + \tfrac{1}{n_2}\right)}}
+\;\xrightarrow{d}\; \mathcal{N}(0,1),
+\label{eq:ztest}
+\end{equation}
+by the central limit theorem applied to the independent binomial counts.
+\paragraph{Computation.} With $\hat{p}_1 = 0.22497$, $\hat{p}_2 = 0.15870$
+(\texttt{results/realguide\_risk.json}): $\hat{p} = 0.19183$,
+$\hat{p}(1-\hat{p}) = 0.15503$, the standard error is
+$\sqrt{0.15503 \cdot 6.6667\mathrm{e}{-5}} = 3.215\mathrm{e}{-3}$, and
+\begin{equation}
+Z \;=\; \frac{0.22497 - 0.15870}{3.215\mathrm{e}{-3}} \;\approx\; 20.6,
+\qquad p < 10^{-90}.
+\end{equation}
+\paragraph{Validity conditions.} The test treats sampled pairs as
+independent. Pairs sharing a guide are weakly dependent, so the nominal
+$p$-value is optimistic; the effect itself ($+6.6$ percentage points over
+cross-gene, $+11.7$ over the random-spacer baseline $0.10812$) is large
+relative to any plausible dependence correction, and the direction is
+mechanistically predicted (transcripts of the same gene share exon
+sequence, hence more reverse-complement complementarity). We report the
+$z$-statistic as descriptive of effect size, not as an exact tail
+probability.
+
+\subsection{D3. Spearman correlation and the gene-clustered paired bootstrap (Tools 7, 10)}
+\paragraph{Statistic.} For $n$ paired observations $(x_i, y_i)$ with rank
+vectors $R_i, S_i$ (average ranks under ties), Spearman's coefficient is
+the Pearson correlation of the ranks:
+\begin{equation}
+\rho \;=\; \frac{\sum_i (R_i - \bar{R})(S_i - \bar{S})}
+{\sqrt{\sum_i (R_i - \bar{R})^2}\sqrt{\sum_i (S_i - \bar{S})^2}}.
+\end{equation}
+All our benchmark numbers are \emph{mean per-gene} Spearman:
+$\bar{\rho} = \tfrac{1}{G}\sum_{g=1}^{G} \rho_g$, which weights genes
+equally regardless of guide count.
+\paragraph{Why a clustered bootstrap.} Guides within a gene share sequence
+context and assay batch, so guide-level resampling would understate the
+variance of $\bar{\rho}_{\text{leader}} - \bar{\rho}_{\text{challenger}}$.
+Resampling \emph{genes} with replacement and recomputing both models'
+per-gene correlations on the same resample preserves the pairing and the
+cluster structure. The reported $p$-value is the fraction of $B = 10{,}000$
+resamples with
+\begin{equation}
+\bar{\rho}^{(b)}_{\text{leader}} - \bar{\rho}^{(b)}_{\text{challenger}} \;\le\; 0,
+\end{equation}
+i.e.\ a one-sided test of ``leader at least as good''. This is exactly the
+quantity a benchmark claim needs; with $G = 9$ genes the test is honest
+but low-powered, which is why we report $p = 0.146$ (v7) and $p = 0.9996$
+(v6) as \emph{failures to beat the bar}, not as near-misses
+(\texttt{results/beat\_azimuth\_v6.json}, \texttt{results/beat\_azimuth\_v7.json}).
+
+\subsection{D4. Microhomology deletion model and frameshift accounting (Tool 7)}
+\paragraph{Lindel-style rate model.} For a deletion of length $\ell$
+removing positions $[s, s+\ell)$ with microhomology of length $m \ge 0$
+between the retained flanks, the model assigns an unnormalized rate
+\begin{equation}
+r(\ell, m, s) \;=\; \exp\!\left(\beta_0 + \beta_1 m + \beta_2 \ell + \beta_3\, \mathbf{1}[\ell = 1]\right),
+\qquad
+\Pr(\ell, m, s) = \frac{r(\ell,m,s)}{\sum_{\ell', m', s'} r(\ell',m',s')},
+\label{eq:lindel}
+\end{equation}
+where the sum runs over all deletions compatible with the 65-nt context.
+The exponential form guarantees positivity; normalization turns rates into
+a categorical distribution over outcome classes.
+\paragraph{Frameshift.} Coding consequence follows from length modulo 3:
+\begin{equation}
+\Pr(\text{frameshift}) \;=\; 1 - \sum_{\ell \equiv 0 \;(\mathrm{mod}\; 3)} \Pr(\text{del of length } \ell)
+\;-\; \Pr(\text{in-frame insertion}).
+\end{equation}
+Because $+1$ insertions dominate the insertion mass and
+$1 \not\equiv 0 \pmod 3$, the +1-insertion rate and the frameshift rate
+are strongly coupled --- which is why our head-to-head
+(\texttt{results/lindel\_headtohead.json}) reports both targets: a model
+can win one and lose the other, and ours does.
+\paragraph{Expected deletion length.} Under \eqref{eq:lindel},
+\begin{equation}
+\mathbb{E}[\ell] \;=\; \frac{\sum \ell\, r(\ell,m,s)}{\sum r(\ell,m,s)},
+\end{equation}
+a one-pass quantity we use as a summary feature for the CNN/GBT models.
+No closed form exists because the compatible-deletion set depends on the
+sequence; the computation is $O(W^2)$ in the context width $W = 65$.
+
+\subsection{D5. Out-of-fold stacking: what it estimates and why in-fold stacking leaks (Tool 10, v5 vs v6)}
+\paragraph{Claim.} Let base learners $f_1, \dots, f_M$ be trained with
+$K$-fold cross-validation, and let $\tilde{f}_m(x_i)$ denote the
+prediction for $x_i$ from the fold \emph{not} containing $i$. A
+meta-learner $g$ trained on $\{(\tilde{f}_1(x_i), \dots, \tilde{f}_M(x_i), y_i)\}$
+sees feature--label pairs whose joint distribution matches deployment
+(features from models that never saw the label). In-fold predictions
+$\hat{f}_m(x_i)$ from models that \emph{did} train on $(x_i, y_i)$ are
+biased toward $y_i$; the meta-learner then learns to trust whichever base
+learner overfits most.
+\paragraph{Quantification on our split.} The effect is not hypothetical:
+the v5 stack with in-fold deep features scored $0.370$ and lost to the
+leader with $p = 1.0$; the v6 leak-free OOF stack on identical
+architectures and data scored $0.490$ ($p = 0.9996$). The $+0.12$ gap is a
+direct measurement of stacking leakage on this dataset
+(\texttt{results/beat\_azimuth\_v5.json}, \texttt{results/beat\_azimuth\_v6.json}).
+\paragraph{Caveat.} OOF stacking removes the \emph{label} leak but not the
+\emph{hyperparameter} leak: tuning base learners on the same training pool
+still biases the meta-features mildly upward. We accepted this residual
+bias because the benchmark question (``can deep features beat the
+same-split leader?'') is conservative under it --- the challenger still
+lost.
+
+\subsection{D6. CFD as a product of per-mismatch penalties (Tool 10 off-target replication)}
+\paragraph{Derivation.} Model cleavage odds for an off-target with
+mismatch set $M$ as factorizing over independent contributions:
+\begin{equation}
+\text{odds}(\text{active} \mid M) \;=\; \text{odds}_0 \prod_{i \in M} \lambda(p_i, b_i),
+\end{equation}
+where $p_i$ is the guide position and $b_i$ the mismatch base identity.
+Taking $\Pr = \text{odds}/(1+\text{odds})$ and approximating
+$\Pr \approx \text{odds}$ for small probabilities gives the CFD scoring
+rule
+\begin{equation}
+\text{CFD}(M) \;=\; \prod_{i \in M} w(p_i, b_i),
+\end{equation}
+with $w$ the empirically fitted penalty table of Doench et al.\ 2016. The
+independence assumption is known to be wrong for adjacent mismatches
+(epistasis in the seed), which is one reason CFD saturates on
+multi-mismatch targets; our replication uses it only as a reference
+ordering check (CFD-style $0.582$ vs Hsu-style $0.556$ mean LOSO AUC,
+winning 5 of 7 studies --- the published ordering;
+\texttt{results/offtarget\_scorers.json}).
+
+\subsection{D7. Tool 8 risk score: composition and invariance (Tool 8)}
+\paragraph{Definition.} With repeat count $|R_s|$, worst span $d$,
+complexity deficit $c$, and homopolymer term $h$,
+\begin{equation}
+S \;=\; 0.45\, \phi(|R_s|/20) + 0.30\, \phi(d/500) + 0.15\, c + 0.10\, h,
+\qquad \phi(x) = \min(x, 1).
+\label{eq:tool8}
+\end{equation}
+\paragraph{Properties.} (i) \emph{Boundedness}: $0 \le S \le 1$ because
+each term is capped at its weight. (ii) \emph{Monotonicity}: $S$ is
+nondecreasing in $|R_s|$ and $d$, matching the mechanistic direction of
+the Kosicki et al.\ observation (more spanning repeats, longer possible
+deletions $\Rightarrow$ higher risk). (iii) \emph{Saturation}: $\phi$
+makes the score insensitive to repeat counts beyond 20 and spans beyond
+500~bp; this is deliberate, since beyond those scales every locus is
+simply ``bad'' and discrimination is useless for guide ranking.
+\paragraph{What $S$ is not.} The weights are hand-set from the qualitative
+weight of evidence in \cite{kosicki2018, wen2022}, not fitted, because no
+per-sequence large-deletion \emph{rate} dataset exists. We therefore use
+$S$ only for ranking and flagging (LOW/MODERATE/HIGH at $0.25/0.5$), and
+we make no calibrated-probability claim anywhere in the tool, the tests,
+or this manuscript.
+
+\subsection{D8. Cost-asymmetric screening threshold (Tool 9)}
+\paragraph{Decision rule.} Let $h(x) = \Pr(\text{hazardous} \mid x)$ be a
+backend's assessed probability for oligo $x$, $C_{FN}$ the cost of
+accepting a hazardous sequence, $C_{FA}$ the cost of blocking a safe one.
+The Bayes-optimal accept rule minimizes expected cost:
+\begin{equation}
+\text{accept}(x) \iff C_{FA}\,(1 - h(x)) \;>\; C_{FN}\, h(x)
+\iff h(x) < \tau^{\star} = \frac{C_{FA}}{C_{FA} + C_{FN}}.
+\label{eq:bayes}
+\end{equation}
+\paragraph{Fail-closed as a limit.} For synthesis screening the cost
+asymmetry is extreme ($C_{FN} \gg C_{FA}$), so $\tau^{\star} \to 0$ and
+the optimal policy approaches ``accept only on positive evidence of
+safety''. The wrapper implements exactly that limit: a backend failure is
+treated as $h(x) = 1$ (block), never as $h(x) = 0$. Equation
+\eqref{eq:bayes} also shows why a screening tool must not average verdicts
+across backends: the expected-cost objective is not linear in $h$, so
+averaging probabilities changes the decision boundary in the unsafe
+direction whenever one backend is miscalibrated low.
+
+\subsection{D9. Duplex-enrichment baseline under random spacers (Tool 6)}
+\paragraph{Baseline construction.} The random-spacer flag rate
+$0.10812$ in \texttt{results/realguide\_risk.json} comes from dinucleotide
+-shuffled spacers paired against the same transcript pool, which preserves
+per-guide base composition while destroying biological sequence identity.
+The enrichment ratios are therefore
+\begin{equation}
+\text{ER}_{\text{same}} = \frac{0.22497}{0.10812} = 2.08,
+\qquad
+\text{ER}_{\text{cross}} = \frac{0.15870}{0.10812} = 1.47,
+\end{equation}
+and the composition-controlled excess of same-gene over cross-gene is
+$0.22497 - 0.15870 = 0.0663$ in absolute flag rate. Because the shuffle
+preserves GC, the excess cannot be attributed to composition; the
+remaining explanation is shared exonic sequence within genes. This is the
+quantified, falsifiable form of the Tool 6 discovery: any future guide-set
+design rule that equalizes within-gene duplex risk should bring
+$\text{ER}_{\text{same}}$ toward 1, and the screener measures whether it
+does.
