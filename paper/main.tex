@@ -250,6 +250,37 @@ cross-species transfer (tool 10) shows no penalty for a CNN moving from human
 to mouse guides; extending that claim beyond mammals is blocked by data
 availability, which we document rather than paper over. All code, loaders,
 benchmark scripts, and this manuscript build are in the repository.
+\appendix
+\section{Dataset statistics}
+\begin{table}[h]\centering
+\caption{Public datasets used.}\label{tab:data}
+\begin{tabular}{llll}\hline\hline
+Dataset & Source & Records & Used by \\\hline
+inDelphi U2OS LibA & figshare 6837956 & 117,438 events $\to$ 1,742 sites & Tool 7 \\
+Doench FC+RES & azimuth mirror & 5,310 human guides & Tool 10 \\
+Doench V1 & azimuth mirror & 2,144 mouse guides & Tool 10 \\
+crisprSQL 100720 & crisprsql.com & 25,632 records & provenance/baselines \\
+Xrcc4/Piga/Cd9 RefSeq & NCBI live & 3 loci & Tool 8 validation \\\hline\hline
+\end{tabular}
+\end{table}
+
+\section{Reproduction}
+Every reported number regenerates from the repository: \texttt{pip install
+torch --index-url https://download.pytorch.org/whl/cpu}, \texttt{pip install
+scikit-learn biopython pytest pandas scipy matplotlib ViennaRNA}, then the five
+scripts under \texttt{scripts/} (see README). The 40-test hermetic suite
+(\texttt{pytest tests/}) requires no network and no training. Hardware used:
+2 CPU cores, 1.9~GB RAM.
+
+\section{Test suite summary}
+The suite covers featurization correctness (one-hot, dinucleotide, $k$-mer,
+thermodynamics, microhomology), model forward shapes, training-loop learning
+on a synthetic signal, MIT-score monotonicity and seed sensitivity, duplex and
+complementarity sanity (perfect complements bind, homopolymers do not), PAM
+competition decay, screener flagging, GNN-vs-brute-force ranking agreement,
+outcome aggregation on a fixture, transfer-verdict logic, risk-flagger planted
+repeats, and biosecurity blocking semantics.
+
 \begin{thebibliography}{9}
 \bibitem[Lorenz et al.(2011)]{lorenz2011} Lorenz R, et al. ViennaRNA Package 2.0. \emph{Algorithms Mol Biol} 6:26, 2011.
 \bibitem[Shen et al.(2018)]{shen2018} Shen MW, et al. Predictable and precise template-free CRISPR editing of pathogenic variants. \emph{Nature} 563:646--651, 2018.
