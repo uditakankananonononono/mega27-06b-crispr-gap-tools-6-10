@@ -1,0 +1,62 @@
+\section{Statistical methods}
+All inferential claims in this paper use one of four procedures, collected
+here with their exact forms.
+
+\subsection{Paired bootstrap over genes}
+The head-to-head comparisons (Tables on the Azimuth protocol) pair
+per-gene Spearman correlations $\rho_g^{(A)}, \rho_g^{(B)}$ across the
+$G = 9$ V1 genes. With $d_g = \rho_g^{(A)} - \rho_g^{(B)}$, the statistic
+is $\bar d = G^{-1}\sum_g d_g$ and the $p$-value for
+$H_1: \bar d < 0$ is
+\begin{equation}
+p = \frac{1}{B}\sum_{b=1}^{B} \mathbf{1}\!\left[
+\frac{1}{G}\sum_{g=1}^{G} d_{\pi_b(g)} \le 0 \right],
+\end{equation}
+where $\pi_b$ is a uniform resample of $\{1,\dots,G\}$ with replacement and
+$B = 10{,}000$. We bootstrap genes, not guides, because guides within a
+gene share assay conditions and are not independent; gene-level resampling
+matches the unit at which the models must generalize.
+
+\subsection{Two-proportion $z$-test for flag-rate enrichment}
+For the duplex-enrichment discovery, flag counts $x_1, x_2$ from $n_1, n_2$
+independent pairs give $\hat p_i = x_i / n_i$ and
+\begin{equation}
+z = \frac{\hat p_1 - \hat p_2}
+{\sqrt{\hat p(1-\hat p)\left(n_1^{-1} + n_2^{-1}\right)}}, \qquad
+\hat p = \frac{x_1 + x_2}{n_1 + n_2},
+\end{equation}
+valid here because $n_i \hat p_i$ and $n_i(1-\hat p_i)$ all exceed $10{,}000$.
+
+\subsection{Spearman correlation and its standard error}
+Per-gene correlations use the rank difference formula; standard errors, where
+needed, use the Fisher $z$ transform
+$z_g = \operatorname{arctanh}(\rho_g)$ with
+$\mathrm{SE}(z_g) \approx 1/\sqrt{n_g - 3}$, and intervals are transformed
+back with $\tanh$. We report means over genes without further weighting,
+matching the published Azimuth protocol exactly so that comparisons against
+published numbers are like-for-like.
+
+\subsection{Multiplicity across break attempts}
+We attempted six model variants against the Rule Set 2 replication bar.
+Under a Bonferroni correction for six attempts, a break claim would require
+$p < 0.0083$; no attempt approached significance in the favorable direction
+(the best challenger trailed with $p = 0.9996$ for the leader), so the
+multiplicity correction changes no conclusion. We state this because
+repeated undisclosed attempts inflate break claims elsewhere in the
+literature; our attempts, scripts, and seeds are all committed.
+
+\subsection{Contamination control as a statistical procedure}
+Train/test overlap was detected by exact 30-mer string matching between the
+FC+RES and V1 files (1{,}836 overlapping sequences) and is prevented
+structurally: the shared loader refuses \texttt{nodrug} rows in training
+frames, and a hermetic test asserts zero overlap on every run. We treat
+this as part of the statistical methodology, not an engineering detail,
+because the overlap changed the headline conclusion (an apparent break at
+$0.792$) and its removal reversed it.
+
+\subsection{Seeds and determinism}
+Every stochastic component (NumPy, PyTorch, scikit-learn) takes a fixed seed
+recorded in its script; the bootstrap resamples use a separate generator
+seeded at $0$. Runs are bitwise reproducible on the same library versions,
+which are pinned in \texttt{requirements.txt} and echoed into every result
+file's metadata.
