@@ -1,0 +1,122 @@
+{
+  "multiplex_compatible": {
+    "cmd": "python cli.py multiplex GAGTCCGAGCAGAAGAAGAA GGGTGGGGGGAGTTTGCTCC GGGAATCGGACGAGGTTGCG",
+    "returncode": 0,
+    "stdout": {
+      "compatibility": 1.0,
+      "per_guide": {
+        "g1": {
+          "self_fold_mfe": 0.0,
+          "self_fold_flag": false,
+          "duplex_flagged_pairs": 0,
+          "pam_flagged_pairs": 0,
+          "worst_duplex_mfe": -10.3,
+          "interference_penalty": 0.0
+        },
+        "g2": {
+          "self_fold_mfe": -3.5999999046325684,
+          "self_fold_flag": false,
+          "duplex_flagged_pairs": 0,
+          "pam_flagged_pairs": 0,
+          "worst_duplex_mfe": -9.2,
+          "interference_penalty": 0.0
+        },
+        "g3": {
+          "self_fold_mfe": -3.700000047683716,
+          "self_fold_flag": false,
+          "duplex_flagged_pairs": 0,
+          "pam_flagged_pairs": 0,
+          "worst_duplex_mfe": -10.3,
+          "interference_penalty": 0.0
+        }
+      },
+      "flagged_pairs": []
+    },
+    "stderr_tail": ""
+  },
+  "multiplex_flagged": {
+    "cmd": "python cli.py multiplex GAGTCCGAGCAGAAGAAGAA TTCTTCTTCTGCTCGGACTC",
+    "returncode": 0,
+    "stdout": {
+      "compatibility": 0.0,
+      "per_guide": {
+        "g1": {
+          "self_fold_mfe": 0.0,
+          "self_fold_flag": false,
+          "duplex_flagged_pairs": 1,
+          "pam_flagged_pairs": 0,
+          "worst_duplex_mfe": -36.5,
+          "interference_penalty": 1.0
+        },
+        "g2": {
+          "self_fold_mfe": 0.0,
+          "self_fold_flag": false,
+          "duplex_flagged_pairs": 1,
+          "pam_flagged_pairs": 0,
+          "worst_duplex_mfe": -36.5,
+          "interference_penalty": 1.0
+        }
+      },
+      "flagged_pairs": [
+        {
+          "a": "g1",
+          "b": "g2",
+          "duplex_mfe": -36.5,
+          "pam_competition": 0.0,
+          "duplex_flag": true,
+          "pam_flag": false
+        }
+      ]
+    },
+    "stderr_tail": ""
+  },
+  "riskflag_cd9": {
+    "cmd": "python cli.py riskflag GGCACTTTTTAAAAGTGGAGCCTCAGGCCAGCCCCTAGCCGCAGCGTGTCTCAGTCGGTTGTCGAGTCCCTTCTGTCCCAGTCGTTCGTGCCTCTTGTCCCACGCAACTCCAGCTTGTACCATGCCGGTCAAAGGAGGTAGCAAGTGCATCAAATACCTGCTCTTCGGATTTAACTTCATCTTCTGGCTCGCTGGCATTGCAGTGCTTGCTATTGGACTATGGCTCCGATTCGACTCTCAGACCAAGAGCATCTTCGAGCAAGAGAATAACCATTCCAGTTTCTACACAGGAGTGTACATTCTGATTGGAGCCGGGGCCCTCATGATGCTGGTTGGTTTCCTGGGCTGCTGTGGAGCTGTACAAGAGTCCCAGTGCATGCTGGGATTGTTCTTCGGGTTCCTCTTGGTGATATTCGCCATTGAGATAGCCGCCGCCGTCTGGGGCTATACCCACAAGGATGAGGTGATTAAAGAACTCCAGGAGTTTTACAAGGACACCTA 26",
+    "returncode": 0,
+    "stdout": {
+      "n_repeat_pairs": 0,
+      "max_deletion_span": 0,
+      "left_repeat_density": 0.0,
+      "right_repeat_density": 0.0,
+      "asymmetry": 0.0,
+      "mean_entropy": 8.060695931687519,
+      "max_homopolymer": 5,
+      "score": 0.0,
+      "flag": "LOW",
+      "details": {
+        "window": 250,
+        "cut_pos": 26,
+        "n_repeats_total": 0,
+        "subscores": {
+          "pairs": 0.0,
+          "span": 0.0,
+          "complexity": 0.0,
+          "homopolymer": 0.0
+        }
+      }
+    },
+    "stderr_tail": "",
+    "locus": "NM_007657.4 Cd9 (mouse), context from committed data/Cd9_mouse.fa"
+  },
+  "transfer_v1_vs_res": {
+    "cmd": "python cli.py transfer /tmp/wt_v1.fasta /tmp/wt_res.fasta",
+    "returncode": 0,
+    "stdout": {
+      "species_a": "A",
+      "species_b": "B",
+      "heldout_spearman": 0.9569,
+      "transfer_spearman": 0.9761,
+      "transfer_drop": -0.0192,
+      "shift": {
+        "gc_mean_a": 0.4631666666666667,
+        "gc_mean_b": 0.48100000000000004,
+        "gc_delta": 0.017833333333333312,
+        "kmer_js_divergence": 0.013213785365223885,
+        "k": 3
+      },
+      "verdict": "TRANSFER OK: within +/-0.05 Spearman between A and B (drop -0.02)."
+    },
+    "stderr_tail": "",
+    "note": "300 V1 mouse guides vs 300 RES human guides, extracted from committed data files"
+  }
+}

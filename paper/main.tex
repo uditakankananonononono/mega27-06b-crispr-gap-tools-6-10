@@ -739,6 +739,85 @@ supplementary tables figure-only; Arabidopsis sets PDF-only) and are preserved
 as a documented negative.
 
 
+
+\section{Using the shipped tool}
+\label{sec:cli-walkthrough}
+The deliverable is a single command-line entry point, \texttt{cli.py}, over
+the five tool packages. Every invocation below was executed for this
+manuscript against the committed repository state; the complete stdout of
+each run is committed as \texttt{results/cli\_walkthrough.json} (generator:
+\texttt{scripts/cli\_walkthrough.py}, which shells out to the real CLI -
+nothing is retyped or mocked).
+
+\paragraph{Multiplex screening (Tool 6).}
+Three real published spacers (EMX1, VEGFA, FANCF) score as a compatible
+set - worst pairwise heteroduplex MFE $-10.3$ kcal/mol, no flags:
+\begin{verbatim}
+$ python cli.py multiplex GAGTCCGAGCAGAAGAAGAA \
+    GGGTGGGGGGAGTTTGCTCC GGGAATCGGACGAGGTTGCG
+  -> compatibility 1.0, flagged_pairs [] (worst duplex -10.3 kcal/mol)
+\end{verbatim}
+Replacing one spacer with the reverse complement of another forces a
+$-36.5$ kcal/mol heteroduplex and the screen blocks the set:
+\begin{verbatim}
+$ python cli.py multiplex GAGTCCGAGCAGAAGAAGAA TTCTTCTTCTGCTCGGACTC
+  -> compatibility 0.0, flagged_pairs [{duplex_mfe -36.5, duplex_flag true}]
+\end{verbatim}
+
+\paragraph{Cut-site risk flagging (Tool 8).}
+A 501-nt window from the real Cd9 mouse locus (NM\_007657.4, committed
+\texttt{data/Cd9\_mouse.fa}), cut placed 3 nt upstream of an interior PAM:
+\begin{verbatim}
+{
+ "n\_repeat\_pairs": 0,
+ "max\_deletion\_span": 0,
+ "mean\_entropy": 8.060695931687519,
+ "max\_homopolymer": 5,
+ "score": 0.0,
+ "flag": "LOW"
+}
+\end{verbatim}
+This particular cut scores LOW (no direct repeats in the window); the
+locus-level aggregates over all NGG sites are the panel results of the
+Tool 8 section.
+
+\paragraph{Cross-species quick check (Tool 10).}
+\begin{verbatim}
+{
+ "species\_a": "A",
+ "species\_b": "B",
+ "heldout\_spearman": 0.9569,
+ "transfer\_spearman": 0.9761,
+ "transfer\_drop": -0.0192,
+ "shift": {
+  "gc\_mean\_a": 0.4631666666666667,
+  "gc\_mean\_b": 0.48100000000000004,
+  "gc\_delta": 0.017833333333333312,
+  "kmer\_js\_divergence": 0.013213785365223885,
+  "k": 3
+ },
+ "verdict": "TRANSFER OK: within +/-0.05 Spearman between A and B (drop -0.02)."
+}
+\end{verbatim}
+Run here on 300 V1 mouse guides against 300 RES human guides extracted
+from the committed data files (RES training rows only, \texttt{drug
+$\neq$ nodrug}). Two honest caveats. First, the quick check uses GC
+content as a stand-in label purely to exercise the shift diagnostics
+end-to-end; GC is nearly sequence-linear, so both correlations are
+inflated relative to any efficacy label - the efficacy-transfer
+evaluation is the Tool 10 benchmark, where the same comparison loses
+$0.20$--$0.30$ of correlation across species. What carries information
+here is the shift block: GC means $0.463$ vs $0.481$
+($\Delta = 0.018$), quantifying the covariate shift the evaluator
+flags. Second, the subcommand is a screening device; no deployment
+decision should rest on it.
+
+\paragraph{Biosecurity wrapper (Tool 9).}
+The \texttt{bioscreen} subcommand's behavior on an unprovisioned host -
+fail-closed, no oligo accepted - is the real run shown in the Tool 9
+deployment walkthrough (Section~\ref{sec:tool9-walkthrough}); we do not
+repeat it here.
+
 \section{Ethics, Dual-Use, and Governance}
 Tool 9 exists because guide design and biosecurity screening are usually
 separated: a designer can emit guides against sequences that regulated
