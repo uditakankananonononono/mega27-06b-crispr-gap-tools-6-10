@@ -3,9 +3,6 @@
 \usepackage{times}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{graphicx}
-\usepackage{booktabs}
-\usepackage{hyperref}
-\usepackage{natbib}
 \title{Five Open-Source Tools for Under-Served Problems in CRISPR Guide Design:\\
 Multiplex Interference, Repair-Outcome Annotation, Large-Deletion Risk,\\
 Biosecurity Screening, and Cross-Species Transfer}
@@ -39,7 +36,7 @@ negative and parity results are preserved.
 % why these five, related work table.
 \section{Data}
 \subsection{inDelphi U2OS LibA}
-Event-level counts from \citet{shen2018} (figshare 6837956, U2OS\_+\_LibA\_postCas9\_rep1.csv)
+Event-level counts from \cite{shen2018} (figshare 6837956, U2OS\_+\_LibA\_postCas9\_rep1.csv)
 joined to 57-nt target contexts (targets-libA.txt) via the \texttt{\_Experiment} index;
 1,742 sites after coverage filters (total $\geq 50$, edited $\geq 100$ reads).
 \subsection{Doench 2016 FC+RES and V1}
@@ -72,11 +69,11 @@ the ViennaRNA teacher (ridge on 3-mers 0.65): parity, not improvement;
 ViennaRNA remains the primary engine (Table~\ref{tab:duplex}).
 \begin{table}[h]\centering
 \caption{Duplex-MFE surrogate benchmark (2,000 spacers, 400 held out).}\label{tab:duplex}
-\begin{tabular}{lcc}\toprule
-Model & Spearman & Pearson \\\midrule
+\begin{tabular}{lcc}\hline\hline
+Model & Spearman & Pearson \\\hline
 Ridge (3-mer) & 0.648 & 0.653 \\
 CNN (one-hot) & 0.633 & 0.658 \\
-GCN (3-mer graph) & 0.645 & 0.645 \\\bottomrule
+GCN (3-mer graph) & 0.645 & 0.645 \\\hline\hline
 \end{tabular}
 \end{table}
 
@@ -95,7 +92,7 @@ Published inDelphi/Lindel numbers are higher; they model full per-genotype
 distributions on mESC with richer feature sets, and we do not claim parity.
 
 \section{Tool 8: Large-deletion risk flagger}
-Mechanistic, per \citet{kosicki2018} and \citet{wen2022}: direct-repeat pairs
+Mechanistic, per \cite{kosicki2018} and \cite{wen2022}: direct-repeat pairs
 spanning the cut (worst-case deletion span), sequence complexity, homopolymers.
 On the real Xrcc4 locus (NM\_028012.4): 18/43 scanned cut sites flagged
 MODERATE, predicted spans to 500~bp - qualitatively consistent with the
@@ -112,11 +109,11 @@ conda tool plus reference databases is the official route.
 \section{Tool 10: Cross-species transfer evaluator}
 \begin{table}[h]\centering
 \caption{Human (FC+RES) $\to$ mouse (V1) transfer, Spearman.}\label{tab:transfer}
-\begin{tabular}{lccc}\toprule
-Model & Human held-out & Mouse transfer & Drop \\\midrule
+\begin{tabular}{lccc}\hline\hline
+Model & Human held-out & Mouse transfer & Drop \\\hline
 Ridge (3-mer) & 0.279 & 0.331 & $-0.052$ \\
 CNN (one-hot 30-mer) & 0.630 & 0.781 & $-0.151$ \\
-GCN (3-mer graph) & 0.289 & 0.281 & $+0.008$ \\\bottomrule
+GCN (3-mer graph) & 0.289 & 0.281 & $+0.008$ \\\hline\hline
 \end{tabular}
 \end{table}
 The CNN transfers from human to mouse \emph{without penalty} (Table~\ref{tab:transfer});
