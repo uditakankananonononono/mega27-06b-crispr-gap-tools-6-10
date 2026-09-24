@@ -38,14 +38,20 @@ Current honest count: 25 external tools/resources (11 RUN, 5 DATA+RUN,
 zebrafish, inDelphi additional cell lines) and verification implementations
 of published scorers (Rule Set 1, SSC, CRISPRscan) benchmarked in the repo.
 
-## Datasets consumed (honest count)
-1. inDelphi U2OS Lib-A events (117,438 rows)
-2. inDelphi targets-libA (2,000 targets)
-3. Doench FC+RES (5,310 guides)
-4. Doench V1 mouse (2,144 guides)
-5. crisprSQL 100720 (25,632 records)
-6. Xrcc4 NM_028012.4 (RefSeq)
-7. Piga NM_011081.4 (RefSeq)
-8. Cd9 NM_007657.4 (RefSeq)
+## Datasets consumed (honest count, accession-level per program rule)
+1. inDelphi U2OS Lib-A (events + targets; one study dataset)
+2. Doench FC+RES human (one study condition matrix = one dataset)
+3. Doench V1 mouse (one dataset)
+4-19. crisprSQL constituent studies analyzed per-study
+     (results/crisprsql_perstudy.json): Anderson, Cameron, Chen17, Cho,
+     Finkelstein, Frock, Fu, Kim, Kim16, KimChromatin, Kleinstiver,
+     Listgarten, Ran, Slaymaker, Tsai, Tsai_circle = 16 datasets
+20. Xrcc4 NM_028012.4 (RefSeq)
+21. Piga NM_011081.4 (RefSeq)
+22. Cd9 NM_007657.4 (RefSeq)
 
-Current honest count: 8 datasets/data sources. Target: 120+.
+Current honest count: 22 datasets/data sources. Target: 120+.
+Path: Tool 8 validation panel over additional RefSeq accessions (each
+accession = one dataset, real sequence-level risk scoring), inDelphi
+additional cell lines (HEK293/HCT116/K562/mESC = +4), Lindel training set,
+Wang ribosomal/non-ribosomal, Koike-Yusa, Chari 2015, CRISPRscan zebrafish.

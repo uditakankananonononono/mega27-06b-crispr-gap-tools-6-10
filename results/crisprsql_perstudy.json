@@ -1,0 +1,232 @@
+{
+  "n_studies": 16,
+  "studies": {
+    "Anderson": {
+      "n_targets": 367,
+      "n_genes": 194,
+      "genomes": [
+        "mm10",
+        "rn5"
+      ],
+      "cell_lines": [
+        "embryo"
+      ],
+      "cleavage_mean": 0.03636784741144414,
+      "cleavage_median": 0.0,
+      "gc_spearman_vs_cleavage": -0.02072507579985282,
+      "thermo_spearman_vs_cleavage": 0.09486407826705003
+    },
+    "Cameron": {
+      "n_targets": 1630,
+      "n_genes": 903,
+      "genomes": [
+        "hg38"
+      ],
+      "cell_lines": [
+        "HEK293"
+      ],
+      "cleavage_mean": 0.004913139877300614,
+      "cleavage_median": 2.7e-05,
+      "gc_spearman_vs_cleavage": 0.05749923057060953,
+      "thermo_spearman_vs_cleavage": -0.05959753881318128
+    },
+    "Chen17": {
+      "n_targets": 203,
+      "n_genes": 146,
+      "genomes": [
+        "hg19"
+      ],
+      "cell_lines": [
+        "U2OS"
+      ],
+      "cleavage_mean": 0.02463054102593153,
+      "cleavage_median": 0.004537584333393,
+      "gc_spearman_vs_cleavage": -0.4398401540778804,
+      "thermo_spearman_vs_cleavage": 0.4490887313474539
+    },
+    "Cho": {
+      "n_targets": 116,
+      "n_genes": 71,
+      "genomes": [
+        "hg19"
+      ],
+      "cell_lines": [
+        "K562"
+      ],
+      "cleavage_mean": 0.04460569827586207,
+      "cleavage_median": 6.4e-05,
+      "gc_spearman_vs_cleavage": -0.15903367504090415,
+      "thermo_spearman_vs_cleavage": 0.14868612619503274
+    },
+    "Finkelstein": {
+      "n_targets": 14108,
+      "n_genes": 0,
+      "genomes": [],
+      "cell_lines": [],
+      "cleavage_mean": 0.05663822539504981,
+      "cleavage_median": 0.00010319581609,
+      "gc_spearman_vs_cleavage": 0.31734086416625906,
+      "thermo_spearman_vs_cleavage": -0.31734086416625906
+    },
+    "Frock": {
+      "n_targets": 86,
+      "n_genes": 53,
+      "genomes": [
+        "hg19"
+      ],
+      "cell_lines": [
+        "HEK293"
+      ],
+      "cleavage_mean": 0.002550627906976745,
+      "cleavage_median": 0.000778,
+      "gc_spearman_vs_cleavage": 0.09512919006496079,
+      "thermo_spearman_vs_cleavage": -0.09512919006496079
+    },
+    "Fu": {
+      "n_targets": 72,
+      "n_genes": 0,
+      "genomes": [],
+      "cell_lines": [
+        "HEK293",
+        "K562",
+        "U2OS"
+      ],
+      "cleavage_mean": 0.16599444444444444,
+      "cleavage_median": 0.1285,
+      "gc_spearman_vs_cleavage": 0.06495826865086993,
+      "thermo_spearman_vs_cleavage": -0.05420799983283042
+    },
+    "Kim": {
+      "n_targets": 162,
+      "n_genes": 100,
+      "genomes": [
+        "hg19"
+      ],
+      "cell_lines": [
+        "HAP1"
+      ],
+      "cleavage_mean": 0.022562185185185185,
+      "cleavage_median": 6.6e-05,
+      "gc_spearman_vs_cleavage": 0.07279976998584897,
+      "thermo_spearman_vs_cleavage": -0.07279976998584897
+    },
+    "Kim16": {
+      "n_targets": 258,
+      "n_genes": 156,
+      "genomes": [
+        "hg19"
+      ],
+      "cell_lines": [
+        "HeLa"
+      ],
+      "cleavage_mean": 0.06506899224806201,
+      "cleavage_median": 0.0021000000000000003,
+      "gc_spearman_vs_cleavage": 0.21464414230190612,
+      "thermo_spearman_vs_cleavage": -0.20424221443385376
+    },
+    "KimChromatin": {
+      "n_targets": 141,
+      "n_genes": 87,
+      "genomes": [
+        "hg19"
+      ],
+      "cell_lines": [
+        "HeLa"
+      ],
+      "cleavage_mean": 0.05733120567375886,
+      "cleavage_median": 0.0003,
+      "gc_spearman_vs_cleavage": 0.06721152517364538,
+      "thermo_spearman_vs_cleavage": -0.054441053797247875
+    },
+    "Kleinstiver": {
+      "n_targets": 61,
+      "n_genes": 39,
+      "genomes": [
+        "hg19"
+      ],
+      "cell_lines": [
+        "U2OS"
+      ],
+      "cleavage_mean": 0.114754131147541,
+      "cleavage_median": 0.031634,
+      "gc_spearman_vs_cleavage": 0.16472995541379135,
+      "thermo_spearman_vs_cleavage": -0.1548987126428784
+    },
+    "Listgarten": {
+      "n_targets": 272,
+      "n_genes": 179,
+      "genomes": [
+        "hg19"
+      ],
+      "cell_lines": [
+        "U2OS"
+      ],
+      "cleavage_mean": 0.036764709558823536,
+      "cleavage_median": 0.0034005,
+      "gc_spearman_vs_cleavage": -0.24522435643404833,
+      "thermo_spearman_vs_cleavage": 0.2459142441629753
+    },
+    "Ran": {
+      "n_targets": 87,
+      "n_genes": 51,
+      "genomes": [
+        "hg19",
+        "mm9"
+      ],
+      "cell_lines": [
+        "HEK293",
+        "N2A"
+      ],
+      "cleavage_mean": 0.020984367816091955,
+      "cleavage_median": 0.00018,
+      "gc_spearman_vs_cleavage": 0.049267402872672394,
+      "thermo_spearman_vs_cleavage": 0.11127963858753723
+    },
+    "Slaymaker": {
+      "n_targets": 31,
+      "n_genes": 12,
+      "genomes": [
+        "hg19"
+      ],
+      "cell_lines": [
+        "HEK293"
+      ],
+      "cleavage_mean": 0.09677419354838712,
+      "cleavage_median": 0.026636225266362,
+      "gc_spearman_vs_cleavage": -0.3164771059117707,
+      "thermo_spearman_vs_cleavage": 0.3164771059117707
+    },
+    "Tsai": {
+      "n_targets": 575,
+      "n_genes": 286,
+      "genomes": [
+        "hg19"
+      ],
+      "cell_lines": [
+        "HEK293",
+        "U2OS"
+      ],
+      "cleavage_mean": 0.034799707826086955,
+      "cleavage_median": 0.002537,
+      "gc_spearman_vs_cleavage": -0.17618816730085934,
+      "thermo_spearman_vs_cleavage": 0.21666443508274813
+    },
+    "Tsai_circle": {
+      "n_targets": 7374,
+      "n_genes": 3034,
+      "genomes": [
+        "hg19"
+      ],
+      "cell_lines": [
+        "HEK293",
+        "K562",
+        "U2OS"
+      ],
+      "cleavage_mean": 0.0025766291022511524,
+      "cleavage_median": 0.000521,
+      "gc_spearman_vs_cleavage": -0.6230777039246993,
+      "thermo_spearman_vs_cleavage": 0.5167000158855948
+    }
+  },
+  "note": "each study = one accession-level dataset in the manifest"
+}
