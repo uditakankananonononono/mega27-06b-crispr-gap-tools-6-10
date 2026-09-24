@@ -87,9 +87,23 @@ recorded as a dead end, not counted.
     the inDelphi STUDY still counts conservatively as one in any
     study-level summary.
 
-Current honest count: 130 datasets/data sources (TARGET 120+ REACHED).
-Breakdown: 3 core (inDelphi Lib-A, FC+RES, V1) + 16 crisprSQL studies
-+ 111 RefSeq panel accessions. Lindel's training data is NOT in its repo
-(model weights only), so the 'Lindel training set' path was dropped; the
-RefSeq panel extension closed the gap instead, with every accession
-actually scored by Tool 8.
+UNIFORM COUNTING RULE (main, 2026-09-24 22:02 IST): accession-level count
+is the gate number - each unique identifier-backed record individually
+fetched and used counts as 1; a study's condition matrix without distinct
+accessions counts as 1; study-level count kept for transparency.
+
+Restated under this rule:
+- 109 accession-level datasets: the 109 RefSeq mRNA accessions actually
+  fetched and scored by Tool 8 (results/riskflag_panel.json; 115 requested,
+  6 fetch failures recorded and NOT counted: KRAS, Rosa26, Alb, Hbb, TRAC,
+  TRBC1; the file's n_accessions=111 field counts resolved ids incl. 2 that
+  yielded no scored locus - the strict used count is 109).
+- 22 study-level datasets (1 each, no distinct accessions): inDelphi U2OS
+  Lib-A, inDelphi U2OS Lib-B, inDelphi mESC Lib-B, Doench FC+RES, Doench V1,
+  Doench V2, and 16 crisprSQL constituent studies analyzed per-study
+  (results/crisprsql_perstudy.json).
+GATE NUMBER (accession-level + study-level matrices, uniform rule): 131.
+Study-level transparency count: 22. TARGET 120+ REACHED under the rule.
+Lindel's training data is NOT in its repo (model weights only), so the
+'Lindel training set' path was dropped; the RefSeq panel closed the gap
+instead, with every accession actually scored by Tool 8.

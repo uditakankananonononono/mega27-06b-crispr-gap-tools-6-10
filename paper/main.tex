@@ -280,6 +280,21 @@ verdict is split and reported as such: one published-leader metric beaten
 on identical held-out real data, one lost
 (\texttt{results/lindel\_headtohead.json}, \texttt{scripts/lindel\_headtohead.py}).
 
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/lindel_head2head.pdf}
+\caption{Head-to-head against the official Lindel model, all numbers from
+\texttt{results/lindel\_headtohead.json} and
+\texttt{results/outcome\_crosscell.json}. Left: in-distribution, 348
+held-out Lib-A sites - our GBT wins the +1-insertion rate ($0.614$ vs
+$0.557$) and loses frameshift frequency ($0.304$ vs $0.496$). Right:
+the same comparison transferred to Lib-B loci in U2OS and in mESC -
+Lindel wins all four transfer evaluations, so the in-distribution win
+does not generalize across loci, cell line, or species.}
+\label{fig:lindel-h2h}
+\end{figure}
+
+
 \subsection{Cross-cell-line and cross-species transfer}
 Training on all 1{,}742 U2OS Lib-A sites and testing on disjoint libraries,
 the in-distribution +1-insertion win does not transfer: on U2OS Lib-B
@@ -603,6 +618,25 @@ signal that does not transfer, consistent with the transfer-penalty finding
 below. The bar for any benchmark break on this split is therefore $0.569$,
 and it remains unbeaten
 (Figure~\ref{fig:azimuth}).
+
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/transfer_ladder.pdf}
+\caption{The Tool 10 benchmark ladder on the clean RES-human $\to$
+V1-mouse split (mean per-gene Spearman), built at compile time from the
+committed \texttt{results/beat\_azimuth\_v*.json} files by
+\texttt{scripts/make\_figures7.py}. The orange dashed line is the
+same-split Rule Set 2 replication ($0.569$), the honest bar. Seven
+challenger variants - ridge/CNN/GNN featurizations (v1, best of the
+three shown), GBT on Azimuth features (v2, v3), a GBT rank ensemble
+(v4), a deep stack with a leaked normalization (v5, flawed and
+retracted), a leak-free out-of-fold deep stack (v6), and multi-assay
+RES+V2 training (v7) - all lose; paired bootstrap $p$-values over genes
+are printed inside the bars where computed. The ladder is the honest
+record of a benchmark we tried seven ways to break and did not.}
+\label{fig:transfer-ladder}
+\end{figure}
 
 \subsection{Classic-scorer replications and a multi-assay negative}
 We replicated five classic published scorers as method classes and
