@@ -34,9 +34,13 @@ numbers/verification source; DATA = public dataset/data source consumed.
 | 26 | Rule Set 1 (Doench 2014) | published tool | replication (logistic, binarized activity) benchmarked on the RES->V1 clean split: 0.352 vs our v6 0.490 (results/classic_scorers.json) | IMPL |
 | 27 | SSC (Xu 2015) | published tool | replication (positional mononucleotide linear) benchmarked: 0.389 vs v6 0.490 (results/classic_scorers.json) | IMPL |
 | 28 | CRISPRscan (Moreno-Mateos 2015) | published tool | replication (positional 6-mer sparse linear) benchmarked: 0.149 vs v6 0.490 (results/classic_scorers.json) | IMPL |
+| 29 | figshare REST API | web API | inDelphi article 6837956 enumeration + downloads; Lindel-data search (no training data found - recorded) | RUN |
+| 30 | openpyxl | package | V2_data.xlsx parsing (Doench 2016 V2) | RUN |
+| 31 | bioRxiv | preprint server | Azimuth 021568 full text for exact protocol verification (within-FC vs same-split numbers) | DATA |
+| 32 | NCBI RefSeq | database | 111 mRNA records consumed by Tool 8 panel | DATA |
 
-Current honest count: 28 external tools/resources (12 RUN, 5 DATA+RUN,
-6 IMPL/IMPL+REF, 5 REF). Lindel was upgraded from REF to RUN: its official
+Current honest count: 32 external tools/resources (14 RUN, 5 DATA+RUN,
+8 IMPL/IMPL+REF, 3 REF, 2 DATA). Lindel was upgraded from REF to RUN: its official
 published weights now execute in-repo for a real head-to-head. Target: 40. Gap plan: additional public datasets
 (Lindel training set, Wang/Koike-Yusa viability, Chari 2015, CRISPRscan
 zebrafish, inDelphi additional cell lines) and verification implementations

@@ -1,0 +1,52 @@
+{
+  "n_pairs": 16472,
+  "studies": {
+    "Anderson": {
+      "n": 336,
+      "n_pos": 36,
+      "auc_hsu_style": 0.6191666666666666,
+      "auc_cfd_style": 0.717037037037037
+    },
+    "Cameron": {
+      "n": 927,
+      "n_pos": 516,
+      "auc_hsu_style": 0.5142731850845923,
+      "auc_cfd_style": 0.5513306550481902
+    },
+    "Cho": {
+      "n": 116,
+      "n_pos": 81,
+      "auc_hsu_style": 0.5033509700176367,
+      "auc_cfd_style": 0.5407407407407407
+    },
+    "Finkelstein": {
+      "n": 6792,
+      "n_pos": 6743,
+      "auc_hsu_style": 0.4811051218648515,
+      "auc_cfd_style": 0.4640927704316192
+    },
+    "Kim": {
+      "n": 89,
+      "n_pos": 59,
+      "auc_hsu_style": 0.5409604519774012,
+      "auc_cfd_style": 0.5774011299435028
+    },
+    "Kim16": {
+      "n": 251,
+      "n_pos": 226,
+      "auc_hsu_style": 0.5715044247787611,
+      "auc_cfd_style": 0.5127433628318584
+    },
+    "KimChromatin": {
+      "n": 135,
+      "n_pos": 106,
+      "auc_hsu_style": 0.6605400130123619,
+      "auc_cfd_style": 0.7111255692908264
+    }
+  },
+  "mean_auc": {
+    "hsu_style": 0.5558429762003245,
+    "cfd_style": 0.5820673236176821,
+    "n_studies": 7
+  }
+}
