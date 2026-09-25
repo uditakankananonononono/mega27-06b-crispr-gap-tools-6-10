@@ -1,0 +1,12 @@
+{
+  "scope": "item 06b resource and accession audit",
+  "strict_tool_gate": "open",
+  "historical_resource_entries": 40,
+  "nonqualifiers": ["pytest", "GitHub", "pdfLaTeX", "reference-only publications/models", "dataset rows"],
+  "fetched_refseq_panel_records": 115,
+  "scored_refseq_records_with_accession": 111,
+  "unique_scored_refseq_accessions": 111,
+  "accession_record_claim": 133,
+  "study_collapsed_count_as_recorded_in_docs": 22,
+  "dataset_gate": "passes only accession-record convention; does not pass 120 independent studies"
+}

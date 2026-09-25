@@ -1,0 +1,3 @@
+# Build the paper with licensed Times New Roman
+
+The PDF has Times New Roman regular/bold/italic embedded. This local build uses the Tectonic 0.17 engine; the existing system LuaLaTeX lacks fontspec, so it cannot reproduce the PDF as-is. Font binaries are not redistributed in this repository. Obtain `times32.exe` from the user's private Drive fonts folder, read its EULA, extract `Times.TTF`, `Timesbd.TTF`, `Timesi.TTF`, `Timesbi.TTF` into `paper/fonts/`, then from `paper/` run `tectonic main.tex`. `pdffonts main.pdf` should show TimesNewRomanPSMT and TimesNewRomanPS-BoldMT as embedded. `paper/fonts/` is gitignored. The research tool gate is open; see the strict-count audit in results.

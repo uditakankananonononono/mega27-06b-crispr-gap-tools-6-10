@@ -49,8 +49,7 @@ numbers/verification source; DATA = public dataset/data source consumed.
 | 39 | primer3-py 2.3.1 (UNAFold-derived NN thermodynamics) | package | independent duplex-engine cross-check of Tool 6 flags: Spearman 0.711 vs ViennaRNA on 2,000 real-guide pairs, kappa 0.475 at matched flag rate (results/duplex_crosscheck.json) | RUN |
 | 40 | CHOPCHOP v3 design rules (Labun 2019) | published tool | design-rule audit of 4,692 real published guides: GC-window [0.35,0.70] violation 0.134, poly-T 0.0 (same file) | REF |
 
-Current honest count: 40 external tools/resources (15 RUN, 5 DATA+RUN,
-14 IMPL/IMPL+REF, 4 REF, 2 DATA). TARGET REACHED. FOREcasT (Allen 2019)
+Historical resource inventory: 40 heterogeneous entries (RUN, DATA, IMPL and REF). This is NOT a strict count of 40 distinct scientific research/data tools. The strict gate remains OPEN pending new verified uses. FOREcasT (Allen 2019)
 was attempted as a further addition: the official shendurelab/FOREcasT
 repo is not on GitHub anymore (404, org search negative, 2026-09-24) -
 recorded as a dead end, not counted.
@@ -103,7 +102,10 @@ Restated under this rule:
   Doench V2, and 16 crisprSQL constituent studies analyzed per-study
   (results/crisprsql_perstudy.json).
 GATE NUMBER (accession-level + study-level matrices, uniform rule): 131.
-Study-level transparency count: 22. TARGET 120+ REACHED under the rule.
+Study-level transparency count: 22. The 120 threshold is reached only by counting accession records, not independent studies.
 Lindel's training data is NOT in its repo (model weights only), so the
 'Lindel training set' path was dropped; the RefSeq panel closed the gap
 instead, with every accession actually scored by Tool 8.
+
+## September 25 strict audit
+Infrastructure entries 9 pytest, 20 GitHub, 21 TeX are excluded. 11-16, 31-32 are data/literature sources or records, not distinct computational tools; 18, 22, 23, 25 are reference-only and not executed. The remaining entries include research packages, APIs and implemented comparators; their distinct-used count is below 40, so no pass is claimed. Reference-only models cannot be upgraded to a RUN merely by a published comparison.

@@ -1,6 +1,7 @@
 \documentclass[12pt]{article}
 \usepackage[margin=1in]{geometry}
-\usepackage{times}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}[Path=fonts/,Extension=.TTF,UprightFont=Times,BoldFont=Timesbd,ItalicFont=Timesi,BoldItalicFont=Timesbi]
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{graphicx}
 \title{Five Open-Source Tools for Under-Served Problems in CRISPR Guide Design:\\
@@ -26,8 +27,8 @@ repair-outcome predictors trained on 1,742 real inDelphi U2OS sites; a
 mechanistic large-deletion risk flagger validated qualitatively on the
 Kosicki-2018 Xrcc4 locus; a screen-and-design wrapper around the IBBIS Common
 Mechanism; and a cross-species transfer evaluator quantifying the real mammalian
-transfer penalty for a CNN trained on human RES and tested on mouse V1
-(held-out 0.67 vs transfer 0.36 Spearman). All benchmarks are reported with
+transfer for a CNN trained on human RES and tested on mouse V1
+(the clean RES-to-V1 transfer is 0.490 Spearman; see the controlled comparison below). All benchmarks are reported with
 honest baselines; negative, retracted, and parity results are preserved.
 \end{abstract}
 
